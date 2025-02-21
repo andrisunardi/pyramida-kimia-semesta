@@ -21,3 +21,11 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+docker-compose.override.yml
+error_log
+**/.DS_Store
+Envoy*
+!EnvoyClearCommand.php
+!envoy.blade.php
+
