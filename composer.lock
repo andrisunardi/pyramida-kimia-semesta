@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98498b26d61748ab899934b26a844192",
+    "content-hash": "5417d4009aacc533c944042b55dfb880",
     "packages": [
         {
             "name": "andrisunardi/library",

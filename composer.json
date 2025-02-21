@@ -11,6 +11,7 @@
         "asantibanez/livewire-charts": "^4.1",
         "azure-oss/storage-blob-laravel": "^1.2",
         "barryvdh/laravel-dompdf": "^3.1",
+        "buglinjo/laravel-webp": "^2.3",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5"
