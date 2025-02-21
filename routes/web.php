@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Home\HomePage;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -10,3 +11,5 @@ Route::any('locale/{locale}', function ($locale) {
 
     return redirect()->back();
 })->name('locale');
+
+Route::any('', HomePage::class)->name('index');
