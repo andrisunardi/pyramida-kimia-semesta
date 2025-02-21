@@ -13,6 +13,7 @@
         "barryvdh/laravel-dompdf": "^3.1",
         "buglinjo/laravel-webp": "^2.3",
         "dcblogdev/laravel-dropbox": "^3.0",
+        "diglactic/laravel-breadcrumbs": "^9.0",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5"
