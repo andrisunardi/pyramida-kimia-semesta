@@ -1,0 +1,29 @@
+.pointer {
+    cursor: pointer;
+}
+
+.text-pre-wrap {
+    white-space: pre-wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+.background-primary {
+    background-color: #006633;
+    color: #ffffff;
+}
+
+.background-secondary {
+    background-color: #009933;
+    color: #ffffff;
+}
+
+.color-primary {
+    color: #006633;
+}
+
+.color-secondary {
+    color: #009933;
+}
