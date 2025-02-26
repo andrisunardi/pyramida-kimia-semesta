@@ -93,13 +93,31 @@
         <div class="container">
             <div class="row">
                 <div class="site-copy col-sm-7">
-                    <p>&copy; 2017 Industrial Company <span class="sep"> . </span> Licensed NI099999<span
-                            class="sep"> . </span> <a href="#">Terms and Condition</a></p>
-                </div>
-                <div class="site-by col-sm-5 al-right">
-                    <p>Template Made by <a href="http://softnio.com/" target="_blank">Softnio.</a></p>
+                    <p>
+                        &copy; {{ trans('index.copyright') }}
+                        @if (env('APP_YEAR') && env('APP_YEAR') != now()->year)
+                            {{ env('APP_YEAR') . ' - ' }}
+                        @endif
+                        {{ now()->year }} &reg;
+
+                        <a draggable="false" href="{{ route('index') }}" target="_blank">
+                            <strong>{{ env('APP_NAME') }}</strong>&#8480;
+                        </a>
+                        <br class="d-block d-md-none">
+
+                        {{ trans('index.all_rights_reserved') }}.
+                    </p>
                 </div>
 
+                <div class="site-by col-sm-5 al-right">
+                    <p>
+                        {{ trans('index.created_and_designed_by') }}
+                        <a draggable="false" href="https://www.diw.co.id" target="_blank">
+                            <img draggable="false" src="{{ asset('images/icon-diw.co.id.png') }}" alt="Icon DIW.co.id"
+                                title="{{ trans('index.created_and_designed_by') }} DIW.co.id">
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
