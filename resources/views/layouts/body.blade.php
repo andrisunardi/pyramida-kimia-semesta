@@ -2,7 +2,7 @@
 
 <main>
     @if (!Route::is('index'))
-        <x-layouts.breadcrumbs />
+        {{-- <x-layouts.breadcrumbs /> --}}
     @endif
 
     @if (!trim($__env->yieldContent('code')))
