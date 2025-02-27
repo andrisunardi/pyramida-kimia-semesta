@@ -7,6 +7,7 @@ return [
     'all_right_reserved' => '版权所有',
     'all_rights_reserved' => '版权所有',
     'data' => '数据',
+    'banner' => '横幅',
     'quick_links' => '快速链接',
     'category' => '类别',
     'product_category' => '产品类别',

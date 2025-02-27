@@ -7,6 +7,7 @@ return [
     'all_right_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'all_rights_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'data' => 'Data',
+    'banner' => 'Spanduk',
     'quick_links' => 'Tautan Cepat',
     'category' => 'Kategori',
     'product_category' => 'Kategori Produk',
