@@ -7,6 +7,7 @@ return [
     'all_right_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'all_rights_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'data' => 'Data',
+    'back_to_home' => 'Kembali ke Beranda',
     'phone' => 'Telepon',
     'email' => 'Email',
     'contact_us' => 'Kontak Kami',
