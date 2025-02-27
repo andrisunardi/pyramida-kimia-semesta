@@ -1,4 +1,4 @@
-@include('vendors.jquery')
+{{-- @include('vendors.jquery') --}}
 
 {{-- @include('vendors.bootstrap') --}}
 

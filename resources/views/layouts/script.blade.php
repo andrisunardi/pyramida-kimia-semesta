@@ -1,5 +1,5 @@
-<script src="{{ asset('js/color-modes.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+{{-- <script src="{{ asset('js/color-modes.js') }}"></script> --}}
+{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
 <script src="{{ asset('js/jquery.bundle.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
