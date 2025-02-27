@@ -6,8 +6,8 @@
         <div class="container">
             <div class="content row has-bg-image">
                 <div class="imagebg bg-image-loaded"
-                    style="background-image: url({{ asset('images/banner-contact.jpg') }});">
-                    <img draggable="false" src="{{ asset('images/banner-contact.jpg') }}"
+                    style="background-image: url({{ asset('images/banner/contact.png') }});">
+                    <img draggable="false" src="{{ asset('images/banner/contact.png') }}"
                         alt="{{ trans('index.banner') }} - {{ trans('index.contact') }} - {{ env('APP_TITLE') }}">
                 </div>
             </div>
