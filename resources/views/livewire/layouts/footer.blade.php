@@ -31,6 +31,23 @@
                     </div>
 
                     <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
+                        <div class="wgs wgs-footer wgs-text">
+                            <h5 class="wgs-title">{{ trans('index.category') }}</h5>
+                            <div class="wgs-content">
+                                <ul>
+                                    @foreach ($productCategories as $key => $productCategory)
+                                        <li wire:key="{{ $key }}">
+                                            <a draggable="false" href="" wire:navigate>
+                                                {{ $productCategory->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
                             <h5 class="wgs-title">{{ trans('index.quick_links') }}</h5>
                             <div class="wgs-content">
@@ -50,23 +67,6 @@
                                             {{ trans('index.contact') }}
                                         </a>
                                     </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
-                        <div class="wgs wgs-footer wgs-text">
-                            <h5 class="wgs-title">{{ trans('index.category') }}</h5>
-                            <div class="wgs-content">
-                                <ul>
-                                    @foreach ($productCategories as $key => $productCategory)
-                                        <li wire:key="{{ $key }}">
-                                            <a draggable="false" href="" wire:navigate>
-                                                {{ $productCategory->name }}
-                                            </a>
-                                        </li>
-                                    @endforeach
                                 </ul>
                             </div>
                         </div>
