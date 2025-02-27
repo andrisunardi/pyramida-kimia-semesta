@@ -22,7 +22,7 @@ return new class extends Migration
         }
 
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
-            //$table->engine('InnoDB');
+            // $table->engine('InnoDB');
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('guard_name');
@@ -32,7 +32,7 @@ return new class extends Migration
         });
 
         Schema::create($tableNames['roles'], function (Blueprint $table) use ($teams, $columnNames) {
-            //$table->engine('InnoDB');
+            // $table->engine('InnoDB');
             $table->bigIncrements('id');
             if ($teams || config('permission.testing')) {
                 $table->unsignedBigInteger($columnNames['team_foreign_key'])->nullable();

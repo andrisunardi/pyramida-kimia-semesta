@@ -7,12 +7,54 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 #[ObservedBy([SliderObserver::class])]
+/**
+ * @property int $id
+ * @property string $name
+ * @property string|null $description
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $image_url
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withoutTrashed()
+ *
+ * @mixin \Eloquent
+ */
 class Slider extends Model
 {
     use HasFactory;

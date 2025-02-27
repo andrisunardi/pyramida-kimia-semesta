@@ -3,8 +3,8 @@
 namespace App\Livewire\Layouts;
 
 use App\Livewire\Component;
-use App\Services\ProductService;
 use App\Services\ProductCategoryService;
+use App\Services\ProductService;
 
 class Footer extends Component
 {
