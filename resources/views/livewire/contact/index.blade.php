@@ -36,36 +36,54 @@
                             @endif
                         </p>
 
-                        <form id="contact-us" class="form-message" method="post">
+                        <form id="contact-us-delete" class="form-message" wire:submit.prevent="submit" role="form"
+                            autocomplete="off">
+
+                            <x-components::form.alert />
+
                             <div class="form-results"></div>
+
                             <div class="form-group row">
                                 <div class="form-field col-md-6 form-m-bttm">
                                     <input name="contact-name" type="text" placeholder="Name *"
-                                        class="form-control required">
+                                        class="form-control required" required>
                                 </div>
                                 <div class="form-field col-md-6">
                                     <input name="contact-email" type="email" placeholder="Email *"
-                                        class="form-control required email">
+                                        class="form-control required email" required>
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="form-field col-md-6 form-m-bttm">
-                                    <input name="contact-phone" type="text" placeholder="Phone" class="form-control">
+                                    <input name="contact-phone" type="text" placeholder="Phone" class="form-control"
+                                        required>
                                 </div>
                                 <div class="form-field col-md-6">
                                     <input name="contact-service" type="text" placeholder="Interest of Service"
                                         class="form-control">
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="form-field col-md-12">
                                     <textarea name="contact-message" placeholder="Messages *" class="txtarea form-control required"></textarea>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <div class="form-field col-md-12">
+                                    <textarea name="contact-message" placeholder="Messages *" class="txtarea form-control required"></textarea>
+                                </div>
+                            </div>
+
                             <input type="text" class="hidden" name="form-anti-honeypot" value="">
-                            <div class="g-recaptcha" data-sitekey="6LdNwz0UAAAAAED8ZFtVoXnFKRniFMBh14NReqaZ"></div>
+
                             <div class="gaps"></div>
-                            <button type="submit" class="btn solid-btn sb-h">Submit</button>
+
+                            <button type="submit" class="btn solid-btn sb-h" wire:click="submit">
+                                {{ trans('index.submit') }}
+                            </button>
                         </form>
                     </div>
 
@@ -130,7 +148,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
