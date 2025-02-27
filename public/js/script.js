@@ -1,4 +1,4 @@
-// 
+//
 ! function(e) {
 	"use strict";
 
@@ -276,18 +276,18 @@
 	});
 
 	// color switch
-	n.append('<div id="color-switch" class="colorPanel cp-custom"><a class="cart" href="https://themeforest.net/item/industrial-industry-and-engineering-services-template/20439885?ref=softnio" target="_blank"><i class="fa fa-cart-arrow-down fa-fw"></i></a><a id="cpToggle" href="#"><i class="fa fa-cog fa-spin fa-fw"></i></a><ul></ul></div>');
-	var O = e("#color-switch");
-	O.length > 0 && O.ColorPanel({
-		styleSheet: "#style-css",
-		animateContainer: ".site-body",
-		colors: {
-			"#1863AB": "css/style.css",
-			"#F5574A": "css/style-red.css",
-			"#46a0f3": "css/style-bluelight.css",
-			"#f26d3f": "css/style-orange.css",
-			"#26B05A": "css/style-green.css",
-			"#fAAB38": "css/style-bitcoin.css"
-		}
-	})
+	// n.append('<div id="color-switch" class="colorPanel cp-custom"><a class="cart" href="https://themeforest.net/item/industrial-industry-and-engineering-services-template/20439885?ref=softnio" target="_blank"><i class="fa fa-cart-arrow-down fa-fw"></i></a><a id="cpToggle" href="#"><i class="fa fa-cog fa-spin fa-fw"></i></a><ul></ul></div>');
+	// var O = e("#color-switch");
+	// O.length > 0 && O.ColorPanel({
+	// 	styleSheet: "#style-css",
+	// 	animateContainer: ".site-body",
+	// 	colors: {
+	// 		"#1863AB": "css/style.css",
+	// 		"#F5574A": "css/style-red.css",
+	// 		"#46a0f3": "css/style-bluelight.css",
+	// 		"#f26d3f": "css/style-orange.css",
+	// 		"#26B05A": "css/style-green.css",
+	// 		"#fAAB38": "css/style-bitcoin.css"
+	// 	}
+	// })
 }(jQuery);
