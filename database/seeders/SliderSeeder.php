@@ -11,7 +11,7 @@ class SliderSeeder extends Seeder
     {
         Slider::create([
             'name' => 'Welcome To Pyramida Kimia Semesta',
-            'description' => 'Trusted supplier of raw chemicals for the solar panel, semiconductor, lithium battery, and industrial waste treatment industries. Serving export markets with over 20 years of experience.',
+            'description' => 'Importir & Stockist Of Industrial and Food Chemical',
             'image' => 'welcome-to-pyramida-kimia-semesta.png',
             'is_active' => true,
         ]);
