@@ -3,10 +3,24 @@
         <div class="row">
             <div class="top-aside top-left">
                 <ul class="top-nav">
-                    <li><a href="resources.html">Knowledge Centre</a></li>
-                    <li><a href="careers.html">Career</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <b>{{ trans('index.change_language') }} :</b>
+                    </li>
+                    <li>
+                        <a draggable="false" href="{{ url('locale/en') }}">
+                            {{ trans('index.english') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a draggable="false" href="{{ url('locale/id') }}">
+                            {{ trans('index.indonesia') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a draggable="false" href="{{ url('locale/zh') }}">
+                            {{ trans('index.chinese') }}
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="top-aside top-right clearfix">
