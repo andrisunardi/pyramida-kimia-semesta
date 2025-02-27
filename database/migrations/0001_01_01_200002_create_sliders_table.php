@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'deleted_by')->nullable()->constrained('users')->nullOnDelete();
