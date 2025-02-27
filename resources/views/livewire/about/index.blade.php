@@ -6,7 +6,8 @@
         <div class="container">
             <div class="content row">
                 <div class="imagebg">
-                    <img src="{{ asset('images/banner-inside-d.jpg') }}" alt="">
+                    <img draggable="false" src="{{ asset('images/banner/about.png') }}"
+                        alt="{{ trans('index.banner') }} - {{ trans('index.about') }} - {{ env('APP_TITLE') }}">
                 </div>
             </div>
         </div>
