@@ -9,22 +9,22 @@ class SliderObserver
 {
     public function creating(Slider $slider)
     {
-        $slider->created_by_id = Auth::slider()->id ?? null;
-        $slider->updated_by_id = Auth::slider()->id ?? null;
+        $slider->created_by = Auth::user()->id ?? null;
+        $slider->updated_by = Auth::user()->id ?? null;
     }
 
     public function created(Slider $slider) {}
 
     public function updating(Slider $slider)
     {
-        $slider->updated_by_id = Auth::slider()->id ?? null;
+        $slider->updated_by = Auth::user()->id ?? null;
     }
 
     public function updated(Slider $slider) {}
 
     public function deleting(Slider $slider)
     {
-        $slider->deleted_by_id = Auth::slider()->id ?? null;
+        $slider->deleted_by = Auth::user()->id ?? null;
         $slider->save();
     }
 
@@ -32,7 +32,7 @@ class SliderObserver
 
     public function restoring(Slider $slider)
     {
-        $slider->deleted_by_id = null;
+        $slider->deleted_by = null;
         $slider->save();
     }
 

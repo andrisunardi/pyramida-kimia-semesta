@@ -9,22 +9,22 @@ class UserObserver
 {
     public function creating(User $user)
     {
-        $user->created_by_id = Auth::user()->id ?? null;
-        $user->updated_by_id = Auth::user()->id ?? null;
+        $user->created_by = Auth::user()->id ?? null;
+        $user->updated_by = Auth::user()->id ?? null;
     }
 
     public function created(User $user) {}
 
     public function updating(User $user)
     {
-        $user->updated_by_id = Auth::user()->id ?? null;
+        $user->updated_by = Auth::user()->id ?? null;
     }
 
     public function updated(User $user) {}
 
     public function deleting(User $user)
     {
-        $user->deleted_by_id = Auth::user()->id ?? null;
+        $user->deleted_by = Auth::user()->id ?? null;
         $user->save();
     }
 
@@ -32,7 +32,7 @@ class UserObserver
 
     public function restoring(User $user)
     {
-        $user->deleted_by_id = null;
+        $user->deleted_by = null;
         $user->save();
     }
 
