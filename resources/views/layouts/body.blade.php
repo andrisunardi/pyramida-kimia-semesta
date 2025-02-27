@@ -1,5 +1,3 @@
-@livewire('layouts.topbar')
-
 @livewire('layouts.header')
 
 <main>
