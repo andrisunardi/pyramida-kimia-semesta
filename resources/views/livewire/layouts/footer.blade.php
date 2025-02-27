@@ -103,8 +103,6 @@
                         <a draggable="false" href="{{ route('index') }}" target="_blank">
                             <strong>{{ env('APP_NAME') }}</strong>&#8480;
                         </a>
-                        <br class="d-block d-md-none">
-
                         {{ trans('index.all_rights_reserved') }}.
                     </p>
                 </div>
