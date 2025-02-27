@@ -35,6 +35,12 @@
                         </a>
                     </li>
                     <li>
+                        <a draggable="false" href="{{ route('about') }}" wire:navigate>
+                            <span class="fas fa-building"></span>
+                            {{ trans('index.about') }}
+                        </a>
+                    </li>
+                    <li>
                         <a draggable="false" href="{{ route('contact') }}" wire:navigate>
                             <span class="fas fa-phone"></span>
                             {{ trans('index.contact') }}

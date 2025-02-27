@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\Localization;
+use App\Livewire\About\AboutPage;
 use App\Livewire\Contact\ContactPage;
 use App\Livewire\Home\HomePage;
 use Illuminate\Support\Facades\App;
@@ -16,5 +17,6 @@ Route::any('locale/{locale}', function ($locale) {
 
 Route::group(['middleware' => [Localization::class]], function () {
     Route::any('', HomePage::class)->name('index');
+    Route::any('about', AboutPage::class)->name('about');
     Route::any('contact', ContactPage::class)->name('contact');
 });

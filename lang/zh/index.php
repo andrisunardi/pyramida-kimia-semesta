@@ -7,6 +7,8 @@ return [
     'all_right_reserved' => '版权所有',
     'all_rights_reserved' => '版权所有',
     'data' => '数据',
+    'company_profile' => '公司简介',
+    'about' => '关于',
     'back_to_home' => '返回首页',
     'phone' => '电话',
     'email' => '电子邮件',

@@ -50,6 +50,12 @@ Breadcrumbs::for('index', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.home'), route('index'), ['icon' => 'fas fa-home']);
 });
 
+// ABOUT
+Breadcrumbs::for('about', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.about'), route('about'), ['icon' => 'fas fa-building']);
+});
+
 // CONTACT
 Breadcrumbs::for('contact', function (BreadcrumbTrail $trail) {
     $trail->parent('index');

@@ -7,6 +7,8 @@ return [
     'all_right_reserved' => 'All Right Reserved',
     'all_rights_reserved' => 'All Rights Reserved',
     'data' => 'Data',
+    'company_profile' => 'Company Profile',
+    'about' => 'About',
     'back_to_home' => 'Back to Home',
     'phone' => 'Phone',
     'email' => 'Email',
