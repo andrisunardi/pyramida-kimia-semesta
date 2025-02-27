@@ -7,5 +7,6 @@ return [
     'all_right_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'all_rights_reserved' => 'Seluruh Hak Cipta Dilindungi',
     'data' => 'Data',
+    'menu' => 'Menu',
     'contact' => 'Kontak',
 ];
