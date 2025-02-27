@@ -6,7 +6,9 @@
 
                     <div class="footer-col col-md-5 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title">Solutions</h5>
+                            <h5 class="wgs-title">
+                                {{ trans("index.our_latest_product") }}
+                            </h5>
                             <div class="wgs-content">
                                 <ul class="menu col-md-6 npl">
                                     <li><a href="#">Mechanical Engineering</a></li>
