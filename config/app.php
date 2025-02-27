@@ -49,7 +49,6 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Utils' => Andrisunardi\Library\Utils::class,
-        'Zip' => ZanySoft\Zip\Zip::class,
     ])->toArray(),
 
 ];

@@ -16,5 +16,4 @@ return [
     SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
     Spatie\Menu\Laravel\MenuServiceProvider::class,
     Spatie\Permission\PermissionServiceProvider::class,
-    ZanySoft\Zip\ZipServiceProvider::class,
 ];

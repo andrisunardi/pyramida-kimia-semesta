@@ -57,6 +57,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withoutTrashed()
+ * @mixin \Eloquent
  */
 	class Contact extends \Eloquent {}
 }
@@ -113,6 +114,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withoutTrashed()
+ * @mixin \Eloquent
  */
 	class Product extends \Eloquent {}
 }
@@ -155,6 +157,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withoutTrashed()
+ * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }
@@ -200,6 +203,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withoutTrashed()
+ * @mixin \Eloquent
  */
 	class Slider extends \Eloquent {}
 }
@@ -241,6 +245,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedBy($value)
+ * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }
