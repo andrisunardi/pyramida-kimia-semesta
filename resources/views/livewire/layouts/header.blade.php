@@ -4,22 +4,26 @@
 
     <div class="navbar navbar-primary">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img class="logo logo-dark" alt="" src="{{ asset('images/logo/logo.png') }}"
-                    srcset="image/logo2x.png 2x">
-                <img class="logo logo-light" alt="" src="{{ asset('images/logo/logo.png') }}"
-                    srcset="image/logo-light2x.png 2x">
+            <a draggable="false" class="navbar-brand" href="{{ route('index') }}" wire:navigate>
+                <img draggable="false" class="logo logo-dark" alt="" src="{{ asset('images/logo/logo.png') }}"
+                    srcset="{{ asset('images/logo/logo.png') }} 2x">
+                <img draggable="false" class="logo logo-light" alt="" src="{{ asset('images/logo/logo.png') }}"
+                    srcset="{{ asset('images/logo/logo.png') }} 2x">
             </a>
 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav"
                     aria-expanded="false">
-                    <span class="sr-only">Menu</span>
+                    <span class="sr-only">{{ trans('index.menu') }}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="quote-btn"><a class="btn" href="get-a-quote.html">Enquire Today</a></div>
+                <div class="quote-btn">
+                    <a class="btn" href="get-a-quote.html">
+                        Enquire Today
+                    </a>
+                </div>
             </div>
 
             <nav class="navbar-collapse collapse" id="mainnav">
