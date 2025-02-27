@@ -6,9 +6,7 @@
 
                     <div class="footer-col col-md-5 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title">
-                                {{ trans('index.our_latest_product') }}
-                            </h5>
+                            <h5 class="wgs-title">{{ trans('index.our_latest_product') }}</h5>
                             <div class="wgs-content">
                                 <ul class="menu col-md-6 npl">
                                     @foreach ($products->take(12) as $key => $product)
@@ -34,9 +32,7 @@
 
                     <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title">
-                                {{ trans('index.quick_links') }}
-                            </h5>
+                            <h5 class="wgs-title">{{ trans('index.quick_links') }}</h5>
                             <div class="wgs-content">
                                 <ul class="menu">
                                     <li>
@@ -56,9 +52,7 @@
 
                     <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-text">
-                            <h5 class="wgs-title">
-                                {{ trans('index.category') }}
-                            </h5>
+                            <h5 class="wgs-title">{{ trans('index.category') }}</h5>
                             <div class="wgs-content">
                                 <ul>
                                     @foreach ($productCategories as $key => $productCategory)
@@ -75,15 +69,22 @@
 
                     <div class="footer-col col-md-3 col-sm-6">
                         <div class="wgs wgs-footer">
-                            <h5 class="wgs-title">Contact us</h5>
+                            <h5 class="wgs-title">{{ trans('index.contact_us') }}</h5>
                             <div class="wgs-content">
                                 <p>
                                     <strong>{{ env('APP_NAME') }}</strong><br>
                                     {{ env('CONTACT_ADDRESS') }}
                                 </p>
                                 <p>
-                                    <span>Phone</span>: {{ env('CONTACT_PHONE') }}<br>
-                                    <span>Email</span>: {{ env('CONTACT_EMAIL') }}
+                                    <span>{{ trans('index.phone') }}</span> :
+                                    <a draggable="false" href="tel:+{{ Utils::phone(env('CONTACT_PHONE')) }}">
+                                        {{ env('CONTACT_PHONE') }}
+                                    </a>
+                                    <br>
+                                    <span>{{ trans('index.email') }}</span> :
+                                    <a draggable="false" href="mailto:{{ env('CONTACT_EMAIL') }}">
+                                        {{ env('CONTACT_EMAIL') }}
+                                    </a>
                                 </p>
                                 <ul class="social">
                                     <li>

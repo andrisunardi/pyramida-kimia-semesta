@@ -2,17 +2,41 @@
 @section('icon', 'fas fa-phone')
 
 <main>
+    <div class="banner banner-static">
+        <div class="container">
+            <div class="content row has-bg-image">
+                <div class="imagebg bg-image-loaded"
+                    style="background-image: url({{ asset('images/banner-contact.jpg') }});">
+                    <img draggable="false" src="{{ asset('images/banner-contact.jpg') }}"
+                        alt="{{ trans('index.banner') }} - {{ trans('index.contact') }} - {{ env('APP_TITLE') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="section section-contents section-contact section-pad">
         <div class="container">
             <div class="content row">
-
-                <h1>Contact Us</h1>
+                <h1>{{ trans('index.contact_us') }}</h1>
                 <div class="contact-content row">
                     <div class="drop-message col-md-7 res-m-bttm">
-                        <p>Want to work with us or need more details about consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolor.</p>
-                        <form id="contact-us" class="form-message"
-                            action="https://demo.themenio.com/industrial/form/contact.php" method="post">
+                        <p>
+                            @if (App::isLocale('en'))
+                                Feel free to reach out to us for any inquiries, support, or additional information. Our
+                                team is always ready to assist you and provide the help you need. We look forward to
+                                hearing from you!
+                            @endif
+                            @if (App::isLocale('id'))
+                                Jangan ragu untuk menghubungi kami untuk pertanyaan, dukungan, atau informasi tambahan.
+                                Tim kami selalu siap membantu Anda dan memberikan bantuan yang Anda butuhkan. Kami
+                                menunggu kabar dari Anda!
+                            @endif
+                            @if (App::isLocale('zh'))
+                                如有任何疑问、需要支持或需要更多信息，请随时联系我们。我们的团队随时准备为您提供帮助。我们期待您的来电！
+                            @endif
+                        </p>
+
+                        <form id="contact-us" class="form-message" method="post">
                             <div class="form-results"></div>
                             <div class="form-group row">
                                 <div class="form-field col-md-6 form-m-bttm">
@@ -44,20 +68,64 @@
                             <button type="submit" class="btn solid-btn sb-h">Submit</button>
                         </form>
                     </div>
+
                     <div class="contact-details col-md-4 col-md-offset-1">
                         <ul class="contact-list">
-                            <li><em class="fa fa-map" aria-hidden="true"></em>
-                                <span>1234 Sed ut perspiciatis Road, <br>At vero eos, D58 8975, London.</span>
-                            </li>
-                            <li><em class="fa fa-phone" aria-hidden="true"></em>
-                                <span>Toll Free : (123) 4567 8910<br>
-                                    Telephone : (123) 1234 5678</span>
-                            </li>
-                            <li><em class="fa fa-envelope" aria-hidden="true"></em>
-                                <span>Email : <a href="#">info@sitename.com</a></span>
+                            <li>
+                                <em class="fa fa-map-marked-alt" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="{{ env('CONTACT_MAPS') }}" target="_blank">
+                                        {{ env('CONTACT_ADDRESS') }}
+                                    </a>
+                                </span>
                             </li>
                             <li>
-                                <em class="fa fa-clock-o" aria-hidden="true"></em><span>Sat - Thu: 8AM - 7PM </span>
+                                <em class="fa fa-phone" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="tel:+{{ Utils::phone(env('CONTACT_PHONE')) }}">
+                                        {{ env('CONTACT_PHONE') }}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <em class="fa fa-envelope" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="mailto:{{ env('CONTACT_EMAIL') }}">
+                                        {{ env('CONTACT_EMAIL') }}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <em class="fa fa-facebook" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="{{ env('FACEBOOK_URL') }}" target="_blank">
+                                        {{ env('FACEBOOK_NAME') }}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <em class="fa fa-twitter" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="{{ env('TWITTER_URL') }}" target="_blank">
+                                        {{ env('TWITTER_USERNAME') }}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <em class="fa fa-instagram" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="{{ env('INSTAGRAM_URL') }}" target="_blank">
+                                        {{ env('INSTAGRAM_USERNAME') }}
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <em class="fa fa-tiktok" aria-hidden="true"></em>
+                                <span>
+                                    <a draggable="false" href="{{ env('TIKTOK_URL') }}" target="_blank">
+                                        {{ env('TIKTOK_USERNAME') }}
+                                    </a>
+                                </span>
                             </li>
                         </ul>
                     </div>
