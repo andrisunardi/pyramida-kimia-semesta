@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 
 #[ObservedBy([SliderObserver::class])]
 class Slider extends Model
@@ -67,5 +69,42 @@ class Slider extends Model
     public function deletedBy()
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function altImage()
+    {
+        return trans('index.slider')." - {$this->id} - ".env('APP_TITLE');
+    }
+
+    public function checkImage()
+    {
+        if ($this->image && File::exists(public_path("images/slider/{$this->image}"))) {
+            return true;
+        }
+    }
+
+    public function assetImage()
+    {
+        if ($this->checkImage()) {
+            return asset("images/slider/{$this->image}");
+        } else {
+            return asset('images/image-not-available.png');
+        }
+    }
+
+    public function deleteImage()
+    {
+        if ($this->checkImage()) {
+            File::delete(public_path("images/slider/{$this->image}"));
+        }
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if ($this->checkImage()) {
+            return URL::to('/')."/images/slider/{$this->image}";
+        }
+
+        return null;
     }
 }
