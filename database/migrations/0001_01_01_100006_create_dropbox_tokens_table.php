@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateDropboxTokensTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('dropbox_tokens', function (Blueprint $table) {
@@ -28,11 +23,6 @@ class CreateDropboxTokensTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('dropbox_tokens');
