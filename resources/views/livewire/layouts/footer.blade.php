@@ -7,7 +7,7 @@
                     <div class="footer-col col-md-5 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
                             <h5 class="wgs-title">
-                                {{ trans("index.our_latest_product") }}
+                                {{ trans('index.our_latest_product') }}
                             </h5>
                             <div class="wgs-content">
                                 <ul class="menu col-md-6 npl">
@@ -30,15 +30,21 @@
 
                     <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title">Quick Links</h5>
+                            <h5 class="wgs-title">
+                                {{ trans('index.quick_links') }}
+                            </h5>
                             <div class="wgs-content">
                                 <ul class="menu">
-                                    <li><a href="index-2.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="resources.html">Resources</a></li>
-                                    <li><a href="responsibility.html">Responsibility</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li>
+                                        <a draggable="false" href="{{ route('index') }}" wire:navigate>
+                                            {{ trans('index.home') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a draggable="false" href="{{ route('contact') }}" wire:navigate>
+                                            {{ trans('index.contact') }}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -46,15 +52,18 @@
 
                     <div class="footer-col col-md-2 col-sm-6 res-m-bttm">
                         <div class="wgs wgs-footer wgs-text">
-                            <h5 class="wgs-title">Areas Serve</h5>
+                            <h5 class="wgs-title">
+                                {{ trans('index.category') }}
+                            </h5>
                             <div class="wgs-content">
                                 <ul>
-                                    <li>USA</li>
-                                    <li>UK</li>
-                                    <li>Kuwit</li>
-                                    <li>Japan</li>
-                                    <li>South Africa</li>
-                                    <li>Canada</li>
+                                    @foreach ($productCategories as $key => $productCategory)
+                                        <li wire:key="{{ $key }}">
+                                            <a draggable="false" href="" wire:navigate>
+                                                {{ $productCategory->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
