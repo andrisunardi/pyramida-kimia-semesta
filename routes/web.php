@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Contact\ContactPage;
 use App\Livewire\Home\HomePage;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,4 @@ Route::any('locale/{locale}', function ($locale) {
 })->name('locale');
 
 Route::any('', HomePage::class)->name('index');
+Route::any('contact', ContactPage::class)->name('contact');
