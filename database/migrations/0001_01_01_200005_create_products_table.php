@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ProductCategory;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -9,17 +10,18 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(ProductCategory::class)->constrained()->cascadeOnDelete();
             $table->string('name')->unique();
-            $table->string('email')->unique();
+            $table->string('image')->nullable()->unique();
+            $table->string('image_coa')->nullable()->unique();
+            $table->string('image_msds')->nullable()->unique();
+            $table->string('slug')->unique();
             $table->boolean('is_active')->unsigned()->default(true);
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'deleted_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +29,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('products');
     }
 };
