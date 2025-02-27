@@ -11,18 +11,22 @@
                             </h5>
                             <div class="wgs-content">
                                 <ul class="menu col-md-6 npl">
-                                    <li><a href="#">Mechanical Engineering</a></li>
-                                    <li><a href="#">Civil Engineering</a></li>
-                                    <li><a href="#">Chemical Research</a></li>
-                                    <li><a href="#">Material Science</a></li>
-                                    <li><a href="#">Power and Energy</a></li>
-                                    <li><a href="#">Oil and Gas</a></li>
+                                    @foreach ($products->take(12) as $key => $product)
+                                        <li>
+                                            <a draggable="false" href="" wire:navigate>
+                                                {{ $product->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                                 <ul class="menu col-md-6">
-                                    <li><a href="#">Maintainance Services</a></li>
-                                    <li><a href="#">Product Development</a></li>
-                                    <li><a href="#">Machinery &amp; Utilities</a></li>
-                                    <li><a href="#">Research &amp; Development</a></li>
+                                    @foreach ($products->skip(12) as $key => $product)
+                                        <li>
+                                            <a draggable="false" href="" wire:navigate>
+                                                {{ $product->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

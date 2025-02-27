@@ -3,6 +3,7 @@
 namespace App\Livewire\Layouts;
 
 use App\Livewire\Component;
+use App\Services\ProductService;
 use App\Services\ProductCategoryService;
 
 class Footer extends Component
@@ -13,6 +14,7 @@ class Footer extends Component
             isActive: [true],
             orderBy: 'name',
             sortBy: 'asc',
+            limit: 12,
             paginate: false,
             trash: false,
         );
@@ -20,11 +22,12 @@ class Footer extends Component
 
     public function getProducts()
     {
-        return (new ProductCategoryService)->index(
+        return (new ProductService)->index(
             isActive: [true],
             random: true,
             orderBy: 'id',
             sortBy: 'desc',
+            limit: 24,
             paginate: false,
             trash: false,
         );
