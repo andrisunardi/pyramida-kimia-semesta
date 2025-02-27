@@ -41,6 +41,12 @@
                         </a>
                     </li>
                     <li>
+                        <a draggable="false" href="{{ route('faq') }}" wire:navigate>
+                            <span class="fas fa-question"></span>
+                            {{ trans('index.faq') }}
+                        </a>
+                    </li>
+                    <li>
                         <a draggable="false" href="{{ route('contact') }}" wire:navigate>
                             <span class="fas fa-phone"></span>
                             {{ trans('index.contact') }}

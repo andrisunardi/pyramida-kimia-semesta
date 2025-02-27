@@ -14,6 +14,8 @@ return [
     'copyright' => 'Copyright',
     'created_and_designed_by' => 'Created and Designed by',
     'data' => 'Data',
+    'get_in_touch' => 'Get In Touch',
+    'faq' => 'FAQ',
     'change_language' => 'Change Language',
     'english' => 'English',
     'indonesia' => 'Indonesia',

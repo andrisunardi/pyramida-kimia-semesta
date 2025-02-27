@@ -14,6 +14,8 @@ return [
     'copyright' => '版权',
     'created_and_designed_by' => '创建和设计者',
     'data' => '数据',
+    'get_in_touch' => '联系我们',
+    'faq' => '问答',
     'change_language' => '更改语言',
     'english' => '英语',
     'indonesia' => '印度尼西亚',

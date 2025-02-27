@@ -1,4 +1,20 @@
 <div>
+    <div class="call-action bg-primary">
+        <div class="cta-block">
+            <div class="container">
+                <div class="content row">
+                    <div class="cta-sameline">
+                        <h3>Looking for a Reliable Chemical Distribution Solution for Your Business ?</h3>
+                        <p>Contact us today for free conslutaion or more information.</p>
+                        <a draggable="false" class="btn btn-outline" href="{{ route('contact') }}">
+                            {{ trans('index.get_in_touch') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer-widget section-pad">
         <div class="container">
             <div class="row">
@@ -60,6 +76,11 @@
                                     <li>
                                         <a draggable="false" href="{{ route('about') }}" wire:navigate>
                                             {{ trans('index.about') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a draggable="false" href="{{ route('faq') }}" wire:navigate>
+                                            {{ trans('index.faq') }}
                                         </a>
                                     </li>
                                     <li>
