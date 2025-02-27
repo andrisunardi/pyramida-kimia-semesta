@@ -7,4 +7,5 @@ return [
     'all_right_reserved' => 'All Right Reserved',
     'all_rights_reserved' => 'All Rights Reserved',
     'data' => 'Data',
+    'contact' => 'Contact',
 ];
