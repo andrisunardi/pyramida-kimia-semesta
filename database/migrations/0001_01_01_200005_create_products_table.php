@@ -14,6 +14,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(ProductCategory::class)->constrained()->cascadeOnDelete();
             $table->string('name')->unique();
+            $table->text('description')->nullable();
             $table->string('image')->nullable()->unique();
             $table->string('image_coa')->nullable()->unique();
             $table->string('image_msds')->nullable()->unique();

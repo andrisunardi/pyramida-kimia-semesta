@@ -2,30 +2,39 @@
 
 namespace App\Models;
 
-use App\Observers\ProductCategoryObserver;
-use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-#[ObservedBy([ProductCategoryObserver::class])]
-class ProductCategory extends Model
+class Product extends Model
 {
     use HasFactory;
     use LogsActivity;
     use SoftDeletes;
 
     public $fillable = [
+        'product_category_id',
         'name',
+        'description',
+        'image',
+        'image_coa',
+        'image_msds',
+        'slug',
         'is_active',
     ];
 
     protected function casts(): array
     {
         return [
+            'product_category_id' => 'integer',
             'name' => 'string',
+            'description' => 'string',
+            'image' => 'string',
+            'image_coa' => 'string',
+            'image_msds' => 'string',
+            'slug' => 'string',
             'is_active' => 'boolean',
         ];
     }
@@ -50,9 +59,9 @@ class ProductCategory extends Model
         return $query->where('is_active', false);
     }
 
-    public function products()
+    public function category()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(ProductCategory::class, 'product_category_id');
     }
 
     public function createdBy()
