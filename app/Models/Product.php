@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 
 #[ObservedBy([ProductObserver::class])]
 class Product extends Model
@@ -80,5 +82,80 @@ class Product extends Model
     public function deletedBy()
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function assetImage()
+    {
+        if ($this->checkImage()) {
+            return asset("images/product/{$this->image}");
+        } else {
+            return asset('images/image-not-available.png');
+        }
+    }
+
+    public function deleteImage()
+    {
+        if ($this->checkImage()) {
+            File::delete(public_path("images/product/{$this->image}"));
+        }
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if ($this->checkImage()) {
+            return URL::to('/')."/images/product/{$this->image}";
+        }
+
+        return null;
+    }
+
+    public function assetImageCoa()
+    {
+        if ($this->checkImageCoa()) {
+            return asset("images/product/coa/{$this->image}");
+        } else {
+            return asset('images/image-not-available.png');
+        }
+    }
+
+    public function deleteImageCoa()
+    {
+        if ($this->checkImageCoa()) {
+            File::delete(public_path("images/product/coa/{$this->image}"));
+        }
+    }
+
+    public function getImageCoaUrlAttribute()
+    {
+        if ($this->checkImageCoa()) {
+            return URL::to('/')."/images/product/coa/{$this->image}";
+        }
+
+        return null;
+    }
+
+    public function assetImageMsds()
+    {
+        if ($this->checkImageMsds()) {
+            return asset("images/product/msds/{$this->image}");
+        } else {
+            return asset('images/image-not-available.png');
+        }
+    }
+
+    public function deleteImageMsds()
+    {
+        if ($this->checkImageMsds()) {
+            File::delete(public_path("images/product/msds/{$this->image}"));
+        }
+    }
+
+    public function getImageMsdsUrlAttribute()
+    {
+        if ($this->checkImageMsds()) {
+            return URL::to('/')."/images/product/msds/{$this->image}";
+        }
+
+        return null;
     }
 }
