@@ -62,13 +62,20 @@
                         @endif
 
                         @if (App::isLocale('zh'))
-                            凭借我们丰富的经验和经验丰富的员工，PT。 Pyramida Kimia Semesta
+                            凭借我们丰富的经验和经验丰富的员工, PT。 Pyramida Kimia Semesta
                             致力于为苏门答腊、巴淡岛、三宝垄、泗水、加里曼丹和苏拉威西岛的所有客户提供最优质服务。我们拥有在化工行业拥有20多年经验的营销、物流和配送网络。
                         @endif
                     </p>
                 </div>
                 <div class="col-sm-5 npr">
-                    <img alt="" src="{{ asset('images/photo-sm-a.jpg') }}">
+                    <div>
+                        <img draggable="false" src="{{ asset('images/about/office.png') }}"
+                            alt="{{ trans('index.about') }} - {{ trans('index.office') }} - {{ env('APP_TITLE') }}">
+                    </div>
+                    <div>
+                        <img draggable="false" src="{{ asset('images/about/office.png') }}"
+                            alt="{{ trans('index.about') }} - {{ trans('index.office') }} - {{ env('APP_TITLE') }}">
+                    </div>
                 </div>
             </div>
         </div>
