@@ -11,12 +11,12 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->nullable();
-            $table->string('company', 50)->nullable();
-            $table->string('email', 50)->nullable();
-            $table->string('phone', 15)->nullable();
-            $table->string('subject', 100)->nullable();
-            $table->string('message', 1000)->nullable();
+            $table->string('name', 50);
+            $table->string('company', 50);
+            $table->string('email', 50);
+            $table->string('phone', 15);
+            $table->string('subject', 100);
+            $table->string('message', 1000);
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
