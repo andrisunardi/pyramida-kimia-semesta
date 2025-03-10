@@ -141,9 +141,9 @@ class Product extends Model
     {
         if ($this->checkImage()) {
             return asset("images/product/{$this->image}");
-        } else {
-            return asset('images/image-not-available.png');
         }
+
+        return asset('images/image-not-available.png');
     }
 
     public function deleteImage()

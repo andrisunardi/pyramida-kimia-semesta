@@ -125,6 +125,7 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -136,6 +137,7 @@ namespace App\Models{
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products
  * @property-read int|null $products_count
@@ -153,11 +155,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withoutTrashed()
- * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -14,6 +16,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 /**
  * @property int $id
  * @property string $name
+ * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -25,6 +28,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products
  * @property-read int|null $products_count
@@ -43,6 +47,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
@@ -58,6 +63,7 @@ class ProductCategory extends Model
 
     public $fillable = [
         'name',
+        'slug',
         'is_active',
     ];
 
@@ -65,6 +71,7 @@ class ProductCategory extends Model
     {
         return [
             'name' => 'string',
+            'slug' => 'string',
             'is_active' => 'boolean',
         ];
     }
@@ -77,6 +84,31 @@ class ProductCategory extends Model
             ->logOnlyDirty()
             ->dontSubmitEmptyLogs()
             ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
+    }
+
+    public function assetImage()
+    {
+        if ($this->checkImage()) {
+            return asset("images/product/category/{$this->image}");
+        }
+
+        return asset('images/image-not-available.png');
+    }
+
+    public function deleteImage()
+    {
+        if ($this->checkImage()) {
+            File::delete(public_path("images/product/category/{$this->image}"));
+        }
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if ($this->checkImage()) {
+            return URL::to('/')."/images/product/category/{$this->image}";
+        }
+
+        return null;
     }
 
     public function scopeActive($query)

@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use Andrisunardi\Library\Libraries\LivewireUpload;
 use App\Models\ProductCategory;
+use Illuminate\Support\Str;
 
 class ProductCategoryService
 {
@@ -21,7 +23,8 @@ class ProductCategoryService
     ): object {
         $productCategories = ProductCategory::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', "%{$search}%");
+                $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('slug', 'LIKE', "%{$search}%");
             }))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))
             ->when($random, fn ($q) => $q->inRandomOrder())
@@ -46,11 +49,37 @@ class ProductCategoryService
 
     public function create(array $data = []): ProductCategory
     {
+        $slug = Str::slug($data['name']);
+
+        $data['image'] = LivewireUpload::upload(
+            file: $data['image'],
+            name: $data['name'],
+            disk: 'images',
+            directory: 'product/category',
+            deleteAsset: false,
+        );
+
+        $data['slug'] = $slug;
+
         return ProductCategory::create($data);
     }
 
     public function update(ProductCategory $productCategory, array $data = []): ProductCategory
     {
+        $slug = Str::slug($data['name']);
+
+        $data['image'] = LivewireUpload::upload(
+            file: $data['image'],
+            name: $data['name'],
+            disk: 'images',
+            directory: 'product/category',
+            checkAsset: $productCategory->checkImage(),
+            fileAsset: $productCategory->image,
+            deleteAsset: true,
+        );
+
+        $data['slug'] = $slug;
+
         $productCategory->update($data);
         $productCategory->refresh();
 
