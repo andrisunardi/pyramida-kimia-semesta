@@ -4,11 +4,19 @@
             <div class="container">
                 <div class="content row">
                     <div class="cta-sameline">
-                        <h3>Looking for a Reliable Chemical Distribution Solution for Your Business ?</h3>
-                        <p>Contact us today for free conslutaion or more information.</p>
-                        <a draggable="false" class="btn btn-outline" href="{{ route('contact') }}">
-                            {{ trans('index.get_in_touch') }}
-                        </a>
+                        @if (App::isLocale('en'))
+                            <h3>Looking for a Reliable Chemical Distribution Solution for Your Business ?</h3>
+                            <p>Contact us today for free consultation or more information.</p>
+                        @endif
+                        @if (App::isLocale('id'))
+                            <h3>Mencari Solusi Distribusi Bahan Kimia yang Andal untuk Bisnis Anda?</h3>
+                            <p>Hubungi kami hari ini untuk konsultasi gratis atau informasi lebih lanjut.</p>
+                        @endif
+                        @if (App::isLocale('zh'))
+                            <h3>正在为您的企业寻找可靠的化学品分销解决方案吗？</h3>
+                            <p>立即联系我们，获得免费咨询或更多信息。</p>
+                        @endif
+                        <x-components::link :class="'btn btn-outline'" :href="route('contact')" :text="trans('index.get_in_touch')" />
                     </div>
                 </div>
             </div>
