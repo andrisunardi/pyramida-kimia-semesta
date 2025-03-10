@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Observers\UserObserver;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -123,14 +124,14 @@ class User extends Authenticatable
             ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
     }
 
-    public function scopeActive($query)
+    public function scopeActive(Builder $query): void
     {
-        return $query->where('is_active', true);
+        $query->where('is_active', true);
     }
 
-    public function scopeInactive($query)
+    public function scopeInactive(Builder $query): void
     {
-        return $query->where('is_active', false);
+        $query->where('is_active', false);
     }
 
     public function createdBy()

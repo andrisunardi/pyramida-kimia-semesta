@@ -265,15 +265,15 @@ namespace App\Models{
  * @property string $name
  * @property string $email
  * @property bool $is_active
- * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property Carbon|null $email_verified_at
  * @property string $password
  * @property int|null $created_by
  * @property int|null $updated_by
  * @property int|null $deleted_by
  * @property string|null $remember_token
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $actions
  * @property-read int|null $actions_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
@@ -314,6 +314,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutRole($roles, $guard = null)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutTrashed()
+ * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }

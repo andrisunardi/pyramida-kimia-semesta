@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Observers\ProductObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -119,14 +120,14 @@ class Product extends Model
             ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
     }
 
-    public function scopeActive($query)
+    public function scopeActive(Builder $query): void
     {
-        return $query->where('is_active', true);
+        $query->where('is_active', true);
     }
 
-    public function scopeInactive($query)
+    public function scopeInactive(Builder $query): void
     {
-        return $query->where('is_active', false);
+        $query->where('is_active', false);
     }
 
     public function category()
