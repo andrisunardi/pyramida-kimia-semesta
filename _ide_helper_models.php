@@ -160,6 +160,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withoutTrashed()
+ * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }

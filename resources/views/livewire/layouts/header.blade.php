@@ -29,28 +29,22 @@
             <nav class="navbar-collapse collapse" id="mainnav">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a draggable="false" href="{{ route('index') }}" wire:navigate>
-                            <span class="fas fa-home"></span>
-                            {{ trans('index.home') }}
-                        </a>
+                        <x-components::link :href="route('index')" :text="trans('index.home')" :icon="'fas fa-home'" />
                     </li>
                     <li>
-                        <a draggable="false" href="{{ route('about') }}" wire:navigate>
-                            <span class="fas fa-building"></span>
-                            {{ trans('index.about') }}
-                        </a>
+                        <x-components::link :href="route('about')" :text="trans('index.about')" :icon="'fas fa-building'" />
                     </li>
                     <li>
-                        <a draggable="false" href="{{ route('faq') }}" wire:navigate>
-                            <span class="fas fa-question"></span>
-                            {{ trans('index.faq') }}
-                        </a>
+                        <x-components::link :href="route('product.index')" :text="trans('index.product')" :icon="'fas fa-flask'" />
                     </li>
                     <li>
-                        <a draggable="false" href="{{ route('contact') }}" wire:navigate>
-                            <span class="fas fa-phone"></span>
-                            {{ trans('index.contact') }}
-                        </a>
+                        <x-components::link :href="route('gallery')" :text="trans('index.gallery')" :icon="'fas fa-images'" />
+                    </li>
+                    <li>
+                        <x-components::link :href="route('faq')" :text="trans('index.faq')" :icon="'fas fa-question'" />
+                    </li>
+                    <li>
+                        <x-components::link :href="route('contact')" :text="trans('index.contact')" :icon="'fas fa-phone'" />
                     </li>
                     <li class="quote-btn"><a class="btn" href="get-a-quote.html">Enquire Today</a></li>
                 </ul>

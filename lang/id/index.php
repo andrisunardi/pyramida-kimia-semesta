@@ -14,6 +14,8 @@ return [
     'copyright' => 'Hak Cipta',
     'created_and_designed_by' => 'Dibuat dan Dirancang oleh',
     'data' => 'Data',
+    'product' => 'Produk',
+    'gallery' => 'Galeri',
     'get_in_touch' => 'Hubungi Kami',
     'faq' => 'Tanya Jawab',
     'change_language' => 'Ganti Bahasa',
