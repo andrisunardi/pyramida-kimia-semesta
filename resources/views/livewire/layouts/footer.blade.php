@@ -34,19 +34,19 @@
                             <div class="wgs-content">
                                 <ul class="menu col-md-6 npl">
                                     @foreach ($products->take(12) as $key => $product)
-                                        <li>
-                                            <a draggable="false" href="" wire:navigate>
-                                                {{ $product->name }}
-                                            </a>
+                                        <li wire:key="{{ $key }}">
+                                            <x-components::link :href="route('product.view', [
+                                                'slug' => $product->slug,
+                                            ])" :text="$product->name" />
                                         </li>
                                     @endforeach
                                 </ul>
                                 <ul class="menu col-md-6">
                                     @foreach ($products->skip(12) as $key => $product)
-                                        <li>
-                                            <a draggable="false" href="" wire:navigate>
-                                                {{ $product->name }}
-                                            </a>
+                                        <li wire:key="{{ $key }}">
+                                            <x-components::link :href="route('product.view', [
+                                                'slug' => $product->slug,
+                                            ])" :text="$product->name" />
                                         </li>
                                     @endforeach
                                 </ul>
@@ -61,9 +61,9 @@
                                 <ul>
                                     @foreach ($productCategories as $key => $productCategory)
                                         <li wire:key="{{ $key }}">
-                                            <a draggable="false" href="" wire:navigate>
-                                                {{ $productCategory->name }}
-                                            </a>
+                                            <x-components::link :href="route('product.category', [
+                                                'slug' => $productCategory->slug,
+                                            ])" :text="$productCategory->name" />
                                         </li>
                                     @endforeach
                                 </ul>
@@ -77,24 +77,16 @@
                             <div class="wgs-content">
                                 <ul class="menu">
                                     <li>
-                                        <a draggable="false" href="{{ route('index') }}" wire:navigate>
-                                            {{ trans('index.home') }}
-                                        </a>
+                                        <x-components::link :href="route('index')" :text="trans('index.home')" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ route('about') }}" wire:navigate>
-                                            {{ trans('index.about') }}
-                                        </a>
+                                        <x-components::link :href="route('about')" :text="trans('index.about')" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ route('faq') }}" wire:navigate>
-                                            {{ trans('index.faq') }}
-                                        </a>
+                                        <x-components::link :href="route('faq')" :text="trans('index.faq')" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ route('contact') }}" wire:navigate>
-                                            {{ trans('index.contact') }}
-                                        </a>
+                                        <x-components::link :href="route('contact')" :text="trans('index.contact')" />
                                     </li>
                                 </ul>
                             </div>
