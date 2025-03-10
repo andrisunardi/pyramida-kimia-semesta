@@ -117,24 +117,16 @@
                                 </p>
                                 <ul class="social">
                                     <li>
-                                        <a draggable="false" href="{{ env('FACEBOOK_URL') }}" target="_blank">
-                                            <em class="fa fa-facebook"></em>
-                                        </a>
+                                        <x-components::link.external-link :href="env('FACEBOOK_URL')" :icon="'fa fa-facebook'" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ env('TWITTER_URL') }}" target="_blank">
-                                            <em class="fab fa-twitter"></em>
-                                        </a>
+                                        <x-components::link.external-link :href="env('TWITTER_URL')" :icon="'fa fa-twitter'" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ env('INSTAGRAM_URL') }}" target="_blank">
-                                            <em class="fa fa-instagram"></em>
-                                        </a>
+                                        <x-components::link.external-link :href="env('INSTAGRAM_URL')" :icon="'fa fa-instagram'" />
                                     </li>
                                     <li>
-                                        <a draggable="false" href="{{ env('TIKTOK_URL') }}" target="_blank">
-                                            <em class="fa fa-tiktok"></em>
-                                        </a>
+                                        <x-components::link.external-link :href="env('TIKTOK_URL')" :icon="'fa fa-tiktok'" />
                                     </li>
                                 </ul>
                             </div>
