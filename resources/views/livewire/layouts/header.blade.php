@@ -34,8 +34,27 @@
                     <li>
                         <x-components::link :href="route('about')" :text="trans('index.about')" :icon="'fas fa-building'" />
                     </li>
-                    <li>
+                    <li class="dropdown">
                         <x-components::link :href="route('product.index')" :text="trans('index.product')" :icon="'fas fa-flask'" />
+                        <ul class="dropdown-menu">
+                            @foreach ($productCategories as $key => $productCategory)
+                                <li class="dropdown" wire:key="{{ $key }}">
+                                    <x-components::link :href="route('product.category', [
+                                        'slug' => $productCategory->slug,
+                                    ])" :text="$productCategory->name" />
+
+                                    <ul class="dropdown-menu">
+                                        @foreach ($productCategory->products as $key => $product)
+                                            <li wire:key="{{ $key }}">
+                                                <x-components::link :href="route('product.view', [
+                                                    'slug' => $product->slug,
+                                                ])" :text="$product->name" />
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
                     <li>
                         <x-components::link :href="route('gallery')" :text="trans('index.gallery')" :icon="'fas fa-images'" />

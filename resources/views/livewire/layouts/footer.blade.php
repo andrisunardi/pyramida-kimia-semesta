@@ -105,38 +105,35 @@
                             <div class="wgs-content">
                                 <p>
                                     <strong>{{ env('APP_NAME') }}</strong><br>
-                                    {{ env('CONTACT_ADDRESS') }}
+                                    <x-components::link.external-link :href="env('CONTACT_MAPS')" :text="env('CONTACT_ADDRESS')"
+                                        :icon="''" />
                                 </p>
                                 <p>
                                     <span>{{ trans('index.phone') }}</span> :
-                                    <a draggable="false" href="tel:+{{ Utils::phone(env('CONTACT_PHONE')) }}">
-                                        {{ env('CONTACT_PHONE') }}
-                                    </a>
+                                    <x-components::link.phone :value="env('CONTACT_PHONE')" :icon="''" />
                                     <br>
                                     <span>{{ trans('index.email') }}</span> :
-                                    <a draggable="false" href="mailto:{{ env('CONTACT_EMAIL') }}">
-                                        {{ env('CONTACT_EMAIL') }}
-                                    </a>
+                                    <x-components::link.email :value="env('CONTACT_EMAIL')" :icon="''" />
                                 </p>
                                 <ul class="social">
                                     <li>
                                         <a draggable="false" href="{{ env('FACEBOOK_URL') }}" target="_blank">
-                                            <em class="fa fa-facebook" aria-hidden="true"></em>
+                                            <em class="fa fa-facebook"></em>
                                         </a>
                                     </li>
                                     <li>
                                         <a draggable="false" href="{{ env('TWITTER_URL') }}" target="_blank">
-                                            <em class="fab fa-twitter" aria-hidden="true"></em>
+                                            <em class="fab fa-twitter"></em>
                                         </a>
                                     </li>
                                     <li>
                                         <a draggable="false" href="{{ env('INSTAGRAM_URL') }}" target="_blank">
-                                            <em class="fa fa-instagram" aria-hidden="true"></em>
+                                            <em class="fa fa-instagram"></em>
                                         </a>
                                     </li>
                                     <li>
                                         <a draggable="false" href="{{ env('TIKTOK_URL') }}" target="_blank">
-                                            <em class="fa fa-tiktok" aria-hidden="true"></em>
+                                            <em class="fa fa-tiktok"></em>
                                         </a>
                                     </li>
                                 </ul>
