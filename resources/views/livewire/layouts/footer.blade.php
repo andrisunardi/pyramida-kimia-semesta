@@ -83,6 +83,12 @@
                                         <x-components::link :href="route('about')" :text="trans('index.about')" />
                                     </li>
                                     <li>
+                                        <x-components::link :href="route('product.index')" :text="trans('index.product')" />
+                                    </li>
+                                    <li>
+                                        <x-components::link :href="route('gallery')" :text="trans('index.gallery')" />
+                                    </li>
+                                    <li>
                                         <x-components::link :href="route('faq')" :text="trans('index.faq')" />
                                     </li>
                                     <li>

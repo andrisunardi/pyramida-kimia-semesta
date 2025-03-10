@@ -30,7 +30,7 @@ Route::group(['middleware' => [Localization::class]], function () {
         Route::any('{slug}', ProductViewPage::class)->name('view');
     });
 
-    Route::any('gallery', GalleryPage::class)->name('faq');
+    Route::any('gallery', GalleryPage::class)->name('gallery');
     Route::any('faq', FaqPage::class)->name('faq');
     Route::any('contact', ContactPage::class)->name('contact');
 });
