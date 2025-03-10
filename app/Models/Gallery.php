@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Observers\SliderObserver;
+use App\Observers\GalleryObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-#[ObservedBy([SliderObserver::class])]
+#[ObservedBy([GalleryObserver::class])]
 /**
  * @property int $id
  * @property string $name
@@ -33,35 +33,35 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider active()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery withoutTrashed()
  *
  * @mixin \Eloquent
  */
-class Slider extends Model
+class Gallery extends Model
 {
     use HasFactory;
     use LogsActivity;
     use SoftDeletes;
 
-    // protected $table = 'sliders';
+    // protected $table = 'galleries';
 
     // protected $rememberTokenName = true;
 
@@ -127,12 +127,12 @@ class Slider extends Model
 
     public function altImage()
     {
-        return trans('index.slider')." - {$this->id} - ".env('APP_TITLE');
+        return trans('index.gallery')." - {$this->id} - ".env('APP_TITLE');
     }
 
     public function checkImage()
     {
-        if ($this->image && File::exists(public_path("images/slider/{$this->image}"))) {
+        if ($this->image && File::exists(public_path("images/gallery/{$this->image}"))) {
             return true;
         }
     }
@@ -140,7 +140,7 @@ class Slider extends Model
     public function assetImage()
     {
         if ($this->checkImage()) {
-            return asset("images/slider/{$this->image}");
+            return asset("images/gallery/{$this->image}");
         } else {
             return asset('images/image-not-available.png');
         }
@@ -149,14 +149,14 @@ class Slider extends Model
     public function deleteImage()
     {
         if ($this->checkImage()) {
-            File::delete(public_path("images/slider/{$this->image}"));
+            File::delete(public_path("images/gallery/{$this->image}"));
         }
     }
 
     public function getImageUrlAttribute()
     {
         if ($this->checkImage()) {
-            return URL::to('/')."/images/slider/{$this->image}";
+            return URL::to('/')."/images/gallery/{$this->image}";
         }
 
         return null;

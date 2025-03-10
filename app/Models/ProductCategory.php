@@ -61,6 +61,18 @@ class ProductCategory extends Model
     use LogsActivity;
     use SoftDeletes;
 
+    // protected $table = 'product_categories';
+
+    // protected $rememberTokenName = true;
+
+    // protected $primaryKey = 'id';
+
+    // protected $keyType = 'integer';
+
+    // public $incrementing = true;
+
+    // public $timestamps = true;
+
     public $fillable = [
         'name',
         'slug',

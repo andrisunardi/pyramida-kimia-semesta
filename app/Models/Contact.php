@@ -64,6 +64,18 @@ class Contact extends Model
     use LogsActivity;
     use SoftDeletes;
 
+    // protected $table = 'contacts';
+
+    // protected $rememberTokenName = true;
+
+    // protected $primaryKey = 'id';
+
+    // protected $keyType = 'integer';
+
+    // public $incrementing = true;
+
+    // public $timestamps = true;
+
     public $fillable = [
         'name',
         'company',

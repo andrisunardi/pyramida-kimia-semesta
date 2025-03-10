@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use Andrisunardi\Library\Libraries\LivewireUpload;
-use App\Models\Slider;
+use App\Models\Gallery;
 
-class SliderService
+class GalleryService
 {
     public function index(
         ?string $search = '',
@@ -20,7 +20,7 @@ class SliderService
         bool $paginate = true,
         int $perPage = 10,
     ): object {
-        $sliders = Slider::query()
+        $galleries = Gallery::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', "%{$search}%")
                     ->orWhere('description', 'LIKE', "%{$search}%");
@@ -32,62 +32,62 @@ class SliderService
             ->limit($limit);
 
         if ($first) {
-            return $sliders->first();
+            return $galleries->first();
         }
 
         if ($count) {
-            return $sliders->count();
+            return $galleries->count();
         }
 
         if ($paginate) {
-            return $sliders->paginate($perPage);
+            return $galleries->paginate($perPage);
         }
 
-        return $sliders->get();
+        return $galleries->get();
     }
 
-    public function create(array $data = []): Slider
+    public function create(array $data = []): Gallery
     {
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
             disk: 'images',
-            directory: 'slider',
+            directory: 'gallery',
             deleteAsset: false,
         );
 
-        return Slider::create($data);
+        return Gallery::create($data);
     }
 
-    public function update(Slider $slider, array $data = []): Slider
+    public function update(Gallery $gallery, array $data = []): Gallery
     {
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
             disk: 'images',
-            directory: 'slider',
-            checkAsset: $slider->checkImage(),
-            fileAsset: $slider->image,
+            directory: 'gallery',
+            checkAsset: $gallery->checkImage(),
+            fileAsset: $gallery->image,
             deleteAsset: true,
         );
 
-        $slider->update($data);
-        $slider->refresh();
+        $gallery->update($data);
+        $gallery->refresh();
 
-        return $slider;
+        return $gallery;
     }
 
-    public function active(Slider $slider): Slider
+    public function active(Gallery $gallery): Gallery
     {
-        $slider->is_active = ! $slider->is_active;
-        $slider->save();
-        $slider->refresh();
+        $gallery->is_active = ! $gallery->is_active;
+        $gallery->save();
+        $gallery->refresh();
 
-        return $slider;
+        return $gallery;
     }
 
-    public function delete(Slider $slider): bool
+    public function delete(Gallery $gallery): bool
     {
-        return $slider->delete();
+        return $gallery->delete();
     }
 }
