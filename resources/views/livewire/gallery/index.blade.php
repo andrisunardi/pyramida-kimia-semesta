@@ -60,18 +60,20 @@
                     class="gallery gallery-filter gallery-project gallery-filled project-morden with-caption hover-fade">
                     <ul class="photos-list col-x4">
                         @foreach ($galleries as $key => $gallery)
-                            <li class="filtr-item" data-category="1">
+                            <li class="filtr-item" data-category="{{ $gallery->gallery_category_id }}"
+                                wire:key="{{ $key }}">
                                 <div class="photo">
-                                    <img src="images/work-sm-a.jpg" alt="">
+                                    <x-components::image :src="$gallery->assetImage()" />
                                     <div class="photo-link">
                                         <span class="links">
-                                            <a class="btn more-link" href="project-single.html">View Projects</a>
+                                            <x-components::link.external-link :class="'btn more-link'" :href="$gallery->assetImage()"
+                                                :text="trans('index.view') . ' ' . trans('index.gallery')" />
                                         </span>
                                     </div>
                                 </div>
                                 <div class="photo-caption">
                                     <a href="project-single.html">
-                                        <h4>Altria Warehouse Complex</h4>
+                                        <h4>{{ $gallery->name }}</h4>
                                     </a>
                                 </div>
                             </li>

@@ -106,6 +106,7 @@ namespace App\Models{
  * @method static Builder<static>|Gallery whereUpdatedAt($value)
  * @method static Builder<static>|Gallery whereUpdatedBy($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\GalleryCategory $category
  */
 	class Gallery extends \Eloquent {}
 }

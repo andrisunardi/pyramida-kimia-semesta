@@ -59,6 +59,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Gallery whereUpdatedAt($value)
  * @method static Builder<static>|Gallery whereUpdatedBy($value)
  *
+ * @property-read \App\Models\GalleryCategory $category
+ *
  * @mixin \Eloquent
  */
 class Gallery extends Model
@@ -160,5 +162,10 @@ class Gallery extends Model
         }
 
         return '';
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(GalleryCategory::class, 'gallery_category_id');
     }
 }

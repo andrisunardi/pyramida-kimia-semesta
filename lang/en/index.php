@@ -14,6 +14,7 @@ return [
     'copyright' => 'Copyright',
     'created_and_designed_by' => 'Created and Designed by',
     'data' => 'Data',
+    'view' => 'View',
     'all' => 'All',
     'our_gallery' => 'Our Gallery',
     'product' => 'Product',

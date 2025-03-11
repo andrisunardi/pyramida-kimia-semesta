@@ -3923,10 +3923,11 @@ namespace PHPSTORM_META {
 'validation.uuid','validation.custom.attribute-name.rule-name','index.about','index.all_right_reserved','index.all_rights_reserved',
 'index.back_to_home','index.banner','index.category','index.company_profile','index.contact_us_if_you_have_any_questions',
 'index.contact_us','index.contact','index.copyright','index.created_and_designed_by','index.data',
-'index.all','index.our_gallery','index.product','index.gallery','index.get_in_touch',
-'index.faq','index.change_language','index.english','index.indonesia','index.chinese',
-'index.submit','index.thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible','index.office','index.email','index.home',
-'index.menu','index.our_latest_product','index.phone','index.product_category','index.quick_links',);
+'index.view','index.all','index.our_gallery','index.product','index.gallery',
+'index.get_in_touch','index.faq','index.change_language','index.english','index.indonesia',
+'index.chinese','index.submit','index.thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible','index.office','index.email',
+'index.home','index.menu','index.our_latest_product','index.phone','index.product_category',
+'index.quick_links',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

@@ -12,7 +12,7 @@ class GalleryPage extends Component
     {
         $galleryCategories = (new GalleryCategoryService)->index(
             isActive: [true],
-            orderBy: 'name',
+            orderBy: 'id',
             sortBy: 'asc',
             paginate: false,
         );
