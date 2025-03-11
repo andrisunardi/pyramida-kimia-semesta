@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -14,12 +15,12 @@ use Spatie\Activitylog\Traits\LogsActivity;
 #[ObservedBy([ContactObserver::class])]
 /**
  * @property int $id
- * @property string|null $name
- * @property string|null $company
- * @property string|null $email
- * @property string|null $phone
- * @property string|null $subject
- * @property string|null $message
+ * @property string $name
+ * @property string $company
+ * @property string $email
+ * @property string $phone
+ * @property string $subject
+ * @property string $message
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -34,28 +35,28 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact active()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereCompany($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereMessage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact wherePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereSubject($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withoutTrashed()
+ * @method static Builder<static>|Contact active()
+ * @method static Builder<static>|Contact inactive()
+ * @method static Builder<static>|Contact newModelQuery()
+ * @method static Builder<static>|Contact newQuery()
+ * @method static Builder<static>|Contact onlyTrashed()
+ * @method static Builder<static>|Contact query()
+ * @method static Builder<static>|Contact whereCompany($value)
+ * @method static Builder<static>|Contact whereCreatedAt($value)
+ * @method static Builder<static>|Contact whereCreatedBy($value)
+ * @method static Builder<static>|Contact whereDeletedAt($value)
+ * @method static Builder<static>|Contact whereDeletedBy($value)
+ * @method static Builder<static>|Contact whereEmail($value)
+ * @method static Builder<static>|Contact whereId($value)
+ * @method static Builder<static>|Contact whereIsActive($value)
+ * @method static Builder<static>|Contact whereMessage($value)
+ * @method static Builder<static>|Contact whereName($value)
+ * @method static Builder<static>|Contact wherePhone($value)
+ * @method static Builder<static>|Contact whereSubject($value)
+ * @method static Builder<static>|Contact whereUpdatedAt($value)
+ * @method static Builder<static>|Contact whereUpdatedBy($value)
+ * @method static Builder<static>|Contact withTrashed()
+ * @method static Builder<static>|Contact withoutTrashed()
  *
  * @mixin \Eloquent
  */
@@ -64,18 +65,6 @@ class Contact extends Model
     use HasFactory;
     use LogsActivity;
     use SoftDeletes;
-
-    // protected $table = 'contacts';
-
-    // protected $rememberTokenName = true;
-
-    // protected $primaryKey = 'id';
-
-    // protected $keyType = 'integer';
-
-    // public $incrementing = true;
-
-    // public $timestamps = true;
 
     public $fillable = [
         'name',
@@ -120,17 +109,17 @@ class Contact extends Model
         $query->where('is_active', false);
     }
 
-    public function createdBy()
+    public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function updatedBy()
+    public function updatedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
 
-    public function deletedBy()
+    public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
     }

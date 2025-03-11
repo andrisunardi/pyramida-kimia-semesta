@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
@@ -35,35 +36,35 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\ProductCategory $category
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_coa_url
- * @property-read mixed $image_msds_url
- * @property-read mixed $image_url
+ * @property-read string $image_coa_url
+ * @property-read string $image_msds_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product active()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImageCoa($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImageMsds($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereProductCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withoutTrashed()
+ * @method static Builder<static>|Product active()
+ * @method static Builder<static>|Product inactive()
+ * @method static Builder<static>|Product newModelQuery()
+ * @method static Builder<static>|Product newQuery()
+ * @method static Builder<static>|Product onlyTrashed()
+ * @method static Builder<static>|Product query()
+ * @method static Builder<static>|Product whereCreatedAt($value)
+ * @method static Builder<static>|Product whereCreatedBy($value)
+ * @method static Builder<static>|Product whereDeletedAt($value)
+ * @method static Builder<static>|Product whereDeletedBy($value)
+ * @method static Builder<static>|Product whereDescription($value)
+ * @method static Builder<static>|Product whereId($value)
+ * @method static Builder<static>|Product whereImage($value)
+ * @method static Builder<static>|Product whereImageCoa($value)
+ * @method static Builder<static>|Product whereImageMsds($value)
+ * @method static Builder<static>|Product whereIsActive($value)
+ * @method static Builder<static>|Product whereName($value)
+ * @method static Builder<static>|Product whereProductCategoryId($value)
+ * @method static Builder<static>|Product whereSlug($value)
+ * @method static Builder<static>|Product whereUpdatedAt($value)
+ * @method static Builder<static>|Product whereUpdatedBy($value)
+ * @method static Builder<static>|Product withTrashed()
+ * @method static Builder<static>|Product withoutTrashed()
  *
  * @mixin \Eloquent
  */
@@ -72,18 +73,6 @@ class Product extends Model
     use HasFactory;
     use LogsActivity;
     use SoftDeletes;
-
-    // protected $table = 'products';
-
-    // protected $rememberTokenName = true;
-
-    // protected $primaryKey = 'id';
-
-    // protected $keyType = 'integer';
-
-    // public $incrementing = true;
-
-    // public $timestamps = true;
 
     public $fillable = [
         'product_category_id',
@@ -130,27 +119,27 @@ class Product extends Model
         $query->where('is_active', false);
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(ProductCategory::class, 'product_category_id');
     }
 
-    public function createdBy()
+    public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function updatedBy()
+    public function updatedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
 
-    public function deletedBy()
+    public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function assetImage()
+    public function assetImage(): string
     {
         if ($this->checkImage()) {
             return asset("images/product/{$this->image}");
@@ -159,48 +148,56 @@ class Product extends Model
         return asset('images/image-not-available.png');
     }
 
-    public function deleteImage()
+    public function deleteImage(): bool
     {
         if ($this->checkImage()) {
             File::delete(public_path("images/product/{$this->image}"));
+
+            return true;
         }
+
+        return false;
     }
 
-    public function getImageUrlAttribute()
+    public function getImageUrlAttribute(): string
     {
         if ($this->checkImage()) {
             return URL::to('/')."/images/product/{$this->image}";
         }
 
-        return null;
+        return '';
     }
 
-    public function assetImageCoa()
+    public function assetImageCoa(): string
     {
         if ($this->checkImageCoa()) {
             return asset("images/product/coa/{$this->image}");
-        } else {
-            return asset('images/image-not-available.png');
         }
+
+        return asset('images/image-not-available.png');
     }
 
-    public function deleteImageCoa()
+    public function deleteImageCoa(): bool
     {
         if ($this->checkImageCoa()) {
             File::delete(public_path("images/product/coa/{$this->image}"));
+
+            return true;
         }
+
+        return false;
     }
 
-    public function getImageCoaUrlAttribute()
+    public function getImageCoaUrlAttribute(): string
     {
         if ($this->checkImageCoa()) {
             return URL::to('/')."/images/product/coa/{$this->image}";
         }
 
-        return null;
+        return '';
     }
 
-    public function assetImageMsds()
+    public function assetImageMsds(): string
     {
         if ($this->checkImageMsds()) {
             return asset("images/product/msds/{$this->image}");
@@ -209,19 +206,23 @@ class Product extends Model
         }
     }
 
-    public function deleteImageMsds()
+    public function deleteImageMsds(): bool
     {
         if ($this->checkImageMsds()) {
             File::delete(public_path("images/product/msds/{$this->image}"));
+
+            return true;
         }
+
+        return false;
     }
 
-    public function getImageMsdsUrlAttribute()
+    public function getImageMsdsUrlAttribute(): string
     {
         if ($this->checkImageMsds()) {
             return URL::to('/')."/images/product/msds/{$this->image}";
         }
 
-        return null;
+        return '';
     }
 }

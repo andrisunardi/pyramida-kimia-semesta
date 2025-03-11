@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
@@ -29,30 +31,30 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products
  * @property-read int|null $products_count
  * @property-read \App\Models\User|null $updatedBy
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory active()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withoutTrashed()
+ * @method static Builder<static>|ProductCategory active()
+ * @method static Builder<static>|ProductCategory inactive()
+ * @method static Builder<static>|ProductCategory newModelQuery()
+ * @method static Builder<static>|ProductCategory newQuery()
+ * @method static Builder<static>|ProductCategory onlyTrashed()
+ * @method static Builder<static>|ProductCategory query()
+ * @method static Builder<static>|ProductCategory whereCreatedAt($value)
+ * @method static Builder<static>|ProductCategory whereCreatedBy($value)
+ * @method static Builder<static>|ProductCategory whereDeletedAt($value)
+ * @method static Builder<static>|ProductCategory whereDeletedBy($value)
+ * @method static Builder<static>|ProductCategory whereId($value)
+ * @method static Builder<static>|ProductCategory whereIsActive($value)
+ * @method static Builder<static>|ProductCategory whereName($value)
+ * @method static Builder<static>|ProductCategory whereSlug($value)
+ * @method static Builder<static>|ProductCategory whereUpdatedAt($value)
+ * @method static Builder<static>|ProductCategory whereUpdatedBy($value)
+ * @method static Builder<static>|ProductCategory withTrashed()
+ * @method static Builder<static>|ProductCategory withoutTrashed()
  *
  * @mixin \Eloquent
  */
@@ -61,18 +63,6 @@ class ProductCategory extends Model
     use HasFactory;
     use LogsActivity;
     use SoftDeletes;
-
-    // protected $table = 'product_categories';
-
-    // protected $rememberTokenName = true;
-
-    // protected $primaryKey = 'id';
-
-    // protected $keyType = 'integer';
-
-    // public $incrementing = true;
-
-    // public $timestamps = true;
 
     public $fillable = [
         'name',
@@ -99,7 +89,7 @@ class ProductCategory extends Model
             ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
     }
 
-    public function assetImage()
+    public function assetImage(): string
     {
         if ($this->checkImage()) {
             return asset("images/product/category/{$this->image}");
@@ -108,20 +98,24 @@ class ProductCategory extends Model
         return asset('images/image-not-available.png');
     }
 
-    public function deleteImage()
+    public function deleteImage(): bool
     {
         if ($this->checkImage()) {
             File::delete(public_path("images/product/category/{$this->image}"));
+
+            return true;
         }
+
+        return false;
     }
 
-    public function getImageUrlAttribute()
+    public function getImageUrlAttribute(): string
     {
         if ($this->checkImage()) {
             return URL::to('/')."/images/product/category/{$this->image}";
         }
 
-        return null;
+        return '';
     }
 
     public function scopeActive(Builder $query): void
@@ -134,22 +128,22 @@ class ProductCategory extends Model
         $query->where('is_active', false);
     }
 
-    public function products()
+    public function products(): HasMany
     {
         return $this->hasMany(Product::class);
     }
 
-    public function createdBy()
+    public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function updatedBy()
+    public function updatedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
 
-    public function deletedBy()
+    public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
     }

@@ -16,12 +16,12 @@ namespace App\Models{
  * 
  *
  * @property int $id
- * @property string|null $name
- * @property string|null $company
- * @property string|null $email
- * @property string|null $phone
- * @property string|null $subject
- * @property string|null $message
+ * @property string $name
+ * @property string $company
+ * @property string $email
+ * @property string $phone
+ * @property string $subject
+ * @property string $message
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -57,7 +57,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withoutTrashed()
- * @mixin \Eloquent
  */
 	class Contact extends \Eloquent {}
 }
@@ -66,22 +65,11 @@ namespace App\Models{
 /**
  * 
  *
- * @property int $id
- * @property string $name
- * @property string|null $description
- * @property string|null $image
- * @property bool $is_active
- * @property int|null $created_by
- * @property int|null $updated_by
- * @property int|null $deleted_by
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery active()
@@ -90,22 +78,34 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery withoutTrashed()
- * @mixin \Eloquent
  */
 	class Gallery extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gallery> $galleries
+ * @property-read int|null $galleries_count
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory withoutTrashed()
+ */
+	class GalleryCategory extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -132,9 +132,9 @@ namespace App\Models{
  * @property-read \App\Models\ProductCategory $category
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_coa_url
- * @property-read mixed $image_msds_url
- * @property-read mixed $image_url
+ * @property-read string $image_coa_url
+ * @property-read string $image_msds_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product active()
@@ -160,7 +160,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withoutTrashed()
- * @mixin \Eloquent
  */
 	class Product extends \Eloquent {}
 }
@@ -183,7 +182,7 @@ namespace App\Models{
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products
  * @property-read int|null $products_count
@@ -206,7 +205,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory withoutTrashed()
- * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }
@@ -230,7 +228,7 @@ namespace App\Models{
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $image_url
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider active()
@@ -252,7 +250,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider withoutTrashed()
- * @mixin \Eloquent
  */
 	class Slider extends \Eloquent {}
 }
@@ -265,21 +262,22 @@ namespace App\Models{
  * @property string $name
  * @property string $email
  * @property bool $is_active
- * @property Carbon|null $email_verified_at
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
  * @property int|null $created_by
  * @property int|null $updated_by
  * @property int|null $deleted_by
  * @property string|null $remember_token
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property Carbon|null $deleted_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $actions
  * @property-read int|null $actions_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
  * @property-read int|null $activities_count
  * @property-read User|null $createdBy
  * @property-read User|null $deletedBy
+ * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
@@ -314,7 +312,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutRole($roles, $guard = null)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutTrashed()
- * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }
