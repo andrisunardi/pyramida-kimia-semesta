@@ -14,7 +14,6 @@ class Header extends Component
             orderBy: 'name',
             sortBy: 'asc',
             paginate: false,
-            trash: false,
         );
 
         $productCategories->loadMissing(['products']);

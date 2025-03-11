@@ -125,8 +125,53 @@ class ProductService
         return $product;
     }
 
+    public function deleteImage(Product $product)
+    {
+        $product->deleteImage();
+
+        $product->image = null;
+        $product->save();
+        $product->refresh();
+
+        return $product;
+    }
+
     public function delete(Product $product): bool
     {
         return $product->delete();
+    }
+
+    public function deleteAll(array $products = []): bool
+    {
+        return Product::when($products, fn ($q) => $q->whereIn('id', $products))->delete();
+    }
+
+    public function restore(Product $product): bool
+    {
+        return $product->restore();
+    }
+
+    public function restoreAll(array $products = []): bool
+    {
+        return Product::when($products, fn ($q) => $q->whereIn('id', $products))->onlyTrashed()->restore();
+    }
+
+    public function deletePermanent(Product $product): bool
+    {
+        $product->deleteImage();
+
+        return $product->forceDelete();
+    }
+
+    public function deletePermanentAll(array $products = []): bool
+    {
+        $products = Product::when($products, fn ($q) => $q->whereIn('id', $products))->onlyTrashed()->get();
+
+        foreach ($products as $product) {
+            $product->deleteImage();
+            $product->forceDelete();
+        }
+
+        return true;
     }
 }

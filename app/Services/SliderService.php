@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use Andrisunardi\Library\Libraries\LivewireUpload;
-use App\Models\Gallery;
+use App\Models\Slider;
 
-class GalleryService
+class SliderService
 {
     public function index(
         ?string $search = '',
@@ -20,7 +20,7 @@ class GalleryService
         bool $paginate = true,
         int $perPage = 10,
     ): object {
-        $galleries = Gallery::query()
+        $sliders = Slider::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', "%{$search}%")
                     ->orWhere('description', 'LIKE', "%{$search}%");
@@ -32,62 +32,107 @@ class GalleryService
             ->limit($limit);
 
         if ($first) {
-            return $galleries->first();
+            return $sliders->first();
         }
 
         if ($count) {
-            return $galleries->count();
+            return $sliders->count();
         }
 
         if ($paginate) {
-            return $galleries->paginate($perPage);
+            return $sliders->paginate($perPage);
         }
 
-        return $galleries->get();
+        return $sliders->get();
     }
 
-    public function create(array $data = []): Gallery
+    public function create(array $data = []): Slider
     {
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
             disk: 'images',
-            directory: 'gallery',
+            directory: 'slider',
             deleteAsset: false,
         );
 
-        return Gallery::create($data);
+        return Slider::create($data);
     }
 
-    public function update(Gallery $gallery, array $data = []): Gallery
+    public function update(Slider $slider, array $data = []): Slider
     {
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
             disk: 'images',
-            directory: 'gallery',
-            checkAsset: $gallery->checkImage(),
-            fileAsset: $gallery->image,
+            directory: 'slider',
+            checkAsset: $slider->checkImage(),
+            fileAsset: $slider->image,
             deleteAsset: true,
         );
 
-        $gallery->update($data);
-        $gallery->refresh();
+        $slider->update($data);
+        $slider->refresh();
 
-        return $gallery;
+        return $slider;
     }
 
-    public function active(Gallery $gallery): Gallery
+    public function active(Slider $slider): Slider
     {
-        $gallery->is_active = ! $gallery->is_active;
-        $gallery->save();
-        $gallery->refresh();
+        $slider->is_active = ! $slider->is_active;
+        $slider->save();
+        $slider->refresh();
 
-        return $gallery;
+        return $slider;
     }
 
-    public function delete(Gallery $gallery): bool
+    public function deleteImage(Slider $slider)
     {
-        return $gallery->delete();
+        $slider->deleteImage();
+
+        $slider->image = null;
+        $slider->save();
+        $slider->refresh();
+
+        return $slider;
+    }
+
+    public function delete(Slider $slider): bool
+    {
+        return $slider->delete();
+    }
+
+    public function deleteAll(array $sliders = []): bool
+    {
+        return Slider::when($sliders, fn ($q) => $q->whereIn('id', $sliders))->delete();
+    }
+
+    public function restore(Slider $slider): bool
+    {
+        return $slider->restore();
+    }
+
+    public function restoreAll(array $sliders = []): bool
+    {
+        return Slider::when($sliders, fn ($q) => $q->whereIn('id', $sliders))->onlyTrashed()->restore();
+    }
+
+    public function deletePermanent(Slider $slider): bool
+    {
+        $slider->deleteImage();
+
+        return $slider->forceDelete();
+    }
+
+    public function deletePermanentAll(array $sliders = []): bool
+    {
+        $sliders = Slider::when($sliders, fn ($q) => $q->whereIn('id', $sliders))->onlyTrashed()->get();
+
+        foreach ($sliders as $slider) {
+            $slider->deleteImage();
+            $slider->forceDelete();
+        }
+
+        return true;
     }
 }

@@ -81,7 +81,6 @@ namespace App\Models{
  * @method static Builder<static>|Gallery query()
  * @method static Builder<static>|Gallery withTrashed()
  * @method static Builder<static>|Gallery withoutTrashed()
- * @mixin \Eloquent
  * @property int $id
  * @property int $gallery_category_id
  * @property string $name
@@ -94,18 +93,19 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereGalleryCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Gallery whereUpdatedBy($value)
+ * @method static Builder<static>|Gallery whereCreatedAt($value)
+ * @method static Builder<static>|Gallery whereCreatedBy($value)
+ * @method static Builder<static>|Gallery whereDeletedAt($value)
+ * @method static Builder<static>|Gallery whereDeletedBy($value)
+ * @method static Builder<static>|Gallery whereDescription($value)
+ * @method static Builder<static>|Gallery whereGalleryCategoryId($value)
+ * @method static Builder<static>|Gallery whereId($value)
+ * @method static Builder<static>|Gallery whereImage($value)
+ * @method static Builder<static>|Gallery whereIsActive($value)
+ * @method static Builder<static>|Gallery whereName($value)
+ * @method static Builder<static>|Gallery whereUpdatedAt($value)
+ * @method static Builder<static>|Gallery whereUpdatedBy($value)
+ * @mixin \Eloquent
  */
 	class Gallery extends \Eloquent {}
 }
@@ -130,7 +130,6 @@ namespace App\Models{
  * @method static Builder<static>|GalleryCategory query()
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
- * @mixin \Eloquent
  * @property int $id
  * @property string $name
  * @property bool $is_active
@@ -140,15 +139,16 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GalleryCategory whereUpdatedBy($value)
+ * @method static Builder<static>|GalleryCategory whereCreatedAt($value)
+ * @method static Builder<static>|GalleryCategory whereCreatedBy($value)
+ * @method static Builder<static>|GalleryCategory whereDeletedAt($value)
+ * @method static Builder<static>|GalleryCategory whereDeletedBy($value)
+ * @method static Builder<static>|GalleryCategory whereId($value)
+ * @method static Builder<static>|GalleryCategory whereIsActive($value)
+ * @method static Builder<static>|GalleryCategory whereName($value)
+ * @method static Builder<static>|GalleryCategory whereUpdatedAt($value)
+ * @method static Builder<static>|GalleryCategory whereUpdatedBy($value)
+ * @mixin \Eloquent
  */
 	class GalleryCategory extends \Eloquent {}
 }
@@ -360,15 +360,15 @@ namespace App\Models{
  * @method static Builder<static>|User withoutPermission($permissions)
  * @method static Builder<static>|User withoutRole($roles, $guard = null)
  * @method static Builder<static>|User withoutTrashed()
- * @mixin \Eloquent
  * @property string $phone
  * @property string $username
  * @property string|null $image
  * @property \Illuminate\Support\Carbon|null $phone_verified_at
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePhoneVerifiedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUsername($value)
+ * @method static Builder<static>|User whereImage($value)
+ * @method static Builder<static>|User wherePhone($value)
+ * @method static Builder<static>|User wherePhoneVerifiedAt($value)
+ * @method static Builder<static>|User whereUsername($value)
+ * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }
