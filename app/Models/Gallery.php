@@ -33,6 +33,32 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Gallery withTrashed()
  * @method static Builder<static>|Gallery withoutTrashed()
  *
+ * @property int $id
+ * @property int $gallery_category_id
+ * @property string $name
+ * @property string|null $description
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ *
+ * @method static Builder<static>|Gallery whereCreatedAt($value)
+ * @method static Builder<static>|Gallery whereCreatedBy($value)
+ * @method static Builder<static>|Gallery whereDeletedAt($value)
+ * @method static Builder<static>|Gallery whereDeletedBy($value)
+ * @method static Builder<static>|Gallery whereDescription($value)
+ * @method static Builder<static>|Gallery whereGalleryCategoryId($value)
+ * @method static Builder<static>|Gallery whereId($value)
+ * @method static Builder<static>|Gallery whereImage($value)
+ * @method static Builder<static>|Gallery whereIsActive($value)
+ * @method static Builder<static>|Gallery whereName($value)
+ * @method static Builder<static>|Gallery whereUpdatedAt($value)
+ * @method static Builder<static>|Gallery whereUpdatedBy($value)
+ *
  * @mixin \Eloquent
  */
 class Gallery extends Model
