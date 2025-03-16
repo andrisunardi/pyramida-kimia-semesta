@@ -245,6 +245,50 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $name
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner active()
+ * @method static \Database\Factories\PartnerFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner withoutTrashed()
+ */
+	class Partner extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property int $product_category_id
  * @property string $name
  * @property string|null $description

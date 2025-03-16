@@ -44,4 +44,5 @@ return [
     'our_product' => 'Product Kami',
     'latest_article' => 'Artikel Terbaru',
     'read_more' => 'Baca Selengkapnya',
+    'partner' => 'Mitra',
 ];
