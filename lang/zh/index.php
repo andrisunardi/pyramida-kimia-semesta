@@ -49,4 +49,5 @@ return [
     'please_try_again_later' => '请稍后重试',
     'our_partner' => '我们的合作伙伴',
     'call' => '称呼',
+    'download' => '下载',
 ];

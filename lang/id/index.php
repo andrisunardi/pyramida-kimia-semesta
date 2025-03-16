@@ -49,4 +49,5 @@ return [
     'please_try_again_later' => 'Silakan Coba Lagi Nanti',
     'our_partner' => 'Mitra Kami',
     'call' => 'Panggilan',
+    'download' => 'Unduh',
 ];

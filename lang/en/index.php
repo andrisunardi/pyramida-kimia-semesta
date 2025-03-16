@@ -49,4 +49,5 @@ return [
     'please_try_again_later' => 'Please Try Again Later',
     'our_partner' => 'Our Partner',
     'call' => 'Call',
+    'download' => 'Download',
 ];

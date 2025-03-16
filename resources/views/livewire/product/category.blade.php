@@ -1,4 +1,4 @@
-@section('title', trans('index.product'))
+@section('title', $productCategory->translate_name)
 @section('icon', 'fas fa-flask')
 
 <main>
@@ -11,7 +11,7 @@
         <div class="container">
             <div class="content row">
                 <div class="wide-md center">
-                    <h1>{{ trans('index.our_product_category') }}</h1>
+                    <h1>{{ trans('index.our_product') }}</h1>
                     <p>
                         @if (App::isLocale('en'))
                             PT. Pyramida Kimia Semesta provides various chemical products divided into several main
@@ -28,6 +28,7 @@
                         @endif
                     </p>
                 </div>
+
                 <div class="gallery gallery-products with-caption hover-fade center mgfix">
                     <ul class="photos-list col-x3">
                         @foreach ($productCategory->products as $key => $product)

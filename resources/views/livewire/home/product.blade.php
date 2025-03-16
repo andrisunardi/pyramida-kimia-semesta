@@ -1,9 +1,9 @@
 <div class="section section-projects recent-project section-pad">
     <div class="container">
         <div class="content row">
-            <h2 class="heading-section center">
-                {{ trans('index.our_product') }}
-            </h2>
+
+            <h4 class="heading-sm-lead">{{ trans('index.our_product') }}</h4>
+            <h2 class="heading-section with-line">{{ env('APP_NAME') }}</h2>
 
             <div class="feature-row feature-project-row mgfix">
                 <div class="owl-carousel loop has-carousel" data-items="4" data-navs="true">
