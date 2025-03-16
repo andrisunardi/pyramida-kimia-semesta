@@ -2,19 +2,7 @@
 @section('icon', 'fas fa-phone')
 
 <main>
-    <div class="banner banner-static">
-        <div class="container">
-            <div class="content row has-bg-image">
-                <div class="banner-text">
-                    <h1 class="page-title">@yield('title')</h1>
-                </div>
-                <div class="imagebg bg-image-loaded"
-                    style="background-image: url({{ asset('images/banner/contact.png') }})">
-                    <x-components::image :src="asset('images/banner/contact.png')" :alt="trans('index.contact') . ' - ' . env('APP_TITLE')" />
-                </div>
-            </div>
-        </div>
-    </div>
+    @livewire('banner')
 
     <div class="section section-contents section-contact section-pad">
         <div class="container">

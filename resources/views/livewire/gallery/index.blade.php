@@ -2,18 +2,7 @@
 @section('icon', 'fas fa-images')
 
 <main>
-    <div class="banner banner-static">
-        <div class="container">
-            <div class="content row has-bg-image">
-                <div class="banner-text">
-                    <h1 class="page-title">@yield('title')</h1>
-                </div>
-                <div class="imagebg bg-image-loaded">
-                    <x-components::image :src="asset('images/banner/gallery.png')" :alt="trans('index.gallery') . ' - ' . env('APP_TITLE')" />
-                </div>
-            </div>
-        </div>
-    </div>
+    @livewire('banner')
 
     <div class="section section-projects section-pad">
         <div class="container">
