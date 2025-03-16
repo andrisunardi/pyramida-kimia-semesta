@@ -47,13 +47,20 @@
                                         <span class="links">
                                             <x-components::link :class="'btn more-link'" :href="route('product.category', [
                                                 'slug' => $productCategory->slug,
-                                            ])" :text="trans('index.view') . ' ' . trans('index.product')" />
+                                            ])" :text="trans('index.view') .
+                                                ' ' .
+                                                trans('index.all') .
+                                                ' ' .
+                                                trans('index.product')" />
                                         </span>
                                     </div>
                                 </div>
                                 <div class="photo-caption">
-                                    <a href="product-single.html">
+                                    <a draggable="false"
+                                        href="{{ route('product.category', ['slug' => $productCategory->slug]) }}"
+                                        wire:navigate>
                                         <h4>{{ $productCategory->translate_name }}</h4>
+                                        <h5>{{ $productCategory->products_count }} {{ trans('index.product') }}</h5>
                                     </a>
                                 </div>
                             </li>
