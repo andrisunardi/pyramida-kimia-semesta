@@ -41,14 +41,14 @@
                                 <li class="dropdown" wire:key="{{ $key }}">
                                     <x-components::link :href="route('product.category', [
                                         'slug' => $productCategory->slug,
-                                    ])" :text="$productCategory->name" />
+                                    ])" :text="$productCategory->translate_name" />
 
                                     <ul class="dropdown-menu">
                                         @foreach ($productCategory->products as $key => $product)
                                             <li wire:key="{{ $key }}">
                                                 <x-components::link :href="route('product.view', [
                                                     'slug' => $product->slug,
-                                                ])" :text="$product->name" />
+                                                ])" :text="$product->translate_name" />
                                             </li>
                                         @endforeach
                                     </ul>

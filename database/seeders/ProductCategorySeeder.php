@@ -15,6 +15,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '酸和过氧化物',
             'image' => 'acid-peroxide.png',
             'slug' => 'acid-peroxide',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -23,6 +24,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '布莱克液',
             'image' => 'blake-fluid.png',
             'slug' => 'blake-fluid',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -31,6 +33,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '食品工业',
             'image' => 'food-industry.png',
             'slug' => 'food-industry',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -39,6 +42,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '金属除油',
             'image' => 'metal-degreasing.png',
             'slug' => 'metal-degreasing',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -47,6 +51,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '猪人',
             'image' => 'pigmen.png',
             'slug' => 'pigmen',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -55,6 +60,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '回收溶剂',
             'image' => 'recycle-solvent.png',
             'slug' => 'recycle-solvent',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -63,6 +69,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '溶剂行业',
             'image' => 'solvent-industry.png',
             'slug' => 'solvent-industry',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -71,6 +78,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '其他的',
             'image' => 'others.png',
             'slug' => 'others',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -79,6 +87,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '气体部分',
             'image' => 'section-gas.png',
             'slug' => 'section-gas',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -87,6 +96,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '电子级部分',
             'image' => 'section-electronic-grade.png',
             'slug' => 'section-electronic-grade',
+            'is_active' => true,
         ]);
 
         ProductCategory::create([
@@ -95,6 +105,7 @@ class ProductCategorySeeder extends Seeder
             'name_zh' => '水处理',
             'image' => 'water-treatment.png',
             'slug' => 'water-treatment',
+            'is_active' => true,
         ]);
     }
 }

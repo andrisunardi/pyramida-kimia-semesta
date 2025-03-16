@@ -226,6 +226,14 @@ namespace App\Models{
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
  * @mixin \Eloquent
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereNameZh($value)
  */
 	class Product extends \Eloquent {}
 }

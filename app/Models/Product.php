@@ -69,6 +69,15 @@ use Spatie\Activitylog\Traits\LogsActivity;
  *
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ *
+ * @method static Builder<static>|Product whereDescriptionId($value)
+ * @method static Builder<static>|Product whereDescriptionZh($value)
+ * @method static Builder<static>|Product whereNameId($value)
+ * @method static Builder<static>|Product whereNameZh($value)
  *
  * @mixin \Eloquent
  */
