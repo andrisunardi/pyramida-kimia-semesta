@@ -120,4 +120,6 @@
             </div>
         </div>
     </div>
+
+    @livewire('home.home-testimony-component')
 </main>

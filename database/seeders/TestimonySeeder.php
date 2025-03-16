@@ -12,7 +12,7 @@ class TestimonySeeder extends Seeder
         Testimony::create([
             'name' => 'John Doe',
             'company' => 'Tech Innovators Ltd.',
-            'message' => '办公室',
+            'message' => 'PT. Pyramida Kimia Semesta has been an outstanding partner, providing high-quality chemical raw materials that consistently meet our industry standards. Their reliable service and expertise make them a trusted supplier for our manufacturing needs.',
             'is_active' => true,
         ]);
 

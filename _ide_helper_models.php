@@ -287,14 +287,14 @@ namespace App\Models{
  * @method static Builder<static>|ProductCategory withTrashed()
  * @method static Builder<static>|ProductCategory withoutTrashed()
  * @property-read mixed $translate_name
- * @mixin \Eloquent
  * @property string|null $description
  * @property string|null $description_id
  * @property string|null $description_zh
  * @property-read mixed $translate_description
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescriptionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescriptionZh($value)
+ * @method static Builder<static>|ProductCategory whereDescription($value)
+ * @method static Builder<static>|ProductCategory whereDescriptionId($value)
+ * @method static Builder<static>|ProductCategory whereDescriptionZh($value)
+ * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }
@@ -354,6 +354,52 @@ namespace App\Models{
  * @mixin \Eloquent
  */
 	class Slider extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $company
+ * @property string $message
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static Builder<static>|Testimony active()
+ * @method static \Database\Factories\TestimonyFactory factory($count = null, $state = [])
+ * @method static Builder<static>|Testimony inactive()
+ * @method static Builder<static>|Testimony newModelQuery()
+ * @method static Builder<static>|Testimony newQuery()
+ * @method static Builder<static>|Testimony onlyTrashed()
+ * @method static Builder<static>|Testimony query()
+ * @method static Builder<static>|Testimony whereCompany($value)
+ * @method static Builder<static>|Testimony whereCreatedAt($value)
+ * @method static Builder<static>|Testimony whereCreatedBy($value)
+ * @method static Builder<static>|Testimony whereDeletedAt($value)
+ * @method static Builder<static>|Testimony whereDeletedBy($value)
+ * @method static Builder<static>|Testimony whereId($value)
+ * @method static Builder<static>|Testimony whereIsActive($value)
+ * @method static Builder<static>|Testimony whereMessage($value)
+ * @method static Builder<static>|Testimony whereName($value)
+ * @method static Builder<static>|Testimony whereUpdatedAt($value)
+ * @method static Builder<static>|Testimony whereUpdatedBy($value)
+ * @method static Builder<static>|Testimony withTrashed()
+ * @method static Builder<static>|Testimony withoutTrashed()
+ * @mixin \Eloquent
+ */
+	class Testimony extends \Eloquent {}
 }
 
 namespace App\Models{
