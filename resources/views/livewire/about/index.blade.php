@@ -63,9 +63,7 @@
                     <div>
                         <x-components::image :src="asset('images/about/office.png')" :alt="trans('index.about') . ' - ' . trans('index.office') . ' - ' . env('APP_TITLE')" />
                     </div>
-
                     <br />
-
                     <div>
                         <x-components::image :src="asset('images/about/warehouse.png')" :alt="trans('index.about') . ' - ' . trans('index.warehouse') . ' - ' . env('APP_TITLE')" />
                     </div>
