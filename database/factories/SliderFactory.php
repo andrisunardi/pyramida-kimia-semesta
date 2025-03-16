@@ -2,21 +2,25 @@
 
 namespace Database\Factories;
 
+use App\Models\GalleryCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class SliderFactory extends Factory
 {
     public function definition(): array
     {
+        $galleryCategory = GalleryCategory::first() ?? GalleryCategory::factory()->create();
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->freeEmail(),
-            'phone' => fake()->unique()->phoneNumber(),
-            'username' => fake()->unique()->userName(),
-            'password' => Hash::make(12345678),
+            'gallery_category_id' => $galleryCategory->id,
+            'name' => fake()->sentence(),
+            'name_id' => fake()->sentence(),
+            'name_zh' => fake()->sentence(),
+            'description' => fake()->paragraph(),
+            'description_id' => fake()->paragraph(),
+            'description_zh' => fake()->paragraph(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];
@@ -39,7 +43,7 @@ class UserFactory extends Factory
 
             File::copy(
                 public_path('images/image.png'),
-                public_path("images/user/{$image}"),
+                public_path("images/gallery/{$image}"),
             );
 
             return [

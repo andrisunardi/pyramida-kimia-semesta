@@ -18,6 +18,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
 /**
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -48,16 +50,12 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|GalleryCategory whereId($value)
  * @method static Builder<static>|GalleryCategory whereIsActive($value)
  * @method static Builder<static>|GalleryCategory whereName($value)
+ * @method static Builder<static>|GalleryCategory whereNameId($value)
+ * @method static Builder<static>|GalleryCategory whereNameZh($value)
  * @method static Builder<static>|GalleryCategory whereUpdatedAt($value)
  * @method static Builder<static>|GalleryCategory whereUpdatedBy($value)
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
- *
- * @property string $name_id
- * @property string $name_zh
- *
- * @method static Builder<static>|GalleryCategory whereNameId($value)
- * @method static Builder<static>|GalleryCategory whereNameZh($value)
  *
  * @mixin \Eloquent
  */

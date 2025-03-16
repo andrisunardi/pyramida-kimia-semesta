@@ -3,19 +3,72 @@
 namespace App\Models;
 
 use App\Observers\SliderObserver;
-use Spatie\Activitylog\LogOptions;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\File;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 #[ObservedBy([SliderObserver::class])]
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ *
+ * @method static Builder<static>|Slider active()
+ * @method static \Database\Factories\SliderFactory factory($count = null, $state = [])
+ * @method static Builder<static>|Slider inactive()
+ * @method static Builder<static>|Slider newModelQuery()
+ * @method static Builder<static>|Slider newQuery()
+ * @method static Builder<static>|Slider onlyTrashed()
+ * @method static Builder<static>|Slider query()
+ * @method static Builder<static>|Slider whereCreatedAt($value)
+ * @method static Builder<static>|Slider whereCreatedBy($value)
+ * @method static Builder<static>|Slider whereDeletedAt($value)
+ * @method static Builder<static>|Slider whereDeletedBy($value)
+ * @method static Builder<static>|Slider whereDescription($value)
+ * @method static Builder<static>|Slider whereDescriptionId($value)
+ * @method static Builder<static>|Slider whereDescriptionZh($value)
+ * @method static Builder<static>|Slider whereId($value)
+ * @method static Builder<static>|Slider whereImage($value)
+ * @method static Builder<static>|Slider whereIsActive($value)
+ * @method static Builder<static>|Slider whereName($value)
+ * @method static Builder<static>|Slider whereNameId($value)
+ * @method static Builder<static>|Slider whereNameZh($value)
+ * @method static Builder<static>|Slider whereUpdatedAt($value)
+ * @method static Builder<static>|Slider whereUpdatedBy($value)
+ * @method static Builder<static>|Slider withTrashed()
+ * @method static Builder<static>|Slider withoutTrashed()
+ *
+ * @mixin \Eloquent
+ */
 class Slider extends Model
 {
     use HasFactory;
@@ -54,7 +107,7 @@ class Slider extends Model
             ->logFillable()
             ->logOnlyDirty()
             ->dontSubmitEmptyLogs()
-            ->setDescriptionForEvent(fn(string $eventName) => ":subject.name has been {$eventName} by :causer.name");
+            ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
     }
 
     public function scopeActive(Builder $query): void
@@ -84,7 +137,7 @@ class Slider extends Model
 
     public function altImage(): string
     {
-        return trans('index.slider') . " - {$this->id} - " . env('APP_TITLE');
+        return trans('index.slider')." - {$this->id} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool
@@ -119,7 +172,7 @@ class Slider extends Model
     public function getImageUrlAttribute(): string
     {
         if ($this->checkImage()) {
-            return URL::to('/') . "/images/slider/{$this->image}";
+            return URL::to('/')."/images/slider/{$this->image}";
         }
 
         return '';

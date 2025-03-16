@@ -28,10 +28,10 @@
 
     <a draggable="false" class="left carousel-control" href="#slider" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">{{ trans('index.previous') }}</span>
     </a>
     <a draggable="false" class="right carousel-control" href="#slider" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">{{ trans('index.next') }}</span>
     </a>
 </div>

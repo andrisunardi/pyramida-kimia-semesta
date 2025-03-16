@@ -4,19 +4,17 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class ProductCategoryFactory extends Factory
 {
     public function definition(): array
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->freeEmail(),
-            'phone' => fake()->unique()->phoneNumber(),
-            'username' => fake()->unique()->userName(),
-            'password' => Hash::make(12345678),
+            'name_id' => fake()->name(),
+            'name_zh' => fake()->name(),
+            'name_zh' => fake()->name(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];
@@ -39,7 +37,7 @@ class UserFactory extends Factory
 
             File::copy(
                 public_path('images/image.png'),
-                public_path("images/user/{$image}"),
+                public_path("images/product/category/{$image}"),
             );
 
             return [

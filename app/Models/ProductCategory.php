@@ -19,7 +19,10 @@ use Spatie\Activitylog\Traits\LogsActivity;
 /**
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
  * @property string $slug
+ * @property string|null $image
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -38,6 +41,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\User|null $updatedBy
  *
  * @method static Builder<static>|ProductCategory active()
+ * @method static \Database\Factories\ProductCategoryFactory factory($count = null, $state = [])
  * @method static Builder<static>|ProductCategory inactive()
  * @method static Builder<static>|ProductCategory newModelQuery()
  * @method static Builder<static>|ProductCategory newQuery()
@@ -48,8 +52,11 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|ProductCategory whereDeletedAt($value)
  * @method static Builder<static>|ProductCategory whereDeletedBy($value)
  * @method static Builder<static>|ProductCategory whereId($value)
+ * @method static Builder<static>|ProductCategory whereImage($value)
  * @method static Builder<static>|ProductCategory whereIsActive($value)
  * @method static Builder<static>|ProductCategory whereName($value)
+ * @method static Builder<static>|ProductCategory whereNameId($value)
+ * @method static Builder<static>|ProductCategory whereNameZh($value)
  * @method static Builder<static>|ProductCategory whereSlug($value)
  * @method static Builder<static>|ProductCategory whereUpdatedAt($value)
  * @method static Builder<static>|ProductCategory whereUpdatedBy($value)
@@ -66,6 +73,9 @@ class ProductCategory extends Model
 
     public $fillable = [
         'name',
+        'name_id',
+        'name_zh',
+        'image',
         'slug',
         'is_active',
     ];
@@ -74,6 +84,9 @@ class ProductCategory extends Model
     {
         return [
             'name' => 'string',
+            'name_id' => 'string',
+            'name_zh' => 'string',
+            'image' => 'string',
             'slug' => 'string',
             'is_active' => 'boolean',
         ];

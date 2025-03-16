@@ -12,7 +12,10 @@ return new class extends Migration
         Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50)->unique();
+            $table->string('name_id', 50)->unique();
+            $table->string('name_zh', 50)->unique();
             $table->string('slug', 50)->unique();
+            $table->string('image')->nullable();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();

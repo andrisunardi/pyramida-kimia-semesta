@@ -23,9 +23,13 @@ use Spatie\Permission\Traits\HasRoles;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string $phone
+ * @property string $username
+ * @property string $password
+ * @property string|null $image
  * @property bool $is_active
  * @property \Illuminate\Support\Carbon|null $email_verified_at
- * @property string $password
+ * @property \Illuminate\Support\Carbon|null $phone_verified_at
  * @property int|null $created_by
  * @property int|null $updated_by
  * @property int|null $deleted_by
@@ -65,26 +69,20 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static Builder<static>|User whereEmail($value)
  * @method static Builder<static>|User whereEmailVerifiedAt($value)
  * @method static Builder<static>|User whereId($value)
+ * @method static Builder<static>|User whereImage($value)
  * @method static Builder<static>|User whereIsActive($value)
  * @method static Builder<static>|User whereName($value)
  * @method static Builder<static>|User wherePassword($value)
+ * @method static Builder<static>|User wherePhone($value)
+ * @method static Builder<static>|User wherePhoneVerifiedAt($value)
  * @method static Builder<static>|User whereRememberToken($value)
  * @method static Builder<static>|User whereUpdatedAt($value)
  * @method static Builder<static>|User whereUpdatedBy($value)
+ * @method static Builder<static>|User whereUsername($value)
  * @method static Builder<static>|User withTrashed()
  * @method static Builder<static>|User withoutPermission($permissions)
  * @method static Builder<static>|User withoutRole($roles, $guard = null)
  * @method static Builder<static>|User withoutTrashed()
- *
- * @property string $phone
- * @property string $username
- * @property string|null $image
- * @property \Illuminate\Support\Carbon|null $phone_verified_at
- *
- * @method static Builder<static>|User whereImage($value)
- * @method static Builder<static>|User wherePhone($value)
- * @method static Builder<static>|User wherePhoneVerifiedAt($value)
- * @method static Builder<static>|User whereUsername($value)
  *
  * @mixin \Eloquent
  */

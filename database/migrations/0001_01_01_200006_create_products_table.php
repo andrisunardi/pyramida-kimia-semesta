@@ -13,12 +13,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(ProductCategory::class)->constrained()->cascadeOnDelete();
-            $table->string('name')->unique();
+            $table->string('name', 50)->unique();
             $table->text('description')->nullable();
-            $table->string('image')->nullable()->unique();
-            $table->string('image_coa')->nullable()->unique();
-            $table->string('image_msds')->nullable()->unique();
-            $table->string('slug')->unique();
+            $table->string('image', 80)->nullable()->unique();
+            $table->string('image_coa', 80)->nullable()->unique();
+            $table->string('image_msds', 80)->nullable()->unique();
+            $table->string('slug', 50)->unique();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();

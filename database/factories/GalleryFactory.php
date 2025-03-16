@@ -21,7 +21,7 @@ class GalleryFactory extends Factory
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
-            'image' => fake()->paragraph(),
+            'image' => null,
             'is_active' => fake()->boolean(),
         ];
     }

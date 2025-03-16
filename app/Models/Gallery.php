@@ -17,27 +17,14 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 #[ObservedBy([GalleryObserver::class])]
 /**
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
- * @property-read int|null $activities_count
- * @property-read \App\Models\User|null $createdBy
- * @property-read \App\Models\User|null $deletedBy
- * @property-read string $image_url
- * @property-read \App\Models\TFactory|null $use_factory
- * @property-read \App\Models\User|null $updatedBy
- *
- * @method static Builder<static>|Gallery active()
- * @method static Builder<static>|Gallery inactive()
- * @method static Builder<static>|Gallery newModelQuery()
- * @method static Builder<static>|Gallery newQuery()
- * @method static Builder<static>|Gallery onlyTrashed()
- * @method static Builder<static>|Gallery query()
- * @method static Builder<static>|Gallery withTrashed()
- * @method static Builder<static>|Gallery withoutTrashed()
- *
  * @property int $id
  * @property int $gallery_category_id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
  * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
  * @property string|null $image
  * @property bool $is_active
  * @property int|null $created_by
@@ -46,35 +33,42 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\GalleryCategory $category
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
  *
+ * @method static Builder<static>|Gallery active()
+ * @method static \Database\Factories\GalleryFactory factory($count = null, $state = [])
+ * @method static Builder<static>|Gallery inactive()
+ * @method static Builder<static>|Gallery newModelQuery()
+ * @method static Builder<static>|Gallery newQuery()
+ * @method static Builder<static>|Gallery onlyTrashed()
+ * @method static Builder<static>|Gallery query()
  * @method static Builder<static>|Gallery whereCreatedAt($value)
  * @method static Builder<static>|Gallery whereCreatedBy($value)
  * @method static Builder<static>|Gallery whereDeletedAt($value)
  * @method static Builder<static>|Gallery whereDeletedBy($value)
  * @method static Builder<static>|Gallery whereDescription($value)
+ * @method static Builder<static>|Gallery whereDescriptionId($value)
+ * @method static Builder<static>|Gallery whereDescriptionZh($value)
  * @method static Builder<static>|Gallery whereGalleryCategoryId($value)
  * @method static Builder<static>|Gallery whereId($value)
  * @method static Builder<static>|Gallery whereImage($value)
  * @method static Builder<static>|Gallery whereIsActive($value)
  * @method static Builder<static>|Gallery whereName($value)
- * @method static Builder<static>|Gallery whereUpdatedAt($value)
- * @method static Builder<static>|Gallery whereUpdatedBy($value)
- *
- * @property-read \App\Models\GalleryCategory $category
- *
- * @method static \Database\Factories\GalleryFactory factory($count = null, $state = [])
- *
- * @property string $name_id
- * @property string $name_zh
- * @property string|null $description_id
- * @property string|null $description_zh
- * @property-read mixed $translate_description
- * @property-read mixed $translate_name
- *
- * @method static Builder<static>|Gallery whereDescriptionId($value)
- * @method static Builder<static>|Gallery whereDescriptionZh($value)
  * @method static Builder<static>|Gallery whereNameId($value)
  * @method static Builder<static>|Gallery whereNameZh($value)
+ * @method static Builder<static>|Gallery whereUpdatedAt($value)
+ * @method static Builder<static>|Gallery whereUpdatedBy($value)
+ * @method static Builder<static>|Gallery withTrashed()
+ * @method static Builder<static>|Gallery withoutTrashed()
  *
  * @mixin \Eloquent
  */
@@ -86,7 +80,11 @@ class Gallery extends Model
 
     public $fillable = [
         'name',
+        'name_id',
+        'name_zh',
         'description',
+        'description_id',
+        'description_zh',
         'image',
         'is_active',
     ];
@@ -95,7 +93,11 @@ class Gallery extends Model
     {
         return [
             'name' => 'string',
+            'name_id' => 'string',
+            'name_zh' => 'string',
             'description' => 'string',
+            'description_id' => 'string',
+            'description_zh' => 'string',
             'image' => 'string',
             'is_active' => 'boolean',
         ];

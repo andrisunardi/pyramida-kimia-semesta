@@ -57,6 +57,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Contact whereUpdatedBy($value)
  * @method static Builder<static>|Contact withTrashed()
  * @method static Builder<static>|Contact withoutTrashed()
+ * @method static \Database\Factories\ContactFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
