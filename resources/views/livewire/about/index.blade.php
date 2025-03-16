@@ -61,12 +61,13 @@
                 </div>
                 <div class="col-sm-5 npr">
                     <div>
-                        <img draggable="false" src="{{ asset('images/about/office.png') }}"
-                            alt="{{ trans('index.about') }} - {{ trans('index.office') }} - {{ env('APP_TITLE') }}">
+                        <x-components::image :src="asset('images/about/office.png')" :alt="trans('index.about') . ' - ' . trans('index.office') . ' - ' . env('APP_TITLE')" />
                     </div>
+
+                    <br />
+
                     <div>
-                        <img draggable="false" src="{{ asset('images/about/office.png') }}"
-                            alt="{{ trans('index.about') }} - {{ trans('index.office') }} - {{ env('APP_TITLE') }}">
+                        <x-components::image :src="asset('images/about/warehouse.png')" :alt="trans('index.about') . ' - ' . trans('index.warehouse') . ' - ' . env('APP_TITLE')" />
                     </div>
                 </div>
             </div>

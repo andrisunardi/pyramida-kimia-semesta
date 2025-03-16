@@ -39,4 +39,5 @@ return [
     'thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible' => 'Thank You For Contacting Us. We Will Reply To Your Message As Soon As Possible.',
     'view' => 'View',
     'our_product_category' => 'Our Product Category',
+    'warehouse' => 'Warehouse',
 ];
