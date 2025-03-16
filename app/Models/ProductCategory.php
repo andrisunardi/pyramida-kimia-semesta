@@ -121,7 +121,7 @@ class ProductCategory extends Model
 
     public function altImage(): string
     {
-        return trans('index.product_category')." - {$this->id} - ".env('APP_TITLE');
+        return trans('index.product_category')." - {$this->translate_name} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool

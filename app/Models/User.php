@@ -162,7 +162,7 @@ class User extends Authenticatable
 
     public function altImage(): string
     {
-        return trans('index.user')." - {$this->id} - ".env('APP_TITLE');
+        return trans('index.user')." - {$this->name} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool

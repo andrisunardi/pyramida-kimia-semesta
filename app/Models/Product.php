@@ -154,7 +154,7 @@ class Product extends Model
 
     public function altImage(): string
     {
-        return trans('index.product')." - {$this->id} - ".env('APP_TITLE');
+        return trans('index.product')." - {$this->translate_name} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool

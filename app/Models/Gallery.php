@@ -140,7 +140,7 @@ class Gallery extends Model
 
     public function altImage(): string
     {
-        return trans('index.gallery')." - {$this->id} - ".env('APP_TITLE');
+        return trans('index.gallery')." - {$this->translate_name} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool

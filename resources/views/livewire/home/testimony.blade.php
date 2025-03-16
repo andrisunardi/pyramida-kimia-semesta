@@ -24,7 +24,7 @@
                     <div class="owl-carousel loop has-carousel" data-items="1" data-loop="true" data-dots="true"
                         data-auto="true">
                         @foreach ($testimonies as $key => $testimony)
-                            <div class="item">
+                            <div class="item" wire:key="{{ $key }}">
                                 <div class="quotes">
                                     <div class="quotes-text center">
                                         <p>{!! $testimony->message !!}</p>

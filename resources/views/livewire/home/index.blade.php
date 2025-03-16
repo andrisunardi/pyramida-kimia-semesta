@@ -121,5 +121,7 @@
         </div>
     </div>
 
+    @livewire('home.home-product-component')
+
     @livewire('home.home-testimony-component')
 </main>

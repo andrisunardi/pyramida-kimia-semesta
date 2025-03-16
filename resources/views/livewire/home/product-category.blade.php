@@ -3,8 +3,8 @@
         <div class="content row">
             <div class="feature-row feature-service-row row">
                 @foreach ($productCategories as $key => $productCategory)
-                    <div
-                        class="col-md-4 col-sm-6 {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }} {{ $loop->first ? 'first' : '' }}">
+                    <div class="col-md-4 col-sm-6 {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }} {{ $loop->first ? 'first' : '' }}"
+                        wire:key="{{ $key }}">
                         <div class="feature boxed">
                             <a href="solution-single.html">
                                 <div class="fbox-photo">
