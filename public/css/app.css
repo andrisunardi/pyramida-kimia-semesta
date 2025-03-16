@@ -27,3 +27,9 @@ a {
 .color-secondary {
     color: #009933;
 }
+
+.outline {
+    color: #fff;
+    text-shadow: #000 0px 0px 10px;
+    -webkit-font-smoothing: antialiased;
+}

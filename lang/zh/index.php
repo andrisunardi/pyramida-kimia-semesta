@@ -14,6 +14,7 @@ return [
     'copyright' => '版权',
     'created_and_designed_by' => '创建和设计者',
     'data' => '数据',
+    'learn_more' => '了解更多',
     'view' => '看法',
     'all' => '全部',
     'our_gallery' => '我们的画廊',
