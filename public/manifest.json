@@ -1,0 +1,25 @@
+{
+    "short_name": "Pyramida Kimia Semest",
+    "name": "PT. Pyramida Kimia Semesta - PT. Pancasakti Group",
+    "description": "PT. Pyramida kimia semesta didirikan di Tangerang serpong, merupakan salah satu bagian dari PANCASAKTI GROUP yang bergerak dibidang distribusi kimia dan perdagangan BAHAN BAKU KIMIA serta PETROKIMIA.",
+    "icons": [
+        {
+            "src": "images/favicon.png",
+            "sizes": "400x400",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/logo.png",
+            "type": "image/png",
+            "sizes": "400x400",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "scope": ".",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "theme_color": "#006633",
+    "background_color": "#006633"
+}

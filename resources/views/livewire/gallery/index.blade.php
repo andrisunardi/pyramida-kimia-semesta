@@ -63,6 +63,7 @@
                                 wire:key="{{ $key }}">
                                 <div class="photo">
                                     <x-components::image :src="$gallery->assetImage()" :alt="$gallery->altImage()" />
+
                                     <div class="photo-link">
                                         <span class="links">
                                             <x-components::link.external-link :class="'btn more-link'" :href="$gallery->assetImage()"
@@ -70,8 +71,9 @@
                                         </span>
                                     </div>
                                 </div>
+
                                 <div class="photo-caption">
-                                    <a draggable="false" href="{{ $gallery->assetImage() }}">
+                                    <a draggable="false" href="{{ $gallery->assetImage() }}" wire:navigate>
                                         <h4>{{ $gallery->translate_name }}</h4>
                                     </a>
                                 </div>

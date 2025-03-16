@@ -152,6 +152,11 @@ class Product extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
+    public function altImage(): string
+    {
+        return trans('index.product')." - {$this->id} - ".env('APP_TITLE');
+    }
+
     public function checkImage(): bool
     {
         if ($this->image && File::exists(public_path("images/product/{$this->image}"))) {
