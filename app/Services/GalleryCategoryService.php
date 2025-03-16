@@ -21,7 +21,9 @@ class GalleryCategoryService
     ): object {
         $galleryCategories = GalleryCategory::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', "%{$search}%");
+                $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('name_id', 'LIKE', "%{$search}%")
+                    ->orWhere('name_zh', 'LIKE', "%{$search}%");
             }))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))
             ->when($random, fn ($q) => $q->inRandomOrder())

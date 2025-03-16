@@ -10,29 +10,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 #[ObservedBy([GalleryCategoryObserver::class])]
 /**
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
- * @property-read int|null $activities_count
- * @property-read \App\Models\User|null $createdBy
- * @property-read \App\Models\User|null $deletedBy
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gallery> $galleries
- * @property-read int|null $galleries_count
- * @property-read \App\Models\TFactory|null $use_factory
- * @property-read \App\Models\User|null $updatedBy
- *
- * @method static Builder<static>|GalleryCategory active()
- * @method static Builder<static>|GalleryCategory inactive()
- * @method static Builder<static>|GalleryCategory newModelQuery()
- * @method static Builder<static>|GalleryCategory newQuery()
- * @method static Builder<static>|GalleryCategory onlyTrashed()
- * @method static Builder<static>|GalleryCategory query()
- * @method static Builder<static>|GalleryCategory withTrashed()
- * @method static Builder<static>|GalleryCategory withoutTrashed()
- *
  * @property int $id
  * @property string $name
  * @property bool $is_active
@@ -42,7 +25,22 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gallery> $galleries
+ * @property-read int|null $galleries_count
+ * @property-read mixed $translate_name
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
  *
+ * @method static Builder<static>|GalleryCategory active()
+ * @method static Builder<static>|GalleryCategory inactive()
+ * @method static Builder<static>|GalleryCategory newModelQuery()
+ * @method static Builder<static>|GalleryCategory newQuery()
+ * @method static Builder<static>|GalleryCategory onlyTrashed()
+ * @method static Builder<static>|GalleryCategory query()
  * @method static Builder<static>|GalleryCategory whereCreatedAt($value)
  * @method static Builder<static>|GalleryCategory whereCreatedBy($value)
  * @method static Builder<static>|GalleryCategory whereDeletedAt($value)
@@ -52,6 +50,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|GalleryCategory whereName($value)
  * @method static Builder<static>|GalleryCategory whereUpdatedAt($value)
  * @method static Builder<static>|GalleryCategory whereUpdatedBy($value)
+ * @method static Builder<static>|GalleryCategory withTrashed()
+ * @method static Builder<static>|GalleryCategory withoutTrashed()
  *
  * @mixin \Eloquent
  */
@@ -63,6 +63,8 @@ class GalleryCategory extends Model
 
     public $fillable = [
         'name',
+        'name_id',
+        'name_zh',
         'is_active',
     ];
 
@@ -70,6 +72,8 @@ class GalleryCategory extends Model
     {
         return [
             'name' => 'string',
+            'name_id' => 'string',
+            'name_zh' => 'string',
             'is_active' => 'boolean',
         ];
     }
@@ -112,5 +116,17 @@ class GalleryCategory extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function getTranslateNameAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->name,
+            'id' => $this->name_id,
+            'zh' => $this->name_zh,
+        ];
+
+        return $language[$locale] ?? $this->name;
     }
 }

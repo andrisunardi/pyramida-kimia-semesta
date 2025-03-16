@@ -12,6 +12,8 @@ return new class extends Migration
         Schema::create('gallery_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('name_id')->unique();
+            $table->string('name_zh')->unique();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
