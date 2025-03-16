@@ -17,6 +17,7 @@ class ProductPage extends Component
             paginate: false,
         );
 
+        $productCategories->loadMissing(['products']);
         $productCategories->loadCount(['products']);
 
         return $productCategories;

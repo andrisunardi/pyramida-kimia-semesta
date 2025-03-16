@@ -12,7 +12,6 @@
                     style="background-image: url({{ asset('images/banner/contact.png') }})">
                     <x-components::image :src="asset('images/banner/contact.png')" :alt="trans('index.contact') . ' - ' . env('APP_TITLE')" />
                 </div>
-
             </div>
         </div>
     </div>

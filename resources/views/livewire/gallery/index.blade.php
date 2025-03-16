@@ -11,7 +11,6 @@
                 <div class="imagebg bg-image-loaded">
                     <x-components::image :src="asset('images/banner/gallery.png')" :alt="trans('index.gallery') . ' - ' . env('APP_TITLE')" />
                 </div>
-
             </div>
         </div>
     </div>

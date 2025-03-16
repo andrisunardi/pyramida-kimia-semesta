@@ -234,7 +234,6 @@
                     </div>
                     <!-- Sidebar #end -->
                 </div>
-
             </div>
         </div>
     </div>

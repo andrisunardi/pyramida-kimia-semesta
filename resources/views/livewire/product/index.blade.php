@@ -11,7 +11,6 @@
                 <div class="imagebg bg-image-loaded">
                     <x-components::image :src="asset('images/banner/product.png')" :alt="trans('index.product') . ' - ' . env('APP_TITLE')" />
                 </div>
-
             </div>
         </div>
     </div>
@@ -121,8 +120,10 @@
 
                                             <div class="photo-link">
                                                 <span class="links">
-                                                    <x-components::link.external-link :class="'btn more-link'"
-                                                        :href="$product->assetImage()" :text="trans('index.view') . ' ' . trans('index.product')" />
+                                                    <x-components::link :class="'btn more-link'" :href="route('product.view', [
+                                                        'slug' => $product->slug,
+                                                    ])"
+                                                        :text="trans('index.view') . ' ' . trans('index.product')" />
                                                 </span>
                                             </div>
                                         </div>
@@ -130,6 +131,7 @@
                                         <div class="photo-caption">
                                             <a draggable="false" href="{{ $product->assetImage() }}" wire:navigate>
                                                 <h4>{{ $product->translate_name }}</h4>
+                                                <h5>{{ $product->category->translate_name }}</h5>
                                             </a>
                                         </div>
                                     </li>
@@ -138,36 +140,49 @@
                         </div>
                     </div>
 
-                    <!-- Sidebar -->
                     <div class="col-md-4">
                         <div class="sidebar-right">
 
                             <div class="wgs-box wgs-menus">
                                 <div class="wgs-content">
                                     <ul class="list list-grouped">
-                                        <li class="list-heading">
-                                            <span>Hydraulic Power</span>
-                                            <ul>
-                                                <li><a href="product-single.html">Hydraulic Component</a></li>
-                                                <li><a href="product-single.html">Pumps and Valves</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="list-heading">
-                                            <span>Cutting Tools</span>
-                                            <ul>
-                                                <li><a href="product-single.html">Drilling and Threading</a></li>
-                                                <li><a href="product-single.html">Turning and Milling</a></li>
-                                                <li><a href="product-single.html">Medial Equipments</a></li>
-                                            </ul>
-                                        </li>
+                                        @foreach ($productCategories as $key => $productCategory)
+                                            <li class="list-heading">
+                                                <span>{{ $productCategory->translate_name }}</span>
+                                                <ul>
+                                                    @foreach ($productCategory->products as $key => $product)
+                                                        <li>
+                                                            <x-components::link :href="route('product.view', [
+                                                                'slug' => $product->slug,
+                                                            ])" :text="$product->translate_name" />
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="wgs-box wgs-quoteform">
-                                <h3 class="wgs-heading">Quick Contact</h3>
+                                <h3 class="wgs-heading">
+                                    Quick Contact
+                                </h3>
                                 <div class="wgs-content">
-                                    <p>If you have any questions or would like to book a session please contact us.</p>
+                                    <p>
+                                        @if (App::isLocale('en'))
+                                            If you have any questions or would like to book a session please contact us.
+                                        @endif
+
+                                        @if (App::isLocale('id'))
+                                            Jika Anda memiliki pertanyaan atau ingin memesan sesi, silakan hubungi kami.
+                                        @endif
+
+                                        @if (App::isLocale('zh'))
+                                            如果您有任何疑问或想要预约，请联系我们。
+                                        @endif
+                                    </p>
+
                                     <form id="contact-us" class="form-quote"
                                         action="https://demo.themenio.com/industrial/form/contact.php" method="post">
                                         <div class="form-results"></div>
@@ -205,12 +220,9 @@
                                     </form>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <!-- Sidebar #end -->
                 </div>
-
             </div>
         </div>
     </div>
