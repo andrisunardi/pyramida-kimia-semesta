@@ -3930,7 +3930,7 @@ namespace PHPSTORM_META {
 'index.learn_more','index.menu','index.next','index.office','index.our_gallery',
 'index.our_latest_product','index.phone','index.previous','index.product_category','index.product',
 'index.quick_links','index.submit','index.thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible','index.view','index.our_product_category',
-'index.warehouse','index.total','index.our_product','index.latest_article',);
+'index.warehouse','index.total','index.our_product','index.latest_article','index.read_more',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

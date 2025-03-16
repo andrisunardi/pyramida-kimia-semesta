@@ -9,7 +9,7 @@ class ArticleSeeder extends Seeder
 {
     public function run(): void
     {
-        for ($i = 1; $i <= 4; $i++) {
+        for ($i = 1; $i <= 3; $i++) {
             Article::create([
                 'name' => "Article {$i}",
                 'name_id' => "Artikel {$i}",

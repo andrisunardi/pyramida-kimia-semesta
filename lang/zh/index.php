@@ -43,4 +43,5 @@ return [
     'total' => '全部的',
     'our_product' => '我们的产品',
     'latest_article' => '最新文章',
+    'read_more' => '阅读更多',
 ];

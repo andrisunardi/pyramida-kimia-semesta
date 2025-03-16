@@ -43,4 +43,5 @@ return [
     'total' => 'Total',
     'our_product' => 'Product Kami',
     'latest_article' => 'Artikel Terbaru',
+    'read_more' => 'Baca Selengkapnya',
 ];

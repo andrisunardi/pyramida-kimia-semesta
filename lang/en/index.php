@@ -43,4 +43,5 @@ return [
     'total' => 'Total',
     'our_product' => 'Our Product',
     'latest_article' => 'Latest Article',
+    'read_more' => 'Read More',
 ];
