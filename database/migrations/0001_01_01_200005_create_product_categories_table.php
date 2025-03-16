@@ -14,6 +14,9 @@ return new class extends Migration
             $table->string('name', 50)->unique();
             $table->string('name_id', 50)->unique();
             $table->string('name_zh', 50)->unique();
+            $table->text('description')->nullable();
+            $table->text('description_id')->nullable();
+            $table->text('description_zh')->nullable();
             $table->string('slug', 50)->unique();
             $table->string('image')->nullable();
             $table->boolean('is_active')->unsigned()->default(true);

@@ -40,4 +40,5 @@ return [
     'view' => 'View',
     'our_product_category' => 'Our Product Category',
     'warehouse' => 'Warehouse',
+    'total' => 'Total',
 ];

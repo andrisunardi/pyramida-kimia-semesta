@@ -10,7 +10,17 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-6 res-s-bttm">
                         <p class="heading-sm-lead">
-                            Welcome To Our Website
+                            @if (App::isLocale('en'))
+                                Welcome To Our Website
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                Selamat Datang di Situs Web Kami
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                欢迎访问我们的网站
+                            @endif
                         </p>
                         <h1 class="heading-lg">{{ env('APP_NAME') }}</h1>
                         <p>
@@ -31,6 +41,7 @@
                             @endif
                         </p>
                     </div>
+
                     <div class="col-md-6 col-md-offset-1 col-sm-6">
                         <x-components::image :src="asset('images/about/office.png')" :alt="trans('index.about') . ' - ' . trans('index.office') . ' - ' . env('APP_TITLE')" />
                     </div>
@@ -38,4 +49,6 @@
             </div>
         </div>
     </div>
+
+    @livewire('home.home-product-category-component')
 </main>

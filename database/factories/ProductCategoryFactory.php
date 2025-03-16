@@ -15,6 +15,9 @@ class ProductCategoryFactory extends Factory
             'name_id' => fake()->name(),
             'name_zh' => fake()->name(),
             'name_zh' => fake()->name(),
+            'description' => fake()->paragraph(),
+            'description_id' => fake()->paragraph(),
+            'description_zh' => fake()->paragraph(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];

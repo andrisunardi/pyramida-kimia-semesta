@@ -65,6 +65,14 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|ProductCategory withoutTrashed()
  *
  * @property-read mixed $translate_name
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property-read mixed $translate_description
+ *
+ * @method static Builder<static>|ProductCategory whereDescription($value)
+ * @method static Builder<static>|ProductCategory whereDescriptionId($value)
+ * @method static Builder<static>|ProductCategory whereDescriptionZh($value)
  *
  * @mixin \Eloquent
  */
@@ -78,6 +86,9 @@ class ProductCategory extends Model
         'name',
         'name_id',
         'name_zh',
+        'description',
+        'description_id',
+        'description_zh',
         'image',
         'slug',
         'is_active',
@@ -89,6 +100,9 @@ class ProductCategory extends Model
             'name' => 'string',
             'name_id' => 'string',
             'name_zh' => 'string',
+            'description' => 'string',
+            'description_id' => 'string',
+            'description_zh' => 'string',
             'image' => 'string',
             'slug' => 'string',
             'is_active' => 'boolean',
@@ -188,5 +202,17 @@ class ProductCategory extends Model
         ];
 
         return $language[$locale] ?? $this->name;
+    }
+
+    public function getTranslateDescriptionAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->description,
+            'id' => $this->description_id,
+            'zh' => $this->description_zh,
+        ];
+
+        return $language[$locale] ?? $this->description;
     }
 }

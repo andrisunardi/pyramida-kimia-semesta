@@ -288,6 +288,13 @@ namespace App\Models{
  * @method static Builder<static>|ProductCategory withoutTrashed()
  * @property-read mixed $translate_name
  * @mixin \Eloquent
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property-read mixed $translate_description
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductCategory whereDescriptionZh($value)
  */
 	class ProductCategory extends \Eloquent {}
 }

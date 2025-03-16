@@ -40,4 +40,5 @@ return [
     'view' => 'Lihat',
     'our_product_category' => 'Kategori Produk Kami',
     'warehouse' => 'Gudang',
+    'total' => 'Total',
 ];

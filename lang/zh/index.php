@@ -40,4 +40,5 @@ return [
     'view' => '看法',
     'our_product_category' => '我们的产品类别',
     'warehouse' => '仓库',
+    'total' => '全部的',
 ];
