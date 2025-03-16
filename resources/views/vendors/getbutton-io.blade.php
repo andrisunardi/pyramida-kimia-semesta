@@ -7,7 +7,7 @@
             var options = {
                 whatsapp: "6281219009202",
                 facebook: "{{ env("FACEBOOK_PAGE") }}",
-                instagram: "worldharvestind",
+                instagram: "{{ env("INSTAGRAM_USERNAME") }}",
                 email: "{{ env("CONTACT_EMAIL") }}",
                 call: "{{ Utils::phone(env("CONTACT_PHONE")) }}",
                 sms: "{{ Utils::phone(env("CONTACT_PHONE")) }}",
