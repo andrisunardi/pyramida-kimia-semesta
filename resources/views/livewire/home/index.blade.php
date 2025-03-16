@@ -102,15 +102,15 @@
                     <div class="cta-sameline">
                         <h3>
                             @if (App::isLocale('en'))
-                                Any kind of business solution or consultation don't hesitate to contact.
+                                View all our products at {{ env('APP_NAME') }}
                             @endif
 
                             @if (App::isLocale('id'))
-                                Apapun solusi bisnis atau konsultasi jangan ragu untuk menghubungi.
+                                Lihat semua produk kami di Pyramida Kimia Semesta
                             @endif
 
                             @if (App::isLocale('zh'))
-                                如需任何类型的业务解决方案或咨询，请随时联系。
+                                在 Pyramida Kimia Semesta 查看我们所有的产品
                             @endif
                         </h3>
 

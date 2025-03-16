@@ -17,6 +17,71 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property array<array-key, mixed>|null $tags
+ * @property array<array-key, mixed>|null $tags_id
+ * @property array<array-key, mixed>|null $tags_zh
+ * @property \Illuminate\Support\Carbon $date
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
+ * @property-read mixed $translate_tags
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article active()
+ * @method static \Database\Factories\ArticleFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTags($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTagsId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTagsZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article withoutTrashed()
+ */
+	class Article extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
  * @property string $company
  * @property string $email
  * @property string $phone
@@ -167,6 +232,7 @@ namespace App\Models{
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
  * @mixin \Eloquent
+ * @method static \Database\Factories\GalleryCategoryFactory factory($count = null, $state = [])
  */
 	class GalleryCategory extends \Eloquent {}
 }

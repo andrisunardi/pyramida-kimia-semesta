@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class SliderFactory extends Factory
+class ArticleFactory extends Factory
 {
     public function definition(): array
     {
@@ -17,6 +17,9 @@ class SliderFactory extends Factory
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
+            'tags' => fake()->paragraphs(),
+            'tags_id' => fake()->paragraphs(),
+            'tags_zh' => fake()->paragraphs(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];
@@ -39,7 +42,7 @@ class SliderFactory extends Factory
 
             File::copy(
                 public_path('images/image.png'),
-                public_path("images/slider/{$image}"),
+                public_path("images/article/{$image}"),
             );
 
             return [

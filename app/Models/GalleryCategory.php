@@ -56,6 +56,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|GalleryCategory whereUpdatedBy($value)
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
+ * @method static \Database\Factories\GalleryCategoryFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */
