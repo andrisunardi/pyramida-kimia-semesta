@@ -61,6 +61,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  *
  * @property-read \App\Models\GalleryCategory $category
  *
+ * @method static \Database\Factories\GalleryFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 class Gallery extends Model
