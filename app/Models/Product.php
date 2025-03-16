@@ -143,6 +143,15 @@ class Product extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
+    public function checkImage(): bool
+    {
+        if ($this->image && File::exists(public_path("images/product/{$this->image}"))) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function assetImage(): string
     {
         if ($this->checkImage()) {
@@ -172,6 +181,15 @@ class Product extends Model
         return '';
     }
 
+    public function checkImageCoa(): bool
+    {
+        if ($this->image_coa && File::exists(public_path("images/product/coa/{$this->image_coa}"))) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function assetImageCoa(): string
     {
         if ($this->checkImageCoa()) {
@@ -199,6 +217,15 @@ class Product extends Model
         }
 
         return '';
+    }
+
+    public function checkImageMsds(): bool
+    {
+        if ($this->image_msds && File::exists(public_path("images/product/msds/{$this->image_msds}"))) {
+            return true;
+        }
+
+        return false;
     }
 
     public function assetImageMsds(): string

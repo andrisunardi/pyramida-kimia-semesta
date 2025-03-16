@@ -38,4 +38,5 @@ return [
     'submit' => 'Kirim',
     'thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible' => 'Terima kasih telah menghubungi kami. Kami akan membalas pesan Anda sesegera mungkin.',
     'view' => 'Lihat',
+    'our_product_category' => 'Kategori Produk Kami',
 ];

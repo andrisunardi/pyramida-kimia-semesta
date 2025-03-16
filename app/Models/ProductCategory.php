@@ -105,6 +105,20 @@ class ProductCategory extends Model
             ->setDescriptionForEvent(fn (string $eventName) => ":subject.name has been {$eventName} by :causer.name");
     }
 
+    public function altImage(): string
+    {
+        return trans('index.product_category')." - {$this->id} - ".env('APP_TITLE');
+    }
+
+    public function checkImage(): bool
+    {
+        if ($this->image && File::exists(public_path("images/product/category/{$this->image}"))) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function assetImage(): string
     {
         if ($this->checkImage()) {
@@ -119,20 +133,6 @@ class ProductCategory extends Model
         if ($this->checkImage()) {
             File::delete(public_path("images/product/category/{$this->image}"));
 
-            return true;
-        }
-
-        return false;
-    }
-
-    public function altImage(): string
-    {
-        return trans('index.product_category')." - {$this->id} - ".env('APP_TITLE');
-    }
-
-    public function checkImage(): bool
-    {
-        if ($this->image && File::exists(public_path("images/product/category/{$this->image}"))) {
             return true;
         }
 

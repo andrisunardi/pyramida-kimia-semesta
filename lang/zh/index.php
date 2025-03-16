@@ -38,4 +38,5 @@ return [
     'submit' => '提交',
     'thank_you_for_contacting_us_we_will_reply_to_your_message_as_soon_as_possible' => '感谢您联系我们。我们将尽快回复您的消息。',
     'view' => '看法',
+    'our_product_category' => '我们的产品类别',
 ];

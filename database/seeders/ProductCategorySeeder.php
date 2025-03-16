@@ -13,7 +13,6 @@ class ProductCategorySeeder extends Seeder
             'name' => 'ACID & PEROXIDE',
             'name_id' => 'ASAM & PEROKSIDA',
             'name_zh' => '酸和过氧化物',
-            'image' => '',
         ]);
 
         ProductCategory::create([

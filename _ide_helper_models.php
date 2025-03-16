@@ -223,9 +223,9 @@ namespace App\Models{
  * @method static Builder<static>|Product whereUpdatedBy($value)
  * @method static Builder<static>|Product withTrashed()
  * @method static Builder<static>|Product withoutTrashed()
- * @mixin \Eloquent
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
+ * @mixin \Eloquent
  */
 	class Product extends \Eloquent {}
 }
@@ -278,8 +278,8 @@ namespace App\Models{
  * @method static Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static Builder<static>|ProductCategory withTrashed()
  * @method static Builder<static>|ProductCategory withoutTrashed()
- * @mixin \Eloquent
  * @property-read mixed $translate_name
+ * @mixin \Eloquent
  */
 	class ProductCategory extends \Eloquent {}
 }

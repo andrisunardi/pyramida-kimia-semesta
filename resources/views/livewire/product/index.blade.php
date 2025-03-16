@@ -20,9 +20,22 @@
         <div class="container">
             <div class="content row">
                 <div class="wide-md center">
-                    <h1>Our Products Range</h1>
-                    <p>Cepsum dolor sit amet consectetur to adipiscing elit, sed dot eiusmod tempor incididunt labore et
-                        dolore magna aliqua. Veniam quis nostrud exercitation ullamco laboris.</p>
+                    <h1>{{ trans('index.our_product_category') }}</h1>
+                    <p>
+                        @if (App::isLocale('en'))
+                            PT. Pyramida Kimia Semesta provides various chemical products divided into several main
+                            categories to support the needs of domestic and foreign industries.
+                        @endif
+
+                        @if (App::isLocale('id'))
+                            PT. Pyramida Kimia Semesta menyediakan berbagai produk kimia yang terbagi dalam beberapa
+                            kategori utama untuk mendukung kebutuhan industri di dalam maupun luar negeri.
+                        @endif
+
+                        @if (App::isLocale('zh'))
+                            PT. Pyramida Kimia Semesta 提供各种化学产品，分为几个主要类别，以满足国内外工业的需求。
+                        @endif
+                    </p>
                 </div>
                 <div class="gallery gallery-products with-caption hover-fade center mgfix">
                     <ul class="photos-list col-x3">
