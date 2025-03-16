@@ -23,9 +23,9 @@
                                     </strong>
                                 </div>
                                 <p>{{ $productCategory->translate_description }}</p>
-                                <p>
+                                <div>
                                     <x-components::link :class="'btn-link'" :href="route('product.category', ['slug' => $productCategory->slug])" :text="trans('index.view') . ' ' . trans('index.product')" />
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
