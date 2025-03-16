@@ -53,6 +53,12 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
  *
+ * @property string $name_id
+ * @property string $name_zh
+ *
+ * @method static Builder<static>|GalleryCategory whereNameId($value)
+ * @method static Builder<static>|GalleryCategory whereNameZh($value)
+ *
  * @mixin \Eloquent
  */
 class GalleryCategory extends Model

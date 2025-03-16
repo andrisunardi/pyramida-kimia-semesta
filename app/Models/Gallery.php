@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
@@ -62,6 +63,18 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\GalleryCategory $category
  *
  * @method static \Database\Factories\GalleryFactory factory($count = null, $state = [])
+ *
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
+ *
+ * @method static Builder<static>|Gallery whereDescriptionId($value)
+ * @method static Builder<static>|Gallery whereDescriptionZh($value)
+ * @method static Builder<static>|Gallery whereNameId($value)
+ * @method static Builder<static>|Gallery whereNameZh($value)
  *
  * @mixin \Eloquent
  */
@@ -169,5 +182,29 @@ class Gallery extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(GalleryCategory::class, 'gallery_category_id');
+    }
+
+    public function getTranslateNameAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->name,
+            'id' => $this->name_id,
+            'zh' => $this->name_zh,
+        ];
+
+        return $language[$locale] ?? $this->name;
+    }
+
+    public function getTranslateDescriptionAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->description,
+            'id' => $this->description_id,
+            'zh' => $this->description_zh,
+        ];
+
+        return $language[$locale] ?? $this->description;
     }
 }

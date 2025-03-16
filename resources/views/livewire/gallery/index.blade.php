@@ -9,7 +9,7 @@
                     <h1 class="page-title">@yield('title')</h1>
                 </div>
                 <div class="imagebg">
-                    <x-components::image :src="asset('images/banner/gallery.png')" />
+                    <x-components::image :src="asset('images/banner/gallery.png')" :alt="trans('index.gallery') . ' - ' . env('APP_TITLE')" />
                 </div>
 
             </div>
@@ -19,7 +19,6 @@
     <div class="section section-projects section-pad">
         <div class="container">
             <div class="content row">
-
                 <div class="wide-md center">
                     <h1>{{ trans('index.our_gallery') }}</h1>
                     <p>
@@ -50,7 +49,7 @@
                         <li class="active" data-filter="all">{{ trans('index.all') }}</li>
                         @foreach ($galleryCategories as $key => $galleryCategory)
                             <li data-filter="{{ $galleryCategory->id }}" wire:key="{{ $key }}">
-                                {{ $galleryCategory->name }}
+                                {{ $galleryCategory->translate_name }}
                             </li>
                         @endforeach
                     </ul>
@@ -63,7 +62,11 @@
                             <li class="filtr-item" data-category="{{ $gallery->gallery_category_id }}"
                                 wire:key="{{ $key }}">
                                 <div class="photo">
-                                    <x-components::image :src="$gallery->assetImage()" />
+                                    <x-components::image :src="$gallery->assetImage()" :alt="trans('index.gallery') .
+                                        ' - ' .
+                                        $gallery->translate_name .
+                                        ' - ' .
+                                        env('APP_TITLE')" />
                                     <div class="photo-link">
                                         <span class="links">
                                             <x-components::link.external-link :class="'btn more-link'" :href="$gallery->assetImage()"
@@ -72,10 +75,34 @@
                                     </div>
                                 </div>
                                 <div class="photo-caption">
-                                    <a href="project-single.html">
-                                        <h4>{{ $gallery->name }}</h4>
+                                    <a draggable="false" href="{{ $gallery->assetImage() }}">
+                                        <h4>{{ $gallery->translate_name }}</h4>
                                     </a>
                                 </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-photo-gallery section-pad bg-light">
+        <div class="container">
+            <div class="content row">
+                <div class="gallery gallery-lightbox gallery-photos gallery-filled hover-zoom">
+                    <ul class="photos-list col-x4">
+                        @foreach ($galleries as $key => $gallery)
+                            <li wire:key="{{ $key }}">
+                                <a draggable="false" href="{{ $gallery->assetImage() }}">
+                                    <div class="photo">
+                                        <x-components::image :src="$gallery->assetImage()" :alt="trans('index.gallery') .
+                                            ' - ' .
+                                            $gallery->translate_name .
+                                            ' - ' .
+                                            env('APP_TITLE')" />
+                                    </div>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
