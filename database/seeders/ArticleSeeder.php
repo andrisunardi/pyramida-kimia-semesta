@@ -22,6 +22,7 @@ class ArticleSeeder extends Seeder
                 'tags_zh' => ["文章 {$i}"],
                 'date' => '2024-12-11',
                 'image' => "article-{$i}.png",
+                'slug' => "article-{$i}",
                 'is_active' => true,
             ]);
         }

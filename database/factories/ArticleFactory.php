@@ -10,10 +10,12 @@ class ArticleFactory extends Factory
 {
     public function definition(): array
     {
+        $name = fake()->unique()->sentence();
+
         return [
-            'name' => fake()->sentence(),
-            'name_id' => fake()->sentence(),
-            'name_zh' => fake()->sentence(),
+            'name' => $name,
+            'name_id' => fake()->unique()->sentence(),
+            'name_zh' => fake()->unique()->sentence(),
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
@@ -21,6 +23,7 @@ class ArticleFactory extends Factory
             'tags_id' => fake()->paragraphs(),
             'tags_zh' => fake()->paragraphs(),
             'image' => null,
+            'slug' => Str::slug($name),
             'is_active' => fake()->boolean(),
         ];
     }

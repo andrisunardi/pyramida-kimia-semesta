@@ -9,9 +9,9 @@ class GalleryCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'name_id' => fake()->name(),
-            'name_zh' => fake()->name(),
+            'name' => fake()->unique()->name(),
+            'name_id' => fake()->unique()->name(),
+            'name_zh' => fake()->unique()->name(),
             'is_active' => fake()->boolean(),
         ];
     }

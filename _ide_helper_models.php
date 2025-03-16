@@ -27,6 +27,7 @@ namespace App\Models{
  * @property array<array-key, mixed>|null $tags_zh
  * @property \Illuminate\Support\Carbon $date
  * @property string|null $image
+ * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -65,6 +66,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereNameId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTags($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTagsId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Article whereTagsZh($value)
@@ -231,8 +233,8 @@ namespace App\Models{
  * @method static Builder<static>|GalleryCategory whereUpdatedBy($value)
  * @method static Builder<static>|GalleryCategory withTrashed()
  * @method static Builder<static>|GalleryCategory withoutTrashed()
- * @mixin \Eloquent
  * @method static \Database\Factories\GalleryCategoryFactory factory($count = null, $state = [])
+ * @mixin \Eloquent
  */
 	class GalleryCategory extends \Eloquent {}
 }

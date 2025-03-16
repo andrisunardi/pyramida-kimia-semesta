@@ -124,4 +124,6 @@
     @livewire('home.home-product-component')
 
     @livewire('home.home-testimony-component')
+
+    @livewire('home.home-article-component')
 </main>

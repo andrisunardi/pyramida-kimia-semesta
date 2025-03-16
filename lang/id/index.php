@@ -42,4 +42,5 @@ return [
     'warehouse' => 'Gudang',
     'total' => 'Total',
     'our_product' => 'Product Kami',
+    'latest_article' => 'Artikel Terbaru',
 ];

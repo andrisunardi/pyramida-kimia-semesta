@@ -10,15 +10,17 @@ class ProductCategoryFactory extends Factory
 {
     public function definition(): array
     {
+        $name = fake()->unique()->name();
+
         return [
-            'name' => fake()->name(),
-            'name_id' => fake()->name(),
-            'name_zh' => fake()->name(),
-            'name_zh' => fake()->name(),
+            'name' => $name,
+            'name_id' => fake()->unique()->name(),
+            'name_zh' => fake()->unique()->name(),
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
             'image' => null,
+            'slug' => Str::slug($name),
             'is_active' => fake()->boolean(),
         ];
     }

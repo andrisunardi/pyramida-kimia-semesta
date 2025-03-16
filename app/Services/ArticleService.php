@@ -33,7 +33,8 @@ class ArticleService
                     ->orWhere('tags', 'LIKE', "%{$search}%")
                     ->orWhere('tags_id', 'LIKE', "%{$search}%")
                     ->orWhere('tags_zh', 'LIKE', "%{$search}%")
-                    ->orWhere('date', 'LIKE', "%{$search}%");
+                    ->orWhere('date', 'LIKE', "%{$search}%")
+                    ->orWhere('slug', 'LIKE', "%{$search}%");
             }))
             ->when($date, fn ($q) => $q->whereDate('date', $date))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))

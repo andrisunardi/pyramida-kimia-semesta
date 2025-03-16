@@ -42,4 +42,5 @@ return [
     'warehouse' => '仓库',
     'total' => '全部的',
     'our_product' => '我们的产品',
+    'latest_article' => '最新文章',
 ];

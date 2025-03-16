@@ -29,6 +29,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property array<array-key, mixed>|null $tags_zh
  * @property \Illuminate\Support\Carbon $date
  * @property string|null $image
+ * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -68,6 +69,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Article whereName($value)
  * @method static Builder<static>|Article whereNameId($value)
  * @method static Builder<static>|Article whereNameZh($value)
+ * @method static Builder<static>|Article whereSlug($value)
  * @method static Builder<static>|Article whereTags($value)
  * @method static Builder<static>|Article whereTagsId($value)
  * @method static Builder<static>|Article whereTagsZh($value)
@@ -96,6 +98,7 @@ class Article extends Model
         'tags_zh',
         'date',
         'image',
+        'slug',
         'is_active',
     ];
 
@@ -113,6 +116,7 @@ class Article extends Model
             'tags_zh' => 'array',
             'date' => 'date',
             'image' => 'string',
+            'slug' => 'string',
             'is_active' => 'boolean',
         ];
     }
