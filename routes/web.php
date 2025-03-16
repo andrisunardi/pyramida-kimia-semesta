@@ -2,12 +2,12 @@
 
 use App\Http\Middleware\Localization;
 use App\Livewire\About\AboutPage;
+use App\Livewire\Article\ArticlePage;
+use App\Livewire\Article\ArticleViewPage;
 use App\Livewire\Contact\ContactPage;
 use App\Livewire\Faq\FaqPage;
 use App\Livewire\Gallery\GalleryPage;
 use App\Livewire\Home\HomePage;
-use App\Livewire\News\NewsPage;
-use App\Livewire\News\NewsViewPage;
 use App\Livewire\Product\ProductCategoryPage;
 use App\Livewire\Product\ProductPage;
 use App\Livewire\Product\ProductViewPage;
@@ -32,9 +32,9 @@ Route::group(['middleware' => [Localization::class]], function () {
         Route::any('{slug}', ProductViewPage::class)->name('view');
     });
 
-    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
-        Route::any('', NewsPage::class)->name('index');
-        Route::any('{slug}', NewsViewPage::class)->name('view');
+    Route::group(['prefix' => 'article', 'as' => 'article.'], function () {
+        Route::any('', ArticlePage::class)->name('index');
+        Route::any('{slug}', ArticleViewPage::class)->name('view');
     });
 
     Route::any('gallery', GalleryPage::class)->name('gallery');

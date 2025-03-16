@@ -3820,7 +3820,7 @@ namespace PHPSTORM_META {
 'log-viewer.files.delete-multiple-files','log-viewer.logs','log-viewer.folders.download','log-viewer.files.download','log-viewer.index',
 'ignition.healthCheck','ignition.executeSolution','ignition.updateConfig',
 'locale','index','about','product.index','product.category',
-'product.view','news.index','news.view','gallery','faq',
+'product.view','article.index','article.view','gallery','faq',
 'contact','storage.local',);
         registerArgumentsSet('views', 
 'breadcrumbs::bootstrap4','breadcrumbs::bootstrap5','breadcrumbs::bulma','breadcrumbs::foundation6','breadcrumbs::materialize',
