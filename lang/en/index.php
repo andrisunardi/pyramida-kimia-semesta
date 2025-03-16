@@ -45,4 +45,8 @@ return [
     'latest_article' => 'Latest Article',
     'read_more' => 'Read More',
     'partner' => 'Partner',
+    'not_found' => 'Not Found',
+    'please_try_again_later' => 'Please Try Again Later',
+    'our_partner' => 'Our Partner',
+    'call' => 'Call',
 ];

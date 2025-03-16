@@ -45,4 +45,8 @@ return [
     'latest_article' => '最新文章',
     'read_more' => '阅读更多',
     'partner' => '伙伴',
+    'not_found' => '未找到',
+    'please_try_again_later' => '请稍后重试',
+    'our_partner' => '我们的合作伙伴',
+    'call' => '称呼',
 ];

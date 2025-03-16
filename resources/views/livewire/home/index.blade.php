@@ -50,9 +50,40 @@
         </div>
     </div>
 
+    <div class="call-action cta-mini bg-secondary">
+        <div class="cta-block">
+            <div class="container">
+                <div class="content row">
+                    <div class="cta-sameline">
+                        <h3>
+                            @if (App::isLocale('en'))
+                                Distribution & trading of chemical raw materials and petrochemicals.
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                Distribusi & perdagangan bahan baku kimia dan petrokimia.
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                化工原料及石化产品的分销及贸易。
+                            @endif
+                        </h3>
+                        <span class="cta-num">
+                            {{ trans('index.call') }}
+                            <strong>
+                                <x-components::link.phone :value="env('CONTACT_PHONE')" :icon="''" />
+                            </strong>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     @livewire('home.home-product-category-component')
 
-    <div class="section-pad">
+    <div class="section-pad bg-light">
         <div class="container">
             <div class="content row">
                 <div class="wide-sm center">

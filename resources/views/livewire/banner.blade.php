@@ -2,11 +2,10 @@
     <div class="container">
         <div class="content row has-bg-image">
             <div class="banner-text">
-                <h1 class="page-title">{{ trans("index.{$page}") }}</h1>
+                <h1 class="page-title">{{ $title }}</h1>
             </div>
-            <div class="imagebg bg-image-loaded" style="background-image: url({{ asset("images/banner/{$page}.png") }})">
-                <x-components::image :src="asset("images/banner/{$page}.png")" :alt="trans("index.{$page}")
-                    . ' - ' . env('APP_TITLE')" />
+            <div class="imagebg bg-image-loaded" style="background-image: url({{ $image }})">
+                <x-components::image :src="$image" :alt="$title . ' - ' . env('APP_TITLE')" />
             </div>
         </div>
     </div>

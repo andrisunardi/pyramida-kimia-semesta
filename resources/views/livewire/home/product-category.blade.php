@@ -1,4 +1,4 @@
-<div class="section section-services section-pad bg-light">
+<div class="section section-services section-pad">
     <div class="container">
         <div class="content row">
             <div class="feature-row feature-service-row row">

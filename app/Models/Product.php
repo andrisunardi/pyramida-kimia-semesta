@@ -195,19 +195,19 @@ class Product extends Model
         return '';
     }
 
-    public function checkImageCoa(): bool
+    public function checkImageCoa()
     {
-        if ($this->image_coa && File::exists(public_path("images/product/coa/{$this->image_coa}"))) {
-            return true;
+        if ($this->image_coa && File::exists(public_path("images/product/{$this->image_coa}"))) {
+            return 2;
         }
 
-        return false;
+        return 3;
     }
 
     public function assetImageCoa(): string
     {
         if ($this->checkImageCoa()) {
-            return asset("images/product/coa/{$this->image}");
+            return asset("images/product/{$this->image_coa}");
         }
 
         return asset('images/image-not-available.png');
@@ -216,7 +216,7 @@ class Product extends Model
     public function deleteImageCoa(): bool
     {
         if ($this->checkImageCoa()) {
-            File::delete(public_path("images/product/coa/{$this->image}"));
+            File::delete(public_path("images/product/{$this->image_coa}"));
 
             return true;
         }
@@ -227,7 +227,7 @@ class Product extends Model
     public function getImageCoaUrlAttribute(): string
     {
         if ($this->checkImageCoa()) {
-            return URL::to('/')."/images/product/coa/{$this->image}";
+            return URL::to('/')."/images/product/{$this->image_coa}";
         }
 
         return '';
@@ -235,7 +235,7 @@ class Product extends Model
 
     public function checkImageMsds(): bool
     {
-        if ($this->image_msds && File::exists(public_path("images/product/msds/{$this->image_msds}"))) {
+        if ($this->image_msds && File::exists(public_path("images/product/{$this->image_msds}"))) {
             return true;
         }
 
@@ -245,7 +245,7 @@ class Product extends Model
     public function assetImageMsds(): string
     {
         if ($this->checkImageMsds()) {
-            return asset("images/product/msds/{$this->image}");
+            return asset("images/product/{$this->image_msds}");
         } else {
             return asset('images/image-not-available.png');
         }
@@ -254,7 +254,7 @@ class Product extends Model
     public function deleteImageMsds(): bool
     {
         if ($this->checkImageMsds()) {
-            File::delete(public_path("images/product/msds/{$this->image}"));
+            File::delete(public_path("images/product/{$this->image_msds}"));
 
             return true;
         }
@@ -265,7 +265,7 @@ class Product extends Model
     public function getImageMsdsUrlAttribute(): string
     {
         if ($this->checkImageMsds()) {
-            return URL::to('/')."/images/product/msds/{$this->image}";
+            return URL::to('/')."/images/product/{$this->image_msds}";
         }
 
         return '';

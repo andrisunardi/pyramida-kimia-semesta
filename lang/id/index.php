@@ -45,4 +45,8 @@ return [
     'latest_article' => 'Artikel Terbaru',
     'read_more' => 'Baca Selengkapnya',
     'partner' => 'Mitra',
+    'not_found' => 'Tidak Ditemukan',
+    'please_try_again_later' => 'Silakan Coba Lagi Nanti',
+    'our_partner' => 'Mitra Kami',
+    'call' => 'Panggilan',
 ];
