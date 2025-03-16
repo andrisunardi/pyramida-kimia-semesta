@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
@@ -62,6 +63,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|ProductCategory whereUpdatedBy($value)
  * @method static Builder<static>|ProductCategory withTrashed()
  * @method static Builder<static>|ProductCategory withoutTrashed()
+ *
+ * @property-read mixed $translate_name
  *
  * @mixin \Eloquent
  */
@@ -122,6 +125,20 @@ class ProductCategory extends Model
         return false;
     }
 
+    public function altImage(): string
+    {
+        return trans('index.product_category')." - {$this->id} - ".env('APP_TITLE');
+    }
+
+    public function checkImage(): bool
+    {
+        if ($this->image && File::exists(public_path("images/product/category/{$this->image}"))) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function getImageUrlAttribute(): string
     {
         if ($this->checkImage()) {
@@ -159,5 +176,17 @@ class ProductCategory extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function getTranslateNameAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->name,
+            'id' => $this->name_id,
+            'zh' => $this->name_zh,
+        ];
+
+        return $language[$locale] ?? $this->name;
     }
 }

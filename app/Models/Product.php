@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
@@ -65,6 +66,9 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Product whereUpdatedBy($value)
  * @method static Builder<static>|Product withTrashed()
  * @method static Builder<static>|Product withoutTrashed()
+ *
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  *
  * @mixin \Eloquent
  */
@@ -224,5 +228,29 @@ class Product extends Model
         }
 
         return '';
+    }
+
+    public function getTranslateNameAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->name,
+            'id' => $this->name_id,
+            'zh' => $this->name_zh,
+        ];
+
+        return $language[$locale] ?? $this->name;
+    }
+
+    public function getTranslateDescriptionAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->description,
+            'id' => $this->description_id,
+            'zh' => $this->description_zh,
+        ];
+
+        return $language[$locale] ?? $this->description;
     }
 }

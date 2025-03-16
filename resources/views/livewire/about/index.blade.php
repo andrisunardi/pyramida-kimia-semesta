@@ -4,10 +4,12 @@
 <main>
     <div class="banner banner-static">
         <div class="container">
-            <div class="content row">
-                <div class="imagebg">
-                    <img draggable="false" src="{{ asset('images/banner/about.png') }}"
-                        alt="{{ trans('index.banner') }} - {{ trans('index.about') }} - {{ env('APP_TITLE') }}">
+            <div class="content row has-bg-image">
+                <div class="banner-text">
+                    <h1 class="page-title">@yield('title')</h1>
+                </div>
+                <div class="imagebg bg-image-loaded">
+                    <x-components::image :src="asset('images/banner/about.png')" :alt="trans('index.about') . ' - ' . env('APP_TITLE')" />
                 </div>
             </div>
         </div>

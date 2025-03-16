@@ -5,11 +5,14 @@
     <div class="banner banner-static">
         <div class="container">
             <div class="content row has-bg-image">
-                <div class="imagebg bg-image-loaded"
-                    style="background-image: url({{ asset('images/banner/contact.png') }});">
-                    <img draggable="false" src="{{ asset('images/banner/contact.png') }}"
-                        alt="{{ trans('index.banner') }} - {{ trans('index.contact') }} - {{ env('APP_TITLE') }}">
+                <div class="banner-text">
+                    <h1 class="page-title">@yield('title')</h1>
                 </div>
+                <div class="imagebg bg-image-loaded"
+                    style="background-image: url({{ asset('images/banner/contact.png') }})">
+                    <x-components::image :src="asset('images/banner/contact.png')" :alt="trans('index.contact') . ' - ' . env('APP_TITLE')" />
+                </div>
+
             </div>
         </div>
     </div>

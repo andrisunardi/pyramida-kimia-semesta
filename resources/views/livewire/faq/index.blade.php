@@ -1,13 +1,15 @@
-@section('title', trans('index.about'))
-@section('icon', 'fas fa-building')
+@section('title', trans('index.faq'))
+@section('icon', 'fas fa-question')
 
 <main>
     <div class="banner banner-static">
         <div class="container">
-            <div class="content row">
-                <div class="imagebg">
-                    <img draggable="false" src="{{ asset('images/banner/about.png') }}"
-                        alt="{{ trans('index.banner') }} - {{ trans('index.about') }} - {{ env('APP_TITLE') }}">
+            <div class="content row has-bg-image">
+                <div class="banner-text">
+                    <h1 class="page-title">@yield('title')</h1>
+                </div>
+                <div class="imagebg bg-image-loaded">
+                    <x-components::image :src="asset('images/banner/faq.png')" :alt="trans('index.faq') . ' - ' . env('APP_TITLE')" />
                 </div>
             </div>
         </div>

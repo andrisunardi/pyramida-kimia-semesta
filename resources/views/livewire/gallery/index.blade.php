@@ -4,11 +4,11 @@
 <main>
     <div class="banner banner-static">
         <div class="container">
-            <div class="content row">
+            <div class="content row has-bg-image">
                 <div class="banner-text">
                     <h1 class="page-title">@yield('title')</h1>
                 </div>
-                <div class="imagebg">
+                <div class="imagebg bg-image-loaded">
                     <x-components::image :src="asset('images/banner/gallery.png')" :alt="trans('index.gallery') . ' - ' . env('APP_TITLE')" />
                 </div>
 
@@ -62,11 +62,7 @@
                             <li class="filtr-item" data-category="{{ $gallery->gallery_category_id }}"
                                 wire:key="{{ $key }}">
                                 <div class="photo">
-                                    <x-components::image :src="$gallery->assetImage()" :alt="trans('index.gallery') .
-                                        ' - ' .
-                                        $gallery->translate_name .
-                                        ' - ' .
-                                        env('APP_TITLE')" />
+                                    <x-components::image :src="$gallery->assetImage()" :alt="$gallery->altImage()" />
                                     <div class="photo-link">
                                         <span class="links">
                                             <x-components::link.external-link :class="'btn more-link'" :href="$gallery->assetImage()"
@@ -96,11 +92,7 @@
                             <li wire:key="{{ $key }}">
                                 <a draggable="false" href="{{ $gallery->assetImage() }}">
                                     <div class="photo">
-                                        <x-components::image :src="$gallery->assetImage()" :alt="trans('index.gallery') .
-                                            ' - ' .
-                                            $gallery->translate_name .
-                                            ' - ' .
-                                            env('APP_TITLE')" />
+                                        <x-components::image :src="$gallery->assetImage()" :alt="$gallery->altImage()" />
                                     </div>
                                 </a>
                             </li>
