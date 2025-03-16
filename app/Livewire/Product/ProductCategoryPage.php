@@ -7,7 +7,7 @@ use App\Models\ProductCategory;
 
 class ProductCategoryPage extends Component
 {
-    public ProductCategory $productCategory;
+    public ?ProductCategory $productCategory;
 
     public function mount(string $slug): void
     {

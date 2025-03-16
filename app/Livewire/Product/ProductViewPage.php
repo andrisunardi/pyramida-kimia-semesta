@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class ProductViewPage extends Component
 {
-    public Product $product;
+    public ?Product $product;
 
     public function mount(string $slug): void
     {
