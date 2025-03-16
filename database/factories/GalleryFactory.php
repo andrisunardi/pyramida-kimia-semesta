@@ -16,7 +16,11 @@ class GalleryFactory extends Factory
         return [
             'gallery_category_id' => $galleryCategory->id,
             'name' => fake()->sentence(),
+            'name_id' => fake()->sentence(),
+            'name_zh' => fake()->sentence(),
             'description' => fake()->paragraph(),
+            'description_id' => fake()->paragraph(),
+            'description_zh' => fake()->paragraph(),
             'image' => fake()->paragraph(),
             'is_active' => fake()->boolean(),
         ];

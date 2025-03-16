@@ -24,7 +24,11 @@ class GalleryService
         $galleries = Gallery::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('name_id', 'LIKE', "%{$search}%")
+                    ->orWhere('name_zh', 'LIKE', "%{$search}%")
                     ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhere('description_id', 'LIKE', "%{$search}%")
+                    ->orWhere('description_zh', 'LIKE', "%{$search}%")
                     ->orWhereRelation('category', 'name', 'LIKE', "%{$search}%");
             }))
             ->when($galleryCategoryId, fn ($q) => $q->where('gallery_category_id', $galleryCategoryId))
