@@ -94,4 +94,30 @@
             </div>
         </div>
     </div>
+
+    <div class="call-action cta-small">
+        <div class="cta-block">
+            <div class="container">
+                <div class="content row">
+                    <div class="cta-sameline">
+                        <h3>
+                            @if (App::isLocale('en'))
+                                Any kind of business solution or consultation don't hesitate to contact.
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                Apapun solusi bisnis atau konsultasi jangan ragu untuk menghubungi.
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                如需任何类型的业务解决方案或咨询，请随时联系。
+                            @endif
+                        </h3>
+
+                        <x-components::link :class="'btn btn-light'" :href="route('product.index')" :text="trans('index.our_product')" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>

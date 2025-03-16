@@ -41,4 +41,5 @@ return [
     'our_product_category' => 'Kategori Produk Kami',
     'warehouse' => 'Gudang',
     'total' => 'Total',
+    'our_product' => 'Product Kami',
 ];

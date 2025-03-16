@@ -41,4 +41,5 @@ return [
     'our_product_category' => 'Our Product Category',
     'warehouse' => 'Warehouse',
     'total' => 'Total',
+    'our_product' => 'Our Product',
 ];
