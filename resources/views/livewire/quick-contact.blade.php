@@ -15,37 +15,61 @@
             @endif
         </p>
 
-        <form id="contact-us" class="form-quote" action="https://demo.themenio.com/industrial/form/contact.php"
-            method="post">
+        <form id="contact-us" class="form-quote" wire:submit.prevent="submit" role="form" autocomplete="off">
+
+            <x-components::form.alert />
+
             <div class="form-results"></div>
+
             <div class="form-group">
                 <div class="form-field">
-                    <input name="contact-name" type="text" placeholder="Name *" class="form-control required">
+                    <input wire:model="form.name" id="name" name="name" type="text"
+                        placeholder="{{ trans('index.your_name') }} *" class="form-control" maxlength="50" required>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="form-field">
-                    <input name="contact-email" type="email" placeholder="Email *"
-                        class="form-control required email">
+                    <input wire:model="form.company" id="company" name="company" type="text"
+                        placeholder="{{ trans('index.your_company') }} *" class="form-control" maxlength="50" required>
                 </div>
             </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <input wire:model="form.email" id="email" name="email" type="email"
+                        placeholder="{{ trans('index.your_email') }} *" class="form-control" maxlength="50" required>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="form-field form-m-bttm">
-                    <input name="contact-phone" type="text" placeholder="Phone" class="form-control">
+                    <input wire:model="form.phone" id="phone" name="phone" type="text"
+                        placeholder="{{ trans('index.your_phone') }} *" class="form-control" maxlength="15" required>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="form-field">
-                    <input name="contact-service" type="text" placeholder="Interest of Service" class="form-control">
+                    <input wire:model="form.subject" id="subject" name="subject" type="text"
+                        placeholder="{{ trans('index.write_subject') }} *" class="form-control" maxlength="100"
+                        required>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="form-field">
-                    <textarea name="contact-message" placeholder="Messages *" class="txtarea form-control required"></textarea>
+                    <textarea wire:model="form.message" id="message" name="message" type="text"
+                        placeholder="{{ trans('index.write_message') }} *" class="txtarea form-control" maxlength="1000" required>
+                    </textarea>
                 </div>
             </div>
+
             <input type="text" class="hidden" name="form-anti-honeypot" value="">
-            <button type="submit" class="btn btn-alt sb-h">Submit</button>
+
+            <button wire:click="submit" type="submit" class="btn btn-alt sb-h">
+                {{ trans('index.submit') }}
+            </button>
         </form>
     </div>
 </div>

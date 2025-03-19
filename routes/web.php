@@ -1,20 +1,20 @@
 <?php
 
-use App\Livewire\Faq\FaqPage;
-use App\Livewire\Home\HomePage;
-use App\Livewire\About\AboutPage;
-use Illuminate\Support\Facades\App;
 use App\Http\Middleware\Localization;
+use App\Livewire\About\AboutPage;
 use App\Livewire\Article\ArticlePage;
-use App\Livewire\Contact\ContactPage;
-use App\Livewire\Gallery\GalleryPage;
-use App\Livewire\Product\ProductPage;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 use App\Livewire\Article\ArticleViewPage;
+use App\Livewire\Contact\ContactPage;
+use App\Livewire\Faq\FaqPage;
+use App\Livewire\Gallery\GalleryPage;
+use App\Livewire\Home\HomePage;
+use App\Livewire\Product\ProductCategoryPage;
+use App\Livewire\Product\ProductPage;
 use App\Livewire\Product\ProductViewPage;
 use App\Livewire\Testimony\TestimonyPage;
-use App\Livewire\Product\ProductCategoryPage;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Route::any('locale/{locale}', function ($locale) {
     Session::put('locale', $locale);
