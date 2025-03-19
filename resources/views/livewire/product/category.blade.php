@@ -48,16 +48,24 @@
                                 <div class="photo-caption">
                                     <a draggable="false" href="{{ route('product.view', ['slug' => $product->slug]) }}"
                                         wire:navigate>
-                                        <h4>{{ $product->translate_name }}</h4>
-                                        <h5>{{ Str::limit($product->translate_description, 100) }}</h5>
+                                        <h4>{{ Str::limit($product->translate_name, 30) }}</h4>
+                                        <h5>{{ Str::limit($product->translate_description, 30) }}</h5>
                                     </a>
                                     <br />
                                     <div>
-                                        <x-components::link :class="'btn'" :href="route('product.view', [
-                                            'slug' => $product->slug,
-                                        ])" :text="trans('index.view')" />
-                                        <x-components::link :class="'btn btn-alt'" :href="$product->assetImageCoa()" :text="'COA'" />
-                                        <x-components::link :class="'btn btn-alt'" :href="$product->assetImageMsds()" :text="'MSDS'" />
+                                        <span>
+                                            <x-components::link :class="'btn'" :href="route('product.view', [
+                                                'slug' => $product->slug,
+                                            ])" :text="trans('index.view')" />
+                                        </span>
+                                        <span>
+                                            <x-components::link :class="'btn btn-alt'" :href="$product->assetImageCoa()"
+                                                :text="'COA'" />
+                                        </span>
+                                        <span>
+                                            <x-components::link :class="'btn btn-alt'" :href="$product->assetImageMsds()"
+                                                :text="'MSDS'" />
+                                        </span>
                                     </div>
                                 </div>
                             </li>
