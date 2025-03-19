@@ -353,7 +353,7 @@ namespace App\Models{
  * @property string|null $description_zh
  * @property string|null $image
  * @property string|null $file_coa
- * @property string|null $image_msds
+ * @property string|null $file_msds
  * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
@@ -368,7 +368,7 @@ namespace App\Models{
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
  * @property-read string $file_coa_url
- * @property-read string $image_msds_url
+ * @property-read string $file_msds_url
  * @property-read string $image_url
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
@@ -388,9 +388,9 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionZh($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereFileCoa($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereFileMsds($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImageMsds($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereNameId($value)

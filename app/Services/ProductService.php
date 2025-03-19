@@ -67,10 +67,10 @@ class ProductService
             deleteAsset: false,
         );
 
-        $data['image_msds'] = LivewireUpload::upload(
-            file: $data['image_msds'],
+        $data['file_msds'] = LivewireUpload::upload(
+            file: $data['file_msds'],
             name: $data['name'],
-            disk: 'images',
+            disk: 'files',
             directory: 'product/msds',
             deleteAsset: false,
         );
@@ -100,13 +100,13 @@ class ProductService
             deleteAsset: true,
         );
 
-        $data['image_msds'] = LivewireUpload::upload(
-            file: $data['image_msds'],
+        $data['file_msds'] = LivewireUpload::upload(
+            file: $data['file_msds'],
             name: $data['name'],
-            disk: 'images',
+            disk: 'files',
             directory: 'product/msds',
-            checkAsset: $product->checkImageMsds(),
-            fileAsset: $product->image_msds,
+            checkAsset: $product->checkFileMsds(),
+            fileAsset: $product->file_msds,
             deleteAsset: true,
         );
 

@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -77,7 +77,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -131,7 +131,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -149,7 +149,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -167,7 +167,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -185,7 +185,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -203,7 +203,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -221,7 +221,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -239,7 +239,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -257,7 +257,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -275,7 +275,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -293,7 +293,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -311,7 +311,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -329,7 +329,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -347,7 +347,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -365,7 +365,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -383,7 +383,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -401,7 +401,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -419,7 +419,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -437,7 +437,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -455,7 +455,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -473,7 +473,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -491,7 +491,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -509,7 +509,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -527,7 +527,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -545,7 +545,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -563,7 +563,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -581,7 +581,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -599,7 +599,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -617,7 +617,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -635,7 +635,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -653,7 +653,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -671,7 +671,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -689,7 +689,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -707,7 +707,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -725,7 +725,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -743,7 +743,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -761,7 +761,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -779,7 +779,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -797,7 +797,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -815,7 +815,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -833,7 +833,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -851,7 +851,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -869,7 +869,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -887,7 +887,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -905,7 +905,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -923,7 +923,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -941,7 +941,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -959,7 +959,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -977,7 +977,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -995,7 +995,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1013,7 +1013,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1031,7 +1031,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1049,7 +1049,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1067,7 +1067,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1085,7 +1085,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1103,7 +1103,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1121,7 +1121,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1139,7 +1139,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1157,7 +1157,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1175,7 +1175,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1193,7 +1193,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1211,7 +1211,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1229,7 +1229,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1247,7 +1247,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1265,7 +1265,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1283,7 +1283,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1301,7 +1301,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1319,7 +1319,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1337,7 +1337,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1355,7 +1355,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1373,7 +1373,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1391,7 +1391,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);
@@ -1409,7 +1409,7 @@ class ProductSeeder extends Seeder
             'description_zh' => "Description {$name}",
             'image' => Str::slug($name).'.png',
             'file_coa' => Str::slug($name).'-coa.pdf',
-            'image_msds' => Str::slug($name).'-msds.png',
+            'file_msds' => Str::slug($name).'-msds.pdf',
             'slug' => Str::slug($name),
             'is_active' => true,
         ]);

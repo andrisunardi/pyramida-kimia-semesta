@@ -27,7 +27,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property string|null $description_zh
  * @property string|null $image
  * @property string|null $file_coa
- * @property string|null $image_msds
+ * @property string|null $file_msds
  * @property string $slug
  * @property bool $is_active
  * @property int|null $created_by
@@ -42,7 +42,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
  * @property-read string $file_coa_url
- * @property-read string $image_msds_url
+ * @property-read string $file_msds_url
  * @property-read string $image_url
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
@@ -63,9 +63,9 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Product whereDescriptionId($value)
  * @method static Builder<static>|Product whereDescriptionZh($value)
  * @method static Builder<static>|Product whereFileCoa($value)
+ * @method static Builder<static>|Product whereFileMsds($value)
  * @method static Builder<static>|Product whereId($value)
  * @method static Builder<static>|Product whereImage($value)
- * @method static Builder<static>|Product whereImageMsds($value)
  * @method static Builder<static>|Product whereIsActive($value)
  * @method static Builder<static>|Product whereName($value)
  * @method static Builder<static>|Product whereNameId($value)
@@ -91,7 +91,7 @@ class Product extends Model
         'description',
         'image',
         'file_coa',
-        'image_msds',
+        'file_msds',
         'slug',
         'is_active',
     ];
@@ -104,7 +104,7 @@ class Product extends Model
             'description' => 'string',
             'image' => 'string',
             'file_coa' => 'string',
-            'image_msds' => 'string',
+            'file_msds' => 'string',
             'slug' => 'string',
             'is_active' => 'boolean',
         ];
@@ -236,28 +236,33 @@ class Product extends Model
         return '';
     }
 
-    public function checkImageMsds(): bool
+    public function altFileMsds(): string
     {
-        if ($this->image_msds && File::exists(public_path("images/product/{$this->image_msds}"))) {
+        return trans('index.product')." - {$this->translate_name} - ".env('APP_TITLE');
+    }
+
+    public function checkFileMsds(): bool
+    {
+        if ($this->file_msds && File::exists(public_path("files/product/msds/{$this->file_msds}"))) {
             return true;
         }
 
         return false;
     }
 
-    public function assetImageMsds(): string
+    public function assetFileMsds(): string
     {
-        if ($this->checkImageMsds()) {
-            return asset("images/product/{$this->image_msds}");
+        if ($this->checkFileMsds()) {
+            return asset("files/product/msds/{$this->file_msds}");
         } else {
-            return asset('images/image-not-available.png');
+            return asset('files/file-not-available.pdf');
         }
     }
 
-    public function deleteImageMsds(): bool
+    public function deleteFileMsds(): bool
     {
-        if ($this->checkImageMsds()) {
-            File::delete(public_path("images/product/{$this->image_msds}"));
+        if ($this->checkFileMsds()) {
+            File::delete(public_path("files/product/msds/{$this->file_msds}"));
 
             return true;
         }
@@ -265,10 +270,10 @@ class Product extends Model
         return false;
     }
 
-    public function getImageMsdsUrlAttribute(): string
+    public function getFileMsdsUrlAttribute(): string
     {
-        if ($this->checkImageMsds()) {
-            return URL::to('/')."/images/product/{$this->image_msds}";
+        if ($this->checkFileMsds()) {
+            return URL::to('/')."/files/product/msds/{$this->file_msds}";
         }
 
         return '';

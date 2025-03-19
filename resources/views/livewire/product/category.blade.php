@@ -63,7 +63,7 @@
                                                 :text="'COA'" />
                                         </span>
                                         <span>
-                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetImageMsds()"
+                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileMsds()"
                                                 :text="'MSDS'" />
                                         </span>
                                     </div>
