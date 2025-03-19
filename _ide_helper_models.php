@@ -348,7 +348,7 @@ namespace App\Models{
  * @property string $name
  * @property string|null $description
  * @property string|null $image
- * @property string|null $image_coa
+ * @property string|null $file_coa
  * @property string|null $image_msds
  * @property string $slug
  * @property bool $is_active
@@ -363,7 +363,7 @@ namespace App\Models{
  * @property-read \App\Models\ProductCategory $category
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read string $image_coa_url
+ * @property-read string $file_coa_url
  * @property-read string $image_msds_url
  * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
@@ -402,6 +402,7 @@ namespace App\Models{
  * @method static Builder<static>|Product whereNameId($value)
  * @method static Builder<static>|Product whereNameZh($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereFileCoa($value)
  */
 	class Product extends \Eloquent {}
 }

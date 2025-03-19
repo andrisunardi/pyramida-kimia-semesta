@@ -59,10 +59,10 @@ class ProductService
             deleteAsset: false,
         );
 
-        $data['image_coa'] = LivewireUpload::upload(
-            file: $data['image_coa'],
+        $data['file_coa'] = LivewireUpload::upload(
+            file: $data['file_coa'],
             name: $data['name'],
-            disk: 'images',
+            disk: 'files',
             directory: 'product/coa',
             deleteAsset: false,
         );
@@ -90,13 +90,13 @@ class ProductService
             deleteAsset: true,
         );
 
-        $data['image_coa'] = LivewireUpload::upload(
-            file: $data['image_coa'],
+        $data['file_coa'] = LivewireUpload::upload(
+            file: $data['file_coa'],
             name: $data['name'],
-            disk: 'images',
+            disk: 'files',
             directory: 'product/coa',
             checkAsset: $product->checkImageCoa(),
-            fileAsset: $product->image_coa,
+            fileAsset: $product->file_coa,
             deleteAsset: true,
         );
 

@@ -22,7 +22,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property string $name
  * @property string|null $description
  * @property string|null $image
- * @property string|null $image_coa
+ * @property string|null $file_coa
  * @property string|null $image_msds
  * @property string $slug
  * @property bool $is_active
@@ -37,7 +37,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\ProductCategory $category
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read string $image_coa_url
+ * @property-read string $file_coa_url
  * @property-read string $image_msds_url
  * @property-read string $image_url
  * @property-read \App\Models\TFactory|null $use_factory
@@ -78,6 +78,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Product whereDescriptionZh($value)
  * @method static Builder<static>|Product whereNameId($value)
  * @method static Builder<static>|Product whereNameZh($value)
+ * @method static Builder<static>|Product whereFileCoa($value)
  *
  * @mixin \Eloquent
  */
@@ -92,7 +93,7 @@ class Product extends Model
         'name',
         'description',
         'image',
-        'image_coa',
+        'file_coa',
         'image_msds',
         'slug',
         'is_active',
@@ -105,7 +106,7 @@ class Product extends Model
             'name' => 'string',
             'description' => 'string',
             'image' => 'string',
-            'image_coa' => 'string',
+            'file_coa' => 'string',
             'image_msds' => 'string',
             'slug' => 'string',
             'is_active' => 'boolean',
@@ -195,28 +196,33 @@ class Product extends Model
         return '';
     }
 
-    public function checkImageCoa()
+    public function altFileCoa(): string
     {
-        if ($this->image_coa && File::exists(public_path("images/product/{$this->image_coa}"))) {
+        return trans('index.product')." - {$this->translate_name} - ".env('APP_TITLE');
+    }
+
+    public function checkFileCoa()
+    {
+        if ($this->file_coa && File::exists(public_path("files/product/coa/{$this->file_coa}"))) {
             return true;
         }
 
         return false;
     }
 
-    public function assetImageCoa(): string
+    public function assetFileCoa(): string
     {
-        if ($this->checkImageCoa()) {
-            return asset("images/product/{$this->image_coa}");
+        if ($this->checkFileCoa()) {
+            return asset("files/product/coa/{$this->file_coa}");
         }
 
-        return asset('images/image-not-available.png');
+        return asset('files/file-not-available.pdf');
     }
 
-    public function deleteImageCoa(): bool
+    public function deleteFileCoa(): bool
     {
-        if ($this->checkImageCoa()) {
-            File::delete(public_path("images/product/{$this->image_coa}"));
+        if ($this->checkFileCoa()) {
+            File::delete(public_path("files/product/coa/{$this->file_coa}"));
 
             return true;
         }
@@ -224,10 +230,10 @@ class Product extends Model
         return false;
     }
 
-    public function getImageCoaUrlAttribute(): string
+    public function getFileCoaUrlAttribute(): string
     {
-        if ($this->checkImageCoa()) {
-            return URL::to('/')."/images/product/{$this->image_coa}";
+        if ($this->checkFileCoa()) {
+            return URL::to('/')."/files/product/coa/{$this->file_coa}";
         }
 
         return '';

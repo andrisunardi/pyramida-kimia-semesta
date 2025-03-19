@@ -59,11 +59,11 @@
                                             ])" :text="trans('index.view')" />
                                         </span>
                                         <span>
-                                            <x-components::link :class="'btn btn-alt'" :href="$product->assetImageCoa()"
+                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileCoa()"
                                                 :text="'COA'" />
                                         </span>
                                         <span>
-                                            <x-components::link :class="'btn btn-alt'" :href="$product->assetImageMsds()"
+                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetImageMsds()"
                                                 :text="'MSDS'" />
                                         </span>
                                     </div>

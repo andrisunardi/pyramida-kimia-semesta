@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('description_id')->nullable();
             $table->text('description_zh')->nullable();
             $table->string('image', 80)->nullable()->unique();
-            $table->string('image_coa', 80)->nullable()->unique();
+            $table->string('file_coa', 80)->nullable()->unique();
             $table->string('image_msds', 80)->nullable()->unique();
             $table->string('slug', 50)->unique();
             $table->boolean('is_active')->unsigned()->default(true);
