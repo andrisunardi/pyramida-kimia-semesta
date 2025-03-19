@@ -9,19 +9,19 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="{{ Route::is('product.*') ? 'current' : null }}">
                 <x-components::link :href="route('product.index')" :text="trans('index.product')" />
             </li>
-            <li>
+            <li class="{{ Route::is('gallery') ? 'current' : null }}">
                 <x-components::link :href="route('gallery')" :text="trans('index.gallery')" />
             </li>
-            <li>
+            <li class="{{ Route::is('faq') ? 'current' : null }}">
                 <x-components::link :href="route('faq')" :text="trans('index.faq')" />
             </li>
-            <li class="current">
+            <li class="{{ Route::is('tetimony') ? 'current' : null }}">
                 <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
             </li>
-            <li>
+            <li class="{{ Route::is('contact') ? 'current' : null }}">
                 <x-components::link :href="route('contact')" :text="trans('index.contact')" />
             </li>
         </ul>
