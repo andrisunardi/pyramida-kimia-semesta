@@ -20,7 +20,11 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property int $id
  * @property int $product_category_id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
  * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
  * @property string|null $image
  * @property string|null $file_coa
  * @property string|null $image_msds
@@ -40,6 +44,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read string $file_coa_url
  * @property-read string $image_msds_url
  * @property-read string $image_url
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read \App\Models\User|null $updatedBy
  *
@@ -54,31 +60,22 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Product whereDeletedAt($value)
  * @method static Builder<static>|Product whereDeletedBy($value)
  * @method static Builder<static>|Product whereDescription($value)
+ * @method static Builder<static>|Product whereDescriptionId($value)
+ * @method static Builder<static>|Product whereDescriptionZh($value)
+ * @method static Builder<static>|Product whereFileCoa($value)
  * @method static Builder<static>|Product whereId($value)
  * @method static Builder<static>|Product whereImage($value)
- * @method static Builder<static>|Product whereImageCoa($value)
  * @method static Builder<static>|Product whereImageMsds($value)
  * @method static Builder<static>|Product whereIsActive($value)
  * @method static Builder<static>|Product whereName($value)
+ * @method static Builder<static>|Product whereNameId($value)
+ * @method static Builder<static>|Product whereNameZh($value)
  * @method static Builder<static>|Product whereProductCategoryId($value)
  * @method static Builder<static>|Product whereSlug($value)
  * @method static Builder<static>|Product whereUpdatedAt($value)
  * @method static Builder<static>|Product whereUpdatedBy($value)
  * @method static Builder<static>|Product withTrashed()
  * @method static Builder<static>|Product withoutTrashed()
- *
- * @property-read mixed $translate_description
- * @property-read mixed $translate_name
- * @property string $name_id
- * @property string $name_zh
- * @property string|null $description_id
- * @property string|null $description_zh
- *
- * @method static Builder<static>|Product whereDescriptionId($value)
- * @method static Builder<static>|Product whereDescriptionZh($value)
- * @method static Builder<static>|Product whereNameId($value)
- * @method static Builder<static>|Product whereNameZh($value)
- * @method static Builder<static>|Product whereFileCoa($value)
  *
  * @mixin \Eloquent
  */

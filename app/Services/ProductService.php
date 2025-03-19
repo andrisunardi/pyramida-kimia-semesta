@@ -95,7 +95,7 @@ class ProductService
             name: $data['name'],
             disk: 'files',
             directory: 'product/coa',
-            checkAsset: $product->checkImageCoa(),
+            checkAsset: $product->checkFileCoa(),
             fileAsset: $product->file_coa,
             deleteAsset: true,
         );

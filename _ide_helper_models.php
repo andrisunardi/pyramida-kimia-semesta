@@ -346,7 +346,11 @@ namespace App\Models{
  * @property int $id
  * @property int $product_category_id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
  * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
  * @property string|null $image
  * @property string|null $file_coa
  * @property string|null $image_msds
@@ -366,43 +370,37 @@ namespace App\Models{
  * @property-read string $file_coa_url
  * @property-read string $image_msds_url
  * @property-read string $image_url
- * @property-read \App\Models\TFactory|null $use_factory
- * @property-read \App\Models\User|null $updatedBy
- * @method static Builder<static>|Product active()
- * @method static Builder<static>|Product inactive()
- * @method static Builder<static>|Product newModelQuery()
- * @method static Builder<static>|Product newQuery()
- * @method static Builder<static>|Product onlyTrashed()
- * @method static Builder<static>|Product query()
- * @method static Builder<static>|Product whereCreatedAt($value)
- * @method static Builder<static>|Product whereCreatedBy($value)
- * @method static Builder<static>|Product whereDeletedAt($value)
- * @method static Builder<static>|Product whereDeletedBy($value)
- * @method static Builder<static>|Product whereDescription($value)
- * @method static Builder<static>|Product whereId($value)
- * @method static Builder<static>|Product whereImage($value)
- * @method static Builder<static>|Product whereImageCoa($value)
- * @method static Builder<static>|Product whereImageMsds($value)
- * @method static Builder<static>|Product whereIsActive($value)
- * @method static Builder<static>|Product whereName($value)
- * @method static Builder<static>|Product whereProductCategoryId($value)
- * @method static Builder<static>|Product whereSlug($value)
- * @method static Builder<static>|Product whereUpdatedAt($value)
- * @method static Builder<static>|Product whereUpdatedBy($value)
- * @method static Builder<static>|Product withTrashed()
- * @method static Builder<static>|Product withoutTrashed()
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
- * @property string $name_id
- * @property string $name_zh
- * @property string|null $description_id
- * @property string|null $description_zh
- * @method static Builder<static>|Product whereDescriptionId($value)
- * @method static Builder<static>|Product whereDescriptionZh($value)
- * @method static Builder<static>|Product whereNameId($value)
- * @method static Builder<static>|Product whereNameZh($value)
- * @mixin \Eloquent
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereDescriptionZh($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereFileCoa($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereImageMsds($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereProductCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withoutTrashed()
  */
 	class Product extends \Eloquent {}
 }
