@@ -21,6 +21,7 @@ return [
     'data' => 'Data',
     'download' => 'Unduh',
     'email' => 'Email',
+    'featured_product' => 'Produk Unggulan',
     'english' => 'Inggris',
     'faq' => 'Tanya Jawab',
     'frequently_asked_questions' => 'Pertanyaan yang Sering Diajukan',

@@ -19,6 +19,7 @@ return [
     'copyright' => '版权',
     'created_and_designed_by' => '创建和设计者',
     'data' => '数据',
+    'featured_product' => '特色产品',
     'download' => '下载',
     'email' => '电子邮件',
     'english' => '英语',

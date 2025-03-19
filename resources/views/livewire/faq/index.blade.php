@@ -70,11 +70,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="sidebar-right">
-                            @livewire('menu-sidebar')
-
-                            @livewire('quick-contact')
-                        </div>
+                        @livewire('sidebar-right')
                     </div>
                 </div>
             </div>

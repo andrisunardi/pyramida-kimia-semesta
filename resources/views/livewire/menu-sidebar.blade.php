@@ -18,7 +18,7 @@
             <li class="{{ Route::is('faq') ? 'current' : null }}">
                 <x-components::link :href="route('faq')" :text="trans('index.faq')" />
             </li>
-            <li class="{{ Route::is('tetimony') ? 'current' : null }}">
+            <li class="{{ Route::is('testimony') ? 'current' : null }}">
                 <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
             </li>
             <li class="{{ Route::is('contact') ? 'current' : null }}">
