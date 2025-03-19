@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Livewire\Contact;
+namespace App\Livewire;
 
 use App\Mail\ContactMail;
-use App\Livewire\Component;
 use App\Livewire\Forms\ContactForm;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
-class ContactPage extends Component
+class QuickContact extends Component
 {
     public ContactForm $form;
 
@@ -34,6 +33,6 @@ class ContactPage extends Component
 
     public function render()
     {
-        return view('livewire.contact.index');
+        return view('livewire.quick-contact');
     }
 }

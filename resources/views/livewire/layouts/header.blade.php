@@ -63,6 +63,9 @@
                         <x-components::link :href="route('faq')" :text="trans('index.faq')" :icon="'fas fa-question'" />
                     </li>
                     <li>
+                        <x-components::link :href="route('testimony')" :text="trans('index.testimony')" :icon="'fas fa-comments'" />
+                    </li>
+                    <li>
                         <x-components::link :href="route('contact')" :text="trans('index.contact')" :icon="'fas fa-phone'" />
                     </li>
                     <li class="quote-btn"><a class="btn" href="get-a-quote.html">Enquire Today</a></li>

@@ -174,8 +174,9 @@
                                         @endif
                                     </p>
 
-                                    <form id="contact-us" class="form-quote"
-                                        action="https://demo.themenio.com/industrial/form/contact.php" method="post">
+                                    <form wire:submit.prevent="submit" id="contact-us" role="form"
+                                        class="form-quote">
+
                                         <div class="form-results"></div>
                                         <div class="form-group">
                                             <div class="form-field">

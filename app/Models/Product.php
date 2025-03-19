@@ -198,10 +198,10 @@ class Product extends Model
     public function checkImageCoa()
     {
         if ($this->image_coa && File::exists(public_path("images/product/{$this->image_coa}"))) {
-            return 2;
+            return true;
         }
 
-        return 3;
+        return false;
     }
 
     public function assetImageCoa(): string

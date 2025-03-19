@@ -94,6 +94,9 @@
                                         <x-components::link :href="route('faq')" :text="trans('index.faq')" />
                                     </li>
                                     <li>
+                                        <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
+                                    </li>
+                                    <li>
                                         <x-components::link :href="route('contact')" :text="trans('index.contact')" />
                                     </li>
                                 </ul>

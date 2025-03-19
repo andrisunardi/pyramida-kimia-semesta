@@ -50,4 +50,9 @@ return [
     'our_partner' => 'Our Partner',
     'call' => 'Call',
     'download' => 'Download',
+    'testimony' => 'Testimony',
+    'company' => 'Company',
+    'thank_you_for_contacting_us' => 'Thank You for Contacting Us!',
+    'quick_contact' => 'Quick Contact',
+    'your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible' => 'Your message has been received successfully. We appreciate you reaching out and will get back to you as soon as possible.',
 ];

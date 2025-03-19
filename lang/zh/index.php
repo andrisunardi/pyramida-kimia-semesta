@@ -50,4 +50,8 @@ return [
     'our_partner' => '我们的合作伙伴',
     'call' => '称呼',
     'download' => '下载',
+    'testimony' => '见证',
+    'company' => '快速联系',
+    'thank_you_for_contacting_us' => '感谢您联系我们！',
+    'your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible' => '您的消息已成功收到。感谢您的联系，我们将尽快回复您。',
 ];
