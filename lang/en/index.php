@@ -23,6 +23,7 @@ return [
     'email' => 'Email',
     'english' => 'English',
     'faq' => 'FAQ',
+    'frequently_asked_questions' => 'Frequently Asked Questions',
     'form_validation' => 'Form Validation',
     'gallery' => 'Gallery',
     'get_in_touch' => 'Get In Touch',

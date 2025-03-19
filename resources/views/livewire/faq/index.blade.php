@@ -7,151 +7,68 @@
     <div class="section section-contents section-pad">
         <div class="container">
             <div class="content row">
-
                 <div class="row">
-
                     <div class="col-md-8">
-                        <h1>Frequently Asked Questions</h1>
-                        <p>Get all the answers to the most frequently asked questions (FAQs) regarding industry,
-                            research, development and much, much more.</p>
-                        <div class="panel-group accordion faqs" id="general" role="tablist"
-                            aria-multiselectable="true">
-                            <!-- each panel of faq as accordion -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="ques-i1">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse"
-                                            data-parent="#general" href="#ques-ans-i1" aria-expanded="false">
-                                            How does it works?
-                                            <span class="plus-minus"><span></span></span>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="ques-ans-i1" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="ques-i1">
-                                    <div class="panel-body">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. Moon officia aute, non cupidatat skateboard dolor
-                                            brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
+                        <h1>{{ trans('index.frequently_asked_questions') }}</h1>
+                        <p>
+                            @if (App::isLocale('en'))
+                                Get all the answers to the most frequently asked questions (FAQs) regarding industry,
+                                research, development and much, much more.
+                            @endif
+                            @if (App::isLocale('id'))
+                                Dapatkan semua jawaban atas pertanyaan yang paling sering diajukan (FAQ) mengenai
+                                industri, penelitian, pengembangan, dan banyak lagi.
+                            @endif
+                            @if (App::isLocale('zh'))
+                                获取有关行业、研究、开发等所有常见问题 (FAQ) 的答案。
+                            @endif
+                        </p>
+                        <div class="panel-group accordion faqs" id="faq" role="tablist" aria-multiselectable="true">
+                            @foreach ($faqs as $key => $faq)
+                                <div class="panel panel-default" wire:key="{{ $key }}">
+                                    <div class="panel-heading" role="tab" id="faq-id-{{ $faq->id }}">
+                                        <h4 class="panel-title">
+                                            <a draggable="false" class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#faq" href="#faq-{{ $faq->id }}"
+                                                aria-expanded="false">
+                                                {{ $faq->translate_question }}
+                                                <span class="plus-minus"><span></span></span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq-{{ $faq->id }}" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="faq-id-{{ $faq->id }}">
+                                        <div class="panel-body">
+                                            <p>{!! $faq->translate_answer !!}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- each panel of faq as accordion -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="ques-i2">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse"
-                                            data-parent="#general" href="#ques-ans-i2" aria-expanded="false">
-                                            How long my product reach?
-                                            <span class="plus-minus"><span></span></span>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="ques-ans-i2" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="ques-i2">
-                                    <div class="panel-body">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- each panel of faq as accordion -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="ques-i3">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse"
-                                            data-parent="#general" href="#ques-ans-i3" aria-expanded="false">
-                                            Should I expect to pay fees?
-                                            <span class="plus-minus"><span></span></span>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="ques-ans-i3" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="ques-i3">
-                                    <div class="panel-body">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-                                        <p>Anim pariatur cliche reprehenderit accusamus terry richardson squid.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- each panel of faq as accordion -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="ques-i4">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse"
-                                            data-parent="#general" href="#ques-ans-i4" aria-expanded="false">
-                                            What are typical considerations?
-                                            <span class="plus-minus"><span></span></span>
-                                        </a>
-
-                                    </h4>
-                                </div>
-                                <div id="ques-ans-i4" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="ques-i4">
-                                    <div class="panel-body">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- each panel of faq as accordion -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="ques-i5">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse"
-                                            data-parent="#general" href="#ques-ans-i5" aria-expanded="false">
-                                            What kinds of companies?
-                                            <span class="plus-minus"><span></span></span>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="ques-ans-i5" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="ques-i5">
-                                    <div class="panel-body">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end each panel of faq -->
-                        </div><!-- PanelGroup #end -->
+                            @endforeach
+                        </div>
 
                         <hr>
 
-                        <h2>Few More thing you should know</h2>
+                        <h2>
+                            @if (App::isLocale('en'))
+                                Few More thing you should know
+                            @endif
+                            @if (App::isLocale('id'))
+                                Beberapa hal lagi yang harus Anda ketahui
+                            @endif
+                            @if (App::isLocale('zh'))
+                                您应该知道的一些事情
+                            @endif
+                        </h2>
                         <div class="faqs-row faqs-s2">
-                            <!-- Faq ques/ans -->
-                            <div class="faqs">
-                                <h3 class="faq-heading">What kinds of companies?</h3>
-                                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet
-                                    orci. Aenean dignissim pellentesque felis. </p>
-                            </div>
-                            <!-- Faq ques/ans -->
-                            <div class="faqs">
-                                <h3 class="faq-heading">What are typical considerations?</h3>
-                                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet
-                                    orci. Aenean dignissim pellentesque felis. </p>
-                            </div>
-                            <!-- Faq ques/ans -->
-                            <div class="faqs">
-                                <h3 class="faq-heading">Should I expect to pay fees?</h3>
-                                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet
-                                    orci. Aenean dignissim pellentesque felis. </p>
-                            </div>
-                            <!-- Faq ques/ans #end -->
+                            @foreach ($faqs as $key => $faq)
+                                <div class="faqs" wire:key="{{ $key }}">
+                                    <h3 class="faq-heading">{{ $faq->translate_question }}</h3>
+                                    <p>{!! $faq->translate_answer !!}</p>
+                                </div>
+                            @endforeach
                         </div>
-
                     </div>
 
-                    <!-- Sidebar -->
                     <div class="col-md-4">
                         <div class="sidebar-right">
 
@@ -212,8 +129,7 @@
                                                 <textarea name="contact-message" placeholder="Messages *" class="txtarea form-control required"></textarea>
                                             </div>
                                         </div>
-                                        <input type="text" class="hidden" name="form-anti-honeypot"
-                                            value="">
+                                        <input type="text" class="hidden" name="form-anti-honeypot" value="">
                                         <button type="submit" class="btn btn-alt sb-h">Submit</button>
                                     </form>
                                 </div>

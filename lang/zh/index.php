@@ -23,6 +23,7 @@ return [
     'email' => '电子邮件',
     'english' => '英语',
     'faq' => '问答',
+    'frequently_asked_questions' => '常见问题',
     'form_validation' => '表单验证',
     'gallery' => '画廊',
     'get_in_touch' => '联系我们',

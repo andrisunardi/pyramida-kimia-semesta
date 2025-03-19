@@ -11,9 +11,9 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->string('question', 50)->unique();
-            $table->string('question_id', 50)->unique();
-            $table->string('question_zh', 50)->unique();
+            $table->string('question', 100)->unique();
+            $table->string('question_id', 100)->unique();
+            $table->string('question_zh', 100)->unique();
             $table->text('answer')->nullable();
             $table->text('answer_id')->nullable();
             $table->text('answer_zh')->nullable();

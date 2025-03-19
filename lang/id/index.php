@@ -23,6 +23,7 @@ return [
     'email' => 'Email',
     'english' => 'Inggris',
     'faq' => 'Tanya Jawab',
+    'frequently_asked_questions' => 'Pertanyaan yang Sering Diajukan',
     'form_validation' => 'Validasi Formulir',
     'gallery' => 'Galeri',
     'get_in_touch' => 'Hubungi Kami',

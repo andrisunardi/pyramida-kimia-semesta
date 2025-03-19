@@ -11,9 +11,9 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->unique();
-            $table->string('name_id', 50)->unique();
-            $table->string('name_zh', 50)->unique();
+            $table->string('name', 100)->unique();
+            $table->string('name_id', 100)->unique();
+            $table->string('name_zh', 100)->unique();
             $table->text('description')->nullable();
             $table->text('description_id')->nullable();
             $table->text('description_zh')->nullable();

@@ -136,6 +136,59 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $question
+ * @property string $question_id
+ * @property string $question_zh
+ * @property string|null $answer
+ * @property string|null $answer_id
+ * @property string|null $answer_zh
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $translate_answer
+ * @property-read mixed $translate_question
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq active()
+ * @method static \Database\Factories\FaqFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereAnswer($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereAnswerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereAnswerZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereQuestion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereQuestionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereQuestionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Faq withoutTrashed()
+ */
+	class Faq extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property int $gallery_category_id
  * @property string $name
  * @property string $name_id
