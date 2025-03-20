@@ -64,4 +64,8 @@ return [
     'write_subject' => '写主题',
     'write_message' => '写信息',
     'your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible' => '您的消息已成功收到。感谢您的联系，我们将尽快回复您。',
+    'resource' => '资源',
+    'resources' => '资源',
+    'reserves' => '储备',
+    'and' => '和',
 ];

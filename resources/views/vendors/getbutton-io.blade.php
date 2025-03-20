@@ -5,7 +5,7 @@
     <script type="text/javascript">
         (function () {
             var options = {
-                whatsapp: "6281219009202",
+                whatsapp: "{{ env("CONTACT_WHATSAPP") }}",
                 facebook: "{{ env("FACEBOOK_PAGE") }}",
                 instagram: "{{ env("INSTAGRAM_USERNAME") }}",
                 email: "{{ env("CONTACT_EMAIL") }}",

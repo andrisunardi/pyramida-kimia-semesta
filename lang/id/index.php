@@ -64,4 +64,8 @@ return [
     'write_subject' => 'Tulis Subyek',
     'write_message' => 'Tulis Pesan',
     'your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible' => 'Pesan Anda telah diterima dengan baik. Kami menghargai perhatian Anda dan akan segera menghubungi Anda kembali.',
+    'resource' => 'Sumber',
+    'resources' => 'Sumber',
+    'reserves' => 'Cadangan',
+    'and' => 'Dan',
 ];
