@@ -90,6 +90,12 @@ Breadcrumbs::for('faq', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.faq'), route('faq'), ['icon' => 'fas fa-question']);
 });
 
+// RESOURCE
+Breadcrumbs::for('resource', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.resource'), route('resource'), ['icon' => 'fas fa-book']);
+});
+
 // TESTIMONY
 Breadcrumbs::for('testimony', function (BreadcrumbTrail $trail) {
     $trail->parent('index');

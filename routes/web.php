@@ -11,6 +11,7 @@ use App\Livewire\Home\HomePage;
 use App\Livewire\Product\ProductCategoryPage;
 use App\Livewire\Product\ProductPage;
 use App\Livewire\Product\ProductViewPage;
+use App\Livewire\Resource\ResourcePage;
 use App\Livewire\Testimony\TestimonyPage;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,7 @@ Route::group(['middleware' => [Localization::class]], function () {
 
     Route::any('gallery', GalleryPage::class)->name('gallery');
     Route::any('faq', FaqPage::class)->name('faq');
+    Route::any('resource', ResourcePage::class)->name('resource');
     Route::any('testimony', TestimonyPage::class)->name('testimony');
     Route::any('contact', ContactPage::class)->name('contact');
 });
