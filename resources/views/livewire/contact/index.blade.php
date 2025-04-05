@@ -151,6 +151,10 @@
     </div>
 
     <div class="map-holder map-contact">
-        <div id="gmap"></div>
+        <div id="gmap">
+            <iframe src="{{ env('CONTACT_IFRAME') }}" frameborder="0" width="100%" height="500"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </main>
