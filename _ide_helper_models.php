@@ -299,6 +299,60 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property int $year
+ * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $translate_answer
+ * @property-read mixed $translate_question
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History active()
+ * @method static \Database\Factories\HistoryFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History whereYear($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|History withoutTrashed()
+ */
+	class History extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property string $name
  * @property string|null $image
  * @property bool $is_active
