@@ -17,24 +17,7 @@
                         </h1>
 
                         <hr>
-                        <h3>MSDS</h3>
-
-                        @foreach ($productCategories as $key => $productCategory)
-                            <p>
-                                <strong>{{ $productCategory->translate_name }}</strong><br />
-                                {{ $productCategory->translate_description }}
-                            </p>
-                            @foreach ($productCategory->products as $key => $product)
-                                <p>
-                                    <a draggable="false" href="{{ $product->assetFileMsds() }}" download>
-                                        <em class="fa fa-file-pdf-o"></em> {{ $product->name }}
-                                    </a>
-                                </p>
-                            @endforeach
-                        @endforeach
-
-                        <hr>
-                        <h3>COA</h3>
+                        <h3>COA (CERTIFICATE OF ANALYSIS)</h3>
 
                         @foreach ($productCategories as $key => $productCategory)
                             <p>
@@ -44,6 +27,23 @@
                             @foreach ($productCategory->products as $key => $product)
                                 <p>
                                     <a draggable="false" href="{{ $product->assetFileCoa() }}" download>
+                                        <em class="fa fa-file-pdf-o"></em> {{ $product->name }}
+                                    </a>
+                                </p>
+                            @endforeach
+                        @endforeach
+
+                        <hr>
+                        <h3>MSDS (MATERIAL SAFETY DATA SHEET)</h3>
+
+                        @foreach ($productCategories as $key => $productCategory)
+                            <p>
+                                <strong>{{ $productCategory->translate_name }}</strong><br />
+                                {{ $productCategory->translate_description }}
+                            </p>
+                            @foreach ($productCategory->products as $key => $product)
+                                <p>
+                                    <a draggable="false" href="{{ $product->assetFileMsds() }}" download>
                                         <em class="fa fa-file-pdf-o"></em> {{ $product->name }}
                                     </a>
                                 </p>
