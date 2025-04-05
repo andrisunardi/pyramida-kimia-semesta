@@ -77,4 +77,6 @@ return [
     'history' => 'Sejarah',
     'our_history' => 'Sejarah Kami',
     'enquire' => 'Bertanya',
+    'subject' => 'Subyek',
+    'message' => 'Pesan',
 ];

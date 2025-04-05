@@ -77,4 +77,6 @@ return [
     'history' => 'History',
     'our_history' => 'Our History',
     'enquire' => 'Enquire',
+    'subject' => 'Subject',
+    'message' => 'Message',
 ];

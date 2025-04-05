@@ -77,4 +77,6 @@ return [
     'history' => '历史',
     'our_history' => '我们的历史',
     'enquire' => '查询',
+    'subject' => '主题',
+    'message' => '信息',
 ];
