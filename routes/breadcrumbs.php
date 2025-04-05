@@ -70,7 +70,7 @@ Breadcrumbs::for('product.view', function (BreadcrumbTrail $trail, $product) {
 // ARTICLE
 Breadcrumbs::for('article.index', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
-    $trail->push(trans('index.article'), route('article.index'), ['icon' => 'fas fa-flask']);
+    $trail->push(trans('index.article'), route('article.index'), ['icon' => 'fas fa-newspaper']);
 });
 
 Breadcrumbs::for('article.view', function (BreadcrumbTrail $trail, $article) {

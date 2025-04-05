@@ -37,6 +37,9 @@
                             <li>
                                 <x-components::link :href="route('resource')" :text="trans('index.resource')" :icon="'fas fa-book'" />
                             </li>
+                            <li>
+                                <x-components::link :href="route('testimony')" :text="trans('index.testimony')" :icon="'fas fa-comments'" />
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -68,7 +71,7 @@
                         <x-components::link :href="route('faq')" :text="trans('index.faq')" :icon="'fas fa-question'" />
                     </li>
                     <li>
-                        <x-components::link :href="route('testimony')" :text="trans('index.testimony')" :icon="'fas fa-comments'" />
+                        <x-components::link :href="route('article.index')" :text="trans('index.article')" :icon="'fas fa-newspaper'" />
                     </li>
                     <li>
                         <x-components::link :href="route('contact')" :text="trans('index.contact')" :icon="'fas fa-phone'" />
