@@ -3,12 +3,42 @@
 namespace App\Livewire\Article;
 
 use App\Livewire\Component;
-use Illuminate\Contracts\View\View;
+use App\Models\Article;
+use App\Services\ArticleService;
 
 class ArticleViewPage extends Component
 {
-    public function render(): View
+    public ?Article $article;
+
+    public function mount(string $slug): void
     {
-        return view('livewire.article.view');
+        $this->article = Article::where('slug', $slug)->active()->first();
+
+        if (! $this->article) {
+            $this->flash('error', trans('index.article').' '.trans('index.not_found'), [
+                'html' => trans('index.please_try_again_later'),
+            ]);
+
+            redirect()->route('article.index');
+
+            return;
+        }
+    }
+
+    public function getOtherArticles(): object
+    {
+        return (new ArticleService)->index(
+            isActive: [true],
+            random: true,
+            limit: 3,
+            paginate: false,
+        )->reject(fn ($article) => $article->id == $this->article->id);
+    }
+
+    public function render()
+    {
+        return view('livewire.article.view', [
+            'otherArticles' => $this->getOtherArticles(),
+        ]);
     }
 }
