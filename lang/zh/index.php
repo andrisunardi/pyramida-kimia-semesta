@@ -81,4 +81,5 @@ return [
     'your_name' => '您的名字',
     'your_phone' => '你的电话',
     'career' => '职业',
+    'apply_online' => '网上申请',
 ];

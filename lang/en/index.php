@@ -81,4 +81,5 @@ return [
     'your_name' => 'Your Name',
     'your_phone' => 'Your Phone',
     'career' => 'Career',
+    'apply_online' => 'Apply Online',
 ];
