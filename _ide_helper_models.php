@@ -85,6 +85,67 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $location
+ * @property string|null $location_id
+ * @property string|null $location_zh
+ * @property string|null $link
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_location
+ * @property-read mixed $translate_name
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career active()
+ * @method static \Database\Factories\CareerFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereLocation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereLocationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereLocationZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Career withoutTrashed()
+ */
+	class Career extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
  * @property string $company
  * @property string $email
  * @property string $phone
