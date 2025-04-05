@@ -31,8 +31,13 @@
                     <li>
                         <x-components::link :href="route('index')" :text="trans('index.home')" :icon="'fas fa-home'" />
                     </li>
-                    <li>
+                    <li class="dropdown">
                         <x-components::link :href="route('about')" :text="trans('index.about')" :icon="'fas fa-building'" />
+                        <ul class="dropdown-menu">
+                            <li>
+                                <x-components::link :href="route('resource')" :text="trans('index.resource')" :icon="'fas fa-book'" />
+                            </li>
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <x-components::link :href="route('product.index')" :text="trans('index.product')" :icon="'fas fa-flask'" />
