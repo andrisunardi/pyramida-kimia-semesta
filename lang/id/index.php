@@ -80,4 +80,5 @@ return [
     'your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible' => 'Pesan Anda telah diterima dengan baik. Kami menghargai perhatian Anda dan akan segera menghubungi Anda kembali.',
     'your_name' => 'Nama Anda',
     'your_phone' => 'Telepon Anda',
+    'career' => 'Karir',
 ];

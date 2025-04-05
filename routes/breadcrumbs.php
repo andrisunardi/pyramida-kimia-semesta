@@ -85,17 +85,6 @@ Breadcrumbs::for('product.view', function (BreadcrumbTrail $trail, $product) {
     $trail->push(trans('index.product'), route('product.view', ['product' => $product]), ['icon' => 'fas fa-list']);
 });
 
-// ARTICLE
-Breadcrumbs::for('article.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('index');
-    $trail->push(trans('index.article'), route('article.index'), ['icon' => 'fas fa-newspaper']);
-});
-
-Breadcrumbs::for('article.view', function (BreadcrumbTrail $trail, $article) {
-    $trail->parent('article.index');
-    $trail->push(trans('index.article'), route('article.view', ['article' => $article]), ['icon' => 'fas fa-newspaper']);
-});
-
 // GALLERY
 Breadcrumbs::for('gallery', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
@@ -106,6 +95,23 @@ Breadcrumbs::for('gallery', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('faq', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push(trans('index.faq'), route('faq'), ['icon' => 'fas fa-question']);
+});
+
+// CAREER
+Breadcrumbs::for('career', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.career'), route('career'), ['icon' => 'fas fa-briefcase']);
+});
+
+// ARTICLE
+Breadcrumbs::for('article.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.article'), route('article.index'), ['icon' => 'fas fa-newspaper']);
+});
+
+Breadcrumbs::for('article.view', function (BreadcrumbTrail $trail, $article) {
+    $trail->parent('article.index');
+    $trail->push(trans('index.article'), route('article.view', ['article' => $article]), ['icon' => 'fas fa-newspaper']);
 });
 
 // CONTACT

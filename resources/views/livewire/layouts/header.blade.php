@@ -74,6 +74,9 @@
                         <x-components::link :href="route('faq')" :text="trans('index.faq')" :icon="'fas fa-question'" />
                     </li>
                     <li>
+                        <x-components::link :href="route('career')" :text="trans('index.career')" :icon="'fas fa-briefcase'" />
+                    </li>
+                    <li>
                         <x-components::link :href="route('article.index')" :text="trans('index.article')" :icon="'fas fa-newspaper'" />
                     </li>
                     <li>

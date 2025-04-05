@@ -4,6 +4,7 @@ use App\Http\Middleware\Localization;
 use App\Livewire\About\AboutPage;
 use App\Livewire\Article\ArticlePage;
 use App\Livewire\Article\ArticleViewPage;
+use App\Livewire\Career\CareerPage;
 use App\Livewire\Contact\ContactPage;
 use App\Livewire\Enquire\EnquirePage;
 use App\Livewire\Faq\FaqPage;
@@ -39,13 +40,15 @@ Route::group(['middleware' => [Localization::class]], function () {
         Route::any('{slug}', ProductViewPage::class)->name('view');
     });
 
+    Route::any('gallery', GalleryPage::class)->name('gallery');
+    Route::any('faq', FaqPage::class)->name('faq');
+    Route::any('career', CareerPage::class)->name('career');
+
     Route::group(['prefix' => 'article', 'as' => 'article.'], function () {
         Route::any('', ArticlePage::class)->name('index');
         Route::any('{slug}', ArticleViewPage::class)->name('view');
     });
 
-    Route::any('gallery', GalleryPage::class)->name('gallery');
-    Route::any('faq', FaqPage::class)->name('faq');
     Route::any('contact', ContactPage::class)->name('contact');
     Route::any('enquire', EnquirePage::class)->name('enquire');
 });
