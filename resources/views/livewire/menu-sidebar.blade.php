@@ -33,6 +33,9 @@
             <li class="{{ Route::is('contact') ? 'current' : null }}">
                 <x-components::link :href="route('contact')" :text="trans('index.contact')" />
             </li>
+            <li class="{{ Route::is('enquire') ? 'current' : null }}">
+                <x-components::link :href="route('enquire')" :text="trans('index.enquire')" />
+            </li>
         </ul>
     </div>
 </div>

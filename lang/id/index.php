@@ -76,4 +76,5 @@ return [
     'other_articles' => 'Artikel Lainnya',
     'history' => 'Sejarah',
     'our_history' => 'Sejarah Kami',
+    'enquire' => 'Bertanya',
 ];

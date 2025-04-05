@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Livewire\Contact;
+namespace App\Livewire\Enquire;
 
 use App\Livewire\Component;
 use App\Livewire\Forms\ContactForm;
 use App\Mail\ContactMail;
+use App\Services\ProductCategoryService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
-class ContactPage extends Component
+class EnquirePage extends Component
 {
     public ContactForm $form;
 
@@ -31,8 +32,20 @@ class ContactPage extends Component
         ]);
     }
 
+    public function getProductCategories(): object
+    {
+        return (new ProductCategoryService)->index(
+            isActive: [true],
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false,
+        );
+    }
+
     public function render(): View
     {
-        return view('livewire.contact.index');
+        return view('livewire.enquire.index', [
+            'productCategories' => $this->getProductCategories(),
+        ]);
     }
 }

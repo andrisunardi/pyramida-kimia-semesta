@@ -31,8 +31,6 @@
 
                             <x-components::form.alert />
 
-                            <div class="form-results"></div>
-
                             <div class="form-group row">
                                 <div class="form-field col-md-6 form-m-bttm">
                                     <input wire:model="form.name" id="name" name="name" type="text"
@@ -74,10 +72,6 @@
                                     </textarea>
                                 </div>
                             </div>
-
-                            <input type="text" class="hidden" name="form-anti-honeypot" value="">
-
-                            <div class="gaps"></div>
 
                             <button type="submit" class="btn solid-btn sb-h" wire:click="submit">
                                 {{ trans('index.submit') }}

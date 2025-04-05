@@ -79,7 +79,9 @@
                     <li>
                         <x-components::link :href="route('contact')" :text="trans('index.contact')" :icon="'fas fa-phone'" />
                     </li>
-                    <li class="quote-btn"><a class="btn" href="get-a-quote.html">Enquire Today</a></li>
+                    <li class="quote-btn">
+                        <x-components::link :class="'btn'" :href="route('enquire')" :text="trans('index.enquire')" />
+                    </li>
                 </ul>
             </nav>
         </div>

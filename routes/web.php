@@ -5,6 +5,7 @@ use App\Livewire\About\AboutPage;
 use App\Livewire\Article\ArticlePage;
 use App\Livewire\Article\ArticleViewPage;
 use App\Livewire\Contact\ContactPage;
+use App\Livewire\Enquire\EnquirePage;
 use App\Livewire\Faq\FaqPage;
 use App\Livewire\Gallery\GalleryPage;
 use App\Livewire\History\HistoryPage;
@@ -46,4 +47,5 @@ Route::group(['middleware' => [Localization::class]], function () {
     Route::any('gallery', GalleryPage::class)->name('gallery');
     Route::any('faq', FaqPage::class)->name('faq');
     Route::any('contact', ContactPage::class)->name('contact');
+    Route::any('enquire', EnquirePage::class)->name('enquire');
 });

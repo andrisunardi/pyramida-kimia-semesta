@@ -76,4 +76,5 @@ return [
     'other_articles' => 'Other Articles',
     'history' => 'History',
     'our_history' => 'Our History',
+    'enquire' => 'Enquire',
 ];

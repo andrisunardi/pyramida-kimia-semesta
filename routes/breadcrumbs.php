@@ -113,3 +113,9 @@ Breadcrumbs::for('contact', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push(trans('index.contact'), route('contact'), ['icon' => 'fas fa-phone']);
 });
+
+// ENQUIRE
+Breadcrumbs::for('enquire', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.enquire'), route('enquire'), ['icon' => 'fas fa-pencil']);
+});
