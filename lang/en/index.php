@@ -31,6 +31,7 @@ return [
     'home' => 'Home',
     'indonesia' => 'Indonesia',
     'latest_article' => 'Latest Article',
+    'article' => 'Article',
     'learn_more' => 'Learn More',
     'menu' => 'Menu',
     'next' => 'Next',

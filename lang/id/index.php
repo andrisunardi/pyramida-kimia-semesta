@@ -31,6 +31,7 @@ return [
     'home' => 'Beranda',
     'indonesia' => 'Indonesia',
     'latest_article' => 'Artikel Terbaru',
+    'article' => 'Artikel',
     'learn_more' => 'Pelajari Lebih Lanjut',
     'menu' => 'Menu',
     'next' => 'Selanjutnya',

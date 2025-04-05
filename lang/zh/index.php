@@ -31,6 +31,7 @@ return [
     'home' => '家',
     'indonesia' => '印度尼西亚',
     'latest_article' => '最新文章',
+    'article' => '文章',
     'learn_more' => '了解更多',
     'menu' => '菜单',
     'next' => '下一个',
