@@ -34,8 +34,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $translate_answer
- * @property-read mixed $translate_question
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  * @property-read \App\Models\User|null $updatedBy
  *
  * @method static Builder<static>|History active()
@@ -131,7 +131,7 @@ class History extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function getTranslateQuestionAttribute()
+    public function getTranslateNameAttribute()
     {
         $locale = App::getLocale();
         $language = [
@@ -143,7 +143,7 @@ class History extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateAnswerAttribute()
+    public function getTranslateDescriptionAttribute()
     {
         $locale = App::getLocale();
         $language = [

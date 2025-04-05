@@ -56,6 +56,24 @@ Breadcrumbs::for('about', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.about'), route('about'), ['icon' => 'fas fa-building']);
 });
 
+// HISTORY
+Breadcrumbs::for('history', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.history'), route('history'), ['icon' => 'fas fa-scroll']);
+});
+
+// RESOURCE
+Breadcrumbs::for('resource', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.resource'), route('resource'), ['icon' => 'fas fa-book']);
+});
+
+// TESTIMONY
+Breadcrumbs::for('testimony', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.testimony'), route('testimony'), ['icon' => 'fas fa-comments']);
+});
+
 // PRODUCT
 Breadcrumbs::for('product.index', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
@@ -88,18 +106,6 @@ Breadcrumbs::for('gallery', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('faq', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push(trans('index.faq'), route('faq'), ['icon' => 'fas fa-question']);
-});
-
-// RESOURCE
-Breadcrumbs::for('resource', function (BreadcrumbTrail $trail) {
-    $trail->parent('index');
-    $trail->push(trans('index.resource'), route('resource'), ['icon' => 'fas fa-book']);
-});
-
-// TESTIMONY
-Breadcrumbs::for('testimony', function (BreadcrumbTrail $trail) {
-    $trail->parent('index');
-    $trail->push(trans('index.testimony'), route('testimony'), ['icon' => 'fas fa-comments']);
 });
 
 // CONTACT

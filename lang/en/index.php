@@ -74,4 +74,6 @@ return [
     'your_name' => 'Your Name',
     'your_phone' => 'Your Phone',
     'other_articles' => 'Other Articles',
+    'history' => 'History',
+    'our_history' => 'Our History',
 ];

@@ -7,6 +7,9 @@
                     <li class="{{ Route::is('about') ? 'current' : null }}">
                         <x-components::link :href="route('about')" :text="trans('index.about')" />
                     </li>
+                    <li class="{{ Route::is('history') ? 'current' : null }}">
+                        <x-components::link :href="route('history')" :text="trans('index.history')" />
+                    </li>
                     <li class="{{ Route::is('resource') ? 'current' : null }}">
                         <x-components::link :href="route('resource')" :text="trans('index.resource')" />
                     </li>

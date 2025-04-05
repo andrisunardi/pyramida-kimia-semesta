@@ -317,8 +317,8 @@ namespace App\Models{
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read mixed $translate_answer
- * @property-read mixed $translate_question
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  * @property-read \App\Models\User|null $updatedBy
  * @method static \Illuminate\Database\Eloquent\Builder<static>|History active()
  * @method static \Database\Factories\HistoryFactory factory($count = null, $state = [])

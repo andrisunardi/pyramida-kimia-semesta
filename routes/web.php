@@ -7,6 +7,7 @@ use App\Livewire\Article\ArticleViewPage;
 use App\Livewire\Contact\ContactPage;
 use App\Livewire\Faq\FaqPage;
 use App\Livewire\Gallery\GalleryPage;
+use App\Livewire\History\HistoryPage;
 use App\Livewire\Home\HomePage;
 use App\Livewire\Product\ProductCategoryPage;
 use App\Livewire\Product\ProductPage;
@@ -27,6 +28,9 @@ Route::any('locale/{locale}', function ($locale) {
 Route::group(['middleware' => [Localization::class]], function () {
     Route::any('', HomePage::class)->name('index');
     Route::any('about', AboutPage::class)->name('about');
+    Route::any('history', HistoryPage::class)->name('history');
+    Route::any('resource', ResourcePage::class)->name('resource');
+    Route::any('testimony', TestimonyPage::class)->name('testimony');
 
     Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
         Route::any('', ProductPage::class)->name('index');
@@ -41,7 +45,5 @@ Route::group(['middleware' => [Localization::class]], function () {
 
     Route::any('gallery', GalleryPage::class)->name('gallery');
     Route::any('faq', FaqPage::class)->name('faq');
-    Route::any('resource', ResourcePage::class)->name('resource');
-    Route::any('testimony', TestimonyPage::class)->name('testimony');
     Route::any('contact', ContactPage::class)->name('contact');
 });

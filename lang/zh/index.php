@@ -74,4 +74,6 @@ return [
     'your_name' => '您的名字',
     'your_phone' => '你的电话',
     'other_articles' => '其他文章',
+    'history' => '历史',
+    'our_history' => '我们的历史',
 ];

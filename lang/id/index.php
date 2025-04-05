@@ -74,4 +74,6 @@ return [
     'your_name' => 'Nama Anda',
     'your_phone' => 'Telepon Anda',
     'other_articles' => 'Artikel Lainnya',
+    'history' => 'Sejarah',
+    'our_history' => 'Sejarah Kami',
 ];
