@@ -10,22 +10,22 @@ use Livewire\Form;
 class ContactForm extends Form
 {
     #[Validate('required|string|min:1|max:50')]
-    public string $name;
+    public string $name = '';
 
     #[Validate('required|string|min:1|max:50')]
-    public string $company;
+    public string $company = '';
 
     #[Validate('required|email:rfc,dns|regex:/^\S*$/u|min:1|max:50')]
-    public string $email;
+    public string $email = '';
 
     #[Validate('required|string|min:1|max:15')]
-    public string $phone;
+    public string $phone = '';
 
     #[Validate('required|string|min:1|max:100')]
-    public string $subject;
+    public string $subject = '';
 
     #[Validate('required|string|min:1|max:1000')]
-    public string $message;
+    public string $message = '';
 
     public function set(): void
     {

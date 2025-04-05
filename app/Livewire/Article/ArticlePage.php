@@ -5,12 +5,19 @@ namespace App\Livewire\Article;
 use App\Livewire\Component;
 use App\Services\ArticleService;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
 
 class ArticlePage extends Component
 {
     #[Url(except: '')]
     public string $search = '';
+
+    #[On('searchChanged')]
+    public function handleSearchChanged(string $search)
+    {
+        $this->search = $search;
+    }
 
     public function getArticles(): object
     {
@@ -21,11 +28,6 @@ class ArticlePage extends Component
             sortBy: 'asc',
             paginate: false,
         );
-    }
-
-    public function submit(): void
-    {
-        $this->getArticles();
     }
 
     public function render(): View
