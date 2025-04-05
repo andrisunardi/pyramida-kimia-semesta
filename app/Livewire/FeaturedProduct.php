@@ -3,10 +3,11 @@
 namespace App\Livewire;
 
 use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
 
 class FeaturedProduct extends Component
 {
-    public function getProduct()
+    public function getProduct(): object
     {
         return (new ProductService)->index(
             isActive: [true],
@@ -15,7 +16,7 @@ class FeaturedProduct extends Component
         );
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.featured-product', [
             'product' => $this->getProduct(),

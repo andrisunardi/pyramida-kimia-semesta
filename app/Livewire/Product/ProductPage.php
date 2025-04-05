@@ -5,10 +5,11 @@ namespace App\Livewire\Product;
 use App\Livewire\Component;
 use App\Services\ProductCategoryService;
 use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
 
 class ProductPage extends Component
 {
-    public function getProductCategories()
+    public function getProductCategories(): object
     {
         $productCategories = (new ProductCategoryService)->index(
             isActive: [true],
@@ -23,7 +24,7 @@ class ProductPage extends Component
         return $productCategories;
     }
 
-    public function getProducts()
+    public function getProducts(): object
     {
         $products = (new ProductService)->index(
             isActive: [true],
@@ -37,7 +38,7 @@ class ProductPage extends Component
         return $products;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.product.index', [
             'productCategories' => $this->getProductCategories(),

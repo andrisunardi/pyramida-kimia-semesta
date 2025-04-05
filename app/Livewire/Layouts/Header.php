@@ -4,10 +4,11 @@ namespace App\Livewire\Layouts;
 
 use App\Livewire\Component;
 use App\Services\ProductCategoryService;
+use Illuminate\Contracts\View\View;
 
 class Header extends Component
 {
-    public function getProductCategories()
+    public function getProductCategories(): object
     {
         $productCategories = (new ProductCategoryService)->index(
             isActive: [true],
@@ -21,7 +22,7 @@ class Header extends Component
         return $productCategories;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.layouts.header', [
             'productCategories' => $this->getProductCategories(),

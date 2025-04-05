@@ -5,10 +5,11 @@ namespace App\Livewire\Layouts;
 use App\Livewire\Component;
 use App\Services\ProductCategoryService;
 use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
 
 class Footer extends Component
 {
-    public function getProductCategories()
+    public function getProductCategories(): object
     {
         return (new ProductCategoryService)->index(
             isActive: [true],
@@ -20,7 +21,7 @@ class Footer extends Component
         );
     }
 
-    public function getProducts()
+    public function getProducts(): object
     {
         return (new ProductService)->index(
             isActive: [true],
@@ -33,7 +34,7 @@ class Footer extends Component
         );
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.layouts.footer', [
             'productCategories' => $this->getProductCategories(),

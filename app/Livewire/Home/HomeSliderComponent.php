@@ -4,10 +4,11 @@ namespace App\Livewire\Home;
 
 use App\Livewire\Component;
 use App\Services\SliderService;
+use Illuminate\Contracts\View\View;
 
 class HomeSliderComponent extends Component
 {
-    public function getSliders()
+    public function getSliders(): object
     {
         return (new SliderService)->index(
             isActive: [true],
@@ -16,7 +17,7 @@ class HomeSliderComponent extends Component
         );
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.home.slider', [
             'sliders' => $this->getSliders(),

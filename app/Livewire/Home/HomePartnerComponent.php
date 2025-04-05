@@ -4,10 +4,11 @@ namespace App\Livewire\Home;
 
 use App\Livewire\Component;
 use App\Services\PartnerService;
+use Illuminate\Contracts\View\View;
 
 class HomePartnerComponent extends Component
 {
-    public function getPartners()
+    public function getPartners(): object
     {
         return (new PartnerService)->index(
             isActive: [true],
@@ -16,7 +17,7 @@ class HomePartnerComponent extends Component
         );
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.home.partner', [
             'partners' => $this->getPartners(),

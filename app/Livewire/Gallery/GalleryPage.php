@@ -5,10 +5,11 @@ namespace App\Livewire\Gallery;
 use App\Livewire\Component;
 use App\Services\GalleryCategoryService;
 use App\Services\GalleryService;
+use Illuminate\Contracts\View\View;
 
 class GalleryPage extends Component
 {
-    public function getGalleryCategories()
+    public function getGalleryCategories(): object
     {
         $galleryCategories = (new GalleryCategoryService)->index(
             isActive: [true],
@@ -22,7 +23,7 @@ class GalleryPage extends Component
         return $galleryCategories;
     }
 
-    public function getGalleries()
+    public function getGalleries(): object
     {
         $galleries = (new GalleryService)->index(
             isActive: [true],
@@ -36,7 +37,7 @@ class GalleryPage extends Component
         return $galleries;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.gallery.index', [
             'galleryCategories' => $this->getGalleryCategories(),

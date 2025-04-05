@@ -4,10 +4,11 @@ namespace App\Livewire\Resource;
 
 use App\Livewire\Component;
 use App\Services\ProductCategoryService;
+use Illuminate\Contracts\View\View;
 
 class ResourcePage extends Component
 {
-    public function getProductCategories()
+    public function getProductCategories(): object
     {
         $productCategories = (new ProductCategoryService)->index(
             orderBy: 'name',
@@ -21,7 +22,7 @@ class ResourcePage extends Component
         return $productCategories;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.resource.index', [
             'productCategories' => $this->getProductCategories(),

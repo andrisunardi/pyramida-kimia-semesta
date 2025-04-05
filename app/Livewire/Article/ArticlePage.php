@@ -3,9 +3,9 @@
 namespace App\Livewire\Article;
 
 use App\Livewire\Component;
-use Livewire\Attributes\Url;
 use App\Services\ArticleService;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Url;
 
 class ArticlePage extends Component
 {

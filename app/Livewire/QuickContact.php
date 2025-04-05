@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Livewire\Forms\ContactForm;
 use App\Mail\ContactMail;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
@@ -11,12 +12,12 @@ class QuickContact extends Component
 {
     public ContactForm $form;
 
-    public function mount()
+    public function mount(): void
     {
         $this->form->set();
     }
 
-    public function submit()
+    public function submit(): void
     {
         $contact = $this->form->submit();
 
@@ -29,7 +30,7 @@ class QuickContact extends Component
         ]);
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.quick-contact');
     }

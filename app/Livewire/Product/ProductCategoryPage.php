@@ -4,6 +4,7 @@ namespace App\Livewire\Product;
 
 use App\Livewire\Component;
 use App\Models\ProductCategory;
+use Illuminate\Contracts\View\View;
 
 class ProductCategoryPage extends Component
 {
@@ -24,7 +25,7 @@ class ProductCategoryPage extends Component
         }
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.product.category');
     }
