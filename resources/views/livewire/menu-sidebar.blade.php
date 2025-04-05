@@ -4,8 +4,11 @@
             <li class="list-heading">
                 <span>{{ trans('index.about') }} {{ trans('index.company') }}</span>
                 <ul>
-                    <li>
+                    <li class="{{ Route::is('about') ? 'current' : null }}">
                         <x-components::link :href="route('about')" :text="trans('index.about')" />
+                    </li>
+                    <li class="{{ Route::is('resource') ? 'current' : null }}">
+                        <x-components::link :href="route('resource')" :text="trans('index.resource')" />
                     </li>
                 </ul>
             </li>
