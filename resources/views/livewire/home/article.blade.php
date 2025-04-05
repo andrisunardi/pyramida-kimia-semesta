@@ -25,7 +25,9 @@
                                 <p>
                                     {{ Str::limit($article->translate_description, 100) }}
                                 </p>
-                                <x-components::link :class="'btn btn-alt'" :href="route('article.view', ['slug' => $article->slug])" :text="trans('index.read_more')" />
+                                <x-components::link :class="'btn btn-alt'" :href="route('article.view', [
+                                    'slug' => $article->slug,
+                                ])" :text="trans('index.read_more')" />
                             </div>
                         </div>
                     @endforeach
