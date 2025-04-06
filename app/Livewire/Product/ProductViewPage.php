@@ -2,8 +2,9 @@
 
 namespace App\Livewire\Product;
 
-use App\Livewire\Component;
 use App\Models\Product;
+use App\Livewire\Component;
+use App\Services\ProductService;
 
 class ProductViewPage extends Component
 {
@@ -24,8 +25,25 @@ class ProductViewPage extends Component
         }
     }
 
+    public function getOtherProducts(): object
+    {
+        $otherProducts =  (new ProductService)->index(
+            productCategoryId: $this->product->product_category_id,
+            isActive: [true],
+            random: true,
+            limit: 2,
+            paginate: false,
+        )->reject(fn ($product) => $product->id == $this->product->id);
+
+        $otherProducts->loadMissing(['category']);
+
+        return $otherProducts;
+    }
+
     public function render()
     {
-        return view('livewire.product.view');
+        return view('livewire.product.view', [
+            'otherProducts' => $this->getOtherProducts(),
+        ]);
     }
 }

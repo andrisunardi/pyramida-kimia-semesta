@@ -85,4 +85,5 @@ return [
     'find_opportunities' => '寻找机会',
     'our_team' => '我们的团队',
     'team' => '团队',
+    'other_product' => '其他产品',
 ];

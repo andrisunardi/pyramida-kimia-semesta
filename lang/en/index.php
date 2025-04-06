@@ -85,4 +85,5 @@ return [
     'apply_online' => 'Apply Online',
     'our_team' => 'Our Team',
     'team' => 'Team',
+    'other_product' => 'Other Product',
 ];
