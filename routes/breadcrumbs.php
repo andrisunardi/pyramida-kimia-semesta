@@ -68,6 +68,12 @@ Breadcrumbs::for('resource', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.resource'), route('resource'), ['icon' => 'fas fa-book']);
 });
 
+// TEAM
+Breadcrumbs::for('team', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.team'), route('team'), ['icon' => 'fas fa-user-circle']);
+});
+
 // PARTNER
 Breadcrumbs::for('partner', function (BreadcrumbTrail $trail) {
     $trail->parent('index');

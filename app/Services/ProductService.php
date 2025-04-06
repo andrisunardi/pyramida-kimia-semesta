@@ -24,8 +24,19 @@ class ProductService
         $products = Product::query()
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('name_id', 'LIKE', "%{$search}%")
+                    ->orWhere('name_zh', 'LIKE', "%{$search}%")
                     ->orWhere('description', 'LIKE', "%{$search}%")
-                    ->orWhereRelation('category', 'name', 'LIKE', "%{$search}%");
+                    ->orWhere('description_id', 'LIKE', "%{$search}%")
+                    ->orWhere('description_zh', 'LIKE', "%{$search}%")
+                    ->orWhere('slug', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'name', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'name_id', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'name_zh', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'description', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'description_id', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'description_zh', 'LIKE', "%{$search}%")
+                    ->orWhereRelation('category', 'slug', 'LIKE', "%{$search}%");
             }))
             ->when($productCategoryId, fn ($q) => $q->where('product_category_id', $productCategoryId))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))

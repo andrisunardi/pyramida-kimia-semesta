@@ -83,4 +83,6 @@ return [
     'career' => 'Karir',
     'apply_online' => 'Daftar Online',
     'find_opportunities' => 'Temukan Peluang',
+    'our_team' => 'Tim Kami',
+    'team' => 'Tim',
 ];

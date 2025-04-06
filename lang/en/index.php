@@ -83,4 +83,6 @@ return [
     'career' => 'Career',
     'find_opportunities' => 'Find Opportunities',
     'apply_online' => 'Apply Online',
+    'our_team' => 'Our Team',
+    'team' => 'Team',
 ];

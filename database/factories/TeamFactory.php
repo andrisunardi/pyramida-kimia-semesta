@@ -13,6 +13,9 @@ class TeamFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'job' => fake()->jobTitle(),
+            'description' => fake()->paragraph(),
+            'description_id' => fake()->paragraph(),
+            'description_zh' => fake()->paragraph(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];

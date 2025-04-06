@@ -13,11 +13,14 @@
                     <li class="{{ Route::is('resource') ? 'current' : null }}">
                         <x-components::link :href="route('resource')" :text="trans('index.resource')" />
                     </li>
-                    <li class="{{ Route::is('testimony') ? 'current' : null }}">
-                        <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
+                    <li class="{{ Route::is('team') ? 'current' : null }}">
+                        <x-components::link :href="route('team')" :text="trans('index.team')" />
                     </li>
                     <li class="{{ Route::is('partner') ? 'current' : null }}">
                         <x-components::link :href="route('partner')" :text="trans('index.partner')" />
+                    </li>
+                    <li class="{{ Route::is('testimony') ? 'current' : null }}">
+                        <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
                     </li>
                 </ul>
             </li>

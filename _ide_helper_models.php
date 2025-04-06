@@ -731,26 +731,33 @@ namespace App\Models{
  * @property-read \App\Models\User|null $deletedBy
  * @property-read string $image_url
  * @property-read \App\Models\User|null $updatedBy
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team active()
+ * @method static Builder<static>|Team active()
  * @method static \Database\Factories\TeamFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereJob($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team withoutTrashed()
+ * @method static Builder<static>|Team inactive()
+ * @method static Builder<static>|Team newModelQuery()
+ * @method static Builder<static>|Team newQuery()
+ * @method static Builder<static>|Team onlyTrashed()
+ * @method static Builder<static>|Team query()
+ * @method static Builder<static>|Team whereCreatedAt($value)
+ * @method static Builder<static>|Team whereCreatedBy($value)
+ * @method static Builder<static>|Team whereDeletedAt($value)
+ * @method static Builder<static>|Team whereDeletedBy($value)
+ * @method static Builder<static>|Team whereId($value)
+ * @method static Builder<static>|Team whereImage($value)
+ * @method static Builder<static>|Team whereIsActive($value)
+ * @method static Builder<static>|Team whereJob($value)
+ * @method static Builder<static>|Team whereName($value)
+ * @method static Builder<static>|Team whereUpdatedAt($value)
+ * @method static Builder<static>|Team whereUpdatedBy($value)
+ * @method static Builder<static>|Team withTrashed()
+ * @method static Builder<static>|Team withoutTrashed()
+ * @mixin \Eloquent
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescriptionZh($value)
  */
 	class Team extends \Eloquent {}
 }

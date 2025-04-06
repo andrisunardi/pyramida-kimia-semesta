@@ -55,6 +55,14 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Team withTrashed()
  * @method static Builder<static>|Team withoutTrashed()
  *
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ *
+ * @method static Builder<static>|Team whereDescription($value)
+ * @method static Builder<static>|Team whereDescriptionId($value)
+ * @method static Builder<static>|Team whereDescriptionZh($value)
+ *
  * @mixin \Eloquent
  */
 class Team extends Model

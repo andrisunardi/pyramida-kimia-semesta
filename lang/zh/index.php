@@ -83,4 +83,6 @@ return [
     'career' => '职业',
     'apply_online' => '网上申请',
     'find_opportunities' => '寻找机会',
+    'our_team' => '我们的团队',
+    'team' => '团队',
 ];
