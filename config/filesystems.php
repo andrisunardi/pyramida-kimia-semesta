@@ -2,31 +2,7 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Filesystem Disk
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify the default filesystem disk that should be used
-    | by the framework. The "local" disk, as well as a variety of cloud
-    | based disks are available to your application for file storage.
-    |
-    */
-
     'default' => env('FILESYSTEM_DISK', 'local'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Filesystem Disks
-    |--------------------------------------------------------------------------
-    |
-    | Below you may configure as many filesystem disks as necessary, and you
-    | may even configure multiple disks for the same driver. Examples for
-    | most supported storage drivers are configured here for reference.
-    |
-    | Supported drivers: "local", "ftp", "sftp", "s3"
-    |
-    */
 
     'disks' => [
 
@@ -60,18 +36,48 @@ return [
             'report' => false,
         ],
 
-    ],
+        'azure' => [
+            'driver' => 'azure-storage-blob',
+            'connection_string' => env('AZURE_STORAGE_CONNECTION_STRING'),
+            'container' => env('AZURE_STORAGE_CONTAINER'),
+        ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Symbolic Links
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the symbolic links that will be created when the
-    | `storage:link` Artisan command is executed. The array keys should be
-    | the locations of the links and the values should be their targets.
-    |
-    */
+        // 'azure' => [
+        //     'driver' => 'azure',
+        //     'name' => env('AZURE_STORAGE_NAME'),
+        //     'key' => env('AZURE_STORAGE_KEY'),
+        //     'container' => env('AZURE_STORAGE_CONTAINER'),
+        //     'url' => env('AZURE_STORAGE_URL'),
+        //     'prefix' => null,
+        //     'connection_string' => env('AZURE_STORAGE_CONNECTION_STRING'),
+        //     'endpoint' => env('AZURE_STORAGE_ENDPOINT'),
+        // ],
+
+        'files' => [
+            'driver' => 'local',
+            'root' => public_path('files'),
+            // 'root' => env('APP_ENV') == 'production' ? base_path('../public_html/files') : public_path('files'),
+            'url' => env('APP_URL').'/files',
+            'visibility' => 'public',
+        ],
+
+        'images' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            // 'root' => env('APP_ENV') == 'production' ? base_path('../public_html/images') : public_path('images'),
+            'url' => env('APP_URL').'/images',
+            'visibility' => 'public',
+        ],
+
+        'videos' => [
+            'driver' => 'local',
+            'root' => public_path('videos'),
+            // 'root' => env('APP_ENV') == 'production' ? base_path('../public_html/videos') : public_path('videos'),
+            'url' => env('APP_URL').'/videos',
+            'visibility' => 'public',
+        ],
+
+    ],
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
