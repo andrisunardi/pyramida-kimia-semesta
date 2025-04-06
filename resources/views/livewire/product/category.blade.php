@@ -58,14 +58,18 @@
                                                 'slug' => $product->slug,
                                             ])" :text="trans('index.view')" />
                                         </span>
-                                        <span>
-                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileCoa()"
-                                                :text="'COA'" />
-                                        </span>
-                                        <span>
-                                            <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileMsds()"
-                                                :text="'MSDS'" />
-                                        </span>
+                                        @if ($product->checkFileCoa())
+                                            <span>
+                                                <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileCoa()"
+                                                    :text="'COA'" />
+                                            </span>
+                                        @endif
+                                        @if ($product->checkFileMsds())
+                                            <span>
+                                                <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileMsds()"
+                                                    :text="'MSDS'" />
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                             </li>
