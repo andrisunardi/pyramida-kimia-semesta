@@ -145,6 +145,31 @@ namespace App\Models{
 /**
  * 
  *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit active()
+ * @method static \Database\Factories\CareerBenefitFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit withoutTrashed()
+ */
+	class CareerBenefit extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $name
  * @property string $company

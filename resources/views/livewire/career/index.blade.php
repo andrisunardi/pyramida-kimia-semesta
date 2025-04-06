@@ -22,10 +22,26 @@
                         </h2>
                         <p>
                             @if (App::isLocale('en'))
+                                Join a team that drives innovation in the chemical and petrochemical industry. At PT.
+                                Pyramida Kimia Semesta, we believe that our people are our greatest asset. With over 20
+                                years of experience and a strong presence across Indonesia, we are always looking for
+                                passionate, skilled, and dedicated individuals to grow with us. Whether you’re just
+                                starting your career or looking to take the next step, explore opportunities to be part
+                                of a company that supports industries shaping the future—like solar energy,
+                                semiconductors, and advanced battery technologies.
                             @endif
                             @if (App::isLocale('id'))
+                                Bergabunglah dengan tim yang mendorong inovasi dalam industri kimia dan petrokimia. Di
+                                PT. Pyramida Kimia Semesta, kami percaya bahwa karyawan kami adalah aset terbesar kami.
+                                Dengan pengalaman lebih dari 20 tahun dan kehadiran yang kuat di seluruh Indonesia, kami
+                                selalu mencari individu yang bersemangat, terampil, dan berdedikasi untuk tumbuh bersama
+                                kami. Baik Anda baru memulai karier atau ingin melangkah ke tahap berikutnya, jelajahi
+                                peluang untuk menjadi bagian dari perusahaan yang mendukung industri yang membentuk masa
+                                depan—seperti energi surya, semikonduktor, dan teknologi baterai canggih.
                             @endif
                             @if (App::isLocale('zh'))
+                                加入一支推动化学和石化行业创新的团队。在 PT. Pyramida Kimia Semesta，我们相信员工是我们最大的财富。凭借 20
+                                多年的经验和在印度尼西亚的强大影响力，我们一直在寻找充满热情、技术娴熟、敬业的人才与我们一起成长。无论您是刚刚开始职业生涯还是希望迈出下一步，都可以探索加入一家支持塑造未来的行业的公司的机会，例如太阳能、半导体和先进的电池技术。
                             @endif
                         </p>
                         <p>

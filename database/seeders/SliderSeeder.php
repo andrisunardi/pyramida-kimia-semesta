@@ -11,7 +11,7 @@ class SliderSeeder extends Seeder
     {
         Slider::create([
             'name' => 'Welcome To Pyramida Kimia Semesta',
-            'name_id' => 'Welcome To Pyramida Kimia Semesta',
+            'name_id' => 'Selamat Datang Di Pyramida Kimia Semesta',
             'name_zh' => '欢迎来到金字塔基米亚塞梅斯塔',
             'description' => 'Importer and Stockist of Industrial and Food Chemical',
             'description_id' => 'Importir dan Distributor Bahan Kimia Industri dan Makanan',

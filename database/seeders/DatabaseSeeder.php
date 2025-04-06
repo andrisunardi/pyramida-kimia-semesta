@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             FaqSeeder::class,
             HistorySeeder::class,
             CareerSeeder::class,
+            CareerBenefitSeeder::class,
             ContactSeeder::class,
         ]);
     }
