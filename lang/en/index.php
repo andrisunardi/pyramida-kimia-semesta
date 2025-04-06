@@ -90,6 +90,8 @@ return [
     'our_mission' => 'Our Mission',
     'other_product' => 'Other Product',
     'login' => 'Login',
+    'login_failed' => 'Login Failed',
+    'username_or_password_is_invalid' => 'Username or Password is Invalid',
     'stay_login' => 'Stay Login',
     'forgot_password' => 'Forgot Password',
 ];

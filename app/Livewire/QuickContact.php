@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Livewire\Forms\ContactForm;
+use App\Livewire\Forms\Contact\ContactForm;
 use App\Mail\ContactMail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\App;

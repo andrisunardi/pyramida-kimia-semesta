@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Forms;
+namespace App\Livewire\Forms\Contact;
 
 use App\Models\Contact;
 use App\Services\ContactService;

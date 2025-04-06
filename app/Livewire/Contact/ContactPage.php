@@ -3,7 +3,7 @@
 namespace App\Livewire\Contact;
 
 use App\Livewire\Component;
-use App\Livewire\Forms\ContactForm;
+use App\Livewire\Forms\Contact\ContactForm;
 use App\Mail\ContactMail;
 use App\Services\OfficeService;
 use Illuminate\Contracts\View\View;

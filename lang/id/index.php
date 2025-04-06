@@ -92,4 +92,6 @@ return [
     'stay_login' => 'Tetap Masuk',
     'forgot_password' => 'Lupa Kata Sandi',
     'other_product' => 'Produk Lainnya',
+    'login_failed' => 'Gagal Masuk',
+    'username_or_password_is_invalid' => 'Username or Password is Invalid',
 ];

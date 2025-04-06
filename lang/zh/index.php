@@ -92,4 +92,6 @@ return [
     'login' => '登录',
     'stay_login' => '保持登录',
     'forgot_password' => '忘记密码',
+    'login_failed' => '登录失败',
+    'username_or_password_is_invalid' => '用户名或密码无效',
 ];

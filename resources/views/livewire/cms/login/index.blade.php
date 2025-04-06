@@ -23,16 +23,17 @@
                                 <x-components::form.alert />
 
                                 <div class="mb-3">
-                                    <x-components::form.username :maxlength="50" :required="true" :autocapitalize="'none'"
-                                        :autofocus="true" />
+                                    <x-components::form.username :key="'form.username'" :maxlength="50" :required="true"
+                                        :autocapitalize="'none'" :autofocus="true" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <x-components::form.password :maxlength="50" :required="true" :autocapitalize="'none'" />
+                                    <x-components::form.password :key="'form.password'" :maxlength="50" :required="true"
+                                        :autocapitalize="'none'" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <x-components::form.boolean :key="'remember'" :title="trans('validation.attributes.remember')" :type="'checkbox'"
+                                    <x-components::form.boolean :key="'form.remember'" :title="trans('validation.attributes.remember')" :type="'checkbox'"
                                         :text="trans('index.stay_login')" :second="false" :required="false" :label="false" />
                                 </div>
 
