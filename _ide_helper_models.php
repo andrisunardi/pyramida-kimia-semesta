@@ -162,7 +162,6 @@ namespace App\Models{
  * @method static Builder<static>|CareerBenefit query()
  * @method static Builder<static>|CareerBenefit withTrashed()
  * @method static Builder<static>|CareerBenefit withoutTrashed()
- * @mixin \Eloquent
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -178,21 +177,22 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDeletedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescriptionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescriptionZh($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereIsActive($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereNameId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereNameZh($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereUpdatedBy($value)
+ * @method static Builder<static>|CareerBenefit whereCreatedAt($value)
+ * @method static Builder<static>|CareerBenefit whereCreatedBy($value)
+ * @method static Builder<static>|CareerBenefit whereDeletedAt($value)
+ * @method static Builder<static>|CareerBenefit whereDeletedBy($value)
+ * @method static Builder<static>|CareerBenefit whereDescription($value)
+ * @method static Builder<static>|CareerBenefit whereDescriptionId($value)
+ * @method static Builder<static>|CareerBenefit whereDescriptionZh($value)
+ * @method static Builder<static>|CareerBenefit whereId($value)
+ * @method static Builder<static>|CareerBenefit whereImage($value)
+ * @method static Builder<static>|CareerBenefit whereIsActive($value)
+ * @method static Builder<static>|CareerBenefit whereName($value)
+ * @method static Builder<static>|CareerBenefit whereNameId($value)
+ * @method static Builder<static>|CareerBenefit whereNameZh($value)
+ * @method static Builder<static>|CareerBenefit whereUpdatedAt($value)
+ * @method static Builder<static>|CareerBenefit whereUpdatedBy($value)
+ * @mixin \Eloquent
  */
 	class CareerBenefit extends \Eloquent {}
 }
@@ -473,6 +473,12 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $link
  * @property string|null $image
  * @property bool $is_active
  * @property int|null $created_by
@@ -486,28 +492,34 @@ namespace App\Models{
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
  * @property-read string $image_url
- * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  * @property-read \App\Models\User|null $updatedBy
- * @method static Builder<static>|Partner active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner active()
  * @method static \Database\Factories\PartnerFactory factory($count = null, $state = [])
- * @method static Builder<static>|Partner inactive()
- * @method static Builder<static>|Partner newModelQuery()
- * @method static Builder<static>|Partner newQuery()
- * @method static Builder<static>|Partner onlyTrashed()
- * @method static Builder<static>|Partner query()
- * @method static Builder<static>|Partner whereCreatedAt($value)
- * @method static Builder<static>|Partner whereCreatedBy($value)
- * @method static Builder<static>|Partner whereDeletedAt($value)
- * @method static Builder<static>|Partner whereDeletedBy($value)
- * @method static Builder<static>|Partner whereId($value)
- * @method static Builder<static>|Partner whereImage($value)
- * @method static Builder<static>|Partner whereIsActive($value)
- * @method static Builder<static>|Partner whereName($value)
- * @method static Builder<static>|Partner whereUpdatedAt($value)
- * @method static Builder<static>|Partner whereUpdatedBy($value)
- * @method static Builder<static>|Partner withTrashed()
- * @method static Builder<static>|Partner withoutTrashed()
- * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Partner withoutTrashed()
  */
 	class Partner extends \Eloquent {}
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('location')->nullable();
             $table->text('location_id')->nullable();
             $table->text('location_zh')->nullable();
-            $table->text('link', 100)->nullable();
+            $table->string('link', 100)->nullable();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();

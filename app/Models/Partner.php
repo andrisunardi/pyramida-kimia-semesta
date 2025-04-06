@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
@@ -18,6 +19,12 @@ use Spatie\Activitylog\Traits\LogsActivity;
 /**
  * @property int $id
  * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $link
  * @property string|null $image
  * @property bool $is_active
  * @property int|null $created_by
@@ -31,7 +38,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
  * @property-read string $image_url
- * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read mixed $translate_description
+ * @property-read mixed $translate_name
  * @property-read \App\Models\User|null $updatedBy
  *
  * @method static Builder<static>|Partner active()
@@ -45,10 +53,16 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Partner whereCreatedBy($value)
  * @method static Builder<static>|Partner whereDeletedAt($value)
  * @method static Builder<static>|Partner whereDeletedBy($value)
+ * @method static Builder<static>|Partner whereDescription($value)
+ * @method static Builder<static>|Partner whereDescriptionId($value)
+ * @method static Builder<static>|Partner whereDescriptionZh($value)
  * @method static Builder<static>|Partner whereId($value)
  * @method static Builder<static>|Partner whereImage($value)
  * @method static Builder<static>|Partner whereIsActive($value)
+ * @method static Builder<static>|Partner whereLink($value)
  * @method static Builder<static>|Partner whereName($value)
+ * @method static Builder<static>|Partner whereNameId($value)
+ * @method static Builder<static>|Partner whereNameZh($value)
  * @method static Builder<static>|Partner whereUpdatedAt($value)
  * @method static Builder<static>|Partner whereUpdatedBy($value)
  * @method static Builder<static>|Partner withTrashed()
@@ -64,6 +78,12 @@ class Partner extends Model
 
     public $fillable = [
         'name',
+        'name_id',
+        'name_zh',
+        'description',
+        'description_id',
+        'description_zh',
+        'link',
         'image',
         'is_active',
     ];
@@ -72,6 +92,12 @@ class Partner extends Model
     {
         return [
             'name' => 'string',
+            'name_id' => 'string',
+            'name_zh' => 'string',
+            'description' => 'string',
+            'description_id' => 'string',
+            'description_zh' => 'string',
+            'link' => 'string',
             'image' => 'string',
             'is_active' => 'boolean',
         ];
@@ -114,7 +140,7 @@ class Partner extends Model
 
     public function altImage(): string
     {
-        return trans('index.partner')." - {$this->name} - ".env('APP_TITLE');
+        return trans('index.partner')." - {$this->translate_name} - ".env('APP_TITLE');
     }
 
     public function checkImage(): bool
@@ -153,5 +179,29 @@ class Partner extends Model
         }
 
         return '';
+    }
+
+    public function getTranslateNameAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->name,
+            'id' => $this->name_id,
+            'zh' => $this->name_zh,
+        ];
+
+        return $language[$locale] ?? $this->name;
+    }
+
+    public function getTranslateDescriptionAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->description,
+            'id' => $this->description_id,
+            'zh' => $this->description_zh,
+        ];
+
+        return $language[$locale] ?? $this->description;
     }
 }
