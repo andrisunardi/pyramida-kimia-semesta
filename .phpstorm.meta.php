@@ -3827,7 +3827,7 @@ namespace PHPSTORM_META {
 'log-viewer.files.delete-multiple-files','log-viewer.logs','log-viewer.folders.download','log-viewer.files.download','log-viewer.index',
 'ignition.healthCheck','ignition.executeSolution','ignition.updateConfig',
 'locale','index','about','history','resource',
-'testimony','partner','product.index','product.category','product.view',
+'partner','testimony','product.index','product.category','product.view',
 'gallery','faq','career','article.index','article.view',
 'contact','enquire','storage.local',);
         registerArgumentsSet('views', 

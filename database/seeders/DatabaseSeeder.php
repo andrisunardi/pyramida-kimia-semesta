@@ -14,7 +14,14 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
 
             SliderSeeder::class,
+            HistorySeeder::class,
+            TeamSeeder::class,
+            PartnerSeeder::class,
             TestimonySeeder::class,
+            FaqSeeder::class,
+
+            CareerSeeder::class,
+            CareerBenefitSeeder::class,
 
             GalleryCategorySeeder::class,
             GallerySeeder::class,
@@ -23,11 +30,7 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
 
             ArticleSeeder::class,
-            PartnerSeeder::class,
-            FaqSeeder::class,
-            HistorySeeder::class,
-            CareerSeeder::class,
-            CareerBenefitSeeder::class,
+
             ContactSeeder::class,
         ]);
     }

@@ -33,8 +33,8 @@ Route::group(['middleware' => [Localization::class]], function () {
     Route::any('about', AboutPage::class)->name('about');
     Route::any('history', HistoryPage::class)->name('history');
     Route::any('resource', ResourcePage::class)->name('resource');
-    Route::any('testimony', TestimonyPage::class)->name('testimony');
     Route::any('partner', PartnerPage::class)->name('partner');
+    Route::any('testimony', TestimonyPage::class)->name('testimony');
 
     Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
         Route::any('', ProductPage::class)->name('index');

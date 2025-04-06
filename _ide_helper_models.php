@@ -716,6 +716,51 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $job
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team active()
+ * @method static \Database\Factories\TeamFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereJob($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team withoutTrashed()
+ */
+	class Team extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
  * @property string $company
  * @property string $message
  * @property bool $is_active

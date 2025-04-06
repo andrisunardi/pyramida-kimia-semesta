@@ -68,16 +68,16 @@ Breadcrumbs::for('resource', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.resource'), route('resource'), ['icon' => 'fas fa-book']);
 });
 
-// TESTIMONY
-Breadcrumbs::for('testimony', function (BreadcrumbTrail $trail) {
-    $trail->parent('index');
-    $trail->push(trans('index.testimony'), route('testimony'), ['icon' => 'fas fa-comments']);
-});
-
 // PARTNER
 Breadcrumbs::for('partner', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push(trans('index.partner'), route('partner'), ['icon' => 'fas fa-users']);
+});
+
+// TESTIMONY
+Breadcrumbs::for('testimony', function (BreadcrumbTrail $trail) {
+    $trail->parent('index');
+    $trail->push(trans('index.testimony'), route('testimony'), ['icon' => 'fas fa-comments']);
 });
 
 // PRODUCT
