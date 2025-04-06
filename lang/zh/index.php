@@ -82,4 +82,5 @@ return [
     'your_phone' => '你的电话',
     'career' => '职业',
     'apply_online' => '网上申请',
+    'find_opportunities' => '寻找机会',
 ];

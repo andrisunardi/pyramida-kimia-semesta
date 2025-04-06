@@ -35,14 +35,26 @@
                             @endif
                         </p>
                         <p>
-                            <a href="#" class="btn">Find Opportunities</a>
+                            <x-components::link :class="'btn'" :href="route('about')" :text="trans('index.find_opportunities')" />
                         </p>
                     </div>
 
                     <div class="col-md-4">
                         <div class="box-s4">
-                            <p>Creating new solutions that will make a real difference in the world</p>
-                            <p><a href="#" class="btn btn-light">Learn More</a></p>
+                            <p>
+                                @if (App::isLocale('en'))
+                                    Creating new solutions that will make a real difference in the world.
+                                @endif
+                                @if (App::isLocale('id'))
+                                    Menciptakan solusi baru yang akan membuat perbedaan nyata di dunia.
+                                @endif
+                                @if (App::isLocale('zh'))
+                                    创造能够真正改变世界的新解决方案。
+                                @endif
+                            </p>
+                            <p>
+                                <x-components::link :class="'btn btn-light'" :href="route('history')" :text="trans('index.learn_more')" />
+                            </p>
                         </div>
                     </div>
                 </div>

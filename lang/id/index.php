@@ -82,4 +82,5 @@ return [
     'your_phone' => 'Telepon Anda',
     'career' => 'Karir',
     'apply_online' => 'Daftar Online',
+    'find_opportunities' => 'Temukan Peluang',
 ];
