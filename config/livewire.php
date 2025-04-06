@@ -51,5 +51,5 @@ return [
 
     'inject_morph_markers' => true,
 
-    'pagination_theme' => 'bootstrap', // tailwind / bootstrap
+    'pagination_theme' => 'bootstrap',
 ];
