@@ -12,6 +12,13 @@ class PartnerFactory extends Factory
     {
         return [
             'name' => fake()->unique()->name(),
+            'name' => fake()->unique()->sentence(),
+            'name_id' => fake()->unique()->sentence(),
+            'name_zh' => fake()->unique()->sentence(),
+            'description' => fake()->paragraph(),
+            'description_id' => fake()->paragraph(),
+            'description_zh' => fake()->paragraph(),
+            'link' => fake()->url(),
             'image' => null,
             'is_active' => fake()->boolean(),
         ];
