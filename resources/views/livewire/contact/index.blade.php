@@ -160,11 +160,31 @@
             <div class="content row">
                 <div class="wide-sm center">
                     <h2>
-                        Our Office Locations
+                        @if (App::isLocale('en'))
+                            Our Office Locations
+                        @endif
+                        @if (App::isLocale('id'))
+                            Lokasi Kantor Kami
+                        @endif
+                        @if (App::isLocale('zh'))
+                            我们的办公地点
+                        @endif
                     </h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur to adipiscing elit sed dot eiusmod tempor incididunt
-                        labore et dolore magna aliqua. Veniam quis nostrud exercitation ullamco.
+                        @if (App::isLocale('en'))
+                            PT. Pyramida Kimia Semesta operates across multiple key regions in Indonesia, with office
+                            and distribution points strategically located in Tangerang, Sumatra, Batam, Semarang,
+                            Surabaya, Kalimantan, and Sulawesi to ensure efficient service and nationwide coverage.
+                        @endif
+                        @if (App::isLocale('id'))
+                            PT. Pyramida Kimia Semesta beroperasi di beberapa wilayah utama di Indonesia, dengan kantor
+                            dan titik distribusi berlokasi strategis di Tangerang, Sumatera, Batam, Semarang, Surabaya,
+                            Kalimantan, dan Sulawesi untuk memastikan layanan yang efisien dan jangkauan nasional.
+                        @endif
+                        @if (App::isLocale('zh'))
+                            PT。 Pyramida Kimia Semesta
+                            的业务遍及印度尼西亚多个主要地区，在坦格朗、苏门答腊、巴淡岛、三宝垄、泗水、加里曼丹和苏拉威西岛战略性地设有办事处和分销点，以确保高效的服务和全国范围的覆盖。
+                        @endif
                     </p>
                 </div>
                 <div class="gaps size-lg"></div>
@@ -181,7 +201,7 @@
                                         :text="$office->address" />
                                 </p>
                                 <p>
-                                    <span class="color-primary">Phone</span>
+                                    <span class="color-primary">{{ trans('index.phone') }}</span>
                                     <x-components::link.phone :icon="''" :value="$office->phone" />
                                 </p>
                             </div>

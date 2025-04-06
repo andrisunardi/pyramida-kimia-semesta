@@ -85,5 +85,8 @@ return [
     'apply_online' => 'Apply Online',
     'our_team' => 'Our Team',
     'team' => 'Team',
+    'vision_and_mission' => 'Vision And Mission',
+    'our_vision' => 'Our Vision',
+    'our_mission' => 'Our Mission',
     'other_product' => 'Other Product',
 ];

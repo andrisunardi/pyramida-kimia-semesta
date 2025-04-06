@@ -23,6 +23,7 @@
 
             <div class="form-group">
                 <div class="form-field">
+                    <label for="name">{{ trans('index.name') }} *</label>
                     <input wire:model="form.name" id="name" name="name" type="text"
                         placeholder="{{ trans('index.your_name') }} *" class="form-control" maxlength="50" required>
                 </div>
@@ -30,6 +31,7 @@
 
             <div class="form-group">
                 <div class="form-field">
+                    <label for="company">{{ trans('index.company') }} *</label>
                     <input wire:model="form.company" id="company" name="company" type="text"
                         placeholder="{{ trans('index.your_company') }} *" class="form-control" maxlength="50" required>
                 </div>
@@ -37,6 +39,7 @@
 
             <div class="form-group">
                 <div class="form-field">
+                    <label for="email">{{ trans('index.email') }} *</label>
                     <input wire:model="form.email" id="email" name="email" type="email"
                         placeholder="{{ trans('index.your_email') }} *" class="form-control" maxlength="50" required>
                 </div>
@@ -44,6 +47,7 @@
 
             <div class="form-group">
                 <div class="form-field form-m-bttm">
+                    <label for="phone">{{ trans('index.phone') }} *</label>
                     <input wire:model="form.phone" id="phone" name="phone" type="text"
                         placeholder="{{ trans('index.your_phone') }} *" class="form-control" maxlength="15" required>
                 </div>
@@ -51,6 +55,7 @@
 
             <div class="form-group">
                 <div class="form-field">
+                    <label for="subject">{{ trans('index.subject') }} *</label>
                     <input wire:model="form.subject" id="subject" name="subject" type="text"
                         placeholder="{{ trans('index.write_subject') }} *" class="form-control" maxlength="100"
                         required>
@@ -59,13 +64,12 @@
 
             <div class="form-group">
                 <div class="form-field">
+                    <label for="message">{{ trans('index.message') }} *</label>
                     <textarea wire:model="form.message" id="message" name="message" type="text"
                         placeholder="{{ trans('index.write_message') }} *" class="txtarea form-control" maxlength="1000" required>
                     </textarea>
                 </div>
             </div>
-
-            <input type="text" class="hidden" name="form-anti-honeypot" value="">
 
             <button wire:click="submit" type="submit" class="btn btn-alt sb-h">
                 {{ trans('index.submit') }}

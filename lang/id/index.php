@@ -85,5 +85,8 @@ return [
     'find_opportunities' => 'Temukan Peluang',
     'our_team' => 'Tim Kami',
     'team' => 'Tim',
+    'vision_and_mission' => 'Visi dan Misi',
+    'our_vision' => 'Visi Kami',
+    'our_mission' => 'Misi Kami',
     'other_product' => 'Produk Lainnya',
 ];
