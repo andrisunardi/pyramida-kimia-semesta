@@ -153,15 +153,46 @@ namespace App\Models{
  * @property-read mixed $translate_description
  * @property-read mixed $translate_name
  * @property-read \App\Models\User|null $updatedBy
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit active()
+ * @method static Builder<static>|CareerBenefit active()
  * @method static \Database\Factories\CareerBenefitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit inactive()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit withoutTrashed()
+ * @method static Builder<static>|CareerBenefit inactive()
+ * @method static Builder<static>|CareerBenefit newModelQuery()
+ * @method static Builder<static>|CareerBenefit newQuery()
+ * @method static Builder<static>|CareerBenefit onlyTrashed()
+ * @method static Builder<static>|CareerBenefit query()
+ * @method static Builder<static>|CareerBenefit withTrashed()
+ * @method static Builder<static>|CareerBenefit withoutTrashed()
+ * @mixin \Eloquent
+ * @property int $id
+ * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CareerBenefit whereUpdatedBy($value)
  */
 	class CareerBenefit extends \Eloquent {}
 }

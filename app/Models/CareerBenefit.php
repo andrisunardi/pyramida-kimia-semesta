@@ -36,6 +36,38 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|CareerBenefit withTrashed()
  * @method static Builder<static>|CareerBenefit withoutTrashed()
  *
+ * @property int $id
+ * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ *
+ * @method static Builder<static>|CareerBenefit whereCreatedAt($value)
+ * @method static Builder<static>|CareerBenefit whereCreatedBy($value)
+ * @method static Builder<static>|CareerBenefit whereDeletedAt($value)
+ * @method static Builder<static>|CareerBenefit whereDeletedBy($value)
+ * @method static Builder<static>|CareerBenefit whereDescription($value)
+ * @method static Builder<static>|CareerBenefit whereDescriptionId($value)
+ * @method static Builder<static>|CareerBenefit whereDescriptionZh($value)
+ * @method static Builder<static>|CareerBenefit whereId($value)
+ * @method static Builder<static>|CareerBenefit whereImage($value)
+ * @method static Builder<static>|CareerBenefit whereIsActive($value)
+ * @method static Builder<static>|CareerBenefit whereName($value)
+ * @method static Builder<static>|CareerBenefit whereNameId($value)
+ * @method static Builder<static>|CareerBenefit whereNameZh($value)
+ * @method static Builder<static>|CareerBenefit whereUpdatedAt($value)
+ * @method static Builder<static>|CareerBenefit whereUpdatedBy($value)
+ *
  * @mixin \Eloquent
  */
 class CareerBenefit extends Model

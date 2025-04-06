@@ -11,9 +11,9 @@ class CareerBenefitFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->sentence(),
-            'name_id' => fake()->unique()->sentence(),
-            'name_zh' => fake()->unique()->sentence(),
+            'name' => fake()->unique()->name(),
+            'name_id' => fake()->unique()->name(),
+            'name_zh' => fake()->unique()->name(),
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
