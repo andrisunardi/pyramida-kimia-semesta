@@ -473,6 +473,55 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $address
+ * @property string $maps
+ * @property string $phone
+ * @property string|null $image
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office active()
+ * @method static \Database\Factories\OfficeFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereMaps($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Office withoutTrashed()
+ */
+	class Office extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
  * @property string $name_id
  * @property string $name_zh
  * @property string|null $description
@@ -757,10 +806,10 @@ namespace App\Models{
  * @method static Builder<static>|Team whereDescription($value)
  * @method static Builder<static>|Team whereDescriptionId($value)
  * @method static Builder<static>|Team whereDescriptionZh($value)
- * @mixin \Eloquent
  * @property string $slug
  * @property-read mixed $translate_description
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereSlug($value)
+ * @method static Builder<static>|Team whereSlug($value)
+ * @mixin \Eloquent
  */
 	class Team extends \Eloquent {}
 }

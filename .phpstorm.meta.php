@@ -3951,7 +3951,7 @@ namespace PHPSTORM_META {
 'index.thank_you_for_contacting_us','index.total','index.view','index.warehouse','index.write_message',
 'index.write_subject','index.your_company','index.your_email','index.your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible','index.your_name',
 'index.your_phone','index.career','index.find_opportunities','index.apply_online','index.our_team',
-'index.team',);
+'index.team','index.other_product',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

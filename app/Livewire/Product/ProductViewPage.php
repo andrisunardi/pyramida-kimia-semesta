@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Product;
 
-use App\Models\Product;
 use App\Livewire\Component;
+use App\Models\Product;
 use App\Services\ProductService;
 
 class ProductViewPage extends Component
@@ -27,7 +27,7 @@ class ProductViewPage extends Component
 
     public function getOtherProducts(): object
     {
-        $otherProducts =  (new ProductService)->index(
+        $otherProducts = (new ProductService)->index(
             productCategoryId: $this->product->product_category_id,
             isActive: [true],
             random: true,

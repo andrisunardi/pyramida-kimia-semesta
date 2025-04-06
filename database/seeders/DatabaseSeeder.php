@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
 
             SliderSeeder::class,
+            OfficeSeeder::class,
             HistorySeeder::class,
             TeamSeeder::class,
             PartnerSeeder::class,

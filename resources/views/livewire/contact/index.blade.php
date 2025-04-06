@@ -92,25 +92,20 @@
                             <li>
                                 <em class="fa fa-map-marked-alt" aria-hidden="true"></em>
                                 <span>
-                                    <a draggable="false" href="{{ env('CONTACT_MAPS') }}" target="_blank">
-                                        {{ env('CONTACT_ADDRESS') }}
-                                    </a>
+                                    <x-components::link.external-link :icon="''" :href="env('CONTACT_MAPS')"
+                                        :text="env('CONTACT_ADDRESS')" />
                                 </span>
                             </li>
                             <li>
                                 <em class="fa fa-phone" aria-hidden="true"></em>
                                 <span>
-                                    <a draggable="false" href="tel:+{{ Utils::phone(env('CONTACT_PHONE')) }}">
-                                        {{ env('CONTACT_PHONE') }}
-                                    </a>
+                                    <x-components::link.phone :icon="''" :value="Utils::phone(env('CONTACT_PHONE'))" />
                                 </span>
                             </li>
                             <li>
                                 <em class="fa fa-envelope" aria-hidden="true"></em>
                                 <span>
-                                    <a draggable="false" href="mailto:{{ env('CONTACT_EMAIL') }}">
-                                        {{ env('CONTACT_EMAIL') }}
-                                    </a>
+                                    <x-components::link.email :icon="''" :value="env('CONTACT_EMAIL')" />
                                 </span>
                             </li>
                             <li>
@@ -154,9 +149,47 @@
 
     <div class="map-holder map-contact">
         <div id="gmap">
-            <iframe src="{{ env('CONTACT_IFRAME') }}" frameborder="0" width="100%" height="500"
+            <iframe src="{{ env('CONTACT_IFRAME') }}" frameborder="0" width="100%" height="400"
                 allowfullscreen>
             </iframe>
+        </div>
+    </div>
+
+    <div class="section section-contents section-pad bg-light">
+        <div class="container">
+            <div class="content row">
+                <div class="wide-sm center">
+                    <h2>
+                        Our Office Locations
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur to adipiscing elit sed dot eiusmod tempor incididunt
+                        labore et dolore magna aliqua. Veniam quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="gaps size-lg"></div>
+                <div class="row center-md">
+                    @foreach ($offices as $key => $office)
+                        <div class="col-lg-3 col-sm-6 res-s-bttm">
+                            <div class="txt-entry bg-white pd-x3 round">
+                                <h5>{{ $office->name }}</h5>
+                                <p>
+                                    <x-components::image :href="$office->maps" :src="$office->assetImage()" :alt="$office->altImage()" />
+                                </p>
+                                <p>
+                                    <x-components::link.external-link :icon="''" :href="$office->maps"
+                                        :text="$office->address" />
+                                </p>
+                                <p>
+                                    <span class="color-primary">Phone</span>
+                                    <x-components::link.phone :icon="''" :value="$office->phone" />
+                                </p>
+                            </div>
+                            <div class="gaps"></div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 </main>

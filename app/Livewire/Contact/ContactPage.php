@@ -5,6 +5,7 @@ namespace App\Livewire\Contact;
 use App\Livewire\Component;
 use App\Livewire\Forms\ContactForm;
 use App\Mail\ContactMail;
+use App\Services\OfficeService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
@@ -31,8 +32,20 @@ class ContactPage extends Component
         ]);
     }
 
+    public function getOffices(): object
+    {
+        return (new OfficeService)->index(
+            isActive: [true],
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false,
+        );
+    }
+
     public function render(): View
     {
-        return view('livewire.contact.index');
+        return view('livewire.contact.index', [
+            'offices' => $this->getOffices(),
+        ]);
     }
 }
