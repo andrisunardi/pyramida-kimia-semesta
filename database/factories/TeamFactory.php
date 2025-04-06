@@ -10,6 +10,8 @@ class TeamFactory extends Factory
 {
     public function definition(): array
     {
+        $name = fake()->unique()->sentence();
+
         return [
             'name' => fake()->unique()->name(),
             'job' => fake()->jobTitle(),
@@ -17,6 +19,7 @@ class TeamFactory extends Factory
             'description_id' => fake()->paragraph(),
             'description_zh' => fake()->paragraph(),
             'image' => null,
+            'slug' => Str::slug($name),
             'is_active' => fake()->boolean(),
         ];
     }

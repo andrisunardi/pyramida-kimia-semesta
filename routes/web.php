@@ -17,6 +17,7 @@ use App\Livewire\Product\ProductPage;
 use App\Livewire\Product\ProductViewPage;
 use App\Livewire\Resource\ResourcePage;
 use App\Livewire\Team\TeamPage;
+use App\Livewire\Team\TeamViewPage;
 use App\Livewire\Testimony\TestimonyPage;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +35,12 @@ Route::group(['middleware' => [Localization::class]], function () {
     Route::any('about', AboutPage::class)->name('about');
     Route::any('history', HistoryPage::class)->name('history');
     Route::any('resource', ResourcePage::class)->name('resource');
-    Route::any('team', TeamPage::class)->name('team');
+
+    Route::group(['prefix' => 'team', 'as' => 'team.'], function () {
+        Route::any('', TeamPage::class)->name('index');
+        Route::any('{slug}', TeamViewPage::class)->name('view');
+    });
+
     Route::any('partner', PartnerPage::class)->name('partner');
     Route::any('testimony', TestimonyPage::class)->name('testimony');
 

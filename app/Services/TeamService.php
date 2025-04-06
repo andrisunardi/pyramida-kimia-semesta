@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Andrisunardi\Library\Libraries\LivewireUpload;
 use App\Models\Team;
+use Illuminate\Support\Str;
 
 class TeamService
 {
@@ -26,7 +27,8 @@ class TeamService
                     ->orWhere('job', 'LIKE', "%{$search}%")
                     ->orWhere('description', 'LIKE', "%{$search}%")
                     ->orWhere('description_id', 'LIKE', "%{$search}%")
-                    ->orWhere('description_zh', 'LIKE', "%{$search}%");
+                    ->orWhere('description_zh', 'LIKE', "%{$search}%")
+                    ->orWhere('slug', 'LIKE', "%{$search}%");
             }))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))
             ->when($random, fn ($q) => $q->inRandomOrder())
@@ -51,6 +53,8 @@ class TeamService
 
     public function create(array $data = []): Team
     {
+        $slug = Str::slug($data['name']);
+
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
@@ -59,11 +63,15 @@ class TeamService
             deleteAsset: false,
         );
 
+        $data['slug'] = $slug;
+
         return Team::create($data);
     }
 
     public function update(Team $team, array $data = []): Team
     {
+        $slug = Str::slug($data['name']);
+
         $data['image'] = LivewireUpload::upload(
             file: $data['image'],
             name: $data['name'],
@@ -73,6 +81,8 @@ class TeamService
             fileAsset: $team->image,
             deleteAsset: true,
         );
+
+        $data['slug'] = $slug;
 
         $team->update($data);
         $team->refresh();

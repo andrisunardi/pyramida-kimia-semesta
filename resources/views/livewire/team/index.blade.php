@@ -33,13 +33,21 @@
 
                         <div class="team-member-row row mgtop">
                             @foreach ($teams as $key => $team)
-                                <div class="col-md-4 col-sm-6 col-xs-6 {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }}">
+                                <div class="col-md-4 col-sm-6 col-xs-6 {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }}"
+                                    wire:key="{{ $key }}">
                                     <div class="team-member">
                                         <div class="team-photo">
-                                            <x-components::image :src="$team->assetImage()" :alt="$team->altImage()" />
+                                            <x-components::image :href="route('team.view', [
+                                                'slug' => $team->slug,
+                                            ])" :src="$team->assetImage()"
+                                                :alt="$team->altImage()" />
                                         </div>
                                         <div class="team-info">
-                                            <h4 class="name">{{ $team->name }}</h4>
+                                            <h4 class="name">
+                                                <x-components::link :href="route('team.view', [
+                                                    'slug' => $team->slug,
+                                                ])" :text="$team->name" />
+                                            </h4>
                                             <p class="sub-title">{{ $team->job }}</p>
                                         </div>
                                     </div>

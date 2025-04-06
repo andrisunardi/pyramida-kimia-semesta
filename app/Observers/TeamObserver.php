@@ -4,26 +4,31 @@ namespace App\Observers;
 
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class TeamObserver
 {
     public function creating(Team $team)
     {
+        $team->slug = Str::slug($team->name);
         $team->created_by = Auth::user()->id ?? null;
     }
 
     public function created(Team $team)
     {
+        $team->slug = Str::slug($team->name);
         $team->created_by = Auth::user()->id ?? null;
     }
 
     public function updating(Team $team)
     {
+        $team->slug = Str::slug($team->name);
         $team->updated_by = Auth::user()->id ?? null;
     }
 
     public function updated(Team $team)
     {
+        $team->slug = Str::slug($team->name);
         $team->updated_by = Auth::user()->id ?? null;
     }
 

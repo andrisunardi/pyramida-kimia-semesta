@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Spatie\Activitylog\LogOptions;
@@ -63,6 +64,11 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Team whereDescriptionId($value)
  * @method static Builder<static>|Team whereDescriptionZh($value)
  *
+ * @property string $slug
+ * @property-read mixed $translate_description
+ *
+ * @method static Builder<static>|Team whereSlug($value)
+ *
  * @mixin \Eloquent
  */
 class Team extends Model
@@ -74,7 +80,11 @@ class Team extends Model
     public $fillable = [
         'name',
         'job',
+        'description',
+        'description_id',
+        'description_zh',
         'image',
+        'slug',
         'is_active',
     ];
 
@@ -83,7 +93,11 @@ class Team extends Model
         return [
             'name' => 'string',
             'job' => 'string',
+            'description' => 'string',
+            'description_id' => 'string',
+            'description_zh' => 'string',
             'image' => 'string',
+            'slug' => 'string',
             'is_active' => 'boolean',
         ];
     }
@@ -164,5 +178,17 @@ class Team extends Model
         }
 
         return '';
+    }
+
+    public function getTranslateDescriptionAttribute()
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->description,
+            'id' => $this->description_id,
+            'zh' => $this->description_zh,
+        ];
+
+        return $language[$locale] ?? $this->description;
     }
 }

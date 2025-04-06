@@ -751,13 +751,16 @@ namespace App\Models{
  * @method static Builder<static>|Team whereUpdatedBy($value)
  * @method static Builder<static>|Team withTrashed()
  * @method static Builder<static>|Team withoutTrashed()
- * @mixin \Eloquent
  * @property string|null $description
  * @property string|null $description_id
  * @property string|null $description_zh
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescriptionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereDescriptionZh($value)
+ * @method static Builder<static>|Team whereDescription($value)
+ * @method static Builder<static>|Team whereDescriptionId($value)
+ * @method static Builder<static>|Team whereDescriptionZh($value)
+ * @mixin \Eloquent
+ * @property string $slug
+ * @property-read mixed $translate_description
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Team whereSlug($value)
  */
 	class Team extends \Eloquent {}
 }
