@@ -3,64 +3,43 @@
 namespace App\Livewire\CMS\ForgotPassword;
 
 use App\Livewire\Component;
-use App\Models\User;
-use App\Services\UserService;
+use App\Livewire\Forms\CMS\ForgotPassword\ForgotPasswordForm;
 use Illuminate\Support\Facades\Auth;
 
 class ForgotPasswordPage extends Component
 {
-    public $username;
+    public ForgotPasswordForm $form;
 
-    public $email;
-
-    public $phone;
-
-    public $confirm_reset;
-
-    public function mount()
+    public function mount(): void
     {
         if (Auth::check()) {
             $this->flash('info', trans('index.login_failed'), [
                 'html' => trans('index.you_already_login'),
             ]);
 
-            return $this->redirect(route('cms.index'), navigate: true);
+            $this->redirect(route('cms.index'), navigate: true);
+
+            return;
         }
     }
 
-    public function rules()
+    public function submit(): void
     {
-        return [
-            'username' => 'required|string|max:50|exists:users,username',
-            'email' => 'required|string|max:50|email:rfc,dns|exists:users,email',
-            'phone' => 'required|string|max:50|exists:users,phone',
-            'confirm_reset' => 'required|boolean',
-        ];
-    }
+        $result = $this->form->submit();
 
-    public function submit()
-    {
-        $this->validate();
-
-        $user = User::where('username', $this->username)
-            ->where('email', $this->email)
-            ->where('phone', $this->phone)
-            ->role(config('app.cms_roles'))
-            ->first();
-
-        if (! $user) {
-            return $this->alert('error', trans('index.forgot_password_failed'), [
+        if (! $result) {
+            $this->alert('error', trans('index.forgot_password_failed'), [
                 'html' => trans('index.username_or_email_or_phone_is_invalid'),
             ]);
+
+            return;
         }
 
-        $password = (new UserService)->resetPassword($user);
-
         $this->flash('success', trans('index.forgot_password_success'), [
-            'html' => trans('validation.attributes.new_password')." : {$password}",
+            'html' => trans('validation.attributes.new_password')." : {$result}",
         ]);
 
-        return $this->redirect(route('cms.login'), navigate: true);
+        $this->redirect(route('cms.login'), navigate: true);
     }
 
     public function render()

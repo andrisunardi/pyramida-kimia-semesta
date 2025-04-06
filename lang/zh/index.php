@@ -94,4 +94,12 @@ return [
     'forgot_password' => '忘记密码',
     'login_failed' => '登录失败',
     'username_or_password_is_invalid' => '用户名或密码无效',
+    'confirm_reset' => '确认重置',
+    'back_to_login' => '返回登录',
+    'send_request' => '发送请求',
+    'login_success' => 'Login Success',
+    'forgot_password_success' => '忘记密码成功',
+    'forgot_password_failed' => '忘记密码失败',
+    'current_password' => '当前密码',
+    'new_password' => '新密码',
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'success' => 'Terlihat Bagus',
 
     'accepted' => 'The :attribute field must be accepted.',
     'accepted_if' => 'The :attribute field must be accepted when :other is :value.',
@@ -161,6 +162,9 @@ return [
     'attributes' => [
         'username' => 'Username',
         'password' => 'Password',
+        'email' => 'Email',
+        'phone' => 'Telepon',
+        'confirm_reset' => 'Konfirmasi Reset',
     ],
 
 ];

@@ -23,26 +23,28 @@
                                 <x-components::form.alert />
 
                                 <div class="mb-3">
-                                    <x-components::form.username :maxlength="50" :required="true" :autocapitalize="'none'"
-                                        :autofocus="true" />
+                                    <x-components::form.username :key="'form.username'" :maxlength="50" :required="true"
+                                        :autocapitalize="'none'" :autofocus="true" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <x-components::form.email :maxlength="50" :required="true" :autocapitalize="'none'" />
+                                    <x-components::form.email :key="'form.email'" :maxlength="50" :required="true"
+                                        :autocapitalize="'none'" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <x-components::form.phone :maxlength="15" :required="true" :autocapitalize="'none'" />
+                                    <x-components::form.phone :key="'form.phone'" :maxlength="15" :required="true"
+                                        :autocapitalize="'none'" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <x-components::form.boolean :key="'confirm_reset'" :title="trans('validation.attributes.confirm_reset')" :type="'checkbox'"
+                                    <x-components::form.boolean :key="'form.confirm_reset'" :title="trans('validation.attributes.confirm_reset')" :type="'checkbox'"
                                         :text="trans('index.confirm_reset')" :second="false" :label="false" />
                                 </div>
 
                                 <div class="row align-items-center justify-content-between">
                                     <div class="col">
-                                        <x-components::link :class="'small text-decoration-none'" :text="trans('index.back_to_login_page')" :icon="'fas fa-arrow-left'"
+                                        <x-components::link :class="'small text-decoration-none'" :text="trans('index.back_to_login')" :icon="'fas fa-arrow-left'"
                                             :href="route('cms.login')" />
                                     </div>
                                     <div class="col">
@@ -57,7 +59,8 @@
                                 &copy; {{ trans('index.copyright') }}
                                 {{ env('APP_YEAR') && env('APP_YEAR') != now()->year ? env('APP_YEAR') . ' - ' : null }}
                                 {{ now()->year }} &reg;
-                                <a draggable="false" href="{{ route('index') }}" target="_blank" class="text-body text-decoration-none">
+                                <a draggable="false" href="{{ route('index') }}" target="_blank"
+                                    class="text-body text-decoration-none">
                                     <strong>{{ env('APP_NAME') }}</strong>&trade;
                                 </a>
                                 <br />

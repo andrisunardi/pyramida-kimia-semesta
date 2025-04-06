@@ -24,16 +24,7 @@ class LoginPage extends Component
         }
     }
 
-    public function rules(): array
-    {
-        return [
-            'username' => 'required|string|max:50|exists:users,username',
-            'password' => 'required|string|max:50',
-            'remember' => 'nullable|boolean',
-        ];
-    }
-
-    public function submit()
+    public function submit(): void
     {
         $result = $this->form->submit();
 
@@ -42,7 +33,9 @@ class LoginPage extends Component
                 'html' => trans('index.login_has_been_successfully'),
             ]);
 
-            return $this->redirect(session()->pull('url.intended', route('cms.index')), navigate: true);
+            $this->redirect(session()->pull('url.intended', route('cms.index')), navigate: true);
+
+            return;
         }
 
         $this->alert('error', trans('index.login_failed'), [

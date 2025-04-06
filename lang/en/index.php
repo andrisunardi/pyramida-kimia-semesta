@@ -94,4 +94,12 @@ return [
     'username_or_password_is_invalid' => 'Username or Password is Invalid',
     'stay_login' => 'Stay Login',
     'forgot_password' => 'Forgot Password',
+    'confirm_reset' => 'Confirm Reset',
+    'back_to_login' => 'Back To Login',
+    'send_request' => 'Send Request',
+    'login_success' => 'Login Success',
+    'forgot_password_success' => 'Forgot Password Success',
+    'forgot_password_failed' => 'Forgot Password Failed',
+    'current_password' => 'Current Password',
+    'new_password' => 'New Password',
 ];
