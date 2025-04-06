@@ -61,4 +61,6 @@ Route::group(['middleware' => [Localization::class]], function () {
 
     Route::any('contact', ContactPage::class)->name('contact');
     Route::any('enquire', EnquirePage::class)->name('enquire');
+
+    Route::prefix('cms')->name('cms.')->as('cms.')->group(base_path('routes/cms.php'));
 });

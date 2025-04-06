@@ -124,7 +124,7 @@ return [
         'local_path' => storage_path('framework/cache/laravel-excel'),
 
         'local_permissions' => [
-            'dir'  => 0755,
+            'dir' => 0755,
             'file' => 0644,
         ],
 

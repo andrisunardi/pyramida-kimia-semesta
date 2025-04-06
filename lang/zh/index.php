@@ -89,4 +89,7 @@ return [
     'our_vision' => '我们的愿景',
     'our_mission' => '我们的使命',
     'other_product' => '其他产品',
+    'login' => '登录',
+    'stay_login' => '保持登录',
+    'forgot_password' => '忘记密码',
 ];

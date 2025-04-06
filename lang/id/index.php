@@ -88,5 +88,8 @@ return [
     'vision_and_mission' => 'Visi dan Misi',
     'our_vision' => 'Visi Kami',
     'our_mission' => 'Misi Kami',
+    'login' => 'Masuk',
+    'stay_login' => 'Tetap Masuk',
+    'forgot_password' => 'Lupa Kata Sandi',
     'other_product' => 'Produk Lainnya',
 ];

@@ -89,4 +89,7 @@ return [
     'our_vision' => 'Our Vision',
     'our_mission' => 'Our Mission',
     'other_product' => 'Other Product',
+    'login' => 'Login',
+    'stay_login' => 'Stay Login',
+    'forgot_password' => 'Forgot Password',
 ];
