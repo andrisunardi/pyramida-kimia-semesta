@@ -43,6 +43,9 @@
                             <li>
                                 <x-components::link :href="route('testimony')" :text="trans('index.testimony')" :icon="'fas fa-comments'" />
                             </li>
+                            <li>
+                                <x-components::link :href="route('partner')" :text="trans('index.partner')" :icon="'fas fa-users'" />
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown">

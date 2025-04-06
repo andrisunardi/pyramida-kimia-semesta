@@ -18,6 +18,7 @@ class PartnerSeeder extends Seeder
                 'description_id' => 'PT. Pyramida kimia semesta didirikan di Tangerang serpong, merupakan salah satu bagian dari PANCASAKTI GROUP yang bergerak dibidang distribusi kimia dan perdagangan BAHAN BAKU KIMIA serta PETROKIMIA.',
                 'description_zh' => 'PT. Pyramida Kimia Semesta 成立于丹格朗塞尔彭，隶属于 PANCASAKTI 集团，该集团从事化学品分销以及化学原料和石化产品贸易。',
                 'image' => "partner-{$i}.png",
+                'link' => 'https://www.pyramida.co.id',
                 'is_active' => true,
             ]);
         }

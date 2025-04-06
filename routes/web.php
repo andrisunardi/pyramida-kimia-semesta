@@ -11,6 +11,7 @@ use App\Livewire\Faq\FaqPage;
 use App\Livewire\Gallery\GalleryPage;
 use App\Livewire\History\HistoryPage;
 use App\Livewire\Home\HomePage;
+use App\Livewire\Partner\PartnerPage;
 use App\Livewire\Product\ProductCategoryPage;
 use App\Livewire\Product\ProductPage;
 use App\Livewire\Product\ProductViewPage;
@@ -33,6 +34,7 @@ Route::group(['middleware' => [Localization::class]], function () {
     Route::any('history', HistoryPage::class)->name('history');
     Route::any('resource', ResourcePage::class)->name('resource');
     Route::any('testimony', TestimonyPage::class)->name('testimony');
+    Route::any('partner', PartnerPage::class)->name('partner');
 
     Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
         Route::any('', ProductPage::class)->name('index');

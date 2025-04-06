@@ -16,6 +16,9 @@
                     <li class="{{ Route::is('testimony') ? 'current' : null }}">
                         <x-components::link :href="route('testimony')" :text="trans('index.testimony')" />
                     </li>
+                    <li class="{{ Route::is('partner') ? 'current' : null }}">
+                        <x-components::link :href="route('partner')" :text="trans('index.partner')" />
+                    </li>
                 </ul>
             </li>
             <li class="{{ Route::is('product.*') ? 'current' : null }}">
@@ -26,6 +29,9 @@
             </li>
             <li class="{{ Route::is('faq') ? 'current' : null }}">
                 <x-components::link :href="route('faq')" :text="trans('index.faq')" />
+            </li>
+            <li class="{{ Route::is('career') ? 'current' : null }}">
+                <x-components::link :href="route('career')" :text="trans('index.career')" />
             </li>
             <li class="{{ Route::is('article.*') ? 'current' : null }}">
                 <x-components::link :href="route('article.index')" :text="trans('index.article')" />
