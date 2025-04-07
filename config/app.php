@@ -47,7 +47,10 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Menu' => Spatie\Menu\Laravel\Facades\Menu::class,
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
+        'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
         'Utils' => Andrisunardi\Library\Utils::class,
     ])->toArray(),
 
