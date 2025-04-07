@@ -4071,7 +4071,7 @@ namespace PHPSTORM_META {
 'index.other_product','index.login','index.login_failed','index.username_or_password_is_invalid','index.stay_login',
 'index.forgot_password','index.confirm_reset','index.back_to_login','index.send_request','index.login_success',
 'index.forgot_password_success','index.forgot_password_failed','index.current_password','index.new_password','index.server_time',
-'index.theme','index.flag',);
+'index.theme','index.flag','index.light','index.dark','index.auto',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

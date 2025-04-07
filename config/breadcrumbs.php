@@ -2,7 +2,8 @@
 
 return [
 
-    'view' => 'breadcrumbs::bootstrap5',
+    // 'view' => 'breadcrumbs::bootstrap5',
+    'view' => 'components/layouts/breadcrumbs-render',
 
     'files' => base_path('routes/breadcrumbs.php'),
 

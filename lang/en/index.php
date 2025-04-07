@@ -105,4 +105,7 @@ return [
     'server_time' => 'Server Time',
     'theme' => 'Theme',
     'flag' => 'Flag',
+    'light' => 'Light',
+    'dark' => 'Dark',
+    'auto' => 'Auto',
 ];

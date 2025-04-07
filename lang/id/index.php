@@ -105,4 +105,7 @@ return [
     'server_time' => 'Waktu Server',
     'theme' => 'Tema',
     'flag' => 'Bendera',
+    'light' => 'Terang',
+    'dark' => 'Gelap',
+    'auto' => 'Auto',
 ];

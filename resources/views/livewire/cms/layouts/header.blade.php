@@ -11,7 +11,7 @@
                 <img draggable="false" class="d-inline-block align-text-top" height="30"
                     src="{{ asset('images/favicon.png') }}" alt="{{ trans('index.logo') }} - {{ env('APP_TITLE') }}">
                 <span class="d-none d-sm-inline">{{ env('APP_NAME') }}</span>
-                <span class="d-inline d-sm-none">World Harvest ID</span>
+                <span class="d-inline d-sm-none">Pyramida</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"

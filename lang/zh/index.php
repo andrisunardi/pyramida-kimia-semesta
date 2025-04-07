@@ -105,4 +105,7 @@ return [
     'server_time' => '瓦克图服务器',
     'theme' => '特马',
     'flag' => '本德拉',
+    'light' => '光',
+    'dark' => '黑暗的',
+    'auto' => '汽车',
 ];
