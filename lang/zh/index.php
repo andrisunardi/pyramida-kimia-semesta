@@ -102,4 +102,7 @@ return [
     'forgot_password_failed' => '忘记密码失败',
     'current_password' => '当前密码',
     'new_password' => '新密码',
+    'server_time' => '瓦克图服务器',
+    'theme' => '特马',
+    'flag' => '本德拉',
 ];

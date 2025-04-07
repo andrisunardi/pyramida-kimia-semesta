@@ -31487,7 +31487,10 @@ namespace  {
     class Excel extends \Maatwebsite\Excel\Facades\Excel {}
     class Menu extends \Spatie\Menu\Laravel\Facades\Menu {}
     class PDF extends \Barryvdh\DomPDF\Facade\Pdf {}
+    class permission extends \Spatie\Permission\Middleware\PermissionMiddleware {}
     class QrCode extends \SimpleSoftwareIO\QrCode\Facades\QrCode {}
+    class role_or_permission extends \Spatie\Permission\Middleware\RoleOrPermissionMiddleware {}
+    class role extends \Spatie\Permission\Middleware\RoleMiddleware {}
     class Utils extends \Andrisunardi\Library\Utils {}
     class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar {}
     class Pdf extends \Barryvdh\DomPDF\Facade\Pdf {}

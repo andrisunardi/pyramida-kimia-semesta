@@ -102,4 +102,7 @@ return [
     'forgot_password_failed' => 'Forgot Password Failed',
     'current_password' => 'Current Password',
     'new_password' => 'New Password',
+    'server_time' => 'Server Time',
+    'theme' => 'Theme',
+    'flag' => 'Flag',
 ];

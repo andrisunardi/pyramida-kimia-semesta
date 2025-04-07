@@ -137,3 +137,9 @@ Breadcrumbs::for('enquire', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
     $trail->push(trans('index.enquire'), route('enquire'), ['icon' => 'fas fa-pencil']);
 });
+
+// CMS
+// HOME
+Breadcrumbs::for('cms.index', function (BreadcrumbTrail $trail) {
+    $trail->push(trans('index.home'), route('cms.index'), ['icon' => 'fas fa-home']);
+});

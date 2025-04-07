@@ -102,4 +102,7 @@ return [
     'forgot_password_failed' => 'Lupa Password Gagal',
     'current_password' => 'Password Saat Ini',
     'new_password' => 'Password Baru',
+    'server_time' => 'Waktu Server',
+    'theme' => 'Tema',
+    'flag' => 'Bendera',
 ];
