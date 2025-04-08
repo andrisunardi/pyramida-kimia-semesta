@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="me-0 me-lg-2">
                 <button type="button" data-bs-target="#sidebar" data-bs-toggle="collapse" class="btn btn-lg">
-                    <span class="fas fa-list fa-fw"></span>
+                    <x-components::icon :value="'fas fa-list'" />
                 </button>
             </div>
 
@@ -24,33 +24,7 @@
 
                     @livewire('c-m-s.layouts.server-time')
 
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <span class="fas fa-palette fa-fw"></span>
-                            {{ trans('index.theme') }}
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <button class="dropdown-item" data-bs-theme-value="light">
-                                    <span class="fas fa-sun fa-fw"></span>
-                                    {{ trans('index.light') }}
-                                </button>
-                            </li>
-                            <li>
-                                <button class="dropdown-item" data-bs-theme-value="dark">
-                                    <span class="fas fa-moon fa-fw"></span>
-                                    {{ trans('index.dark') }}
-                                </button>
-                            </li>
-                            <li>
-                                <button class="dropdown-item" data-bs-theme-value="auto">
-                                    <span class="fas fa-circle-half-stroke fa-fw"></span>
-                                    {{ trans('index.auto') }}
-                                </button>
-                            </li>
-                        </ul>
-                    </li>
+                    @livewire('c-m-s.layouts.theme')
 
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
