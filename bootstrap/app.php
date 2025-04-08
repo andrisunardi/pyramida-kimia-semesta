@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->redirectGuestsTo('/cms/login');
+        $middleware->redirectGuestsTo(function ($request) {
+            return Str::startsWith($request->path(), 'cms') ? '/cms/login' : '/login';
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
