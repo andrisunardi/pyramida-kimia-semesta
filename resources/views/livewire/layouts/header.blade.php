@@ -60,7 +60,7 @@
                                         'slug' => $productCategory->slug,
                                     ])" :text="$productCategory->translate_name" />
 
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="width:400px">
                                         @foreach ($productCategory->products as $key => $product)
                                             <li wire:key="{{ $key }}">
                                                 <x-components::link :href="route('product.view', [
