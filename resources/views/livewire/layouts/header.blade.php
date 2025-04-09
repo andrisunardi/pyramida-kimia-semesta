@@ -20,8 +20,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="quote-btn">
-                    <a draggable="false" class="btn" href="get-a-quote.html" wire:navigate>
-                        Enquire Today
+                    <a draggable="false" class="btn" href="{{ route('enquire') }}" wire:navigate>
+                        {{ trans('index.enquire') }}
                     </a>
                 </div>
             </div>
