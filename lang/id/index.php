@@ -108,4 +108,12 @@ return [
     'light' => 'Terang',
     'dark' => 'Gelap',
     'auto' => 'Auto',
+    'profile' => 'Profil',
+    'activty_log' => 'Catatan Aktivitas',
+    'edit_profile' => 'Ubah Profil',
+    'change_password' => 'Ganti Password',
+    'logout' => 'Keluar',
+    'logout_failed' => 'Keluar Gagal',
+    'logout_success' => 'Keluar Berhasil',
+    'you_have_been_successfully_logged_out' => 'Anda telah berhasil keluar',
 ];

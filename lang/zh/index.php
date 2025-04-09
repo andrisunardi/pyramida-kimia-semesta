@@ -108,4 +108,12 @@ return [
     'light' => '光',
     'dark' => '黑暗的',
     'auto' => '汽车',
+    'profile' => '轮廓',
+    'activty_log' => '活动日志',
+    'edit_profile' => '编辑个人资料',
+    'change_password' => '更改密码',
+    'logout' => '登出',
+    'logout_failed' => '注销失败',
+    'logout_success' => '登出成功',
+    'you_have_been_successfully_logged_out' => '您已成功退出',
 ];

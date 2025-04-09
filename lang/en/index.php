@@ -108,4 +108,12 @@ return [
     'light' => 'Light',
     'dark' => 'Dark',
     'auto' => 'Auto',
+    'profile' => 'Profile',
+    'activty_log' => 'Activity Log',
+    'edit_profile' => 'Edit Profile',
+    'change_password' => 'Change Password',
+    'logout' => 'Logout',
+    'logout_failed' => 'Logout Failed',
+    'logout_success' => 'Logout Success',
+    'you_have_been_successfully_logged_out' => 'You have been successfully logged out',
 ];
