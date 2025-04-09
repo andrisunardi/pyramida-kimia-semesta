@@ -109,7 +109,7 @@ return [
     'dark' => 'Dark',
     'auto' => 'Auto',
     'profile' => 'Profile',
-    'activty_log' => 'Activity Log',
+    'activity_log' => 'Activity Log',
     'edit_profile' => 'Edit Profile',
     'change_password' => 'Change Password',
     'logout' => 'Logout',

@@ -109,7 +109,7 @@ return [
     'dark' => '黑暗的',
     'auto' => '汽车',
     'profile' => '轮廓',
-    'activty_log' => '活动日志',
+    'activity_log' => '活动日志',
     'edit_profile' => '编辑个人资料',
     'change_password' => '更改密码',
     'logout' => '登出',

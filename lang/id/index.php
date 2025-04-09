@@ -109,7 +109,7 @@ return [
     'dark' => 'Gelap',
     'auto' => 'Auto',
     'profile' => 'Profil',
-    'activty_log' => 'Catatan Aktivitas',
+    'activity_log' => 'Catatan Aktivitas',
     'edit_profile' => 'Ubah Profil',
     'change_password' => 'Ganti Password',
     'logout' => 'Keluar',
