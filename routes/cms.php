@@ -12,6 +12,10 @@ Route::any('forgot-password', ForgotPasswordPage::class)->name('forgot-password'
 Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], function () {
     Route::any('', HomePage::class)->name('index');
 
+    Route::prefix('configuration')->name('configuration.')->as('configuration.')
+        ->middleware(['role:Super User|Configuration'])
+        ->group(base_path('routes/cms/configuration.php'));
+
     Route::prefix('profile')->name('profile.')->as('profile.')
         ->group(base_path('routes/cms/profile.php'));
 
