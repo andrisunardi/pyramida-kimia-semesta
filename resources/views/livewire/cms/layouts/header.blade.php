@@ -28,6 +28,8 @@
 
                     @livewire('c-m-s.layouts.language')
 
+                    @livewire('c-m-s.layouts.profile')
+
                 </ul>
             </div>
         </div>
