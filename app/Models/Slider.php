@@ -178,7 +178,7 @@ class Slider extends Model
         return '';
     }
 
-    public function getTranslateNameAttribute()
+    public function getTranslateNameAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -190,7 +190,7 @@ class Slider extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateDescriptionAttribute()
+    public function getTranslateDescriptionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

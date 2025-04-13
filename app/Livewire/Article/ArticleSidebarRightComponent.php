@@ -12,7 +12,7 @@ class ArticleSidebarRightComponent extends Component
     #[Url(except: '')]
     public string $search = '';
 
-    public function updatedSearch(string $search)
+    public function updatedSearch(string $search): void
     {
         $this->search = $search;
         $this->dispatch('searchChanged', search: $search);

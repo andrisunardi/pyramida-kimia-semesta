@@ -131,7 +131,7 @@ class History extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function getTranslateNameAttribute()
+    public function getTranslateNameAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -143,7 +143,7 @@ class History extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateDescriptionAttribute()
+    public function getTranslateDescriptionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

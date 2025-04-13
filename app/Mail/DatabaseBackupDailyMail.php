@@ -16,7 +16,7 @@ class DatabaseBackupDailyMail extends Mailable
 
     public function __construct() {}
 
-    public function envelope()
+    public function envelope(): Envelope
     {
         return new Envelope(
             from: new Address(env('MAIL_FROM_ADDRESS'), env('APP_NAME')),
@@ -24,16 +24,16 @@ class DatabaseBackupDailyMail extends Mailable
         );
     }
 
-    public function content()
+    public function content(): Content
     {
         return new Content(
             markdown: 'emails.database-backup-daily',
         );
     }
 
-    public function attachments()
+    public function attachments(): array
     {
-        $date = now()->toDateString();
+        $date = now()->today()->toDateString();
 
         return [
             // Attachment::fromPath(storage_path("app/private/database/{$date}.sql").'/app/database/'.$date.'.sql'),

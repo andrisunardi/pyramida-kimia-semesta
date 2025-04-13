@@ -7,49 +7,49 @@ use Illuminate\Support\Facades\Auth;
 
 class OfficeObserver
 {
-    public function creating(Office $office)
+    public function creating(Office $office): void
     {
         $office->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(Office $office)
+    public function created(Office $office): void
     {
         $office->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(Office $office)
+    public function updating(Office $office): void
     {
         $office->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(Office $office)
+    public function updated(Office $office): void
     {
         $office->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(Office $office)
+    public function deleting(Office $office): void
     {
         $office->deleted_by = Auth::user()->id ?? null;
         $office->save();
     }
 
-    public function deleted(Office $office)
+    public function deleted(Office $office): void
     {
         $office->deleted_by = Auth::user()->id ?? null;
         $office->save();
     }
 
-    public function restoring(Office $office)
+    public function restoring(Office $office): void
     {
         $office->deleted_by = null;
         $office->save();
     }
 
-    public function restored(Office $office)
+    public function restored(Office $office): void
     {
         $office->deleted_by = null;
         $office->save();
     }
 
-    public function forceDeleted(Office $office) {}
+    public function forceDeleted(Office $office): void {}
 }

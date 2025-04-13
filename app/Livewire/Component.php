@@ -13,7 +13,7 @@ class Component extends LivewireComponent
     use WithFileUploads;
     use WithPagination;
 
-    public function getBgClasses()
+    public function getBgClasses(): object
     {
         return collect([
             'bg-primary',
@@ -25,17 +25,17 @@ class Component extends LivewireComponent
         ]);
     }
 
-    public function resetFile()
+    public function resetFile(): void
     {
         $this->reset(['file']);
     }
 
-    public function resetImage()
+    public function resetImage(): void
     {
         $this->reset(['image']);
     }
 
-    public function resetVideo()
+    public function resetVideo(): void
     {
         $this->reset(['video']);
     }

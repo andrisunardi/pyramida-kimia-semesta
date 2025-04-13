@@ -7,49 +7,49 @@ use Illuminate\Support\Facades\Auth;
 
 class GalleryObserver
 {
-    public function creating(Gallery $gallery)
+    public function creating(Gallery $gallery): void
     {
         $gallery->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(Gallery $gallery)
+    public function created(Gallery $gallery): void
     {
         $gallery->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(Gallery $gallery)
+    public function updating(Gallery $gallery): void
     {
         $gallery->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(Gallery $gallery)
+    public function updated(Gallery $gallery): void
     {
         $gallery->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(Gallery $gallery)
+    public function deleting(Gallery $gallery): void
     {
         $gallery->deleted_by = Auth::user()->id ?? null;
         $gallery->save();
     }
 
-    public function deleted(Gallery $gallery)
+    public function deleted(Gallery $gallery): void
     {
         $gallery->deleted_by = Auth::user()->id ?? null;
         $gallery->save();
     }
 
-    public function restoring(Gallery $gallery)
+    public function restoring(Gallery $gallery): void
     {
         $gallery->deleted_by = null;
         $gallery->save();
     }
 
-    public function restored(Gallery $gallery)
+    public function restored(Gallery $gallery): void
     {
         $gallery->deleted_by = null;
         $gallery->save();
     }
 
-    public function forceDeleted(Gallery $gallery) {}
+    public function forceDeleted(Gallery $gallery): void {}
 }

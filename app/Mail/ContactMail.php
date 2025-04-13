@@ -14,14 +14,14 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $contact;
+    public Contact $contact;
 
     public function __construct(Contact $contact)
     {
         $this->contact = $contact;
     }
 
-    public function envelope()
+    public function envelope(): Envelope
     {
         return new Envelope(
             from: new Address(env('MAIL_FROM_ADDRESS'), env('APP_NAME')),
@@ -29,7 +29,7 @@ class ContactMail extends Mailable
         );
     }
 
-    public function content()
+    public function content(): Content
     {
         return new Content(
             markdown: 'emails.contact',
@@ -39,7 +39,7 @@ class ContactMail extends Mailable
         );
     }
 
-    public function attachments()
+    public function attachments(): array
     {
         return [];
     }

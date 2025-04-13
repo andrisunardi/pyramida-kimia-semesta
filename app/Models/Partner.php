@@ -181,7 +181,7 @@ class Partner extends Model
         return '';
     }
 
-    public function getTranslateNameAttribute()
+    public function getTranslateNameAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -193,7 +193,7 @@ class Partner extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateDescriptionAttribute()
+    public function getTranslateDescriptionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

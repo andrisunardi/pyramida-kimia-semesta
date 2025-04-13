@@ -144,7 +144,7 @@ class Career extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function getTranslateNameAttribute()
+    public function getTranslateNameAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -156,7 +156,7 @@ class Career extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateDescriptionAttribute()
+    public function getTranslateDescriptionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -168,7 +168,7 @@ class Career extends Model
         return $language[$locale] ?? $this->description;
     }
 
-    public function getTranslateLocationAttribute()
+    public function getTranslateLocationAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

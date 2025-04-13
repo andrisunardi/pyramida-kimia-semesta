@@ -199,7 +199,7 @@ class Article extends Model
         return '';
     }
 
-    public function getTranslateNameAttribute()
+    public function getTranslateNameAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -211,7 +211,7 @@ class Article extends Model
         return $language[$locale] ?? $this->name;
     }
 
-    public function getTranslateDescriptionAttribute()
+    public function getTranslateDescriptionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -223,7 +223,7 @@ class Article extends Model
         return $language[$locale] ?? $this->description;
     }
 
-    public function getTranslateTagsAttribute()
+    public function getTranslateTagsAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

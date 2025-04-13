@@ -8,53 +8,53 @@ use Illuminate\Support\Str;
 
 class ProductObserver
 {
-    public function creating(Product $product)
+    public function creating(Product $product): void
     {
         $product->slug = Str::slug($product->name);
         $product->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(Product $product)
+    public function created(Product $product): void
     {
         $product->slug = Str::slug($product->name);
         $product->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(Product $product)
+    public function updating(Product $product): void
     {
         $product->slug = Str::slug($product->name);
         $product->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(Product $product)
+    public function updated(Product $product): void
     {
         $product->slug = Str::slug($product->name);
         $product->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(Product $product)
+    public function deleting(Product $product): void
     {
         $product->deleted_by = Auth::user()->id ?? null;
         $product->save();
     }
 
-    public function deleted(Product $product)
+    public function deleted(Product $product): void
     {
         $product->deleted_by = Auth::user()->id ?? null;
         $product->save();
     }
 
-    public function restoring(Product $product)
+    public function restoring(Product $product): void
     {
         $product->deleted_by = null;
         $product->save();
     }
 
-    public function restored(Product $product)
+    public function restored(Product $product): void
     {
         $product->deleted_by = null;
         $product->save();
     }
 
-    public function forceDeleted(Product $product) {}
+    public function forceDeleted(Product $product): void {}
 }

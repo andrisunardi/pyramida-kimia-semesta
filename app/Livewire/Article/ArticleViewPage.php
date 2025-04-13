@@ -5,6 +5,7 @@ namespace App\Livewire\Article;
 use App\Livewire\Component;
 use App\Models\Article;
 use App\Services\ArticleService;
+use Illuminate\Contracts\View\View;
 
 class ArticleViewPage extends Component
 {
@@ -35,7 +36,7 @@ class ArticleViewPage extends Component
         )->reject(fn ($article) => $article->id == $this->article->id);
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.article.view', [
             'otherArticles' => $this->getOtherArticles(),

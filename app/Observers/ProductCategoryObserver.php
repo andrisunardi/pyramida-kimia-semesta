@@ -8,53 +8,53 @@ use Illuminate\Support\Str;
 
 class ProductCategoryObserver
 {
-    public function creating(ProductCategory $productCategory)
+    public function creating(ProductCategory $productCategory): void
     {
         $productCategory->slug = Str::slug($productCategory->name);
         $productCategory->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(ProductCategory $productCategory)
+    public function created(ProductCategory $productCategory): void
     {
         $productCategory->slug = Str::slug($productCategory->name);
         $productCategory->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(ProductCategory $productCategory)
+    public function updating(ProductCategory $productCategory): void
     {
         $productCategory->slug = Str::slug($productCategory->name);
         $productCategory->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(ProductCategory $productCategory)
+    public function updated(ProductCategory $productCategory): void
     {
         $productCategory->slug = Str::slug($productCategory->name);
         $productCategory->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(ProductCategory $productCategory)
+    public function deleting(ProductCategory $productCategory): void
     {
         $productCategory->deleted_by = Auth::user()->id ?? null;
         $productCategory->save();
     }
 
-    public function deleted(ProductCategory $productCategory)
+    public function deleted(ProductCategory $productCategory): void
     {
         $productCategory->deleted_by = Auth::user()->id ?? null;
         $productCategory->save();
     }
 
-    public function restoring(ProductCategory $productCategory)
+    public function restoring(ProductCategory $productCategory): void
     {
         $productCategory->deleted_by = null;
         $productCategory->save();
     }
 
-    public function restored(ProductCategory $productCategory)
+    public function restored(ProductCategory $productCategory): void
     {
         $productCategory->deleted_by = null;
         $productCategory->save();
     }
 
-    public function forceDeleted(ProductCategory $productCategory) {}
+    public function forceDeleted(ProductCategory $productCategory): void {}
 }

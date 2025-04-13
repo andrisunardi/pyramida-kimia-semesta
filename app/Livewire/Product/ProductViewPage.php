@@ -5,6 +5,7 @@ namespace App\Livewire\Product;
 use App\Livewire\Component;
 use App\Models\Product;
 use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
 
 class ProductViewPage extends Component
 {
@@ -40,7 +41,7 @@ class ProductViewPage extends Component
         return $otherProducts;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.product.view', [
             'otherProducts' => $this->getOtherProducts(),

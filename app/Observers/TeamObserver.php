@@ -8,53 +8,53 @@ use Illuminate\Support\Str;
 
 class TeamObserver
 {
-    public function creating(Team $team)
+    public function creating(Team $team): void
     {
         $team->slug = Str::slug($team->name);
         $team->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(Team $team)
+    public function created(Team $team): void
     {
         $team->slug = Str::slug($team->name);
         $team->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(Team $team)
+    public function updating(Team $team): void
     {
         $team->slug = Str::slug($team->name);
         $team->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(Team $team)
+    public function updated(Team $team): void
     {
         $team->slug = Str::slug($team->name);
         $team->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(Team $team)
+    public function deleting(Team $team): void
     {
         $team->deleted_by = Auth::user()->id ?? null;
         $team->save();
     }
 
-    public function deleted(Team $team)
+    public function deleted(Team $team): void
     {
         $team->deleted_by = Auth::user()->id ?? null;
         $team->save();
     }
 
-    public function restoring(Team $team)
+    public function restoring(Team $team): void
     {
         $team->deleted_by = null;
         $team->save();
     }
 
-    public function restored(Team $team)
+    public function restored(Team $team): void
     {
         $team->deleted_by = null;
         $team->save();
     }
 
-    public function forceDeleted(Team $team) {}
+    public function forceDeleted(Team $team): void {}
 }

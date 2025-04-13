@@ -5,6 +5,7 @@ namespace App\Livewire\Team;
 use App\Livewire\Component;
 use App\Models\Team;
 use App\Services\TeamService;
+use Illuminate\Contracts\View\View;
 
 class TeamViewPage extends Component
 {
@@ -35,7 +36,7 @@ class TeamViewPage extends Component
         )->reject(fn ($team) => $team->id == $this->team->id);
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.team.view', [
             'otherTeams' => $this->getOtherTeams(),

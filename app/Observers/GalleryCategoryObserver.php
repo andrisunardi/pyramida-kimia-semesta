@@ -7,49 +7,49 @@ use Illuminate\Support\Facades\Auth;
 
 class GalleryCategoryObserver
 {
-    public function creating(GalleryCategory $galleryCategory)
+    public function creating(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(GalleryCategory $galleryCategory)
+    public function created(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(GalleryCategory $galleryCategory)
+    public function updating(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(GalleryCategory $galleryCategory)
+    public function updated(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(GalleryCategory $galleryCategory)
+    public function deleting(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->deleted_by = Auth::user()->id ?? null;
         $galleryCategory->save();
     }
 
-    public function deleted(GalleryCategory $galleryCategory)
+    public function deleted(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->deleted_by = Auth::user()->id ?? null;
         $galleryCategory->save();
     }
 
-    public function restoring(GalleryCategory $galleryCategory)
+    public function restoring(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->deleted_by = null;
         $galleryCategory->save();
     }
 
-    public function restored(GalleryCategory $galleryCategory)
+    public function restored(GalleryCategory $galleryCategory): void
     {
         $galleryCategory->deleted_by = null;
         $galleryCategory->save();
     }
 
-    public function forceDeleted(GalleryCategory $galleryCategory) {}
+    public function forceDeleted(GalleryCategory $galleryCategory): void {}
 }

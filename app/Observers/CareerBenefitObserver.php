@@ -7,49 +7,49 @@ use Illuminate\Support\Facades\Auth;
 
 class CareerBenefitObserver
 {
-    public function creating(CareerBenefit $careerBenefit)
+    public function creating(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(CareerBenefit $careerBenefit)
+    public function created(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(CareerBenefit $careerBenefit)
+    public function updating(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(CareerBenefit $careerBenefit)
+    public function updated(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(CareerBenefit $careerBenefit)
+    public function deleting(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->deleted_by = Auth::user()->id ?? null;
         $careerBenefit->save();
     }
 
-    public function deleted(CareerBenefit $careerBenefit)
+    public function deleted(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->deleted_by = Auth::user()->id ?? null;
         $careerBenefit->save();
     }
 
-    public function restoring(CareerBenefit $careerBenefit)
+    public function restoring(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->deleted_by = null;
         $careerBenefit->save();
     }
 
-    public function restored(CareerBenefit $careerBenefit)
+    public function restored(CareerBenefit $careerBenefit): void
     {
         $careerBenefit->deleted_by = null;
         $careerBenefit->save();
     }
 
-    public function forceDeleted(CareerBenefit $careerBenefit) {}
+    public function forceDeleted(CareerBenefit $careerBenefit): void {}
 }

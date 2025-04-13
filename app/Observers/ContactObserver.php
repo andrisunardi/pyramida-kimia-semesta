@@ -7,49 +7,49 @@ use Illuminate\Support\Facades\Auth;
 
 class ContactObserver
 {
-    public function creating(Contact $contact)
+    public function creating(Contact $contact): void
     {
         $contact->created_by = Auth::user()->id ?? null;
     }
 
-    public function created(Contact $contact)
+    public function created(Contact $contact): void
     {
         $contact->created_by = Auth::user()->id ?? null;
     }
 
-    public function updating(Contact $contact)
+    public function updating(Contact $contact): void
     {
         $contact->updated_by = Auth::user()->id ?? null;
     }
 
-    public function updated(Contact $contact)
+    public function updated(Contact $contact): void
     {
         $contact->updated_by = Auth::user()->id ?? null;
     }
 
-    public function deleting(Contact $contact)
+    public function deleting(Contact $contact): void
     {
         $contact->deleted_by = Auth::user()->id ?? null;
         $contact->save();
     }
 
-    public function deleted(Contact $contact)
+    public function deleted(Contact $contact): void
     {
         $contact->deleted_by = Auth::user()->id ?? null;
         $contact->save();
     }
 
-    public function restoring(Contact $contact)
+    public function restoring(Contact $contact): void
     {
         $contact->deleted_by = null;
         $contact->save();
     }
 
-    public function restored(Contact $contact)
+    public function restored(Contact $contact): void
     {
         $contact->deleted_by = null;
         $contact->save();
     }
 
-    public function forceDeleted(Contact $contact) {}
+    public function forceDeleted(Contact $contact): void {}
 }

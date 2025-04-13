@@ -128,7 +128,7 @@ class Faq extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function getTranslateQuestionAttribute()
+    public function getTranslateQuestionAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
@@ -140,7 +140,7 @@ class Faq extends Model
         return $language[$locale] ?? $this->question;
     }
 
-    public function getTranslateAnswerAttribute()
+    public function getTranslateAnswerAttribute(): string
     {
         $locale = App::getLocale();
         $language = [

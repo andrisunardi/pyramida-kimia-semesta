@@ -14,7 +14,7 @@ class ArticlePage extends Component
     public string $search = '';
 
     #[On('searchChanged')]
-    public function handleSearchChanged(string $search)
+    public function handleSearchChanged(string $search): void
     {
         $this->search = $search;
     }

@@ -11,7 +11,7 @@ class DatabaseBackupCommand extends Command
 
     protected $description = 'Database Backup';
 
-    public function handle()
+    public function handle(): bool
     {
         $username = env('DB_USERNAME');
         $password = env('DB_PASSWORD');
