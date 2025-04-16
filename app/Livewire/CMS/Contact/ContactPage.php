@@ -2,6 +2,7 @@
 
 namespace App\Livewire\CMS\Contact;
 
+use App\Exports\ContactExport;
 use App\Livewire\Component;
 use App\Models\Contact;
 use App\Services\ContactService;
@@ -63,8 +64,8 @@ class ContactPage extends Component
     public function export()
     {
         return Excel::download(new ContactExport(
-            data: $this->getContacts(paginate: false),
-        ), 'Contact.xlsx');
+            contacts: $this->getContacts(paginate: false),
+        ), trans('index.contact').'.xlsx');
     }
 
     public function render()

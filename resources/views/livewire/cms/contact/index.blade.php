@@ -11,27 +11,7 @@
         <div class="card-body">
             <div class="row g-3 mb-3">
                 <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'name'" :title="trans('validation.attributes.name')" :icon="'fas fa-user'" />
-                </div>
-
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'company'" :title="trans('validation.attributes.company')" :icon="'fas fa-building'" />
-                </div>
-
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'email'" :title="trans('validation.attributes.email')" :icon="'fas fa-envelope'" />
-                </div>
-
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'phone'" :title="trans('validation.attributes.phone')" :icon="'fas fa-phone'" />
-                </div>
-
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'subject'" :title="trans('validation.attributes.subject')" :icon="'fas fa-pencil'" />
-                </div>
-
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
-                    <x-components::search :key="'message'" :title="trans('validation.attributes.message')" :icon="'fas fa-message'" />
+                    <x-components::search />
                 </div>
 
                 <div class="col-sm-4 col-lg-3 col-xl-auto">
@@ -42,6 +22,9 @@
             <div class="row">
                 <div class="col-auto">
                     <x-components::form.reset :text="trans('index.reset_filter')" />
+                </div>
+                <div class="col-auto">
+                    <x-components::button.refresh />
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ namespace App\Livewire\CMS\Contact;
 use App\Livewire\Component;
 use App\Models\Contact;
 
-class ContactViewPage extends Component
+class ContactDetailPage extends Component
 {
     public $contact;
 
@@ -16,6 +16,6 @@ class ContactViewPage extends Component
 
     public function render()
     {
-        return view('livewire.cms.contact.view');
+        return view('livewire.cms.contact.detail');
     }
 }

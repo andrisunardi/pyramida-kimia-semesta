@@ -165,6 +165,12 @@ return [
         'email' => '电子邮件',
         'phone' => '电话',
         'confirm_reset' => '确认重置',
+        'name' => '姓名',
+        'company' => '公司',
+        'subject' => '主题',
+        'message' => '信息',
+        'is_active' => '积极的',
+        'search' => '搜索',
     ],
 
 ];

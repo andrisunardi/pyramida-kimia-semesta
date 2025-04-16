@@ -165,6 +165,12 @@ return [
         'email' => 'Email',
         'phone' => 'Telepon',
         'confirm_reset' => 'Konfirmasi Reset',
+        'name' => 'Name',
+        'company' => 'Company',
+        'subject' => 'Subject',
+        'message' => 'Message',
+        'is_active' => 'Active',
+        'search' => 'Search',
     ],
 
 ];

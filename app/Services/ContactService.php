@@ -54,6 +54,11 @@ class ContactService
         return Contact::create($data);
     }
 
+    public function clone(array $data, Contact $contact): Contact
+    {
+        return Contact::create($data);
+    }
+
     public function update(Contact $contact, array $data = []): Contact
     {
         $contact->update($data);
