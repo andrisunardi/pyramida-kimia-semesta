@@ -172,6 +172,9 @@ return [
         'is_active' => 'Active',
         'search' => 'Search',
         'image' => 'Gambar',
+        'current_password' => 'Password Saat Ini',
+        'new_password' => 'Password Baru',
+        'confirm_password' => 'Konfirmasi Password',
     ],
 
 ];

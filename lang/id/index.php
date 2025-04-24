@@ -155,4 +155,6 @@ return [
     'new' => 'Baru',
     'your_profile_has_been_successfully_updated' => 'Profil Anda telah berhasil diperbarui',
     'image' => 'Gambar',
+    'format' => 'Format',
+    'size' => 'Ukuran',
 ];

@@ -172,6 +172,9 @@ return [
         'is_active' => '积极的',
         'search' => '搜索',
         'image' => '图像',
+        'current_password' => '当前密码',
+        'new_password' => '新密码',
+        'confirm_password' => '确认密码',
     ],
 
 ];

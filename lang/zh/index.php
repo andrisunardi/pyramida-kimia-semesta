@@ -155,4 +155,6 @@ return [
     'new' => '新的',
     'your_profile_has_been_successfully_updated' => '您的个人资料已成功更新',
     'image' => '图像',
+    'format' => '格式',
+    'size' => '尺寸',
 ];
