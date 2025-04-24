@@ -151,4 +151,8 @@ return [
     'fields_has_been_successfully_reseted' => '字段已成功重置',
     'back' => '后退',
     'reset' => '重置',
+    'old' => '老的',
+    'new' => '新的',
+    'your_profile_has_been_successfully_updated' => '您的个人资料已成功更新',
+    'image' => '图像',
 ];

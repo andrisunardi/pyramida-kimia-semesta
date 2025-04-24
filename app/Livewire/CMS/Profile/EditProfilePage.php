@@ -3,61 +3,38 @@
 namespace App\Livewire\CMS\Profile;
 
 use App\Livewire\Component;
-use App\Services\UserService;
-use Illuminate\Support\Facades\Auth;
+use App\Livewire\Forms\CMS\Profile\EditProfileForm;
+use Illuminate\Contracts\View\View;
 
 class EditProfilePage extends Component
 {
-    public $name;
+    public EditProfileForm $form;
 
-    public $username;
-
-    public $email;
-
-    public $phone;
-
-    public $image;
-
-    public function mount()
+    public function mount(): void
     {
-        $this->name = Auth::user()->name;
-        $this->username = Auth::user()->username;
-        $this->email = Auth::user()->email;
-        $this->phone = Auth::user()->phone;
+        $this->form->set();
     }
 
-    public function resetFields()
+    public function resetFields(): void
     {
-        $this->name = Auth::user()->name;
-        $this->username = Auth::user()->username;
-        $this->email = Auth::user()->email;
-        $this->phone = Auth::user()->phone;
-    }
+        $this->form->set();
 
-    public function rules()
-    {
-        return [
-            'name' => 'required|string|max:50|unique:users,name,'.Auth::user()->id,
-            'username' => 'required|string|max:50|unique:users,username,'.Auth::user()->id,
-            'email' => 'required|string|max:50|unique:users,email,'.Auth::user()->id,
-            'phone' => 'required|string|max:20|unique:users,phone,'.Auth::user()->id,
-            'image' => 'nullable|max:'.env('MAX_IMAGE').'|mimes:'.env('MIMES_IMAGE'),
-        ];
-    }
-
-    public function submit()
-    {
-        (new UserService)->editProfile(Auth::user(), $this->validate());
-
-        $this->resetFields();
-        $this->resetValidation();
-
-        return $this->alert('success', trans('index.edit_profile_success'), [
-            'html' => trans('index.your_profile_has_been_successfully_updated'),
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
     }
 
-    public function render()
+    public function submit(): void
+    {
+        $this->form->submit();
+
+        $this->alert('success', trans('index.edit_profile').' '.trans('index.success'), [
+            'html' => trans('index.your_profile_has_been_successfully_updated'),
+        ]);
+
+    }
+
+    public function render(): View
     {
         return view('livewire.cms.profile.edit-profile');
     }

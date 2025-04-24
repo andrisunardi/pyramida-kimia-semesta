@@ -151,4 +151,8 @@ return [
     'fields_has_been_successfully_reseted' => 'Bidang telah berhasil diatur ulang',
     'back' => 'Kembali',
     'reset' => 'Atur Ulang',
+    'old' => 'Lama',
+    'new' => 'Baru',
+    'your_profile_has_been_successfully_updated' => 'Profil Anda telah berhasil diperbarui',
+    'image' => 'Gambar',
 ];

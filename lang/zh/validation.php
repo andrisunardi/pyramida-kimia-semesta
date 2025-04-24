@@ -171,6 +171,7 @@ return [
         'message' => '信息',
         'is_active' => '积极的',
         'search' => '搜索',
+        'image' => '图像',
     ],
 
 ];

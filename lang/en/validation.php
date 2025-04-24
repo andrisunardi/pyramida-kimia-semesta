@@ -171,7 +171,7 @@ return [
         'message' => 'Message',
         'is_active' => 'Active',
         'search' => 'Search',
-        'data' => 'Data',
+        'image' => 'Image',
         'data' => 'Data',
         'data' => 'Data',
         'data' => 'Data',

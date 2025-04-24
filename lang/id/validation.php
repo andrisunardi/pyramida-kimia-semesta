@@ -171,6 +171,7 @@ return [
         'message' => 'Message',
         'is_active' => 'Active',
         'search' => 'Search',
+        'image' => 'Gambar',
     ],
 
 ];

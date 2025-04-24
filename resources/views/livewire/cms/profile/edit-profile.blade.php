@@ -20,30 +20,31 @@
 
                         <div class="row g-3 mb-3">
                             <div class="col-sm-6">
-                                <x-components::form.name :icon="'fas fa-id-card'" :maxlength="50" :required="true"
-                                    :autofocus="true" />
+                                <x-components::form.name :key="'form.name'" :icon="'fas fa-id-card'" :maxlength="50"
+                                    :required="true" :autofocus="true" />
                             </div>
 
                             <div class="col-sm-6">
-                                <x-components::form.username :maxlength="50" :required="true" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3 mb-3">
-                            <div class="col-sm-6">
-                                <x-components::form.email :maxlength="50" :required="true" :autocapitalize="'none'" />
-                            </div>
-
-                            <div class="col-sm-6">
-                                <x-components::form.phone :maxlength="15" :required="true" />
+                                <x-components::form.username :key="'form.username'" :maxlength="50" :required="true" />
                             </div>
                         </div>
 
                         <div class="row g-3 mb-3">
                             <div class="col-sm-6">
-                                <x-components::form.image />
+                                <x-components::form.email :key="'form.email'" :maxlength="50" :required="true"
+                                    :autocapitalize="'none'" />
+                            </div>
 
-                                <x-components::preview.image :image="$image" :data="Auth::user()" />
+                            <div class="col-sm-6">
+                                <x-components::form.phone :key="'form.phone'" :maxlength="15" :required="true" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-sm-6">
+                                <x-components::form.image :key="'form.image'" />
+
+                                <x-components::preview.image :image="$form->image" :data="Auth::user()" />
                             </div>
                         </div>
 

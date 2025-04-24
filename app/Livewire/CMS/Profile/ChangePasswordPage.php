@@ -4,7 +4,7 @@ namespace App\Livewire\CMS\Profile;
 
 use App\Livewire\Component;
 use App\Livewire\Forms\CMS\Profile\ChangePasswordForm;
-use App\Services\UserService;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,27 +12,25 @@ class ChangePasswordPage extends Component
 {
     public ChangePasswordForm $form;
 
-    public $currentPasswordVisibility = false;
+    public bool $currentPasswordVisibility = false;
 
-    public $newPasswordVisibility = false;
+    public bool $newPasswordVisibility = false;
 
-    public $newPasswordConfirmationVisibility = false;
+    public bool $newPasswordConfirmationVisibility = false;
 
     public function resetFields(): void
     {
         $this->form->set();
 
         $this->alert('success', trans('index.reset').' '.trans('index.success'), [
-            'html' => '',
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
 
     }
 
     public function submit(): void
     {
-        $data = $this->form->validate();
-
-        if (! Hash::check($data['current_password'], Auth::user()->password)) {
+        if (! Hash::check($this->form->current_password, Auth::user()->password)) {
             $this->alert('error', trans('index.change_password_failed'), [
                 'html' => trans('index.current_password_is_incorrect'),
             ]);
@@ -40,18 +38,7 @@ class ChangePasswordPage extends Component
             return;
         }
 
-        if ($data['new_password'] != $data['new_password_confirmation']) {
-            $this->alert('error', trans('index.change_password_failed'), [
-                'html' => trans('index.new_password_and_confirm_password_does_not_match'),
-            ]);
-
-            return;
-        }
-
-        (new UserService)->changePassword(user: Auth::user(), data: $data);
-
-        $this->form->reset();
-        $this->resetValidation();
+        $this->form->submit();
 
         $this->alert('success', trans('index.change_password_success'), [
             'html' => trans('index.forgot_password_success'),
@@ -59,7 +46,7 @@ class ChangePasswordPage extends Component
 
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.cms.profile.change-password');
     }
