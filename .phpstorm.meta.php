@@ -4095,7 +4095,7 @@ namespace PHPSTORM_META {
 'index.yes','index.no','index.reset_filter','index.trash','index.#',
 'index.id','index.action','index.add','index.edit','index.delete',
 'index.clone','index.login_has_been_successfully','index.no_data_available','index.refresh','index.page_has_been_successfully_refreshed',
-'index.success','index.failed',);
+'index.success','index.failed','index.fields_has_been_successfully_reseted','index.back','index.reset',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

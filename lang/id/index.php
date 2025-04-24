@@ -148,4 +148,7 @@ return [
     'page_has_been_successfully_refreshed' => 'Halaman telah berhasil disegarkan',
     'success' => 'Berhasil',
     'failed' => 'Gagal',
+    'fields_has_been_successfully_reseted' => 'Bidang telah berhasil diatur ulang',
+    'back' => 'Kembali',
+    'reset' => 'Atur Ulang',
 ];

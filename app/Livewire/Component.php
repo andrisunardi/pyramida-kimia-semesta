@@ -13,11 +13,12 @@ class Component extends LivewireComponent
     use WithFileUploads;
     use WithPagination;
 
-    public function refresh()
+    public function refresh(): void
     {
-        return $this->alert('success', trans('index.refresh').' '.trans('index.success'), [
+        $this->alert('success', trans('index.refresh').' '.trans('index.success'), [
             'html' => trans('index.page_has_been_successfully_refreshed'),
         ]);
+
     }
 
     public function getBgClasses(): object

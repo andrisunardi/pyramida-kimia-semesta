@@ -148,4 +148,7 @@ return [
     'page_has_been_successfully_refreshed' => '页面已成功刷新',
     'success' => '成功',
     'failed' => '失败的',
+    'fields_has_been_successfully_reseted' => '字段已成功重置',
+    'back' => '后退',
+    'reset' => '重置',
 ];

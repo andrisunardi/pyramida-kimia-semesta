@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 class Logout extends Component
 {
-    public function mount()
+    public function mount(): void
     {
         Auth::logout();
         Session::flush();
@@ -17,6 +17,7 @@ class Logout extends Component
             'html' => trans('index.you_have_been_successfully_logged_out'),
         ]);
 
-        return $this->redirect(route('cms.login'), navigate: true);
+        $this->redirect(route('cms.login'), navigate: true);
+
     }
 }

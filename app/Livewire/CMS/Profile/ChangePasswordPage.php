@@ -3,58 +3,60 @@
 namespace App\Livewire\CMS\Profile;
 
 use App\Livewire\Component;
+use App\Livewire\Forms\CMS\Profile\ChangePasswordForm;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ChangePasswordPage extends Component
 {
-    public $current_password;
+    public ChangePasswordForm $form;
 
-    public $new_password;
+    public $currentPasswordVisibility = false;
 
-    public $confirm_password;
+    public $newPasswordVisibility = false;
 
-    public function resetFields()
+    public $newPasswordConfirmationVisibility = false;
+
+    public function resetFields(): void
     {
-        $this->reset([
-            'current_password',
-            'new_password',
-            'confirm_password',
+        $this->form->set();
+
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => '',
         ]);
+
     }
 
-    public function rules()
+    public function submit(): void
     {
-        return [
-            'current_password' => 'required|string|max:50',
-            'new_password' => 'required|string|max:50|same:confirm_password',
-            'confirm_password' => 'required|string|max:50|same:new_password',
-        ];
-    }
+        $data = $this->form->validate();
 
-    public function submit()
-    {
-        if (! Hash::check($this->current_password, Auth::user()->password)) {
-            return $this->alert('error', trans('index.change_password_failed'), [
+        if (! Hash::check($data['current_password'], Auth::user()->password)) {
+            $this->alert('error', trans('index.change_password_failed'), [
                 'html' => trans('index.current_password_is_incorrect'),
             ]);
+
+            return;
         }
 
-        if ($this->new_password != $this->confirm_password) {
-            return $this->alert('error', trans('index.change_password_failed'), [
+        if ($data['new_password'] != $data['new_password_confirmation']) {
+            $this->alert('error', trans('index.change_password_failed'), [
                 'html' => trans('index.new_password_and_confirm_password_does_not_match'),
             ]);
+
+            return;
         }
 
-        (new UserService)->changePassword(user: Auth::user(), data: $this->validate());
+        (new UserService)->changePassword(user: Auth::user(), data: $data);
 
-        $this->resetFields();
+        $this->form->reset();
         $this->resetValidation();
 
-        return $this->alert('success', trans('index.change_password_success'), [
+        $this->alert('success', trans('index.change_password_success'), [
             'html' => trans('index.forgot_password_success'),
         ]);
+
     }
 
     public function render()
