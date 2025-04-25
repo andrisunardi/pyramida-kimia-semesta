@@ -159,4 +159,9 @@ return [
     'size' => 'Ukuran',
     'permission' => 'Izin',
     'configuration' => 'Konfigurasi',
+    'activity' => 'Aktivitas',
+    'setting' => 'Pengaturan',
+    'export_to_excel' => 'Ekspor Ke Excel',
+    'export_to_pdf' => 'Ekspor Ke PDF',
+    'guard_name' => 'Nama Penjaga',
 ];

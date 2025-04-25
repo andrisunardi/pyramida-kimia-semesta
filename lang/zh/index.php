@@ -159,4 +159,9 @@ return [
     'size' => '尺寸',
     'permission' => '允许',
     'configuration' => '配置',
+    'activity' => '活动',
+    'setting' => '环境',
+    'export_to_excel' => '导出至 Excel',
+    'export_to_pdf' => '导出为 PDF',
+    'guard_name' => '警卫姓名',
 ];
