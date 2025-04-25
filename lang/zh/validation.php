@@ -175,6 +175,8 @@ return [
         'current_password' => '当前密码',
         'new_password' => '新密码',
         'confirm_password' => '确认密码',
+        'user' => '用户',
+        'role' => '角色',
     ],
 
 ];

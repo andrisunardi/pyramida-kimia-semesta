@@ -158,4 +158,5 @@ return [
     'format' => '格式',
     'size' => '尺寸',
     'permission' => '允许',
+    'configuration' => '配置',
 ];

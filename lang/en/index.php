@@ -158,7 +158,7 @@ return [
     'format' => 'Format',
     'size' => 'Size',
     'permission' => 'Permission',
-    'data' => 'Data',
+    'configuration' => 'Configuration',
     'data' => 'Data',
     'data' => 'Data',
     'data' => 'Data',

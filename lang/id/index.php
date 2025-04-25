@@ -158,4 +158,5 @@ return [
     'format' => 'Format',
     'size' => 'Ukuran',
     'permission' => 'Izin',
+    'configuration' => 'Konfigurasi',
 ];

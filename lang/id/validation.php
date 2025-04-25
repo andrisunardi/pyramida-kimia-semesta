@@ -175,6 +175,8 @@ return [
         'current_password' => 'Password Saat Ini',
         'new_password' => 'Password Baru',
         'confirm_password' => 'Konfirmasi Password',
+        'user' => 'Pengguna',
+        'role' => 'Peran',
     ],
 
 ];
