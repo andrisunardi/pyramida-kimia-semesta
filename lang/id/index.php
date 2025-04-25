@@ -157,4 +157,5 @@ return [
     'image' => 'Gambar',
     'format' => 'Format',
     'size' => 'Ukuran',
+    'permission' => 'Izin',
 ];

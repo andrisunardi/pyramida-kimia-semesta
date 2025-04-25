@@ -157,4 +157,5 @@ return [
     'image' => '图像',
     'format' => '格式',
     'size' => '尺寸',
+    'permission' => '允许',
 ];

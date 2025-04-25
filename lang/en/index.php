@@ -157,7 +157,7 @@ return [
     'image' => 'Image',
     'format' => 'Format',
     'size' => 'Size',
-    'data' => 'Data',
+    'permission' => 'Permission',
     'data' => 'Data',
     'data' => 'Data',
     'data' => 'Data',
