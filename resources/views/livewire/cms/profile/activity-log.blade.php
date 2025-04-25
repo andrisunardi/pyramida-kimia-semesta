@@ -2,13 +2,13 @@
 @section('icon', 'fas fa-user-clock')
 
 <main>
-    @include('livewire.cms.profile.menu')
+    @livewire('c-m-s.profile.menu-component')
 
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
-                <div class="card-header bg-info text-white">
-                    <span class="@yield('icon') fa-fw"></span>
+                <div class="card-header text-bg-info">
+                    <x-components::icon :value="'fas fa-user-clock'" />
                     @yield('title')
                 </div>
 
@@ -20,7 +20,7 @@
                                     <h5 class="mb-1 text-capitalize">
                                         {{ $activity->log_name }} - {{ $activity->subject_id }}
                                     </h5>
-                                    <small class="text-capitalize">{{ $activity->event }}</small>
+                                    <small>{{ Utils::translate($activity->event) }}</small>
                                 </div>
                                 <p class="mb-1">{!! $activity->description !!}</p>
                                 <div><small>{{ $activity->causer->name }}</small></div>
@@ -53,8 +53,6 @@
 
                     {{ $activities->links('components::components.layouts.pagination') }}
                 </div>
-
-                <div class="card-footer bg-info"></div>
             </div>
         </div>
     </div>

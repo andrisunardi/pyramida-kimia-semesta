@@ -2,13 +2,13 @@
 @section('icon', 'fas fa-user-circle')
 
 <main>
-    @include('livewire.cms.profile.menu')
+    @livewire('c-m-s.profile.menu-component')
 
     <div class="row">
         <div class="col-xl-6">
             <div class="card mb-4">
-                <div class="card-header bg-primary text-white">
-                    <span class="@yield('icon') fa-fw"></span>
+                <div class="card-header text-bg-primary">
+                    <x-components::icon :value="'fas fa-user-circle'" />
                     @yield('title')
                 </div>
 
@@ -64,7 +64,7 @@
                         </div>
                         <div class="col-sm-6 col-md-8 col-lg-9 col-xl-9">
                             <span class="{{ 'badge bg-' . Utils::successDanger(Auth::user()->is_active) }}">
-                                {{ Utils::translate(Utils::active(Auth::user()->is_active)) }}
+                                {{ Utils::translate(Utils::yesNo(Auth::user()->is_active)) }}
                             </span>
                         </div>
                     </div>
@@ -115,16 +115,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="card-footer bg-primary"></div>
-
             </div>
         </div>
 
         <div class="col-xl-6">
             @if ($lastActivity)
                 <div class="card mb-4">
-
                     <div class="card-header text-white bg-primary">
                         <span class="fas fa-clock fa-fw"></span>
                         {{ trans('index.last_activity') }}
@@ -164,7 +160,6 @@
                             </button>
                         </div>
                     </div>
-                    <div class="card-footer bg-primary"></div>
                 </div>
             @endif
 
@@ -196,7 +191,6 @@
                         @endforeach
                     </ol>
                 </div>
-                <div class="card-footer bg-primary"></div>
             </div>
         </div>
     </div>

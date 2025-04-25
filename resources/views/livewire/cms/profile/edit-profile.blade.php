@@ -2,18 +2,17 @@
 @section('icon', 'fas fa-user-edit')
 
 <main>
-    @include('livewire.cms.profile.menu')
+    @livewire('c-m-s.profile.menu-component')
 
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
-                <div class="card-header bg-success text-white">
-                    <span class="@yield('icon') fa-fw"></span>
+                <div class="card-header text-bg-success">
+                    <x-components::icon :value="'fas fa-user-edit'" />
                     @yield('title')
                 </div>
 
                 <div class="card-body">
-
                     <form wire:submit.prevent="submit" role="form" autocomplete="off">
 
                         <x-components::form.alert />
@@ -56,12 +55,8 @@
                                 <x-components::form.reset />
                             </div>
                         </div>
-
                     </form>
-
                 </div>
-
-                <div class="card-footer bg-success"></div>
             </div>
         </div>
     </div>

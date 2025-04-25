@@ -25,7 +25,6 @@ class ChangePasswordPage extends Component
         $this->alert('success', trans('index.reset').' '.trans('index.success'), [
             'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
-
     }
 
     public function submit(): void
