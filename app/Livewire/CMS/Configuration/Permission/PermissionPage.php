@@ -2,12 +2,12 @@
 
 namespace App\Livewire\CMS\Configuration\Permission;
 
+use App\Exports\PermissionExport;
 use App\Livewire\Component;
-use Livewire\Attributes\Url;
+use App\Services\PermissionService;
 use App\Services\RoleService;
 use App\Services\UserService;
-use App\Exports\PermissionExport;
-use App\Services\PermissionService;
+use Livewire\Attributes\Url;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -41,10 +41,9 @@ class PermissionPage extends Component
         (new PermissionService)->delete(permission: $permission);
 
         $this->alert('success', trans('index.delete_success'), [
-            'html' => trans('index.permission') . " " . trans('index.has_been_successfully_deleted'),
+            'html' => trans('index.permission').' '.trans('index.has_been_successfully_deleted'),
         ]);
 
-        return;
     }
 
     public function updating(): void

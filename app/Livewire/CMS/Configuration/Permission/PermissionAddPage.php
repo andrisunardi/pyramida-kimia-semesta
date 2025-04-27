@@ -25,7 +25,7 @@ class PermissionAddPage extends Component
         $this->form->submit();
 
         $this->flash('success', trans('index.add').' '.trans('index.success'), [
-            'html' => trans('index.permission')." ".trans('index.has_been_successfully_added'),
+            'html' => trans('index.permission').' '.trans('index.has_been_successfully_added'),
         ]);
 
         $this->redirect(route('cms.configuration.permission.index'), navigate: true);

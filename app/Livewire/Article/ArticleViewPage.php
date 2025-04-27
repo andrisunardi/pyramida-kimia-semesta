@@ -20,9 +20,7 @@ class ArticleViewPage extends Component
                 'html' => trans('index.please_try_again_later'),
             ]);
 
-            redirect()->route('article.index');
-
-            return;
+            $this->redirect(route('article.index'), navigate: true);
         }
     }
 

@@ -20,9 +20,7 @@ class TeamViewPage extends Component
                 'html' => trans('index.please_try_again_later'),
             ]);
 
-            redirect()->route('team.index');
-
-            return;
+            $this->redirect(route('team.index'), navigate: true);
         }
     }
 

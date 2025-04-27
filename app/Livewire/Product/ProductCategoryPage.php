@@ -19,9 +19,7 @@ class ProductCategoryPage extends Component
                 'html' => trans('index.please_try_again_later'),
             ]);
 
-            redirect()->route('product.index');
-
-            return;
+            $this->redirect(route('product.index'), navigate: true);
         }
     }
 

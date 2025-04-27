@@ -18,8 +18,6 @@ class ForgotPasswordPage extends Component
             ]);
 
             $this->redirect(route('cms.index'), navigate: true);
-
-            return;
         }
     }
 

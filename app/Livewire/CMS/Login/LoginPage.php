@@ -19,8 +19,6 @@ class LoginPage extends Component
             ]);
 
             $this->redirect(route('cms.index'), navigate: true);
-
-            return;
         }
     }
 
