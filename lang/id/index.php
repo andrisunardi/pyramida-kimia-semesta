@@ -174,4 +174,5 @@ return [
     'has_been_successfully_changed' => 'Telah Berhasil Diubah',
     'printed_date' => 'Tanggal Dicetak',
     'select' => 'Pilih',
+    'change' => 'Ganti',
 ];

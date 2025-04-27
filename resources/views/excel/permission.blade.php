@@ -17,14 +17,30 @@
             <td colspan="8"></td>
         </tr>
         <tr>
-            <th align="center"><b>#</b></th>
-            <th align="center"><b>ID</b></th>
-            <th align="center"><b>Name</b></th>
-            <th align="center"><b>Guard Name</b></th>
-            <th align="center"><b>Total Role</b></th>
-            <th align="center"><b>Total User</b></th>
-            <th align="center"><b>Created At</b></th>
-            <th align="center"><b>Updated At</b></th>
+            <th align="center">
+                <b>{{ trans('index.#') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.id') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.name') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.guard_name') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.total') }} {{ trans('index.role') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.total') }} {{ trans('index.user') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.created_at') }}</b>
+            </th>
+            <th align="center">
+                <b>{{ trans('index.updated_at') }}</b>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -32,7 +48,7 @@
             <tr>
                 <td align="center">{{ $loop->iteration }}</td>
                 <td align="center">{{ $permission->id }}</td>
-                <td align="center">{{ $permission->name }}</td>
+                <td align="left">{{ $permission->name }}</td>
                 <td align="center">{{ $permission->guard_name }}</td>
                 <td align="center">{{ $permission->roles_count }}</td>
                 <td align="center">{{ $permission->users_count }}</td>
@@ -41,7 +57,9 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="8">No Data Available</td>
+                <td align="center" colspan="8">
+                    {{ trans('index.no_data_available') }}
+                </td>
             </tr>
         @endforelse
     </tbody>

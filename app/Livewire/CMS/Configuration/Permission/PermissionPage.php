@@ -38,6 +38,11 @@ class PermissionPage extends Component
         ]);
     }
 
+    public function updating(): void
+    {
+        $this->resetPage();
+    }
+
     public function delete(Permission $permission): void
     {
         (new PermissionService)->delete(permission: $permission);
@@ -45,11 +50,6 @@ class PermissionPage extends Component
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_deleted'),
         ]);
-    }
-
-    public function updating(): void
-    {
-        $this->resetPage();
     }
 
     public function getRoles(): object

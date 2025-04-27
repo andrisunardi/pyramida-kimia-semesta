@@ -6,8 +6,10 @@ use App\Exports\ContactExport;
 use App\Livewire\Component;
 use App\Models\Contact;
 use App\Services\ContactService;
+use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Url;
 use Maatwebsite\Excel\Facades\Excel;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ContactPage extends Component
 {
@@ -17,12 +19,7 @@ class ContactPage extends Component
     #[Url(except: [])]
     public $is_active = [];
 
-    public function updating()
-    {
-        $this->resetPage();
-    }
-
-    public function resetFields()
+    public function resetFields(): void
     {
         $this->resetPage();
 
@@ -30,45 +27,56 @@ class ContactPage extends Component
             'search',
             'is_active',
         ]);
+
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
+        ]);
     }
 
-    public function changeActive(Contact $contact)
+    public function updating(): void
+    {
+        $this->resetPage();
+    }
+
+    public function changeActive(Contact $contact): void
     {
         (new ContactService)->active(contact: $contact);
 
-        return $this->alert('success', 'Change Active Success', [
-            'html' => 'Contact has been successfully changed.',
+        $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
+            'html' => trans('index.contact').' '.trans('index.has_been_successfully_changed'),
         ]);
     }
 
-    public function delete(Contact $contact)
+    public function delete(Contact $contact): void
     {
         (new ContactService)->delete(contact: $contact);
 
-        return $this->alert('success', 'Delete Success', [
-            'html' => 'Contact has been successfully deleted.',
+        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
+            'html' => trans('index.contact').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
 
-    public function getContacts(bool $paginate = true)
+    public function getContacts(bool $paginate = true): object
     {
-        $contacts = (new ContactService)->index(
+        return (new ContactService)->index(
             search: $this->search,
             isActive: $this->is_active,
             paginate: $paginate,
         );
-
-        return $contacts;
     }
 
-    public function export()
+    public function exportToExcel(): BinaryFileResponse
     {
+        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
+            'html' => trans('index.user').' '.trans('index.has_been_successfully_exported'),
+        ]);
+
         return Excel::download(new ContactExport(
             contacts: $this->getContacts(paginate: false),
         ), trans('index.contact').'.xlsx');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.cms.contact.index', [
             'contacts' => $this->getContacts(),

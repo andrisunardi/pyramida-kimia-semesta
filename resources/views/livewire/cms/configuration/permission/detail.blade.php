@@ -1,7 +1,7 @@
 @section('title', trans('index.permission'))
 @section('icon', 'fas fa-key')
 
-<div>
+<main>
     <div class="card mb-3">
         <div class="card-header text-bg-info">
             <x-components::icon :value="'fas fa-list'" />
@@ -146,4 +146,4 @@
 
     @livewire('c-m-s.loader')
 
-</div>
+</main>

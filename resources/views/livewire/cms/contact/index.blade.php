@@ -1,55 +1,53 @@
 @section('title', trans('index.contact'))
 @section('icon', 'fas fa-phone')
 
-<div>
+<main>
     <div class="card">
         <div class="card-header text-bg-primary">
             <x-components::icon :value="'fas fa-search'" />
             {{ trans('index.search') }} @yield('title')
         </div>
-
         <div class="card-body">
-            <div class="row g-3 mb-3">
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
+            <div class="row g-3">
+                <div class="col-sm">
                     <x-components::search />
                 </div>
 
-                <div class="col-sm-4 col-lg-3 col-xl-auto">
+                <div class="col-sm-auto">
                     <x-components::search.is-active />
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-auto">
-                    <x-components::form.reset :text="trans('index.reset_filter')" />
+                <div class="col col-sm-auto">
+                    <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
+                    <x-components::form.reset />
                 </div>
-                <div class="col-auto">
+                <div class="col-auto col-sm-auto">
+                    <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
                     <x-components::button.refresh />
                 </div>
             </div>
         </div>
-
-        <div class="card-footer bg-primary-subtle"></div>
     </div>
 
-    <div class="card my-3">
-        <div class="card-header bg-primary-subtle">
-            <span class="fas fa-table fa-fw"></span>
+    <div class="card mt-3">
+        <div class="card-header text-bg-primary">
+            <x-components::icon :value="'fas fa-table'" />
             {{ trans('index.data') }} @yield('title')
         </div>
 
         <div class="card-body">
-            <div class="row g-3 mb-3">
-                @can('Contact Trash')
-                    <div class="col-6 col-sm-auto">
-                        <x-components::link.trash :href="route('cms.contact.trash')" />
+            <div class="row g-3">
+                @can('contact.export')
+                    <div class="col-auto col-sm-auto">
+                        <x-components::button.export-to-excel :width="'100'" />
                     </div>
                 @endcan
             </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped table-hover table-bordered text-nowrap table-responsive align-middle">
-                    <thead>
+            <div class="table-responsive mt-3">
+                <table
+                    class="table table-striped table-bordered table-hover text-nowrap table-responsive align-middle mb-0">
+                    <thead class="table-primary">
                         <tr class="text-center align-middle">
                             <th width="1%">{{ trans('index.#') }}</th>
                             <th width="1%">{{ trans('index.id') }}</th>
@@ -62,16 +60,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($contacts as $contact)
-                            <tr wire:key="{{ $contact->id }}">
+                        @forelse ($contacts as $key => $contact)
+                            <tr wire:key="{{ $key }}">
                                 <td class="text-center">
                                     {{ ($contacts->currentPage() - 1) * $contacts->perPage() + $loop->iteration }}
                                 </td>
                                 <td class="text-center">
-                                    <x-components::link :href="route('cms.contact.view', ['contact' => $contact->id])" :text="$contact->id" />
+                                    <x-components::link :href="route('cms.contact.detail', [
+                                        'contact' => $contact,
+                                    ])" :text="$contact->id" />
                                 </td>
-                                <td class="text-wrap">{{ $contact->name }}</td>
-                                <td class="text-wrap">{{ $contact->company }}</td>
+                                <td class="text-wrap">
+                                    {{ $contact->name }}
+                                </td>
+                                <td class="text-wrap">
+                                    {{ $contact->company }}
+                                </td>
                                 <td>
                                     <x-components::link.email :value="$contact->email" />
                                 </td>
@@ -79,55 +83,27 @@
                                     <x-components::link.whatsapp :value="$contact->phone" />
                                 </td>
                                 <td class="text-center">
-                                    <span class="badge bg-{{ Utils::successDanger($contact->is_active) }}">
-                                        {{ Utils::translate(Utils::yesNo($contact->is_active)) }}
-                                    </span>
+                                    @can('contact.edit')
+                                        <x-components::form.switch :key="'changeActive'" :id="$contact->id" :value="$contact->is_active" />
+                                    @else
+                                        <span
+                                            class="badge rounded-pill text-bg-{{ Utils::successDanger($contact->is_active) }}">
+                                            {{ Utils::translate(Utils::yesNo($contact->is_active)) }}
+                                        </span>
+                                    @endcan
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="fas fa-tools fa-fw"></span>
-                                        {{ trans('index.action') }}
-                                    </button>
+                                    @can('contact.detail')
+                                        <x-components::link.detail :size="'sm'" :width="'auto'"
+                                            :href="route('cms.contact.detail', [
+                                                'contact' => $contact->id,
+                                            ])" />
+                                    @endcan
 
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        @can('Contact View')
-                                            <li>
-                                                <x-components::link.view :class="'dropdown-item'" :href="route('cms.contact.view', [
-                                                    'contact' => $contact->id,
-                                                ])" />
-                                            </li>
-                                        @endcan
-                                        @can('Contact Clone')
-                                            <li>
-                                                <x-components::link.clone :class="'dropdown-item'" :href="route('cms.contact.clone', [
-                                                    'contact' => $contact->id,
-                                                ])" />
-                                            </li>
-                                        @endcan
-                                        @can('Contact Edit')
-                                            <li>
-                                                <x-components::link.edit :class="'dropdown-item'" :href="route('cms.contact.edit', [
-                                                    'contact' => $contact->id,
-                                                ])" />
-                                            </li>
-                                        @endcan
-                                        @can('Contact Active')
-                                            <li>
-                                                <x-components::link.active :class="'dropdown-item'" :href="route('cms.contact.active', [
-                                                    'contact' => $contact->id,
-                                                ])"
-                                                    :value="$contact->is_active" />
-                                            </li>
-                                        @endcan
-                                        @can('Contact Delete')
-                                            <li>
-                                                <x-components::link.delete :class="'dropdown-item'" :href="route('cms.contact.delete', [
-                                                    'contact' => $contact->id,
-                                                ])" />
-                                            </li>
-                                        @endcan
-                                    </ul>
+                                    @can('contact.delete')
+                                        <x-components::button.delete :size="'sm'" :width="'auto'"
+                                            :key="'delete(' . $contact->id . ')'" :confirm="trans('index.confirm')" />
+                                    @endcan
                                 </td>
                             </tr>
                         @empty
@@ -143,7 +119,5 @@
 
             {{ $contacts->links('components::components.layouts.pagination') }}
         </div>
-
-        <div class="card-footer bg-primary-subtle"></div>
     </div>
-</div>
+</main>

@@ -1,16 +1,16 @@
 <table>
     <thead>
         <tr>
-            <th valign="middle" align="center" colspan="11">
-                <b>Contact</b>
+            <th align="center" colspan="11">
+                <b>{{ trans('index.contact') }}</b>
             </th>
         </tr>
         <tr>
             <td colspan="11"></td>
         </tr>
         <tr>
-            <th valign="middle" align="center" colspan="11">
-                Printed Date : {{ now()->isoFormat('LLLL') }}
+            <th align="center" colspan="11">
+                {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
         <tr>
@@ -18,37 +18,37 @@
         </tr>
         <tr>
             <th valign="middle" align="center">
-                <b>#</b>
+                <b>{{ trans('index.#') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>ID</b>
+                <b>{{ trans('index.id') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Name</b>
+                <b>{{ trans('index.name') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Company</b>
+                <b>{{ trans('index.company') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Email</b>
+                <b>{{ trans('index.email') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Phone</b>
+                <b>{{ trans('index.phone') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Subject</b>
+                <b>{{ trans('index.subject') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Message</b>
+                <b>{{ trans('index.message') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Active</b>
+                <b>{{ trans('index.active') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Created At</b>
+                <b>{{ trans('index.created_at') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>Updated At</b>
+                <b>{{ trans('index.updated_at') }}</b>
             </th>
         </tr>
     </thead>
@@ -68,6 +68,9 @@
                     {{ $contact->company }}
                 </td>
                 <td align="left">
+                    {{ $contact->email }}
+                </td>
+                <td align="left">
                     {{ $contact->phone }}
                 </td>
                 <td align="left">
@@ -77,7 +80,7 @@
                     {{ $contact->message }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ Str::yesNo($contact->is_active) }}
+                    {{ Utils::translate(Utils::yesNo($contact->is_active)) }}
                 </td>
                 <td valign="middle" align="center">
                     {{ $contact->created_at }}
@@ -88,7 +91,7 @@
             </tr>
         @empty
             <tr>
-                <td valign="middle" align="center" colspan="11">
+                <td align="center" colspan="11">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

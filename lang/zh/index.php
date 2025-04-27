@@ -174,4 +174,5 @@ return [
     'has_been_successfully_changed' => '已成功更改',
     'printed_date' => '打印日期',
     'select' => '选择',
+    'change' => '改变',
 ];

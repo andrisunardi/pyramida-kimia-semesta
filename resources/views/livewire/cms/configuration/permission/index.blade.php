@@ -25,12 +25,12 @@
 
                 <div class="col col-sm-auto">
                     <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                    <x-components::form.reset :width="'100'" />
+                    <x-components::form.reset />
                 </div>
 
                 <div class="col-auto col-sm-auto">
                     <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                    <x-components::button.refresh :width="'100'" />
+                    <x-components::button.refresh />
                 </div>
             </div>
         </div>
