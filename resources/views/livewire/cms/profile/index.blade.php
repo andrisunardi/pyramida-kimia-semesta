@@ -75,7 +75,7 @@
                         </div>
                         <div class="col-sm-6 col-md-8 col-lg-9 col-xl-9">
                             @if (Auth::user()->createdBy)
-                                <x-components::link :text="Auth::user()->createdBy->name" :href="route('cms.configuration.user.view', [
+                                <x-components::link :text="Auth::user()->createdBy->name" :href="route('cms.configuration.user.detail', [
                                     'user' => Auth::user()->createdBy->id,
                                 ])" />
                             @endif
@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-sm-6 col-md-8 col-lg-9 col-xl-9">
                             @if (Auth::user()->updatedBy)
-                                <x-components::link :text="Auth::user()->updatedBy->name" :href="route('cms.configuration.user.view', [
+                                <x-components::link :text="Auth::user()->updatedBy->name" :href="route('cms.configuration.user.detail', [
                                     'user' => Auth::user()->updatedBy->id,
                                 ])" />
                             @endif
@@ -180,7 +180,7 @@
                                     @foreach ($role->permissions as $permission)
                                         <div>
                                             {{ $loop->iteration }}.
-                                            <x-components::link :text="$permission->name" :href="route('cms.configuration.permission.view', [
+                                            <x-components::link :text="$permission->name" :href="route('cms.configuration.permission.detail', [
                                                 'permission' => $permission->id,
                                             ])" />
                                         </div>

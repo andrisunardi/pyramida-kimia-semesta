@@ -16,6 +16,6 @@ class UserDetailPage extends Component
 
     public function render()
     {
-        return view('livewire.cms.configuration.user.view');
+        return view('livewire.cms.configuration.user.detail');
     }
 }

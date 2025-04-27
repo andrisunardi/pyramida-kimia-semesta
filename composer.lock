@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "andrisunardi/library",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andrisunardi/library.git",
-                "reference": "fe38aeee3fd0f88534cb1499597e30cf6c43f04c"
+                "reference": "9fba9f07a5fb5ea8a3bba7036c4510dc68f3b3a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andrisunardi/library/zipball/fe38aeee3fd0f88534cb1499597e30cf6c43f04c",
-                "reference": "fe38aeee3fd0f88534cb1499597e30cf6c43f04c",
+                "url": "https://api.github.com/repos/andrisunardi/library/zipball/9fba9f07a5fb5ea8a3bba7036c4510dc68f3b3a0",
+                "reference": "9fba9f07a5fb5ea8a3bba7036c4510dc68f3b3a0",
                 "shasum": ""
             },
             "require": {
@@ -44,9 +44,9 @@
             "description": "Library Andri Sunardi",
             "support": {
                 "issues": "https://github.com/andrisunardi/library/issues",
-                "source": "https://github.com/andrisunardi/library/tree/v1.2.1"
+                "source": "https://github.com/andrisunardi/library/tree/v1.2.2"
             },
-            "time": "2025-04-27T12:41:46+00:00"
+            "time": "2025-04-27T23:27:54+00:00"
         },
         {
             "name": "asantibanez/livewire-charts",
