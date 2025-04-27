@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header text-bg-primary">
             <x-components::icon :value="'fas fa-table'" />
-            Data Role
+            {{ trans('index.data') }} {{ trans('index.role') }}
         </div>
         <div class="card-body">
             <div class="row g-3 mb-3">
@@ -28,7 +28,7 @@
                 @can('role.add')
                     <div class="col-6 col-sm-auto">
                         <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                        <x-components::link.add :width="'100'" :href="route('cms.configuration.permission.add')" />
+                        <x-components::link.add :width="'100'" :href="route('cms.configuration.role.add')" />
                     </div>
                 @endcan
 
@@ -99,7 +99,7 @@
 
                                     @can('role.delete')
                                         <x-components::button.delete :size="'sm'" :width="'auto'"
-                                            :key="'delete(' . $role->id . ')'" :confirm="'Are you sure you want to delete this Role'" />
+                                            :key="'delete(' . $role->id . ')'" :confirm="trans('index.confirm')" />
                                     @endcan
                                 </td>
                             </tr>

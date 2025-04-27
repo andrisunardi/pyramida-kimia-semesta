@@ -65,7 +65,7 @@ class UserEditPage extends Component
     {
         $user = (new UserService)->edit(user: $this->user, data: $this->validate());
 
-        $this->flash('success', trans('index.edit_success'), [
+        $this->alert('success', trans('index.edit').' '.trans('index.success'), [
             'html' => trans('index.user')." - {$user->id} - ".trans('index.edited'),
         ]);
 

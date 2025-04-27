@@ -43,7 +43,7 @@ class SettingEditPage extends Component
     {
         $setting = (new SettingService)->edit(setting: $this->setting, data: $this->validate());
 
-        $this->flash('success', trans('index.edit_success'), [
+        $this->alert('success', trans('index.edit').' '.trans('index.success'), [
             'html' => trans('index.setting')." - {$setting->id} - ".trans('index.edited'),
         ]);
 

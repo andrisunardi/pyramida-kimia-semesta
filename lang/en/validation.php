@@ -169,7 +169,7 @@ return [
         'image' => 'Image',
         'is_active' => 'Active',
         'message' => 'Message',
-        'name' => 'Data',
+        'name' => 'Name',
         'new_password' => 'New Password',
         'password' => 'Password',
         'phone' => 'Phone',

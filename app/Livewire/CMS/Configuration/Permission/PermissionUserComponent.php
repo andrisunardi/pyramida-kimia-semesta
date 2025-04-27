@@ -33,23 +33,30 @@ class PermissionUserComponent extends Component
 
     public function resetFields(): void
     {
+        $this->resetPage();
+
         $this->reset([
             'search',
             'role_name',
             'is_active',
         ]);
 
-        $this->alert('success', 'Reset Success', [
-            'html' => 'Fields has been successfully resetted.',
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
+    }
+
+    public function updating(): void
+    {
+        $this->resetPage();
     }
 
     public function changeActive(User $user): void
     {
         (new UserService)->active(user: $user);
 
-        $this->alert('success', 'Change Active Success', [
-            'html' => 'User has been successfully changed.',
+        $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
+            'html' => trans('index.user').' '.trans('index.has_been_successfully_changed'),
         ]);
     }
 
@@ -57,8 +64,8 @@ class PermissionUserComponent extends Component
     {
         (new UserService)->delete(user: $user);
 
-        $this->alert('success', 'Delete Success', [
-            'html' => 'User has been successfully deleted.',
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+            'html' => trans('index.user').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
 
@@ -87,8 +94,12 @@ class PermissionUserComponent extends Component
         return $users;
     }
 
-    public function export(): BinaryFileResponse
+    public function exportToExcel(): BinaryFileResponse
     {
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+            'html' => trans('index.user').' '.trans('index.has_been_successfully_exported'),
+        ]);
+
         return Excel::download(new PermissionUserExport(
             users: $this->getUsers(paginate: false),
             permission: $this->permission,

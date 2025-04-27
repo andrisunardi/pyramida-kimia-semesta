@@ -170,4 +170,8 @@ return [
     'your_phone' => 'Telepon Anda',
     'your_profile_has_been_successfully_updated' => 'Profil Anda telah berhasil diperbarui',
     'save' => 'Simpan',
+    'has_been_successfully_exported' => 'Telah Berhasil Diekspor',
+    'has_been_successfully_changed' => 'Telah Berhasil Diubah',
+    'printed_date' => 'Tanggal Dicetak',
+    'select' => 'Pilih',
 ];

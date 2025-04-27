@@ -99,7 +99,7 @@
                 @can('permission.delete')
                     <div class="col-6 col-sm-auto">
                         <x-components::button.delete :size="'md'" :width="'100'" :key="'delete(' . $permission->id . ')'"
-                            :confirm="'Are you sure you want to delete this Permission'" />
+                            :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

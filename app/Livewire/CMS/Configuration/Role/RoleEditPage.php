@@ -44,7 +44,7 @@ class RoleEditPage extends Component
     {
         $role = (new RoleService)->edit(role: $this->role, data: $this->validate());
 
-        $this->flash('success', trans('index.edit_success'), [
+        $this->alert('success', trans('index.edit').' '.trans('index.success'), [
             'html' => trans('index.role')." - {$role->id} - ".trans('index.edited'),
         ]);
 

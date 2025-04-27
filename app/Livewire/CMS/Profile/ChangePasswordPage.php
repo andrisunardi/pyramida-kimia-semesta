@@ -42,7 +42,6 @@ class ChangePasswordPage extends Component
         $this->alert('success', trans('index.change_password_success'), [
             'html' => trans('index.forgot_password_success'),
         ]);
-
     }
 
     public function render(): View

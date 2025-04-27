@@ -18,11 +18,6 @@ class PermissionAddForm extends Form
     #[Validate('nullable|array|min:0|exists:roles,name')]
     public array $role_ids = [];
 
-    public function set(): void
-    {
-        $this->reset();
-    }
-
     public function submit(): Permission
     {
         return (new PermissionService)->create(data: $this->validate());

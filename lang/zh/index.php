@@ -170,4 +170,8 @@ return [
     'your_phone' => '你的电话',
     'your_profile_has_been_successfully_updated' => '您的个人资料已成功更新',
     'save' => '节省',
+    'has_been_successfully_exported' => '已成功导出',
+    'has_been_successfully_changed' => '已成功更改',
+    'printed_date' => '打印日期',
+    'select' => '选择',
 ];

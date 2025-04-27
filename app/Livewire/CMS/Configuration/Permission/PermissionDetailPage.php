@@ -21,12 +21,11 @@ class PermissionDetailPage extends Component
     {
         (new PermissionService)->delete(permission: $permission);
 
-        $this->flast('success', trans('index.delete_success'), [
+        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_deleted'),
         ]);
 
         $this->redirect(route('cms.configuration.permission.index'), navigate: true);
-
     }
 
     public function render(): View

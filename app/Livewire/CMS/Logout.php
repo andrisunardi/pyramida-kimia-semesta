@@ -18,6 +18,5 @@ class Logout extends Component
         ]);
 
         $this->redirect(route('cms.login'), navigate: true);
-
     }
 }

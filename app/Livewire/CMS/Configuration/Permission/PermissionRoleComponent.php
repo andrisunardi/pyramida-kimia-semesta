@@ -30,22 +30,29 @@ class PermissionRoleComponent extends Component
 
     public function resetFields(): void
     {
+        $this->resetPage();
+
         $this->reset([
             'search',
             'user_id',
         ]);
 
-        $this->alert('success', 'Reset Success', [
-            'html' => 'Fields has been successfully resetted.',
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
+    }
+
+    public function updating(): void
+    {
+        $this->resetPage();
     }
 
     public function delete(Role $role): void
     {
         (new RoleService)->delete(role: $role);
 
-        $this->alert('success', 'Delete Success', [
-            'html' => 'Role has been successfully deleted.',
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+            'html' => trans('index.role').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
 
@@ -76,6 +83,10 @@ class PermissionRoleComponent extends Component
 
     public function export(): BinaryFileResponse
     {
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+            'html' => trans('index.role').' '.trans('index.has_been_successfully_exported'),
+        ]);
+
         return Excel::download(new PermissionRoleExport(
             roles: $this->getRoles(paginate: false),
             permission: $this->permission,

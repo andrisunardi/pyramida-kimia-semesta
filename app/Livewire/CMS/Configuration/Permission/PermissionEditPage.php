@@ -32,7 +32,7 @@ class PermissionEditPage extends Component
     {
         $this->form->submit(permission: $this->permission);
 
-        $this->flash('success', trans('index.edit_success'), [
+        $this->alert('success', trans('index.edit').' '.trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_edited'),
         ]);
 

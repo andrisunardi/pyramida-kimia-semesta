@@ -31,7 +31,6 @@ class EditProfilePage extends Component
         $this->alert('success', trans('index.edit_profile').' '.trans('index.success'), [
             'html' => trans('index.your_profile_has_been_successfully_updated'),
         ]);
-
     }
 
     public function render(): View

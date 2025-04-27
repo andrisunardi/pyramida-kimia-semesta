@@ -25,6 +25,8 @@ class PermissionPage extends Component
 
     public function resetFields(): void
     {
+        $this->resetPage();
+
         $this->reset([
             'search',
             'role_id',
@@ -40,10 +42,9 @@ class PermissionPage extends Component
     {
         (new PermissionService)->delete(permission: $permission);
 
-        $this->alert('success', trans('index.delete_success'), [
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_deleted'),
         ]);
-
     }
 
     public function updating(): void
@@ -83,8 +84,12 @@ class PermissionPage extends Component
         return $permissions;
     }
 
-    public function export(): BinaryFileResponse
+    public function exportToExcel(): BinaryFileResponse
     {
+        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+            'html' => trans('index.permission').' '.trans('index.has_been_successfully_exported'),
+        ]);
+
         return Excel::download(new PermissionExport(
             permissions: $this->getPermissions(paginate: false),
         ), trans('index.permission').'.xlsx');

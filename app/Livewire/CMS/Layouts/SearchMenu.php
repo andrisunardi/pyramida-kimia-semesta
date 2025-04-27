@@ -18,7 +18,6 @@ class SearchMenu extends Component
     public function submit(): void
     {
         $this->redirect(route($this->search_menu), navigate: true);
-
     }
 
     public function render(): View

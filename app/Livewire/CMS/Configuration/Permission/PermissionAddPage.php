@@ -13,7 +13,7 @@ class PermissionAddPage extends Component
 
     public function resetFields(): void
     {
-        $this->form->set();
+        $this->form->reset();
 
         $this->alert('success', trans('index.reset').' '.trans('index.success'), [
             'html' => trans('index.fields_has_been_successfully_reseted'),
