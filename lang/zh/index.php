@@ -169,4 +169,5 @@ return [
     'your_name' => '您的名字',
     'your_phone' => '你的电话',
     'your_profile_has_been_successfully_updated' => '您的个人资料已成功更新',
+    'save' => '节省',
 ];

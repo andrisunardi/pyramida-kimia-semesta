@@ -169,7 +169,7 @@ return [
     'your_name' => 'Your Name',
     'your_phone' => 'Your Phone',
     'your_profile_has_been_successfully_updated' => 'Your Profile has been successfully updated',
-    'index' => 'Index',
+    'save' => 'Save',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

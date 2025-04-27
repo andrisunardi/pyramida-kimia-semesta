@@ -3,49 +3,38 @@
 namespace App\Livewire\CMS\Configuration\Permission;
 
 use App\Livewire\Component;
-use App\Services\PermissionService;
 use App\Services\RoleService;
+use App\Services\PermissionService;
 use Spatie\Permission\Models\Permission;
+use App\Livewire\Forms\CMS\Permission\PermissionEditForm;
 
 class PermissionEditPage extends Component
 {
-    public $permission;
+    public PermissionEditForm $form;
 
-    public $name = '';
+    public Permission $permission;
 
-    public $guard_name = 'web';
-
-    public $role_ids = [];
-
-    public function mount(Permission $permission)
+    public function mount(Permission $permission): void
     {
-        $this->name = $permission->name;
-        $this->guard_name = $permission->guard_name;
-        $this->role_ids = $permission->roles->pluck('id')->toArray();
+        $this->permission = $permission;
+        $this->form->set(permission: $permission);
     }
 
-    public function resetFields()
+    public function resetFields(): void
     {
-        $this->name = $this->permission->name;
-        $this->guard_name = $this->permission->guard_name;
-        $this->role_ids = $this->permission->roles->pluck('id')->toArray();
-    }
+        $this->form->set(permission: $this->permission);
 
-    public function rules()
-    {
-        return [
-            'name' => "required|string|max:255|unique:permissions,name,{$this->permission->id}",
-            'guard_name' => 'required|string|max:255',
-            'role_ids' => 'nullable|array|exists:roles,id',
-        ];
+        $this->alert('success', trans('index.reset') . ' ' . trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
+        ]);
     }
 
     public function submit()
     {
-        $permission = (new PermissionService)->edit(permission: $this->permission, data: $this->validate());
+        $this->form->submit(permission: $this->permission);
 
         $this->flash('success', trans('index.edit_success'), [
-            'html' => trans('index.permission')." - {$permission->id} - ".trans('index.edited'),
+            'html' => trans('index.permission') . " " . trans('index.has_been_successfully_edited'),
         ]);
 
         return $this->redirect(route('cms.configuration.permission.index'), navigate: true);
@@ -53,7 +42,11 @@ class PermissionEditPage extends Component
 
     public function getRoles()
     {
-        return (new RoleService)->index(orderBy: 'name', sortBy: 'asc', paginate: false);
+        return (new RoleService)->index(
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false
+        );
     }
 
     public function render()

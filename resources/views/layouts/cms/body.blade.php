@@ -8,7 +8,7 @@
                 @livewire('c-m-s.layouts.sidebar')
 
                 <div class="col-12 p-0 col-sm vh-100 border-start overflow-auto">
-                    <div class="mx-3 mt-5 pt-4">
+                    <div class="mx-3 pt-5 my-4">
                         <div class="mt-2 d-block d-md-flex justify-content-md-between">
                             <div>
                                 <h3>

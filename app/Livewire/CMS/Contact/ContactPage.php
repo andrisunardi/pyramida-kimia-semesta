@@ -50,7 +50,7 @@ class ContactPage extends Component
         ]);
     }
 
-    public function getContacts($paginate = true)
+    public function getContacts(bool $paginate = true)
     {
         $contacts = (new ContactService)->index(
             search: $this->search,

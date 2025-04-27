@@ -3,52 +3,44 @@
 namespace App\Livewire\CMS\Configuration\Permission;
 
 use App\Livewire\Component;
-use App\Services\PermissionService;
+use App\Livewire\Forms\CMS\Permission\PermissionAddForm;
 use App\Services\RoleService;
+use Illuminate\Contracts\View\View;
 
 class PermissionAddPage extends Component
 {
-    public $name = '';
+    public PermissionAddForm $form;
 
-    public $guard_name = 'web';
-
-    public $role_ids = [];
-
-    public function resetFields()
+    public function resetFields(): void
     {
-        $this->reset([
-            'name',
-            'guard_name',
-            'role_ids',
+        $this->form->set();
+
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
     }
 
-    public function rules()
+    public function submit(): void
     {
-        return [
-            'name' => 'required|string|max:255|unique:permissions,name',
-            'guard_name' => 'required|string|max:255',
-            'role_ids' => 'nullable|array|exists:roles,id',
-        ];
-    }
+        $this->form->submit();
 
-    public function submit()
-    {
-        $permission = (new PermissionService)->add(data: $this->validate());
-
-        $this->flash('success', trans('index.add_success'), [
-            'html' => trans('index.permission')." - {$permission->id} - ".trans('index.added'),
+        $this->flash('success', trans('index.add').' '.trans('index.success'), [
+            'html' => trans('index.permission')." ".trans('index.has_been_successfully_added'),
         ]);
 
-        return $this->redirect(route('cms.configuration.permission.index'), navigate: true);
+        $this->redirect(route('cms.configuration.permission.index'), navigate: true);
     }
 
-    public function getRoles()
+    public function getRoles(): object
     {
-        return (new RoleService)->index(orderBy: 'name', sortBy: 'asc', paginate: false);
+        return (new RoleService)->index(
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false,
+        );
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.cms.configuration.permission.add', [
             'roles' => $this->getRoles(),

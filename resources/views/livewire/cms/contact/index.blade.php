@@ -3,8 +3,8 @@
 
 <div>
     <div class="card">
-        <div class="card-header bg-primary-subtle">
-            <span class="fas fa-search fa-fw"></span>
+        <div class="card-header text-bg-primary">
+            <x-components::icon :value="'fas fa-search'" />
             {{ trans('index.search') }} @yield('title')
         </div>
 
@@ -40,12 +40,6 @@
 
         <div class="card-body">
             <div class="row g-3 mb-3">
-                @can('Contact Add')
-                    <div class="col-6 col-sm-auto">
-                        <x-components::link.add :href="route('cms.contact.add')" />
-                    </div>
-                @endcan
-
                 @can('Contact Trash')
                     <div class="col-6 col-sm-auto">
                         <x-components::link.trash :href="route('cms.contact.trash')" />

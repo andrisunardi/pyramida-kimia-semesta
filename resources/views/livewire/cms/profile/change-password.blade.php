@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card mb-4">
+            <div class="card">
                 <div class="card-header text-bg-warning">
                     <x-components::icon :value="'fas fa-user-lock'" />
                     @yield('title')

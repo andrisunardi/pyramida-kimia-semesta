@@ -3,57 +3,99 @@
 namespace App\Livewire\CMS\Configuration\Permission;
 
 use App\Livewire\Component;
-use App\Services\PermissionService;
+use Livewire\Attributes\Url;
 use App\Services\RoleService;
+use App\Services\UserService;
+use App\Exports\PermissionExport;
+use App\Services\PermissionService;
+use Maatwebsite\Excel\Facades\Excel;
+use Spatie\Permission\Models\Permission;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PermissionPage extends Component
 {
-    public $role_id = '';
+    #[Url(except: '')]
+    public string $search = '';
 
-    public $name = '';
+    #[Url(except: '')]
+    public string $role_id = '';
 
-    public $guard_name = '';
+    #[Url(except: '')]
+    public string $user_id = '';
 
-    public $queryString = [
-        'role_id',
-        'name',
-        'guard_name',
-    ];
-
-    public function updating()
+    public function resetFields(): void
     {
-        $this->resetPage();
-    }
-
-    public function resetFields()
-    {
-        $this->resetPage();
-
         $this->reset([
+            'search',
             'role_id',
-            'name',
-            'guard_name',
+            'user_id',
+        ]);
+
+        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+            'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
     }
 
-    public function getRoles()
+    public function delete(Permission $permission): void
     {
-        return (new RoleService)->index(orderBy: 'name', sortBy: 'asc');
+        (new PermissionService)->delete(permission: $permission);
+
+        $this->alert('success', trans('index.delete_success'), [
+            'html' => trans('index.permission') . " " . trans('index.has_been_successfully_deleted'),
+        ]);
+
+        return;
     }
 
-    public function getPermissions()
+    public function updating(): void
     {
-        return (new PermissionService)->index(
-            role_id: $this->role_id,
-            name: $this->name,
-            guard_name: $this->guard_name,
+        $this->resetPage();
+    }
+
+    public function getRoles(): object
+    {
+        return (new RoleService)->index(
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false,
         );
+    }
+
+    public function getUsers(): object
+    {
+        return (new UserService)->index(
+            orderBy: 'name',
+            sortBy: 'asc',
+            paginate: false,
+        );
+    }
+
+    public function getPermissions(bool $paginate = true)
+    {
+        $permissions = (new PermissionService)->index(
+            search: $this->search,
+            roleId: $this->role_id,
+            userId: $this->user_id,
+            paginate: $paginate,
+        );
+
+        $permissions->loadCount(['roles', 'users']);
+
+        return $permissions;
+    }
+
+    public function export(): BinaryFileResponse
+    {
+        return Excel::download(new PermissionExport(
+            permissions: $this->getPermissions(paginate: false),
+        ), trans('index.permission').'.xlsx');
     }
 
     public function render()
     {
         return view('livewire.cms.configuration.permission.index', [
             'roles' => $this->getRoles(),
+            'users' => $this->getUsers(),
             'permissions' => $this->getPermissions(),
         ]);
     }

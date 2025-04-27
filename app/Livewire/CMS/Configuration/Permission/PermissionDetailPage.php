@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Livewire\CMS\Configuration\Permission;
+
+use App\Livewire\Component;
+use App\Services\PermissionService;
+use Illuminate\Contracts\View\View;
+use Spatie\Permission\Models\Permission;
+
+class PermissionDetailPage extends Component
+{
+    public Permission $permission;
+
+    public function mount(Permission $permission): void
+    {
+        $this->permission = $permission;
+        $this->permission->loadCount(['roles', 'users']);
+    }
+
+    public function delete(Permission $permission): void
+    {
+        (new PermissionService)->delete(permission: $permission);
+
+        $this->flast('success', trans('index.delete_success'), [
+            'html' => trans('index.permission') . " " . trans('index.has_been_successfully_deleted'),
+        ]);
+
+        redirect()->route('cms.configuration.permission.index');
+
+        return;
+    }
+
+    public function render(): View
+    {
+        return view('livewire.cms.configuration.permission.detail');
+    }
+}
