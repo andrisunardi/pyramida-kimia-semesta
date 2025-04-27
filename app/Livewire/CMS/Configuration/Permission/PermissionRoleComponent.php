@@ -81,16 +81,16 @@ class PermissionRoleComponent extends Component
         return $roles;
     }
 
-    public function export(): BinaryFileResponse
+    public function exportToExcel(): BinaryFileResponse
     {
         $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
             'html' => trans('index.role').' '.trans('index.has_been_successfully_exported'),
         ]);
 
         return Excel::download(new PermissionRoleExport(
-            roles: $this->getRoles(paginate: false),
             permission: $this->permission,
-        ), "Permission Role - {$this->permission->name}.xlsx");
+            roles: $this->getRoles(paginate: false),
+        ), trans('index.permission') . ' ' . trans('index.role') . " - {$this->permission->name}.xlsx");
     }
 
     public function render(): View

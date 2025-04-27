@@ -22,13 +22,13 @@
 
                 <div class="row g-3 mb-3">
                     <div class="col-sm-6">
-                        <x-components::form.name :key="'form.name'" :title="trans('validation.attributes.name')" :placeholder="'Ex. Admin'" :icon="'fas fa-key'"
-                            :required="true" :autofocus="true" />
+                        <x-components::form.name :key="'form.name'" :title="trans('validation.attributes.name')" :icon="'fas fa-key'" :required="true"
+                            :autofocus="true" />
                     </div>
 
                     <div class="col-sm-6">
                         <x-components::form.text :key="'form.guard_name'" :title="trans('validation.attributes.guard_name')" :icon="'fas fa-shield'"
-                            :placeholder="'Ex. web'" :required="true" />
+                            :required="true" />
                     </div>
 
                     <div class="col-sm-6">

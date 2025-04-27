@@ -7,12 +7,12 @@
         <div class="card-body">
             <div class="row g-3 mb-3">
                 <div class="col-sm-6 col-lg">
-                    <x-components::search :wire="'live'" />
+                    <x-components::search />
                 </div>
 
                 <div class="col-sm-6 col-lg" wire:ignore>
-                    <x-components::form.select :key="'user_id'" :title="'User'" :icon="'fas fa-user'" :placeholder="'All User'"
-                        :wire="'lazy'" :datas="$users" :value="$user_id" />
+                    <x-components::form.select :key="'user_id'" :title="trans('index.user')" :icon="'fas fa-user'" :placeholder="trans('index.all') . ' ' . trans('index.user')"
+                        :datas="$users" :value="$user_id" />
                 </div>
 
                 <div class="col-6 col-sm-auto">
@@ -45,13 +45,13 @@
                     class="table table-striped table-bordered table-hover text-nowrap table-responsive align-middle mb-0">
                     <thead class="table-primary">
                         <tr class="text-center align-middle">
-                            <th width="1%">#</th>
-                            <th width="1%">ID</th>
-                            <th>Name</th>
-                            <th>Guard Name</th>
-                            <th width="1%">Total Permission</th>
-                            <th width="1%">Total User</th>
-                            <th width="1%">Action</th>
+                            <th width="1%">{{ trans('index.#') }}</th>
+                            <th width="1%">{{ trans('index.id') }}</th>
+                            <th>{{ trans('index.name') }}</th>
+                            <th>{{ trans('index.guard_name') }}</th>
+                            <th width="1%">{{ trans('index.total') }} {{ trans('index.permission') }}</th>
+                            <th width="1%">{{ trans('index.total') }} {{ trans('index.user') }}</th>
+                            <th width="1%">{{ trans('index.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +106,7 @@
                         @empty
                             <tr>
                                 <td class="text-center" colspan="100%">
-                                    No Data Available
+                                    {{ trans('index.no_data_available') }}
                                 </td>
                             </tr>
                         @endforelse

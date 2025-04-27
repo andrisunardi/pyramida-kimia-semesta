@@ -41,7 +41,7 @@ class PermissionUserComponent extends Component
             'is_active',
         ]);
 
-        $this->alert('success', trans('index.reset').' '.trans('index.success'), [
+        $this->alert('success', trans('index.reset') . ' ' . trans('index.success'), [
             'html' => trans('index.fields_has_been_successfully_reseted'),
         ]);
     }
@@ -55,8 +55,8 @@ class PermissionUserComponent extends Component
     {
         (new UserService)->active(user: $user);
 
-        $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
-            'html' => trans('index.user').' '.trans('index.has_been_successfully_changed'),
+        $this->alert('success', trans('index.change') . ' ' . trans('index.active') . ' ' . trans('index.success'), [
+            'html' => trans('index.user') . ' ' . trans('index.has_been_successfully_changed'),
         ]);
     }
 
@@ -65,7 +65,7 @@ class PermissionUserComponent extends Component
         (new UserService)->delete(user: $user);
 
         $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
-            'html' => trans('index.user').' '.trans('index.has_been_successfully_deleted'),
+            'html' => trans('index.user') . ' ' . trans('index.has_been_successfully_deleted'),
         ]);
     }
 
@@ -97,13 +97,13 @@ class PermissionUserComponent extends Component
     public function exportToExcel(): BinaryFileResponse
     {
         $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
-            'html' => trans('index.user').' '.trans('index.has_been_successfully_exported'),
+            'html' => trans('index.user') . ' ' . trans('index.has_been_successfully_exported'),
         ]);
 
         return Excel::download(new PermissionUserExport(
-            users: $this->getUsers(paginate: false),
             permission: $this->permission,
-        ), "Permission User - {$this->permission->name}.xlsx");
+            users: $this->getUsers(paginate: false),
+        ), trans('index.permission') . ' ' . trans('index.user') . " - {$this->permission->name}.xlsx");
     }
 
     public function render(): View

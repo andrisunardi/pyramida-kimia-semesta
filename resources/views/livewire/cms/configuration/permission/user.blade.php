@@ -128,7 +128,7 @@
 
                                     @can('user.delete')
                                         <x-components::button.delete :size="'sm'" :width="'auto'"
-                                            :key="'delete(' . $user->id . ')'" :confirm="'Are you sure you want to delete this User'" />
+                                            :key="'delete(' . $user->id . ')'" :confirm="trans('index.confirm')" />
                                     @endcan
                                 </td>
                             </tr>

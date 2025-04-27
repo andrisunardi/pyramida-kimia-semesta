@@ -28,15 +28,15 @@ class PermissionEditPage extends Component
         ]);
     }
 
-    public function submit()
+    public function submit(): void
     {
         $this->form->submit(permission: $this->permission);
 
-        $this->alert('success', trans('index.edit').' '.trans('index.success'), [
+        $this->flash('success', trans('index.edit').' '.trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_edited'),
         ]);
 
-        return $this->redirect(route('cms.configuration.permission.index'), navigate: true);
+        $this->redirect(route('cms.configuration.permission.index'), navigate: true);
     }
 
     public function getRoles()

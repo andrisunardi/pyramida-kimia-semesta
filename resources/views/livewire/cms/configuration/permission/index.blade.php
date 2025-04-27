@@ -10,17 +10,17 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-sm">
-                    <x-components::search :wire="'lazy'" />
+                    <x-components::search />
                 </div>
 
                 <div class="col-sm-6 col-lg" wire:ignore>
-                    <x-components::search.select :wire="'lazy'" :key="'role_id'" :title="trans('validation.attributes.role')" :icon="'fas fa-briefcase'"
-                        :datas="$roles" :value="$role_id" />
+                    <x-components::search.select :key="'role_id'" :title="trans('validation.attributes.role')" :icon="'fas fa-briefcase'" :datas="$roles"
+                        :value="$role_id" />
                 </div>
 
                 <div class="col-sm-6 col-lg" wire:ignore>
-                    <x-components::search.select :wire="'lazy'" :key="'user_id'" :title="trans('validation.attributes.user')"
-                        :icon="'fas fa-user'" :datas="$users" :value="$user_id" />
+                    <x-components::search.select :key="'user_id'" :title="trans('validation.attributes.user')" :icon="'fas fa-user'" :datas="$users"
+                        :value="$user_id" />
                 </div>
 
                 <div class="col col-sm-auto">

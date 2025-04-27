@@ -21,7 +21,7 @@ class PermissionDetailPage extends Component
     {
         (new PermissionService)->delete(permission: $permission);
 
-        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
+        $this->flash('success', trans('index.delete').' '.trans('index.success'), [
             'html' => trans('index.permission').' '.trans('index.has_been_successfully_deleted'),
         ]);
 
