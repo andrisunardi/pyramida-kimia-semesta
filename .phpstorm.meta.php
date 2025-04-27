@@ -4254,7 +4254,8 @@ namespace PHPSTORM_META {
 'index.username_or_password_is_invalid','index.username','index.view','index.vision_and_mission','index.warehouse',
 'index.write_message','index.write_subject','index.yes','index.you_have_been_successfully_logged_out','index.your_company',
 'index.your_email','index.your_message_has_been_received_successfully_we_appreciate_you_reaching_out_and_will_get_back_to_you_as_soon_as_possible','index.your_name','index.your_phone','index.your_profile_has_been_successfully_updated',
-'index.save','index.index',);
+'index.save','index.has_been_successfully_exported','index.has_been_successfully_changed','index.printed_date','index.select',
+'index.index',);
         registerArgumentsSet('env', 
 'APP_NAME','APP_ENV','APP_KEY','APP_DEBUG','APP_TIMEZONE',
 'APP_URL','APP_DOMAIN','APP_CHARSET','APP_COLOR','APP_COLOR_CLASS',

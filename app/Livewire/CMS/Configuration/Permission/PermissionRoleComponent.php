@@ -51,7 +51,7 @@ class PermissionRoleComponent extends Component
     {
         (new RoleService)->delete(role: $role);
 
-        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
             'html' => trans('index.role').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
@@ -83,14 +83,14 @@ class PermissionRoleComponent extends Component
 
     public function exportToExcel(): BinaryFileResponse
     {
-        $this->alert('success', trans('index.delete') . ' ' . trans('index.success'), [
+        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
             'html' => trans('index.role').' '.trans('index.has_been_successfully_exported'),
         ]);
 
         return Excel::download(new PermissionRoleExport(
             permission: $this->permission,
             roles: $this->getRoles(paginate: false),
-        ), trans('index.permission') . ' ' . trans('index.role') . " - {$this->permission->name}.xlsx");
+        ), trans('index.permission').' '.trans('index.role')." - {$this->permission->name}.xlsx");
     }
 
     public function render(): View
