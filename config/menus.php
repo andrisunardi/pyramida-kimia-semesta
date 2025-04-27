@@ -3,7 +3,7 @@
 return [
     [
         'roles' => 'Super User|Admin',
-        'permissions' => 'contact',
+        'permissions' => 'contact.index',
         'name' => 'Contact',
         'route' => 'cms.contact.index',
         'icon' => 'fas fa-phone',
@@ -13,7 +13,7 @@ return [
     ],
     [
         'roles' => 'Super User',
-        'permissions' => 'Configuration',
+        'permissions' => 'configuration.index',
         'name' => 'Configuration',
         'route' => 'cms.configuration.index',
         'icon' => 'fas fa-gears',
@@ -22,7 +22,7 @@ return [
         'subMenus' => [
             [
                 'roles' => 'Super User',
-                'permissions' => 'Configuration',
+                'permissions' => 'configuration.index',
                 'name' => 'Configuration',
                 'route' => 'cms.configuration.index',
                 'icon' => 'fas fa-gears',
@@ -31,7 +31,7 @@ return [
             ],
             [
                 'roles' => 'Super User',
-                'permissions' => 'Activity',
+                'permissions' => 'activity.index',
                 'name' => 'Activity',
                 'route' => 'cms.configuration.activity',
                 'icon' => 'fas fa-history',
@@ -40,7 +40,7 @@ return [
             ],
             [
                 'roles' => 'Super User',
-                'permissions' => 'User',
+                'permissions' => 'user.index',
                 'name' => 'User',
                 'route' => 'cms.configuration.user.index',
                 'icon' => 'fas fa-user',
@@ -49,7 +49,7 @@ return [
             ],
             [
                 'roles' => 'Super User',
-                'permissions' => 'Role',
+                'permissions' => 'role.index',
                 'name' => 'Role',
                 'route' => 'cms.configuration.role.index',
                 'icon' => 'fas fa-briefcase',
@@ -58,7 +58,7 @@ return [
             ],
             [
                 'roles' => 'Super User',
-                'permissions' => 'Permission',
+                'permissions' => 'permission.index',
                 'name' => 'Permission',
                 'route' => 'cms.configuration.permission.index',
                 'icon' => 'fas fa-key',
@@ -67,7 +67,7 @@ return [
             ],
             [
                 'roles' => 'Super User',
-                'permissions' => 'Setting',
+                'permissions' => 'setting.index',
                 'name' => 'Setting',
                 'route' => 'cms.configuration.setting.index',
                 'icon' => 'fas fa-gear',

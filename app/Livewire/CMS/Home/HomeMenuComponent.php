@@ -5,11 +5,11 @@ namespace App\Livewire\CMS\Home;
 use App\Livewire\Component;
 use Illuminate\Support\Facades\DB;
 
-class HomePage extends Component
+class HomeMenuComponent extends Component
 {
-    public function render()
+    public function getMenus()
     {
-        $menus = collect(config('menus'))->flatMap(function ($menu) {
+        return collect(config('menus'))->flatMap(function ($menu) {
             $menu['total'] = $menu['table'] ?
                 DB::table($menu['table'])->count() :
                 count(collect($menu['subMenus'])->filter(function ($subMenu) {
@@ -26,9 +26,12 @@ class HomePage extends Component
 
             return [$menu] + ($menu['subMenus'] ?? []);
         })->all();
+    }
 
-        return view('livewire.cms.home.index', [
-            'menus' => $menus,
+    public function render()
+    {
+        return view('livewire.cms.home.menu', [
+            'menus' => $this->getMenus(),
             'bgClasses' => $this->getBgClasses(),
         ]);
     }
