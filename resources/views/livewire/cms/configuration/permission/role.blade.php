@@ -1,41 +1,41 @@
 <div>
     <div class="card">
         <div class="card-header text-bg-primary">
-            <x-icon :value="'fas fa-table'" />
+            <x-components::icon :value="'fas fa-table'" />
             Data Role
         </div>
         <div class="card-body">
             <div class="row g-3 mb-3">
                 <div class="col-sm-6 col-lg">
-                    <x-form.search :wire="'live'" />
+                    <x-components::search :wire="'live'" />
                 </div>
 
                 <div class="col-sm-6 col-lg" wire:ignore>
-                    <x-form.select :key="'user_id'" :title="'User'" :icon="'fas fa-user'" :placeholder="'All User'"
+                    <x-components::form.select :key="'user_id'" :title="'User'" :icon="'fas fa-user'" :placeholder="'All User'"
                         :wire="'lazy'" :datas="$users" :value="$user_id" />
                 </div>
 
                 <div class="col-6 col-sm-auto">
-                    <x-form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                    <x-form.reset :width="'100'" />
+                    <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
+                    <x-components::form.reset :width="'100'" />
                 </div>
 
                 <div class="col-6 col-sm-auto">
-                    <x-form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                    <x-button.refresh :width="'100'" />
+                    <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
+                    <x-components::button.refresh :width="'100'" />
                 </div>
 
                 @can('role.add')
                     <div class="col-6 col-sm-auto">
-                        <x-form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                        <x-link.add :width="'100'" :href="route('permission.add')" />
+                        <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
+                        <x-components::link.add :width="'100'" :href="route('cms.configuration.permission.add')" />
                     </div>
                 @endcan
 
                 @can('role.export')
                     <div class="col-6 col-sm-auto">
-                        <x-form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
-                        <x-button.export :width="'100'" />
+                        <x-components::form.label :class="'d-none d-sm-block'" :title="'&nbsp;'" />
+                        <x-components::button.export-to-excel :width="'100'" />
                     </div>
                 @endcan
             </div>
@@ -64,41 +64,42 @@
                                     {{ $role->id }}
                                 </td>
                                 <td>
-                                    <x-link :href="route('role.detail', [
+                                    <x-components::link :href="route('cms.configuration.role.detail', [
                                         'role' => $role,
                                     ])" :text="$role->name" />
                                 </td>
                                 <td class="text-center">
-                                    <x-link :href="route('role.detail', [
+                                    <x-components::link :href="route('cms.configuration.role.detail', [
                                         'role' => $role,
                                     ])" :text="$role->guard_name" />
                                 </td>
                                 <td class="text-center">
-                                    <x-link :href="route('permission.index', [
+                                    <x-components::link :href="route('cms.configuration.permission.index', [
                                         'role_id' => $role->id,
                                     ])" :text="$role->permissions_count" />
                                 </td>
                                 <td class="text-center">
-                                    <x-link :href="route('user.index', [
+                                    <x-components::link :href="route('cms.configuration.user.index', [
                                         'role_name' => $role->name,
                                     ])" :text="$role->users_count" />
                                 </td>
                                 <td>
                                     @can('role.detail')
-                                        <x-link.detail :size="'sm'" :width="'auto'" :href="route('role.detail', [
-                                            'role' => $role->id,
-                                        ])" />
+                                        <x-components::link.detail :size="'sm'" :width="'auto'"
+                                            :href="route('cms.configuration.role.detail', [
+                                                'role' => $role->id,
+                                            ])" />
                                     @endcan
 
                                     @can('role.edit')
-                                        <x-link.edit :size="'sm'" :width="'auto'" :href="route('role.edit', [
+                                        <x-components::link.edit :size="'sm'" :width="'auto'" :href="route('cms.configuration.role.edit', [
                                             'role' => $role->id,
                                         ])" />
                                     @endcan
 
                                     @can('role.delete')
-                                        <x-button.delete :size="'sm'" :width="'auto'" :key="'delete(' . $role->id . ')'"
-                                            :confirm="'Are you sure you want to delete this Role'" />
+                                        <x-components::button.delete :size="'sm'" :width="'auto'"
+                                            :key="'delete(' . $role->id . ')'" :confirm="'Are you sure you want to delete this Role'" />
                                     @endcan
                                 </td>
                             </tr>
@@ -113,7 +114,7 @@
                 </table>
             </div>
 
-            {{ $roles->links('livewire.pagination') }}
+            {{ $roles->links('components::components.layouts.pagination') }}
         </div>
     </div>
 </div>

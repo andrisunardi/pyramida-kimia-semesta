@@ -5,7 +5,7 @@ namespace App\Livewire\CMS\Configuration\User;
 use App\Livewire\Component;
 use App\Models\User;
 
-class UserViewPage extends Component
+class UserDetailPage extends Component
 {
     public $user;
 

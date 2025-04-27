@@ -5,7 +5,7 @@ namespace App\Livewire\CMS\Configuration\Role;
 use App\Livewire\Component;
 use Spatie\Permission\Models\Role;
 
-class RoleViewPage extends Component
+class RoleDetailPage extends Component
 {
     public $role;
 
@@ -13,6 +13,6 @@ class RoleViewPage extends Component
 
     public function render()
     {
-        return view('livewire.cms.configuration.role.view');
+        return view('livewire.cms.configuration.role.detail');
     }
 }

@@ -13,7 +13,7 @@ class UserService
     public function index(
         ?string $search = '',
         array $isActive = [],
-        string|int $roleId = '',
+        string $roleName = '',
         string $permissionName = '',
         bool $random = false,
         bool $trash = false,
@@ -33,7 +33,7 @@ class UserService
                     ->orWhere('username', 'LIKE', "%{$search}%");
             }))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))
-            ->when($roleId, fn ($q) => $q->role($roleId))
+            ->when($roleName, fn ($q) => $q->role($roleName))
             ->when($permissionName, fn ($q) => $q->permission($permissionName))
             ->when($random, fn ($q) => $q->inRandomOrder())
             ->when($trash, fn ($q) => $q->onlyTrashed())

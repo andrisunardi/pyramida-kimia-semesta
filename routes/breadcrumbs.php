@@ -22,9 +22,9 @@ Breadcrumbs::for('livewire.update', function (BreadcrumbTrail $trail) {
 });
 
 // LIVEWIRE PREVIEW FILE
-Breadcrumbs::for('livewire.preview-file', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('livewire.predetail-file', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
-    $trail->push(trans('index.preview_file'), null, ['icon' => 'fas fa-photo-film']);
+    $trail->push(trans('index.predetail_file'), null, ['icon' => 'fas fa-photo-film']);
 });
 
 // TELESCOPE
@@ -40,9 +40,9 @@ Breadcrumbs::for('horizon.index', function (BreadcrumbTrail $trail) {
 });
 
 // LOG VIEWER
-Breadcrumbs::for('log-viewer.index', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('log-detailer.index', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
-    $trail->push(trans('index.log_viewer'), null, ['icon' => 'fas fa-history']);
+    $trail->push(trans('index.log_detailer'), null, ['icon' => 'fas fa-history']);
 });
 
 // HOME
@@ -92,9 +92,9 @@ Breadcrumbs::for('product.index', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.product'), route('product.index'), ['icon' => 'fas fa-flask']);
 });
 
-Breadcrumbs::for('product.view', function (BreadcrumbTrail $trail, $product) {
+Breadcrumbs::for('product.detail', function (BreadcrumbTrail $trail, $product) {
     $trail->parent('product.index');
-    $trail->push(trans('index.product'), route('product.view', ['product' => $product]), ['icon' => 'fas fa-list']);
+    $trail->push(trans('index.product'), route('product.detail', ['product' => $product]), ['icon' => 'fas fa-list']);
 });
 
 // GALLERY
@@ -121,9 +121,9 @@ Breadcrumbs::for('article.index', function (BreadcrumbTrail $trail) {
     $trail->push(trans('index.article'), route('article.index'), ['icon' => 'fas fa-newspaper']);
 });
 
-Breadcrumbs::for('article.view', function (BreadcrumbTrail $trail, $article) {
+Breadcrumbs::for('article.detail', function (BreadcrumbTrail $trail, $article) {
     $trail->parent('article.index');
-    $trail->push(trans('index.article'), route('article.view', ['article' => $article]), ['icon' => 'fas fa-newspaper']);
+    $trail->push(trans('index.article'), route('article.detail', ['article' => $article]), ['icon' => 'fas fa-newspaper']);
 });
 
 // CONTACT
@@ -165,9 +165,9 @@ Breadcrumbs::for('cms.contact.edit', function (BreadcrumbTrail $trail, $contact)
     $trail->push(trans('index.edit'), route('cms.contact.edit', ['contact' => $contact]), ['icon' => 'fas fa-edit']);
 });
 
-Breadcrumbs::for('cms.contact.view', function (BreadcrumbTrail $trail, $contact) {
+Breadcrumbs::for('cms.contact.detail', function (BreadcrumbTrail $trail, $contact) {
     $trail->parent('cms.contact.index');
-    $trail->push(trans('index.view'), route('cms.contact.view', ['contact' => $contact]), ['icon' => 'fas fa-eye']);
+    $trail->push(trans('index.detail'), route('cms.contact.detail', ['contact' => $contact]), ['icon' => 'fas fa-list']);
 });
 
 Breadcrumbs::for('cms.contact.trash', function (BreadcrumbTrail $trail) {
@@ -208,9 +208,9 @@ Breadcrumbs::for('cms.configuration.user.edit', function (BreadcrumbTrail $trail
     $trail->push(trans('index.edit'), route('cms.configuration.user.edit', ['user' => $user]), ['icon' => 'fas fa-edit']);
 });
 
-Breadcrumbs::for('cms.configuration.user.view', function (BreadcrumbTrail $trail, $user) {
+Breadcrumbs::for('cms.configuration.user.detail', function (BreadcrumbTrail $trail, $user) {
     $trail->parent('cms.configuration.user.index');
-    $trail->push(trans('index.view'), route('cms.configuration.user.view', ['user' => $user]), ['icon' => 'fas fa-eye']);
+    $trail->push(trans('index.detail'), route('cms.configuration.user.detail', ['user' => $user]), ['icon' => 'fas fa-list']);
 });
 
 Breadcrumbs::for('cms.configuration.user.trash', function (BreadcrumbTrail $trail) {
@@ -239,9 +239,9 @@ Breadcrumbs::for('cms.configuration.role.edit', function (BreadcrumbTrail $trail
     $trail->push(trans('index.edit'), route('cms.configuration.role.edit', ['role' => $role]), ['icon' => 'fas fa-edit']);
 });
 
-Breadcrumbs::for('cms.configuration.role.view', function (BreadcrumbTrail $trail, $role) {
+Breadcrumbs::for('cms.configuration.role.detail', function (BreadcrumbTrail $trail, $role) {
     $trail->parent('cms.configuration.role.index');
-    $trail->push(trans('index.view'), route('cms.configuration.role.view', ['role' => $role]), ['icon' => 'fas fa-eye']);
+    $trail->push(trans('index.detail'), route('cms.configuration.role.detail', ['role' => $role]), ['icon' => 'fas fa-list']);
 });
 
 // PERMISSION
@@ -265,9 +265,9 @@ Breadcrumbs::for('cms.configuration.permission.edit', function (BreadcrumbTrail 
     $trail->push(trans('index.edit'), route('cms.configuration.permission.edit', ['permission' => $permission]), ['icon' => 'fas fa-edit']);
 });
 
-Breadcrumbs::for('cms.configuration.permission.view', function (BreadcrumbTrail $trail, $permission) {
+Breadcrumbs::for('cms.configuration.permission.detail', function (BreadcrumbTrail $trail, $permission) {
     $trail->parent('cms.configuration.permission.index');
-    $trail->push(trans('index.view'), route('cms.configuration.permission.view', ['permission' => $permission]), ['icon' => 'fas fa-eye']);
+    $trail->push(trans('index.detail'), route('cms.configuration.permission.detail', ['permission' => $permission]), ['icon' => 'fas fa-list']);
 });
 
 // SETTING
@@ -291,9 +291,9 @@ Breadcrumbs::for('cms.configuration.setting.edit', function (BreadcrumbTrail $tr
     $trail->push(trans('index.edit'), route('cms.configuration.setting.edit', ['setting' => $setting]), ['icon' => 'fas fa-edit']);
 });
 
-Breadcrumbs::for('cms.configuration.setting.view', function (BreadcrumbTrail $trail, $setting) {
+Breadcrumbs::for('cms.configuration.setting.detail', function (BreadcrumbTrail $trail, $setting) {
     $trail->parent('cms.configuration.setting.index');
-    $trail->push(trans('index.view'), route('cms.configuration.setting.view', ['setting' => $setting]), ['icon' => 'fas fa-eye']);
+    $trail->push(trans('index.detail'), route('cms.configuration.setting.detail', ['setting' => $setting]), ['icon' => 'fas fa-list']);
 });
 
 Breadcrumbs::for('cms.configuration.setting.trash', function (BreadcrumbTrail $trail) {

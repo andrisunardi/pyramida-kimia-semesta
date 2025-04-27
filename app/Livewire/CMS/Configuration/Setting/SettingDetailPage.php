@@ -5,7 +5,7 @@ namespace App\Livewire\CMS\Configuration\Setting;
 use App\Livewire\Component;
 use App\Models\Setting;
 
-class SettingViewPage extends Component
+class SettingDetailPage extends Component
 {
     public $setting;
 

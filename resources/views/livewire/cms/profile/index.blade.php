@@ -175,7 +175,7 @@
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold">
-                                        <x-components::link :text="$role->name" :href="route('cms.configuration.role.view', ['role' => $role->id])" />
+                                        <x-components::link :text="$role->name" :href="route('cms.configuration.role.detail', ['role' => $role->id])" />
                                     </div>
                                     @foreach ($role->permissions as $permission)
                                         <div>
