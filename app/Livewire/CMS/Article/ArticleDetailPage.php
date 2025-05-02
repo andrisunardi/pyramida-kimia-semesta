@@ -33,7 +33,7 @@ class ArticleDetailPage extends Component
             'html' => trans('index.article').' '.trans('index.has_been_successfully_deleted'),
         ]);
 
-        $this->redirect(route('cms.configuration.article.index'), navigate: true);
+        $this->redirect(route('cms.article.index'), navigate: true);
     }
 
     public function render(): View

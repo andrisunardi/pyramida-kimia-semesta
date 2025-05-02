@@ -31,51 +31,113 @@
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
                     {{ $article->name }}
+                    <x-components::link.external-link :href="route('article.view', [
+                        'slug' => $article->slug,
+                    ])" />
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.company') }}</div>
+                    <div class="fw-bold">{{ trans('index.name_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->company }}
+                    {{ $article->name_id }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.email') }}</div>
+                    <div class="fw-bold">{{ trans('index.name_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    <x-components::link.email :value="$article->email" />
+                    {{ $article->name_zh }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.phone') }}</div>
+                    <div class="fw-bold">{{ trans('index.description') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    <x-components::link.whatsapp :value="$article->phone" />
+                    {!! $article->description !!}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.subject') }}</div>
+                    <div class="fw-bold">{{ trans('index.description_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->subject }}
+                    {!! $article->description_id !!}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.message') }}</div>
+                    <div class="fw-bold">{{ trans('index.description_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $article->message !!}
+                    {!! $article->description_zh !!}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.tags') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    {{ collect($article->tags)->join(', ') }}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.tags_id') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    {{ collect($article->tags_id)->join(', ') }}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.tags_zh') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    {{ collect($article->tags_zh)->join(', ') }}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.date') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    @if ($article->date)
+                        {{ $article->date->isoFormat('LL') }}
+                        {{ $article->date->diffForHumans() }}
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.image') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-2">
+                    @if ($article->checkImage())
+                        <x-components::image :href="$article->assetImage()" :src="$article->assetImage()" :alt="$article->altImage()" />
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.slug') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    {{ $article->slug }}
                 </div>
             </div>
 

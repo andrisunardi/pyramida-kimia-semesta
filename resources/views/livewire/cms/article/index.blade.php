@@ -37,8 +37,14 @@
 
         <div class="card-body">
             <div class="row g-3">
+                @can('article.add')
+                    <div class="col col-sm-auto">
+                        <x-components::link.add :href="route('cms.article.add')" />
+                    </div>
+                @endcan
+
                 @can('article.export')
-                    <div class="col-auto col-sm-auto">
+                    <div class="col-auto">
                         <x-components::button.export-to-excel :width="'100'" />
                     </div>
                 @endcan
@@ -51,10 +57,10 @@
                         <tr class="text-center align-middle">
                             <th width="1%">{{ trans('index.#') }}</th>
                             <th width="1%">{{ trans('index.id') }}</th>
+                            <th width="1%">{{ trans('index.image') }}</th>
                             <th>{{ trans('index.name') }}</th>
-                            <th>{{ trans('index.company') }}</th>
-                            <th>{{ trans('index.email') }}</th>
-                            <th>{{ trans('index.phone') }}</th>
+                            <th width="1%">{{ trans('index.tags') }}</th>
+                            <th width="1%">{{ trans('index.date') }}</th>
                             <th width="1%">{{ trans('index.active') }}</th>
                             <th width="1%">{{ trans('index.action') }}</th>
                         </tr>
@@ -70,21 +76,44 @@
                                         'article' => $article,
                                     ])" :text="$article->id" />
                                 </td>
-                                <td class="text-wrap">
-                                    {{ $article->name }}
-                                </td>
-                                <td class="text-wrap">
-                                    {{ $article->company }}
+                                <td>
+                                    @if ($article->checkImage())
+                                        <x-components::image :href="$article->assetImage()" :src="$article->assetImage()" :alt="$article->altImage()" />
+                                    @endif
                                 </td>
                                 <td>
-                                    <x-components::link.email :value="$article->email" />
+                                    <div>
+                                        <x-components::link :href="route('cms.article.detail', [
+                                            'article' => $article,
+                                        ])" :text="$article->name" />
+                                        <x-components::link.external-link :href="route('article.view', [
+                                            'slug' => $article->slug,
+                                        ])" />
+                                    </div>
+                                    <div>
+                                        <x-components::link :href="route('cms.article.detail', [
+                                            'article' => $article,
+                                        ])" :text="$article->name_id" />
+                                    </div>
+                                    <div>
+                                        <x-components::link :href="route('cms.article.detail', [
+                                            'article' => $article,
+                                        ])" :text="$article->name_zh" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <x-components::link.whatsapp :value="$article->phone" />
+                                    <div>{{ collect($article->tags)->join(', ') }}</div>
+                                    <div>{{ collect($article->tags_id)->join(', ') }}</div>
+                                    <div>{{ collect($article->tags_zh)->join(', ') }}</div>
+                                </td>
+                                <td>
+                                    <div>{{ $article->date->isoFormat('LL') }}</div>
+                                    <div>{{ $article->date->diffForHumans() }}</div>
                                 </td>
                                 <td class="text-center">
                                     @can('article.edit')
-                                        <x-components::form.switch :key="'changeActive'" :id="$article->id" :value="$article->is_active" />
+                                        <x-components::form.switch :key="'changeActive'" :id="$article->id"
+                                            :value="$article->is_active" />
                                     @else
                                         <span
                                             class="badge rounded-pill text-bg-{{ Utils::successDanger($article->is_active) }}">
@@ -98,6 +127,12 @@
                                             :href="route('cms.article.detail', [
                                                 'article' => $article->id,
                                             ])" />
+                                    @endcan
+
+                                    @can('article.edit')
+                                        <x-components::link.edit :size="'sm'" :width="'auto'" :href="route('cms.article.edit', [
+                                            'article' => $article->id,
+                                        ])" />
                                     @endcan
 
                                     @can('article.delete')
