@@ -189,4 +189,5 @@ return [
     'location' => 'Location',
     'location_id' => 'Location ID',
     'location_zh' => 'Location ZH',
+    'career_benefit' => 'Career Benefit',
 ];

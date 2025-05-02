@@ -32,6 +32,16 @@ return [
         'subMenus' => [],
     ],
     [
+        'roles' => 'Super User|Admin',
+        'permissions' => 'career-benefit.index',
+        'name' => 'Career Benefit',
+        'route' => 'cms.career-benefit.index',
+        'icon' => 'fas fa-briefcase',
+        'table' => 'careerBenefits',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
         'roles' => 'Super User',
         'permissions' => 'configuration.index',
         'name' => 'Configuration',

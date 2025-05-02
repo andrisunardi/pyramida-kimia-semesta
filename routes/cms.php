@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/career.php'));
 
+    Route::prefix('career-benefit')->name('career-benefit.')->as('career-benefit.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/career-benefit.php'));
+
     Route::prefix('configuration')->name('configuration.')->as('configuration.')
         ->middleware(['role:Super User|Configuration'])
         ->group(base_path('routes/cms/configuration.php'));

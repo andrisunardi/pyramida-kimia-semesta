@@ -197,6 +197,27 @@ Breadcrumbs::for('cms.career.detail', function (BreadcrumbTrail $trail, $career)
     $trail->push(trans('index.detail'), route('cms.career.detail', ['career' => $career]), ['icon' => 'fas fa-list']);
 });
 
+// CAREER BENEFIT
+Breadcrumbs::for('cms.career-benefit.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.career_benefit'), route('cms.career-benefit.index'), ['icon' => 'fas fa-gift']);
+});
+
+Breadcrumbs::for('cms.career-benefit.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.career-benefit.index');
+    $trail->push(trans('index.add'), route('cms.career-benefit.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.career-benefit.edit', function (BreadcrumbTrail $trail, $careerBenefit) {
+    $trail->parent('cms.career-benefit.index');
+    $trail->push(trans('index.edit'), route('cms.career-benefit.edit', ['careerBenefit' => $careerBenefit]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.career-benefit.detail', function (BreadcrumbTrail $trail, $careerBenefit) {
+    $trail->parent('cms.career-benefit.index');
+    $trail->push(trans('index.detail'), route('cms.career-benefit.detail', ['careerBenefit' => $careerBenefit]), ['icon' => 'fas fa-list']);
+});
+
 // CONFIGURATION
 Breadcrumbs::for('cms.configuration.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');
