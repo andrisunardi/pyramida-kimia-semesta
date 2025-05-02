@@ -20,6 +20,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/article.php'));
 
+    Route::prefix('career')->name('career.')->as('career.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/career.php'));
+
     Route::prefix('configuration')->name('configuration.')->as('configuration.')
         ->middleware(['role:Super User|Configuration'])
         ->group(base_path('routes/cms/configuration.php'));

@@ -188,6 +188,11 @@ return [
         'username' => '用户名',
         'date' => '日期',
         'tags' => '标签',
+        'location' => 'Location',
+        'location_id' => 'Location ID',
+        'location_zh' => 'Location ZH',
+        'url' => 'Url',
+        'link' => 'Link',
     ],
 
 ];

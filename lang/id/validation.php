@@ -188,6 +188,11 @@ return [
         'user' => 'Pengguna',
         'username' => 'Username',
         'date' => 'Tanggal',
+        'location' => 'Lokasi',
+        'location_id' => 'Lokasi ID',
+        'location_zh' => 'Lokasi ZH',
+        'url' => 'Url',
+        'link' => 'Link',
     ],
 
 ];

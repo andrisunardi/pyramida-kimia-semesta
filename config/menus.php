@@ -22,6 +22,16 @@ return [
         'subMenus' => [],
     ],
     [
+        'roles' => 'Super User|Admin',
+        'permissions' => 'career.index',
+        'name' => 'Career',
+        'route' => 'cms.career.index',
+        'icon' => 'fas fa-briefcase',
+        'table' => 'careers',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
         'roles' => 'Super User',
         'permissions' => 'configuration.index',
         'name' => 'Configuration',

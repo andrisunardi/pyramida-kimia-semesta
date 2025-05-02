@@ -185,4 +185,8 @@ return [
     'your_phone' => 'Telepon Anda',
     'your_profile_has_been_successfully_updated' => 'Profil Anda telah berhasil diperbarui',
     'example' => 'Contoh',
+    'link' => 'Tautan',
+    'location' => 'Lokasi',
+    'location_id' => 'Lokasi ID',
+    'location_zh' => 'Lokasi ZH',
 ];

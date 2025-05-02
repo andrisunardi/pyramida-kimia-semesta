@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Livewire\CMS\Contact;
+namespace App\Livewire\CMS\Career;
 
-use App\Exports\ContactExport;
+use App\Exports\CareerExport;
 use App\Livewire\Component;
-use App\Models\Contact;
-use App\Services\ContactService;
+use App\Models\Career;
+use App\Services\CareerService;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Url;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-class ContactPage extends Component
+class CareerPage extends Component
 {
     #[Url(except: '')]
     public $search = '';
@@ -38,27 +38,27 @@ class ContactPage extends Component
         $this->resetPage();
     }
 
-    public function changeActive(Contact $contact): void
+    public function changeActive(Career $career): void
     {
-        (new ContactService)->active(contact: $contact);
+        (new CareerService)->active(career: $career);
 
         $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
-            'html' => trans('index.contact').' '.trans('index.has_been_successfully_changed'),
+            'html' => trans('index.career').' '.trans('index.has_been_successfully_changed'),
         ]);
     }
 
-    public function delete(Contact $contact): void
+    public function delete(Career $career): void
     {
-        (new ContactService)->delete(contact: $contact);
+        (new CareerService)->delete(career: $career);
 
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
-            'html' => trans('index.contact').' '.trans('index.has_been_successfully_deleted'),
+            'html' => trans('index.career').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
 
-    public function getContacts(bool $paginate = true): object
+    public function getCareers(bool $paginate = true): object
     {
-        return (new ContactService)->index(
+        return (new CareerService)->index(
             search: $this->search,
             isActive: $this->is_active,
             paginate: $paginate,
@@ -68,18 +68,18 @@ class ContactPage extends Component
     public function exportToExcel(): BinaryFileResponse
     {
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
-            'html' => trans('index.contact').' '.trans('index.has_been_successfully_exported'),
+            'html' => trans('index.career').' '.trans('index.has_been_successfully_exported'),
         ]);
 
-        return Excel::download(new ContactExport(
-            contacts: $this->getContacts(paginate: false),
-        ), trans('index.contact').'.xlsx');
+        return Excel::download(new CareerExport(
+            careers: $this->getCareers(paginate: false),
+        ), trans('index.career').'.xlsx');
     }
 
     public function render(): View
     {
-        return view('livewire.cms.contact.index', [
-            'contacts' => $this->getContacts(),
+        return view('livewire.cms.career.index', [
+            'careers' => $this->getCareers(),
         ]);
     }
 }

@@ -29,13 +29,13 @@ class ArticleAddForm extends Form
     public string $description_zh = '';
 
     #[Validate('nullable|string|min:1|max:65535')]
-    public ?string $tags = '';
+    public string $tags = '';
 
     #[Validate('nullable|string|min:1|max:65535')]
-    public ?string $tags_id = '';
+    public string $tags_id = '';
 
     #[Validate('nullable|string|min:1|max:65535')]
-    public ?string $tags_zh = '';
+    public string $tags_zh = '';
 
     #[Validate('nullable|date|date_format:Y-m-d')]
     public string $date = '';

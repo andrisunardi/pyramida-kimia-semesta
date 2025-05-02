@@ -185,4 +185,8 @@ return [
     'your_phone' => '你的电话',
     'your_profile_has_been_successfully_updated' => '您的个人资料已成功更新',
     'example' => 'Example',
+    'link' => 'Link',
+    'location' => 'Location',
+    'location_id' => 'Location ID',
+    'location_zh' => 'Location ZH',
 ];

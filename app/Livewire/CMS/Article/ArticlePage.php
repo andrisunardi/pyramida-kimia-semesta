@@ -68,7 +68,7 @@ class ArticlePage extends Component
     public function exportToExcel(): BinaryFileResponse
     {
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
-            'html' => trans('index.user').' '.trans('index.has_been_successfully_exported'),
+            'html' => trans('index.article').' '.trans('index.has_been_successfully_exported'),
         ]);
 
         return Excel::download(new ArticleExport(

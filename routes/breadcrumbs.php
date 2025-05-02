@@ -176,6 +176,27 @@ Breadcrumbs::for('cms.article.detail', function (BreadcrumbTrail $trail, $articl
     $trail->push(trans('index.detail'), route('cms.article.detail', ['article' => $article]), ['icon' => 'fas fa-list']);
 });
 
+// CAREER
+Breadcrumbs::for('cms.career.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.career'), route('cms.career.index'), ['icon' => 'fas fa-briefcase']);
+});
+
+Breadcrumbs::for('cms.career.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.career.index');
+    $trail->push(trans('index.add'), route('cms.career.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.career.edit', function (BreadcrumbTrail $trail, $career) {
+    $trail->parent('cms.career.index');
+    $trail->push(trans('index.edit'), route('cms.career.edit', ['career' => $career]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.career.detail', function (BreadcrumbTrail $trail, $career) {
+    $trail->parent('cms.career.index');
+    $trail->push(trans('index.detail'), route('cms.career.detail', ['career' => $career]), ['icon' => 'fas fa-list']);
+});
+
 // CONFIGURATION
 Breadcrumbs::for('cms.configuration.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');
