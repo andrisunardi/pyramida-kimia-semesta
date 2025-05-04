@@ -1,5 +1,5 @@
-@section('title', trans('index.career'))
-@section('icon', 'fas fa-briefcase')
+@section('title', trans('index.faq'))
+@section('icon', 'fas fa-question')
 
 <main>
     <div class="card mb-3">
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.career.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.faq.index')" />
                 </div>
             </div>
 
@@ -21,97 +21,61 @@
                     <div class="fw-bold">{{ trans('index.id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->id }}
+                    {{ $faq->id }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.name') }}</div>
+                    <div class="fw-bold">{{ trans('index.question') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->name }}
+                    {{ $faq->question }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.name_id') }}</div>
+                    <div class="fw-bold">{{ trans('index.question_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->name_id }}
+                    {{ $faq->question_id }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.name_zh') }}</div>
+                    <div class="fw-bold">{{ trans('index.question_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->name_zh }}
+                    {{ $faq->question_zh }}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.description') }}</div>
+                    <div class="fw-bold">{{ trans('index.answer') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $career->description !!}
+                    {!! $faq->answer !!}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.description_id') }}</div>
+                    <div class="fw-bold">{{ trans('index.answer_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $career->description_id !!}
+                    {!! $faq->answer_id !!}
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.description_zh') }}</div>
+                    <div class="fw-bold">{{ trans('index.answer_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $career->description_zh !!}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.location') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->location }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.location_id') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->location_id }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.location_zh') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $career->location_zh }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.link') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    <x-components::link.external-link :href="$career->link" :text="$career->link" />
+                    {!! $faq->answer_zh !!}
                 </div>
             </div>
 
@@ -120,11 +84,11 @@
                     <div class="fw-bold">{{ trans('index.active') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @can('career.edit')
-                        <x-components::form.switch :key="'changeActive'" :id="$career->id" :value="$career->is_active" />
+                    @can('faq.edit')
+                        <x-components::form.switch :key="'changeActive'" :id="$faq->id" :value="$faq->is_active" />
                     @else
-                        <span class="badge rounded-pill text-bg-{{ Utils::successDanger($career->is_active) }}">
-                            {{ Utils::translate(Utils::yesNo($career->is_active)) }}
+                        <span class="badge rounded-pill text-bg-{{ Utils::successDanger($faq->is_active) }}">
+                            {{ Utils::translate(Utils::yesNo($faq->is_active)) }}
                         </span>
                     @endcan
                 </div>
@@ -135,8 +99,8 @@
                     <div class="fw-bold">{{ trans('index.created_by') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($career->createdBy)
-                        <x-components::link.user :data="$career->createdBy" />
+                    @if ($faq->createdBy)
+                        <x-components::link.user :data="$faq->createdBy" />
                     @endif
                 </div>
             </div>
@@ -146,8 +110,8 @@
                     <div class="fw-bold">{{ trans('index.updated_by') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($career->updatedBy)
-                        <x-components::link.user :data="$career->updatedBy" />
+                    @if ($faq->updatedBy)
+                        <x-components::link.user :data="$faq->updatedBy" />
                     @endif
                 </div>
             </div>
@@ -157,10 +121,10 @@
                     <div class="fw-bold">{{ trans('index.created_at') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($career->created_at)
-                        {{ $career->created_at->isoFormat('LLLL') }}
+                    @if ($faq->created_at)
+                        {{ $faq->created_at->isoFormat('LLLL') }}
                         <br class="d-lg-none">
-                        ({{ $career->created_at->diffForHumans() }})
+                        ({{ $faq->created_at->diffForHumans() }})
                     @endif
                 </div>
             </div>
@@ -170,10 +134,10 @@
                     <div class="fw-bold">{{ trans('index.updated_at') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($career->updated_at)
-                        {{ $career->updated_at->isoFormat('LLLL') }}
+                    @if ($faq->updated_at)
+                        {{ $faq->updated_at->isoFormat('LLLL') }}
                         <br class="d-lg-none">
-                        ({{ $career->updated_at->diffForHumans() }})
+                        ({{ $faq->updated_at->diffForHumans() }})
                     @endif
                 </div>
             </div>
@@ -181,16 +145,16 @@
             <hr />
 
             <div class="row">
-                @can('career.edit')
+                @can('faq.edit')
                     <div class="col-6 col-sm-auto">
-                        <x-components::link.edit :width="'100'" :href="route('cms.career.edit', [
-                            'career' => $career->id,
+                        <x-components::link.edit :width="'100'" :href="route('cms.faq.edit', [
+                            'faq' => $faq->id,
                         ])" />
                     </div>
                 @endcan
-                @can('career.delete')
+                @can('faq.delete')
                     <div class="col-6 col-sm-auto">
-                        <x-components::button.delete :width="'100'" :key="'delete(' . $career->id . ')'" :confirm="trans('index.confirm')" />
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $faq->id . ')'" :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

@@ -156,10 +156,16 @@
             <hr />
 
             <div class="row">
-                @can('article.delete')
+                @can('career_benefit.edit')
                     <div class="col-6 col-sm-auto">
-                        <x-components::button.delete :size="'md'" :width="'100'" :key="'delete(' . $careerBenefit->id . ')'"
-                            :confirm="trans('index.confirm')" />
+                        <x-components::link.edit :width="'100'" :href="route('cms.career-benefit.edit', [
+                            'careerBenefit' => $careerBenefit->id,
+                        ])" />
+                    </div>
+                @endcan
+                @can('career_benefit.delete')
+                    <div class="col-6 col-sm-auto">
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $careerBenefit->id . ')'" :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

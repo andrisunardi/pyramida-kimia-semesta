@@ -147,8 +147,7 @@
             <div class="row">
                 @can('contact.delete')
                     <div class="col-6 col-sm-auto">
-                        <x-components::button.delete :size="'md'" :width="'100'" :key="'delete(' . $contact->id . ')'"
-                            :confirm="trans('index.confirm')" />
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $contact->id . ')'" :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

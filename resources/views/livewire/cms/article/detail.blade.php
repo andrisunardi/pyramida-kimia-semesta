@@ -207,10 +207,14 @@
             <hr />
 
             <div class="row">
+                @can('article.edit')
+                    <div class="col-6 col-sm-auto">
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $article->id . ')'" :confirm="trans('index.confirm')" />
+                    </div>
+                @endcan
                 @can('article.delete')
                     <div class="col-6 col-sm-auto">
-                        <x-components::button.delete :size="'md'" :width="'100'" :key="'delete(' . $article->id . ')'"
-                            :confirm="trans('index.confirm')" />
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $article->id . ')'" :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

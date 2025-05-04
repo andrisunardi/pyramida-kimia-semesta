@@ -42,6 +42,16 @@ return [
         'subMenus' => [],
     ],
     [
+        'roles' => 'Super User|Admin',
+        'permissions' => 'faq.index',
+        'name' => 'FAQ',
+        'route' => 'cms.faq.index',
+        'icon' => 'fas fa-question',
+        'table' => 'faqs',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
         'roles' => 'Super User',
         'permissions' => 'configuration.index',
         'name' => 'Configuration',

@@ -218,6 +218,27 @@ Breadcrumbs::for('cms.career-benefit.detail', function (BreadcrumbTrail $trail, 
     $trail->push(trans('index.detail'), route('cms.career-benefit.detail', ['careerBenefit' => $careerBenefit]), ['icon' => 'fas fa-list']);
 });
 
+// FAQ
+Breadcrumbs::for('cms.faq.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.faq'), route('cms.faq.index'), ['icon' => 'fas fa-question']);
+});
+
+Breadcrumbs::for('cms.faq.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.faq.index');
+    $trail->push(trans('index.add'), route('cms.faq.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.faq.edit', function (BreadcrumbTrail $trail, $faq) {
+    $trail->parent('cms.faq.index');
+    $trail->push(trans('index.edit'), route('cms.faq.edit', ['faq' => $faq]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.faq.detail', function (BreadcrumbTrail $trail, $faq) {
+    $trail->parent('cms.faq.index');
+    $trail->push(trans('index.detail'), route('cms.faq.detail', ['faq' => $faq]), ['icon' => 'fas fa-list']);
+});
+
 // CONFIGURATION
 Breadcrumbs::for('cms.configuration.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');

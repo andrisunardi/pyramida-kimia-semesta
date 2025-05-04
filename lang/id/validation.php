@@ -193,6 +193,12 @@ return [
         'location_zh' => 'Lokasi ZH',
         'url' => 'Url',
         'link' => 'Link',
+        'question' => 'Pertanyaan',
+        'question_id' => 'Pertanyaan ID',
+        'question_zh' => 'Pertanyaan ZH',
+        'answer' => 'Jawaban',
+        'answer_id' => 'Jawaban ID',
+        'answer_zh' => 'Jawaban ZH',
     ],
 
 ];

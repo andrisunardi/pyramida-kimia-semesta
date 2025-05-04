@@ -190,7 +190,7 @@ return [
     'location_id' => 'Location ID',
     'location_zh' => 'Location ZH',
     'career_benefit' => 'Career Benefit',
-    'index' => 'Index',
+    'f_a_q' => 'FAQ',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

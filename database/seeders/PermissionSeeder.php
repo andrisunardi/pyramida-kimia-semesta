@@ -33,5 +33,12 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'career_benefit.delete', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'career_benefit.detail', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'career_benefit.export', 'guard_name' => 'web'])->assignRole('Admin');
+
+        Permission::create(['name' => 'faq', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'faq.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'faq.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'faq.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'faq.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'faq.export', 'guard_name' => 'web'])->assignRole('Admin');
     }
 }
