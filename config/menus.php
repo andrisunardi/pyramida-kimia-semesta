@@ -37,7 +37,7 @@ return [
         'name' => 'Career Benefit',
         'route' => 'cms.career-benefit.index',
         'icon' => 'fas fa-briefcase',
-        'table' => 'career_enefits',
+        'table' => 'career_benefitsx',
         'sidebar' => true,
         'subMenus' => [],
     ],
