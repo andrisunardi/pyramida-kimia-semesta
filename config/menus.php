@@ -23,6 +23,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'gallery.index',
+        'name' => 'Gallery',
+        'route' => 'cms.gallery.index',
+        'icon' => 'fas fa-images',
+        'table' => 'galleries',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'career.index',
         'name' => 'Career',
         'route' => 'cms.career.index',
