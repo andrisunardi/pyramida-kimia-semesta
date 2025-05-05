@@ -191,4 +191,5 @@ return [
     'location_zh' => 'Lokasi ZH',
     'career_benefit' => 'Career Benefit',
     'f_a_q' => 'Tanya Jawab',
+    'gallery_category' => 'Kategori Galeri',
 ];

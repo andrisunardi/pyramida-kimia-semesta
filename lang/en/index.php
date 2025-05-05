@@ -191,7 +191,7 @@ return [
     'location_zh' => 'Location ZH',
     'career_benefit' => 'Career Benefit',
     'f_a_q' => 'FAQ',
-    'index' => 'Index',
+    'gallery_category' => 'Gallery Category',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

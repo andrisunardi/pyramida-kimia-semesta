@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/gallery.php'));
 
+    Route::prefix('gallery-category')->name('gallery-category.')->as('gallery-category.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/gallery-category.php'));
+
     Route::prefix('career')->name('career.')->as('career.')
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/career.php'));

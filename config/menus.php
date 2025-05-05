@@ -33,6 +33,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'gallery_category.index',
+        'name' => 'Gallery Category',
+        'route' => 'cms.gallery-category.index',
+        'icon' => 'fas fa-tags',
+        'table' => 'gallery_categories',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'career.index',
         'name' => 'Career',
         'route' => 'cms.career.index',
@@ -43,7 +53,7 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
-        'permissions' => 'career-benefit.index',
+        'permissions' => 'career_benefit.index',
         'name' => 'Career Benefit',
         'route' => 'cms.career-benefit.index',
         'icon' => 'fas fa-briefcase',

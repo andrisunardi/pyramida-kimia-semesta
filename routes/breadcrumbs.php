@@ -197,6 +197,27 @@ Breadcrumbs::for('cms.gallery.detail', function (BreadcrumbTrail $trail, $galler
     $trail->push(trans('index.detail'), route('cms.gallery.detail', ['gallery' => $gallery]), ['icon' => 'fas fa-list']);
 });
 
+// GALLERY CATEGORY
+Breadcrumbs::for('cms.gallery-category.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.gallery_category'), route('cms.gallery-category.index'), ['icon' => 'fas fa-tags']);
+});
+
+Breadcrumbs::for('cms.gallery-category.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.gallery-category.index');
+    $trail->push(trans('index.add'), route('cms.gallery-category.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.gallery-category.edit', function (BreadcrumbTrail $trail, $galleryCategory) {
+    $trail->parent('cms.gallery-category.index');
+    $trail->push(trans('index.edit'), route('cms.gallery-category.edit', ['galleryCategory' => $galleryCategory]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.gallery-category.detail', function (BreadcrumbTrail $trail, $galleryCategory) {
+    $trail->parent('cms.gallery-category.index');
+    $trail->push(trans('index.detail'), route('cms.gallery-category.detail', ['galleryCategory' => $galleryCategory]), ['icon' => 'fas fa-list']);
+});
+
 // CAREER
 Breadcrumbs::for('cms.career.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');

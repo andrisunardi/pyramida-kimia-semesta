@@ -191,4 +191,5 @@ return [
     'location_zh' => '地点 ZH',
     'career_benefit' => '职业福利',
     'f_a_q' => '常问问题',
+    'gallery_category' => '画廊类别',
 ];
