@@ -63,10 +63,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($historys as $key => $history)
+                        @forelse ($histories as $key => $history)
                             <tr wire:key="{{ $key }}">
                                 <td class="text-center">
-                                    {{ ($historys->currentPage() - 1) * $historys->perPage() + $loop->iteration }}
+                                    {{ ($histories->currentPage() - 1) * $histories->perPage() + $loop->iteration }}
                                 </td>
                                 <td class="text-center">
                                     <x-components::link :href="route('cms.history.detail', [
@@ -132,7 +132,7 @@
                 </table>
             </div>
 
-            {{ $historys->links('components::components.layouts.pagination') }}
+            {{ $histories->links('components::components.layouts.pagination') }}
         </div>
     </div>
 </main>
