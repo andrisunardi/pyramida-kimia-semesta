@@ -199,6 +199,8 @@ return [
         'answer' => 'Jawaban',
         'answer_id' => 'Jawaban ID',
         'answer_zh' => 'Jawaban ZH',
+        'address' => 'Alamat',
+        'maps' => 'Peta',
     ],
 
 ];

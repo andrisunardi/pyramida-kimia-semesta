@@ -34,6 +34,13 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'gallery_category.detail', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'gallery_category.export', 'guard_name' => 'web'])->assignRole('Admin');
 
+        Permission::create(['name' => 'history', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'history.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'history.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'history.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'history.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'history.export', 'guard_name' => 'web'])->assignRole('Admin');
+
         Permission::create(['name' => 'career', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'career.add', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'career.edit', 'guard_name' => 'web'])->assignRole('Admin');
@@ -54,5 +61,12 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'faq.delete', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'faq.detail', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'faq.export', 'guard_name' => 'web'])->assignRole('Admin');
+
+        Permission::create(['name' => 'office', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'office.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'office.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'office.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'office.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'office.export', 'guard_name' => 'web'])->assignRole('Admin');
     }
 }

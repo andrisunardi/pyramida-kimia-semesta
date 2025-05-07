@@ -302,6 +302,27 @@ Breadcrumbs::for('cms.faq.detail', function (BreadcrumbTrail $trail, $faq) {
     $trail->push(trans('index.detail'), route('cms.faq.detail', ['faq' => $faq]), ['icon' => 'fas fa-list']);
 });
 
+// OFFICE
+Breadcrumbs::for('cms.office.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.office'), route('cms.office.index'), ['icon' => 'fas fa-building']);
+});
+
+Breadcrumbs::for('cms.office.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.office.index');
+    $trail->push(trans('index.add'), route('cms.office.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.office.edit', function (BreadcrumbTrail $trail, $office) {
+    $trail->parent('cms.office.index');
+    $trail->push(trans('index.edit'), route('cms.office.edit', ['office' => $office]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.office.detail', function (BreadcrumbTrail $trail, $office) {
+    $trail->parent('cms.office.index');
+    $trail->push(trans('index.detail'), route('cms.office.detail', ['office' => $office]), ['icon' => 'fas fa-list']);
+});
+
 // CONFIGURATION
 Breadcrumbs::for('cms.configuration.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');

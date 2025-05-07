@@ -44,6 +44,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/faq.php'));
 
+    Route::prefix('office')->name('office.')->as('office.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/office.php'));
+
     Route::prefix('configuration')->name('configuration.')->as('configuration.')
         ->middleware(['role:Super User|Configuration'])
         ->group(base_path('routes/cms/configuration.php'));

@@ -82,6 +82,16 @@ return [
         'subMenus' => [],
     ],
     [
+        'roles' => 'Super User|Admin',
+        'permissions' => 'office.index',
+        'name' => 'Office',
+        'route' => 'cms.office.index',
+        'icon' => 'fas fa-building',
+        'table' => 'offices',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
         'roles' => 'Super User',
         'permissions' => 'configuration.index',
         'name' => 'Configuration',

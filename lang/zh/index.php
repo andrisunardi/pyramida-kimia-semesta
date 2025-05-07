@@ -192,4 +192,6 @@ return [
     'career_benefit' => '职业福利',
     'f_a_q' => '常问问题',
     'gallery_category' => '画廊类别',
+    'address' => '地址',
+    'maps' => '地图',
 ];
