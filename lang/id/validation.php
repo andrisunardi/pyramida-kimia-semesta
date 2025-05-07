@@ -205,6 +205,7 @@ return [
         'file_coa' => 'Dokumen COA',
         'file_msds' => 'Dokumen MSDS',
         'product_category_id' => 'Kategori Produk',
+        'job' => 'Pekerjaan',
     ],
 
 ];

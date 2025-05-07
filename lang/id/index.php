@@ -197,4 +197,5 @@ return [
     'file_coa' => 'Dokumen COA',
     'file_msds' => 'Dokumen MSDS',
     'slider' => 'Penggeser',
+    'job' => 'Pekerjaan',
 ];

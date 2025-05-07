@@ -73,6 +73,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'team.index',
+        'name' => 'Team',
+        'route' => 'cms.team.index',
+        'icon' => 'fas fa-user-tie',
+        'table' => 'teams',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'partner.index',
         'name' => 'Partner',
         'route' => 'cms.partner.index',

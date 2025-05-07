@@ -281,6 +281,27 @@ Breadcrumbs::for('cms.slider.detail', function (BreadcrumbTrail $trail, $slider)
     $trail->push(trans('index.detail'), route('cms.slider.detail', ['slider' => $slider]), ['icon' => 'fas fa-list']);
 });
 
+// TEAM
+Breadcrumbs::for('cms.team.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.team'), route('cms.team.index'), ['icon' => 'fas fa-user-tie']);
+});
+
+Breadcrumbs::for('cms.team.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.team.index');
+    $trail->push(trans('index.add'), route('cms.team.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.team.edit', function (BreadcrumbTrail $trail, $team) {
+    $trail->parent('cms.team.index');
+    $trail->push(trans('index.edit'), route('cms.team.edit', ['team' => $team]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.team.detail', function (BreadcrumbTrail $trail, $team) {
+    $trail->parent('cms.team.index');
+    $trail->push(trans('index.detail'), route('cms.team.detail', ['team' => $team]), ['icon' => 'fas fa-list']);
+});
+
 // PARTNER
 Breadcrumbs::for('cms.partner.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');

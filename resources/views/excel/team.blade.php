@@ -1,20 +1,20 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="16">
-                <b>{{ trans('index.product') }}</b>
+            <th align="center" colspan="12">
+                <b>{{ trans('index.team') }}</b>
             </th>
         </tr>
         <tr>
-            <td colspan="16"></td>
+            <td colspan="12"></td>
         </tr>
         <tr>
-            <th align="center" colspan="16">
+            <th align="center" colspan="12">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
         <tr>
-            <td colspan="16"></td>
+            <td colspan="12"></td>
         </tr>
         <tr>
             <th valign="middle" align="center">
@@ -24,16 +24,10 @@
                 <b>{{ trans('index.id') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>{{ trans('index.product_category') }}</b>
-            </th>
-            <th valign="middle" align="center">
                 <b>{{ trans('index.name') }}</b>
             </th>
             <th valign="middle" align="center">
-                <b>{{ trans('index.name_id') }}</b>
-            </th>
-            <th valign="middle" align="center">
-                <b>{{ trans('index.name_zh') }}</b>
+                <b>{{ trans('index.job') }}</b>
             </th>
             <th valign="middle" align="center">
                 <b>{{ trans('index.description') }}</b>
@@ -46,12 +40,6 @@
             </th>
             <th valign="middle" align="center">
                 <b>{{ trans('index.image') }}</b>
-            </th>
-            <th valign="middle" align="center">
-                <b>{{ trans('index.image_coa') }}</b>
-            </th>
-            <th valign="middle" align="center">
-                <b>{{ trans('index.image_msds') }}</b>
             </th>
             <th valign="middle" align="center">
                 <b>{{ trans('index.slug') }}</b>
@@ -68,60 +56,51 @@
         </tr>
     </thead>
     <tbody>
-        @forelse ($products as $product)
+        @forelse ($teams as $team)
             <tr>
                 <td valign="middle" align="center">
                     {{ $loop->iteration }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $product->id }}
+                    {{ $team->id }}
                 </td>
                 <td align="left">
-                    {{ $product->category?->name }}
+                    {{ $team->name }}
                 </td>
                 <td align="left">
-                    {{ $product->name }}
+                    {{ $team->job }}
                 </td>
                 <td align="left">
-                    {{ $product->name_id }}
+                    {{ $team->name_zh }}
                 </td>
                 <td align="left">
-                    {{ $product->name_zh }}
+                    {{ $team->description }}
                 </td>
                 <td align="left">
-                    {{ $product->description }}
+                    {{ $team->description_id }}
                 </td>
                 <td align="left">
-                    {{ $product->description_id }}
+                    {{ $team->description_zh }}
                 </td>
                 <td align="left">
-                    {{ $product->description_zh }}
+                    {{ $team->image }}
                 </td>
                 <td align="left">
-                    {{ $product->image }}
-                </td>
-                <td align="left">
-                    {{ $product->image_coa }}
-                </td>
-                <td align="left">
-                    {{ $product->image_msds }}
-                </td>
-                <td align="left">
-                    {{ $product->slug }}
+                    {{ $team->slug }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ Utils::translate(Utils::yesNo($product->is_active)) }}
+                    {{ Utils::translate(Utils::yesNo($team->is_active)) }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $product->created_at }}
+                    {{ $team->created_at }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $product->updated_at }}
+                    {{ $team->updated_at }}
                 </td>
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="16">
+                <td align="center" colspan="12">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>
@@ -129,7 +108,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="16"></td>
+            <td colspan="12"></td>
         </tr>
     </tfoot>
 </table>

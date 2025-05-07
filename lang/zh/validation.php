@@ -205,6 +205,7 @@ return [
         'file_coa' => '文件 COA',
         'file_msds' => '文件 MSDS',
         'product_category_id' => '产品类别',
+        'job' => '工作',
     ],
 
 ];

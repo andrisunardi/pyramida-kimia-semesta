@@ -197,7 +197,7 @@ return [
     'file_coa' => 'File COA',
     'file_msds' => 'File MSDS',
     'slider' => 'Slider',
-    'index' => 'Index',
+    'job' => 'Job',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

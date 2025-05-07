@@ -44,6 +44,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/partner.php'));
 
+    Route::prefix('team')->name('team.')->as('team.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/team.php'));
+
     Route::prefix('history')->name('history.')->as('history.')
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/history.php'));
