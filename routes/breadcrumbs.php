@@ -176,6 +176,27 @@ Breadcrumbs::for('cms.article.detail', function (BreadcrumbTrail $trail, $articl
     $trail->push(trans('index.detail'), route('cms.article.detail', ['article' => $article]), ['icon' => 'fas fa-list']);
 });
 
+// PRODUCT
+Breadcrumbs::for('cms.product-category.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.product-category'), route('cms.product-category.index'), ['icon' => 'fas fa-newspaper']);
+});
+
+Breadcrumbs::for('cms.product-category.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.product-category.index');
+    $trail->push(trans('index.add'), route('cms.product-category.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.product-category.edit', function (BreadcrumbTrail $trail, $productCategory) {
+    $trail->parent('cms.product-category.index');
+    $trail->push(trans('index.edit'), route('cms.product-category.edit', ['productCategory' => $productCategory]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.product-category.detail', function (BreadcrumbTrail $trail, $productCategory) {
+    $trail->parent('cms.product-category.index');
+    $trail->push(trans('index.detail'), route('cms.product-category.detail', ['productCategory' => $productCategory]), ['icon' => 'fas fa-list']);
+});
+
 // GALLERY
 Breadcrumbs::for('cms.gallery.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');
