@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Livewire\CMS\Gallery;
+namespace App\Livewire\CMS\Product;
 
-use App\Exports\GalleryExport;
+use App\Exports\ProductExport;
 use App\Livewire\Component;
-use App\Models\Gallery;
-use App\Services\GalleryCategoryService;
-use App\Services\GalleryService;
+use App\Models\Product;
+use App\Services\ProductCategoryService;
+use App\Services\ProductService;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Url;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-class GalleryPage extends Component
+class ProductPage extends Component
 {
     #[Url(except: '')]
-    public $gallery_category_id = '';
+    public $product_category_id = '';
 
     #[Url(except: '')]
     public $search = '';
@@ -28,7 +28,7 @@ class GalleryPage extends Component
         $this->resetPage();
 
         $this->reset([
-            'gallery_category_id',
+            'product_category_id',
             'search',
             'is_active',
         ]);
@@ -43,52 +43,52 @@ class GalleryPage extends Component
         $this->resetPage();
     }
 
-    public function changeActive(Gallery $gallery): void
+    public function changeActive(Product $product): void
     {
-        (new GalleryService)->active(gallery: $gallery);
+        (new ProductService)->active(product: $product);
 
         $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
-            'html' => trans('index.gallery').' '.trans('index.has_been_successfully_changed'),
+            'html' => trans('index.product').' '.trans('index.has_been_successfully_changed'),
         ]);
     }
 
-    public function delete(Gallery $gallery): void
+    public function delete(Product $product): void
     {
-        (new GalleryService)->delete(gallery: $gallery);
+        (new ProductService)->delete(product: $product);
 
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
-            'html' => trans('index.gallery').' '.trans('index.has_been_successfully_deleted'),
+            'html' => trans('index.product').' '.trans('index.has_been_successfully_deleted'),
         ]);
     }
 
-    public function getGalleries(bool $paginate = true): object
+    public function getProducts(bool $paginate = true): object
     {
-        $galleries = (new GalleryService)->index(
+        $products = (new ProductService)->index(
             search: $this->search,
-            galleryCategoryId: $this->gallery_category_id,
+            productCategoryId: $this->product_category_id,
             isActive: $this->is_active,
             paginate: $paginate,
         );
 
-        $galleries->loadMissing(['category']);
+        $products->loadMissing(['category']);
 
-        return $galleries;
+        return $products;
     }
 
     public function exportToExcel(): BinaryFileResponse
     {
         $this->alert('success', trans('index.delete').' '.trans('index.success'), [
-            'html' => trans('index.gallery').' '.trans('index.has_been_successfully_exported'),
+            'html' => trans('index.product').' '.trans('index.has_been_successfully_exported'),
         ]);
 
-        return Excel::download(new GalleryExport(
-            galleries: $this->getGalleries(paginate: false),
-        ), trans('index.gallery').'.xlsx');
+        return Excel::download(new ProductExport(
+            products: $this->getProducts(paginate: false),
+        ), trans('index.product').'.xlsx');
     }
 
-    public function getGalleryCategories(): object
+    public function getProductCategories(): object
     {
-        return (new GalleryCategoryService)->index(
+        return (new ProductCategoryService)->index(
             isActive: [true],
             orderBy: 'name',
             sortBy: 'asc',
@@ -98,9 +98,9 @@ class GalleryPage extends Component
 
     public function render(): View
     {
-        return view('livewire.cms.gallery.index', [
-            'galleryCategories' => $this->getGalleryCategories(),
-            'galleries' => $this->getGalleries(),
+        return view('livewire.cms.product.index', [
+            'productCategories' => $this->getProductCategories(),
+            'products' => $this->getProducts(),
         ]);
     }
 }

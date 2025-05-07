@@ -20,6 +20,13 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'article.detail', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'article.export', 'guard_name' => 'web'])->assignRole('Admin');
 
+        Permission::create(['name' => 'product', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'product.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'product.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'product.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'product.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'product.export', 'guard_name' => 'web'])->assignRole('Admin');
+
         Permission::create(['name' => 'product_category', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'product_category.add', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'product_category.edit', 'guard_name' => 'web'])->assignRole('Admin');

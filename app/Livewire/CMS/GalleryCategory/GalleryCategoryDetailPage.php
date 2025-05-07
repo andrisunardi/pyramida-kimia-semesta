@@ -14,7 +14,7 @@ class GalleryCategoryDetailPage extends Component
     public function mount(GalleryCategory $galleryCategory): void
     {
         $this->galleryCategory = $galleryCategory;
-        $this->galleryCategory->loadCount('galleries');
+        $this->galleryCategory->loadCount(['galleries']);
     }
 
     public function changeActive(GalleryCategory $galleryCategory): void

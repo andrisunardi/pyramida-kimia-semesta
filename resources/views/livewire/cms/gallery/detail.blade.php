@@ -30,9 +30,9 @@
                     <div class="fw-bold">{{ trans('index.category') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{-- <x-components::link :href="route('cms.gallery-category.detail', [
+                    <x-components::link :href="route('cms.gallery-category.detail', [
                         'galleryCategory' => $gallery->category->id,
-                    ])" :text="$gallery->category->name" /> --}}
+                    ])" :text="$gallery->category->name" />
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
-@section('title', trans('index.article'))
-@section('icon', 'fas fa-newspaper')
+@section('title', trans('index.product'))
+@section('icon', 'fas fa-flask')
 
 <main>
     <div class="card mb-3">
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.article.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.product.index')" />
                 </div>
             </div>
 
@@ -21,7 +21,19 @@
                     <div class="fw-bold">{{ trans('index.id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->id }}
+                    {{ $product->id }}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.category') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    {{ $product->category->name }}
+                    <x-components::link.external-link :href="route('product.category', [
+                        'slug' => $product->category->slug,
+                    ])" />
                 </div>
             </div>
 
@@ -30,9 +42,9 @@
                     <div class="fw-bold">{{ trans('index.name') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->name }}
-                    <x-components::link.external-link :href="route('article.view', [
-                        'slug' => $article->slug,
+                    {{ $product->name }}
+                    <x-components::link.external-link :href="route('product.view', [
+                        'slug' => $product->slug,
                     ])" />
                 </div>
             </div>
@@ -42,7 +54,7 @@
                     <div class="fw-bold">{{ trans('index.name_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->name_id }}
+                    {{ $product->name_id }}
                 </div>
             </div>
 
@@ -51,7 +63,7 @@
                     <div class="fw-bold">{{ trans('index.name_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->name_zh }}
+                    {{ $product->name_zh }}
                 </div>
             </div>
 
@@ -60,7 +72,7 @@
                     <div class="fw-bold">{{ trans('index.description') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $article->description !!}
+                    {!! $product->description !!}
                 </div>
             </div>
 
@@ -69,7 +81,7 @@
                     <div class="fw-bold">{{ trans('index.description_id') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $article->description_id !!}
+                    {!! $product->description_id !!}
                 </div>
             </div>
 
@@ -78,46 +90,7 @@
                     <div class="fw-bold">{{ trans('index.description_zh') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {!! $article->description_zh !!}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.tags') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ collect($article->tags)->join(', ') }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.tags_id') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ collect($article->tags_id)->join(', ') }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.tags_zh') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ collect($article->tags_zh)->join(', ') }}
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="fw-bold">{{ trans('index.date') }}</div>
-                </div>
-                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($article->date)
-                        {{ $article->date->isoFormat('LL') }}
-                        {{ $article->date->diffForHumans() }}
-                    @endif
+                    {!! $product->description_zh !!}
                 </div>
             </div>
 
@@ -126,8 +99,30 @@
                     <div class="fw-bold">{{ trans('index.image') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-2">
-                    @if ($article->checkImage())
-                        <x-components::image :href="$article->assetImage()" :src="$article->assetImage()" :alt="$article->altImage()" />
+                    @if ($product->checkImage())
+                        <x-components::image :href="$product->assetImage()" :src="$product->assetImage()" :alt="$product->altImage()" />
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.file_coa') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    @if ($product->checkFileCoa())
+                        <x-components::iframe :src="$product->assetFileCoa()" />
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.file_msds') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    @if ($product->checkFileMsds())
+                        <x-components::iframe :src="$product->assetFileMsds()" />
                     @endif
                 </div>
             </div>
@@ -137,7 +132,7 @@
                     <div class="fw-bold">{{ trans('index.slug') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    {{ $article->slug }}
+                    {{ $product->slug }}
                 </div>
             </div>
 
@@ -146,11 +141,11 @@
                     <div class="fw-bold">{{ trans('index.active') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @can('article.edit')
-                        <x-components::form.switch :key="'changeActive'" :id="$article->id" :value="$article->is_active" />
+                    @can('product.edit')
+                        <x-components::form.switch :key="'changeActive'" :id="$product->id" :value="$product->is_active" />
                     @else
-                        <span class="badge rounded-pill text-bg-{{ Utils::successDanger($article->is_active) }}">
-                            {{ Utils::translate(Utils::yesNo($article->is_active)) }}
+                        <span class="badge rounded-pill text-bg-{{ Utils::successDanger($product->is_active) }}">
+                            {{ Utils::translate(Utils::yesNo($product->is_active)) }}
                         </span>
                     @endcan
                 </div>
@@ -161,8 +156,8 @@
                     <div class="fw-bold">{{ trans('index.created_by') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($article->createdBy)
-                        <x-components::link.user :data="$article->createdBy" />
+                    @if ($product->createdBy)
+                        <x-components::link.user :data="$product->createdBy" />
                     @endif
                 </div>
             </div>
@@ -172,8 +167,8 @@
                     <div class="fw-bold">{{ trans('index.updated_by') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($article->updatedBy)
-                        <x-components::link.user :data="$article->updatedBy" />
+                    @if ($product->updatedBy)
+                        <x-components::link.user :data="$product->updatedBy" />
                     @endif
                 </div>
             </div>
@@ -183,10 +178,10 @@
                     <div class="fw-bold">{{ trans('index.created_at') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($article->created_at)
-                        {{ $article->created_at->isoFormat('LLLL') }}
+                    @if ($product->created_at)
+                        {{ $product->created_at->isoFormat('LLLL') }}
                         <br class="d-lg-none">
-                        ({{ $article->created_at->diffForHumans() }})
+                        ({{ $product->created_at->diffForHumans() }})
                     @endif
                 </div>
             </div>
@@ -196,10 +191,10 @@
                     <div class="fw-bold">{{ trans('index.updated_at') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-                    @if ($article->updated_at)
-                        {{ $article->updated_at->isoFormat('LLLL') }}
+                    @if ($product->updated_at)
+                        {{ $product->updated_at->isoFormat('LLLL') }}
                         <br class="d-lg-none">
-                        ({{ $article->updated_at->diffForHumans() }})
+                        ({{ $product->updated_at->diffForHumans() }})
                     @endif
                 </div>
             </div>
@@ -207,16 +202,16 @@
             <hr />
 
             <div class="row">
-                @can('article.edit')
+                @can('product.edit')
                     <div class="col-6 col-sm-auto">
-                        <x-components::link.edit :width="'100'" :href="route('cms.article.edit', [
-                            'article' => $article->id,
+                        <x-components::link.edit :width="'100'" :href="route('cms.product.edit', [
+                            'product' => $product->id,
                         ])" />
                     </div>
                 @endcan
-                @can('article.delete')
+                @can('product.delete')
                     <div class="col-6 col-sm-auto">
-                        <x-components::button.delete :width="'100'" :key="'delete(' . $article->id . ')'" :confirm="trans('index.confirm')" />
+                        <x-components::button.delete :width="'100'" :key="'delete(' . $product->id . ')'" :confirm="trans('index.confirm')" />
                     </div>
                 @endcan
             </div>

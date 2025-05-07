@@ -194,4 +194,6 @@ return [
     'gallery_category' => '画廊类别',
     'address' => '地址',
     'maps' => '地图',
+    'file_coa' => '文件 COA',
+    'file_msds' => '文件 MSDS',
 ];

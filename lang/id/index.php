@@ -194,4 +194,6 @@ return [
     'gallery_category' => 'Kategori Galeri',
     'address' => 'Alamat',
     'maps' => 'Peta',
+    'file_coa' => 'Dokumen COA',
+    'file_msds' => 'Dokumen MSDS',
 ];

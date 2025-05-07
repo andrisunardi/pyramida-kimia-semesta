@@ -22,7 +22,7 @@
 
                 <div class="row g-3 mb-3">
                     <div class="col-sm-6">
-                        <x-components::form.select :key="'gallery_category_id'" :title="trans('validation.attributes.gallery_category_id')" :icon="'fas fa-tag'"
+                        <x-components::form.select :key="'form.gallery_category_id'" :title="trans('validation.attributes.gallery_category_id')" :icon="'fas fa-tag'"
                             :datas="$galleryCategories" :required="true" />
                     </div>
                 </div>

@@ -64,7 +64,7 @@ class GalleryCategoryPage extends Component
             paginate: $paginate,
         );
 
-        $galleryCategories->loadCount('galleries');
+        $galleryCategories->loadCount(['galleries']);
 
         return $galleryCategories;
     }

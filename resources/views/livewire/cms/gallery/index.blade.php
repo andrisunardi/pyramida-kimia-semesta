@@ -86,9 +86,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{-- <x-components::link :href="route('cms.gallery-category.detail', [
+                                    <x-components::link :href="route('cms.gallery-category.detail', [
                                         'galleryCategory' => $gallery->category->id,
-                                    ])" :text="$gallery->category->name" /> --}}
+                                    ])" :text="$gallery->category->name" />
                                 </td>
                                 <td>
                                     <div>

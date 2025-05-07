@@ -1,5 +1,5 @@
-@section('title', trans('index.gallery'))
-@section('icon', 'fas fa-images')
+@section('title', trans('index.article'))
+@section('icon', 'fas fa-newspaper')
 
 <main>
     <div class="card">
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.gallery.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.article.index')" />
                 </div>
             </div>
 
@@ -22,8 +22,8 @@
 
                 <div class="row g-3 mb-3">
                     <div class="col-sm-6">
-                        <x-components::form.select :key="'form.gallery_category_id'" :title="trans('validation.attributes.gallery_category_id')" :icon="'fas fa-tag'"
-                            :datas="$galleryCategories" :required="true" />
+                        <x-components::form.select :key="'form.product_category_id'" :title="trans('validation.attributes.product_category_id')" :icon="'fas fa-tag'"
+                            :datas="$productCategories" :required="true" />
                     </div>
                 </div>
 
@@ -37,6 +37,11 @@
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description'" :title="trans('validation.attributes.description')" />
                         </div>
+
+                        <div class="mt-3">
+                            <x-components::form.textarea :key="'tags'" :title="trans('validation.attributes.tags')" :icon="'fas fa-tags'"
+                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
+                        </div>
                     </div>
 
                     <div class="col-sm-4">
@@ -47,6 +52,11 @@
 
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description_id'" :title="trans('validation.attributes.description_id')" />
+                        </div>
+
+                        <div class="mt-3">
+                            <x-components::form.textarea :key="'tags_id'" :title="trans('validation.attributes.tags_id')" :icon="'fas fa-tags'"
+                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
                         </div>
                     </div>
 
@@ -59,19 +69,42 @@
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description_zh'" :title="trans('validation.attributes.description_zh')" />
                         </div>
+
+                        <div class="mt-3">
+                            <x-components::form.textarea :key="'tags_zh'" :title="trans('validation.attributes.tags_zh')" :icon="'fas fa-tags'"
+                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
+                        </div>
                     </div>
                 </div>
 
                 <div class="row g-3 mb-3">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <x-components::form.image :key="'form.image'" />
 
                         <div class="mt-3">
-                            <x-components::preview.image :image="$form->image" :data="$gallery" />
+                            <x-components::preview.image :image="$form->image" :data="$product" />
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <x-components::form.file :key="'form.file_coa'" :title="trans('validation.attributes.file_coa')" />
+
+                        <div class="mt-3">
+                            <x-components::preview.file :file="$form->file_coa" :data="$product" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <x-components::form.file :key="'form.file_msds'" :title="trans('validation.attributes.file_msds')" />
+
+                        <div class="mt-3">
+                            <x-components::preview.file :file="$form->file_msds" :data="$product" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-sm-4">
                         <x-components::form.is-active :key="'form.is_active'" />
                     </div>
                 </div>

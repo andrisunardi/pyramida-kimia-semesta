@@ -23,6 +23,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'product.index',
+        'name' => 'Product',
+        'route' => 'cms.product.index',
+        'icon' => 'fas fa-flask',
+        'table' => 'products',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'product-category.index',
         'name' => 'Product Category',
         'route' => 'cms.product-category.index',

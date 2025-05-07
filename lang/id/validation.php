@@ -202,6 +202,9 @@ return [
         'address' => 'Alamat',
         'maps' => 'Peta',
         'gallery_category_id' => 'Kategori Galeri',
+        'file_coa' => 'Dokumen COA',
+        'file_msds' => 'Dokumen MSDS',
+        'product_category_id' => 'Kategori Produk',
     ],
 
 ];

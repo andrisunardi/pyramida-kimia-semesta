@@ -13,7 +13,7 @@ class GalleryEditForm extends Form
     public Gallery $gallery;
 
     #[Validate('required|integer|exists:gallery_categories,name')]
-    public string $galery_category_id = '';
+    public string $gallery_category_id = '';
 
     public string $name = '';
 
@@ -38,7 +38,7 @@ class GalleryEditForm extends Form
     public function set(Gallery $gallery): void
     {
         $this->gallery = $gallery;
-        $this->galery_category_id = $gallery->galery_category_id;
+        $this->gallery_category_id = $gallery->gallery_category_id;
         $this->name = $gallery->name;
         $this->name_id = $gallery->name_id;
         $this->name_zh = $gallery->name_zh;
