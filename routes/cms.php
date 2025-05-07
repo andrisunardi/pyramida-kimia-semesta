@@ -36,6 +36,10 @@ Route::group(['middleware' => ['auth', 'role:'.config('app.route_cms_roles')]], 
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/gallery-category.php'));
 
+    Route::prefix('slider')->name('slider.')->as('slider.')
+        ->middleware(['role:Super User|Admin'])
+        ->group(base_path('routes/cms/slider.php'));
+
     Route::prefix('partner')->name('partner.')->as('partner.')
         ->middleware(['role:Super User|Admin'])
         ->group(base_path('routes/cms/partner.php'));

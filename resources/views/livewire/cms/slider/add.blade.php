@@ -1,16 +1,16 @@
-@section('title', trans('index.partner'))
-@section('icon', 'fas fa-users')
+@section('title', trans('index.slider'))
+@section('icon', 'fas fa-sliders')
 
 <main>
     <div class="card">
-        <div class="card-header text-bg-success">
-            <x-components::icon :value="'fas fa-edit'" />
-            {{ trans('index.edit') }} @yield('title')
+        <div class="card-header text-bg-primary">
+            <x-components::icon :value="'fas fa-plus'" />
+            {{ trans('index.add') }} @yield('title')
         </div>
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.partner.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.slider.index')" />
                 </div>
             </div>
 
@@ -56,19 +56,15 @@
                 </div>
 
                 <div class="row g-3 mb-3">
-                    <div class="col-sm-4">
-                        <x-components::form.url :key="'form.link'" :title="trans('validation.attributes.link')" />
-                    </div>
-
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <x-components::form.image :key="'form.image'" />
 
                         <div class="mt-3">
-                            <x-components::preview.image :image="$form->image" :data="$partner" />
+                            <x-components::preview.image :image="$form->image" />
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <x-components::form.is-active :key="'form.is_active'" />
                     </div>
                 </div>
@@ -77,7 +73,7 @@
 
                 <div class="row">
                     <div class="col-6 col-sm-auto">
-                        <x-components::form.save :width="'100'" />
+                        <x-components::form.submit :width="'100'" />
                     </div>
                     <div class="col-6 col-sm-auto">
                         <x-components::form.reset :width="'100'" />

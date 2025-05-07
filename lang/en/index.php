@@ -196,7 +196,7 @@ return [
     'maps' => 'Maps',
     'file_coa' => 'File COA',
     'file_msds' => 'File MSDS',
-    'index' => 'Index',
+    'slider' => 'Slider',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

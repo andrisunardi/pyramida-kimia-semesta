@@ -1,5 +1,5 @@
-@section('title', trans('index.partner'))
-@section('icon', 'fas fa-users')
+@section('title', trans('index.slider'))
+@section('icon', 'fas fa-sliders')
 
 <main>
     <div class="card">
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.partner.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.slider.index')" />
                 </div>
             </div>
 
@@ -56,19 +56,15 @@
                 </div>
 
                 <div class="row g-3 mb-3">
-                    <div class="col-sm-4">
-                        <x-components::form.url :key="'form.link'" :title="trans('validation.attributes.link')" />
-                    </div>
-
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <x-components::form.image :key="'form.image'" />
 
                         <div class="mt-3">
-                            <x-components::preview.image :image="$form->image" :data="$partner" />
+                            <x-components::preview.image :image="$form->image" :data="$slider" />
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <x-components::form.is-active :key="'form.is_active'" />
                     </div>
                 </div>

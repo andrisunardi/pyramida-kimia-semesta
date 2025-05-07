@@ -196,4 +196,5 @@ return [
     'maps' => '地图',
     'file_coa' => '文件 COA',
     'file_msds' => '文件 MSDS',
+    'slider' => '滑块',
 ];

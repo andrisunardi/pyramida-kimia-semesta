@@ -48,6 +48,20 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'gallery_category.detail', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'gallery_category.export', 'guard_name' => 'web'])->assignRole('Admin');
 
+        Permission::create(['name' => 'slider', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'slider.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'slider.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'slider.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'slider.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'slider.export', 'guard_name' => 'web'])->assignRole('Admin');
+
+        Permission::create(['name' => 'partner', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'partner.add', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'partner.edit', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'partner.delete', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'partner.detail', 'guard_name' => 'web'])->assignRole('Admin');
+        Permission::create(['name' => 'partner.export', 'guard_name' => 'web'])->assignRole('Admin');
+
         Permission::create(['name' => 'history', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'history.add', 'guard_name' => 'web'])->assignRole('Admin');
         Permission::create(['name' => 'history.edit', 'guard_name' => 'web'])->assignRole('Admin');

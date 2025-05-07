@@ -63,6 +63,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'slider.index',
+        'name' => 'Slider',
+        'route' => 'cms.slider.index',
+        'icon' => 'fas fa-sliders',
+        'table' => 'sliders',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'partner.index',
         'name' => 'Partner',
         'route' => 'cms.partner.index',

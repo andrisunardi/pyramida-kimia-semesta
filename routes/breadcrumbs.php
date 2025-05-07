@@ -260,6 +260,27 @@ Breadcrumbs::for('cms.gallery-category.detail', function (BreadcrumbTrail $trail
     $trail->push(trans('index.detail'), route('cms.gallery-category.detail', ['galleryCategory' => $galleryCategory]), ['icon' => 'fas fa-list']);
 });
 
+// SLIDER
+Breadcrumbs::for('cms.slider.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.slider'), route('cms.slider.index'), ['icon' => 'fas fa-sliders']);
+});
+
+Breadcrumbs::for('cms.slider.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.slider.index');
+    $trail->push(trans('index.add'), route('cms.slider.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.slider.edit', function (BreadcrumbTrail $trail, $slider) {
+    $trail->parent('cms.slider.index');
+    $trail->push(trans('index.edit'), route('cms.slider.edit', ['slider' => $slider]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.slider.detail', function (BreadcrumbTrail $trail, $slider) {
+    $trail->parent('cms.slider.index');
+    $trail->push(trans('index.detail'), route('cms.slider.detail', ['slider' => $slider]), ['icon' => 'fas fa-list']);
+});
+
 // PARTNER
 Breadcrumbs::for('cms.partner.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');
