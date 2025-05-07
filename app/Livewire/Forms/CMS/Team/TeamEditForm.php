@@ -14,7 +14,7 @@ class TeamEditForm extends Form
 
     public string $name = '';
 
-    #[Validate('require|string|min:1|max:50')]
+    #[Validate('required|string|min:1|max:50')]
     public string $job = '';
 
     #[Validate('nullable|string|min:1|max:65535')]

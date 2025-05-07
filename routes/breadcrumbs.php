@@ -281,6 +281,27 @@ Breadcrumbs::for('cms.slider.detail', function (BreadcrumbTrail $trail, $slider)
     $trail->push(trans('index.detail'), route('cms.slider.detail', ['slider' => $slider]), ['icon' => 'fas fa-list']);
 });
 
+// TESTIMONY
+Breadcrumbs::for('cms.testimony.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.testimony'), route('cms.testimony.index'), ['icon' => 'fas fa-comments']);
+});
+
+Breadcrumbs::for('cms.testimony.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.testimony.index');
+    $trail->push(trans('index.add'), route('cms.testimony.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.testimony.edit', function (BreadcrumbTrail $trail, $testimony) {
+    $trail->parent('cms.testimony.index');
+    $trail->push(trans('index.edit'), route('cms.testimony.edit', ['testimony' => $testimony]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.testimony.detail', function (BreadcrumbTrail $trail, $testimony) {
+    $trail->parent('cms.testimony.index');
+    $trail->push(trans('index.detail'), route('cms.testimony.detail', ['testimony' => $testimony]), ['icon' => 'fas fa-list']);
+});
+
 // TEAM
 Breadcrumbs::for('cms.team.index', function (BreadcrumbTrail $trail) {
     $trail->parent('cms.index');

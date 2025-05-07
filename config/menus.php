@@ -73,6 +73,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'testimony.index',
+        'name' => 'Testimony',
+        'route' => 'cms.testimony.index',
+        'icon' => 'fas fa-comments',
+        'table' => 'testimonies',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'team.index',
         'name' => 'Team',
         'route' => 'cms.team.index',
