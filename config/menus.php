@@ -43,6 +43,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'partner.index',
+        'name' => 'Partner',
+        'route' => 'cms.partner.index',
+        'icon' => 'fas fa-users',
+        'table' => 'partners',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'history.index',
         'name' => 'History',
         'route' => 'cms.history.index',
