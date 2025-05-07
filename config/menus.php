@@ -43,6 +43,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'history.index',
+        'name' => 'History',
+        'route' => 'cms.history.index',
+        'icon' => 'fas fa-scroll',
+        'table' => 'histories',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'career.index',
         'name' => 'Career',
         'route' => 'cms.career.index',
