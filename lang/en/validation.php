@@ -201,7 +201,7 @@ return [
         'answer_zh' => 'Answer ZH',
         'address' => 'Address',
         'maps' => 'Maps',
-        'index' => 'Index',
+        'gallery_category_id' => 'Gallery Category',
         'index' => 'Index',
         'index' => 'Index',
         'index' => 'Index',

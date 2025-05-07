@@ -58,11 +58,15 @@ class GalleryCategoryPage extends Component
 
     public function getGalleryCategories(bool $paginate = true): object
     {
-        return (new GalleryCategoryService)->index(
+        $galleryCategories = (new GalleryCategoryService)->index(
             search: $this->search,
             isActive: $this->is_active,
             paginate: $paginate,
         );
+
+        $galleryCategories->loadCount('galleries');
+
+        return $galleryCategories;
     }
 
     public function exportToExcel(): BinaryFileResponse

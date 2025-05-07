@@ -201,6 +201,7 @@ return [
         'answer_zh' => '回答 ZH',
         'address' => '地址',
         'maps' => '地图',
+        'gallery_category_id' => '画廊类别',
     ],
 
 ];

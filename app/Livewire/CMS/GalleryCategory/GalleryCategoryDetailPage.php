@@ -14,11 +14,15 @@ class GalleryCategoryDetailPage extends Component
     public function mount(GalleryCategory $galleryCategory): void
     {
         $this->galleryCategory = $galleryCategory;
+        $this->galleryCategory->loadCount('galleries');
     }
 
     public function changeActive(GalleryCategory $galleryCategory): void
     {
         (new GalleryCategoryService)->active(galleryCategory: $galleryCategory);
+
+        $this->galleryCategory->refresh();
+        $this->galleryCategory->loadCount('galleries');
 
         $this->alert('success', trans('index.change').' '.trans('index.active').' '.trans('index.success'), [
             'html' => trans('index.gallery_category').' '.trans('index.has_been_successfully_changed'),

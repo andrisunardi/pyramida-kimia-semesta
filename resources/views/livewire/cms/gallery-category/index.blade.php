@@ -58,6 +58,7 @@
                             <th width="1%">{{ trans('index.#') }}</th>
                             <th width="1%">{{ trans('index.id') }}</th>
                             <th>{{ trans('index.name') }}</th>
+                            <th width="1%">{{ trans('index.total') }} {{ trans('index.gallery') }}</th>
                             <th width="1%">{{ trans('index.active') }}</th>
                             <th width="1%">{{ trans('index.action') }}</th>
                         </tr>
@@ -89,6 +90,11 @@
                                             'galleryCategory' => $galleryCategory,
                                         ])" :text="$galleryCategory->name_zh" />
                                     </div>
+                                </td>
+                                <td class="text-center">
+                                    <x-components::link :href="route('cms.gallery.index', [
+                                        'newgallery_category_id' => $galleryCategory->id,
+                                    ])" :text="$galleryCategory->galleries_count" />
                                 </td>
                                 <td class="text-center">
                                     @can('gallery_category.edit')

@@ -201,6 +201,7 @@ return [
         'answer_zh' => 'Jawaban ZH',
         'address' => 'Alamat',
         'maps' => 'Peta',
+        'gallery_category_id' => 'Kategori Galeri',
     ],
 
 ];

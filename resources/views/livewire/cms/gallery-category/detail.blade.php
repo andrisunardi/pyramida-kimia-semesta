@@ -54,6 +54,17 @@
 
             <div class="row mb-3">
                 <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="fw-bold">{{ trans('index.total') }} {{ trans('index.gallery') }}</div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+                    <x-components::link :href="route('cms.gallery.index', [
+                        'newgallery_category_id' => $galleryCategory->id,
+                    ])" :text="$galleryCategory->galleries_count" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
                     <div class="fw-bold">{{ trans('index.active') }}</div>
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
