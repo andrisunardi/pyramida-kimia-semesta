@@ -88,7 +88,11 @@ class Product extends Model
     public $fillable = [
         'product_category_id',
         'name',
+        'name_id',
+        'name_zh',
         'description',
+        'description_id',
+        'description_zh',
         'image',
         'file_coa',
         'file_msds',
@@ -101,7 +105,11 @@ class Product extends Model
         return [
             'product_category_id' => 'integer',
             'name' => 'string',
+            'name_id' => 'string',
+            'name_zh' => 'string',
             'description' => 'string',
+            'description_id' => 'string',
+            'description_zh' => 'string',
             'image' => 'string',
             'file_coa' => 'string',
             'file_msds' => 'string',

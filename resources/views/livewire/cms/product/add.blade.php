@@ -21,9 +21,9 @@
                 <x-components::form.alert />
 
                 <div class="row g-3 mb-3">
-                    <div class="col-sm-6">
-                        <x-components::form.select :key="'form.product_category_id'" :title="trans('validation.attributes.product_category_id')" :icon="'fas fa-tag'"
-                            :datas="$productCategories" :required="true" />
+                    <div class="col-sm-6" wire:ignore>
+                        <x-components::form.select :key="'form.product_category_id'" :id="'product_category_id'" :title="trans('validation.attributes.product_category_id')"
+                            :icon="'fas fa-tag'" :datas="$productCategories" :required="true" />
                     </div>
                 </div>
 

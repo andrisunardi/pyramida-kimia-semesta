@@ -10,16 +10,16 @@ use Livewire\Form;
 
 class ProductAddForm extends Form
 {
-    #[Validate('required|integer|exists:product_categories,name')]
+    #[Validate('required|integer|exists:product_categories,id')]
     public string $product_category_id = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name')]
+    #[Validate('required|string|min:1|max:100|unique:products,name')]
     public string $name = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name_id')]
+    #[Validate('required|string|min:1|max:100|unique:products,name_id')]
     public string $name_id = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name_zh')]
+    #[Validate('required|string|min:1|max:100|unique:products,name_zh')]
     public string $name_zh = '';
 
     #[Validate('nullable|string|min:1|max:65535')]

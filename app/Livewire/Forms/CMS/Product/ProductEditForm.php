@@ -12,7 +12,7 @@ class ProductEditForm extends Form
 {
     public Product $product;
 
-    #[Validate('required|integer|exists:product_categories,name')]
+    #[Validate('required|integer|exists:product_categories,id')]
     public string $product_category_id = '';
 
     public string $name = '';
@@ -55,9 +55,9 @@ class ProductEditForm extends Form
     public function rules(): array
     {
         return [
-            'name' => "required|string|min:1|max:100|unique:galleries,name,{$this->product->id}",
-            'name_id' => "required|string|min:1|max:100|unique:galleries,name_id,{$this->product->id}",
-            'name_zh' => "required|string|min:1|max:100|unique:galleries,name_zh,{$this->product->id}",
+            'name' => "required|string|min:1|max:100|unique:products,name,{$this->product->id}",
+            'name_id' => "required|string|min:1|max:100|unique:products,name_id,{$this->product->id}",
+            'name_zh' => "required|string|min:1|max:100|unique:products,name_zh,{$this->product->id}",
             'image' => 'nullable|image|max:'.env('MAX_IMAGE').'|mimes:'.env('MIMES_IMAGE'),
             'file_coa' => 'nullable|file|max:'.env('MAX_FILE').'|mimes:'.env('MIMES_FILE'),
             'file_msds' => 'nullable|file|max:'.env('MAX_FILE').'|mimes:'.env('MIMES_FILE'),

@@ -90,7 +90,11 @@
                         <x-components::form.file :key="'form.file_coa'" :title="trans('validation.attributes.file_coa')" />
 
                         <div class="mt-3">
-                            <x-components::preview.file :file="$form->file_coa" :data="$product" />
+                            @if ($form->file_coa)
+                                <x-components::iframe :src="$fileUrl" />
+                            @else
+                                <x-components::iframe :src="$product->assetFileCoa()" />
+                            @endif
                         </div>
                     </div>
 
@@ -98,7 +102,11 @@
                         <x-components::form.file :key="'form.file_msds'" :title="trans('validation.attributes.file_msds')" />
 
                         <div class="mt-3">
-                            <x-components::preview.file :file="$form->file_msds" :data="$product" />
+                            @if ($form->file_msds)
+                                <x-components::iframe :src="$fileUrl" />
+                            @else
+                                <x-components::iframe :src="$product->assetFileMsds()" />
+                            @endif
                         </div>
                     </div>
                 </div>
