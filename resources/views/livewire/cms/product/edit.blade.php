@@ -1,5 +1,5 @@
-@section('title', trans('index.article'))
-@section('icon', 'fas fa-newspaper')
+@section('title', trans('index.product'))
+@section('icon', 'fas fa-flask')
 
 <main>
     <div class="card">
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="row g-3">
                 <div class="col-auto">
-                    <x-components::link.back :width="'100'" :href="route('cms.article.index')" />
+                    <x-components::link.back :width="'100'" :href="route('cms.product.index')" />
                 </div>
             </div>
 
@@ -88,26 +88,10 @@
 
                     <div class="col-sm-4">
                         <x-components::form.file :key="'form.file_coa'" :title="trans('validation.attributes.file_coa')" />
-
-                        <div class="mt-3">
-                            @if ($form->file_coa)
-                                <x-components::iframe :src="$fileUrl" />
-                            @else
-                                <x-components::iframe :src="$product->assetFileCoa()" />
-                            @endif
-                        </div>
                     </div>
 
                     <div class="col-sm-4">
                         <x-components::form.file :key="'form.file_msds'" :title="trans('validation.attributes.file_msds')" />
-
-                        <div class="mt-3">
-                            @if ($form->file_msds)
-                                <x-components::iframe :src="$fileUrl" />
-                            @else
-                                <x-components::iframe :src="$product->assetFileMsds()" />
-                            @endif
-                        </div>
                     </div>
                 </div>
 

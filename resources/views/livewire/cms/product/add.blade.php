@@ -73,18 +73,10 @@
 
                     <div class="col-sm-4">
                         <x-components::form.file :key="'form.file_coa'" :title="trans('validation.attributes.file_coa')" />
-
-                        <div class="mt-3">
-                            <x-components::preview.file :file="$form->file_coa" />
-                        </div>
                     </div>
 
                     <div class="col-sm-4">
                         <x-components::form.file :key="'form.file_msds'" :title="trans('validation.attributes.file_msds')" />
-
-                        <div class="mt-3">
-                            <x-components::preview.file :file="$form->file_msds" />
-                        </div>
                     </div>
                 </div>
 
