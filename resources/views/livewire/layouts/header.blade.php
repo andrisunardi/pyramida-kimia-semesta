@@ -40,9 +40,9 @@
                             <li>
                                 <x-components::link :href="route('resource')" :text="trans('index.resource')" :icon="'fas fa-book'" />
                             </li>
-                            <li>
+                            {{-- <li>
                                 <x-components::link :href="route('team.index')" :text="trans('index.team')" :icon="'fas fa-user-circle'" />
-                            </li>
+                            </li> --}}
                             <li>
                                 <x-components::link :href="route('partner')" :text="trans('index.partner')" :icon="'fas fa-users'" />
                             </li>
