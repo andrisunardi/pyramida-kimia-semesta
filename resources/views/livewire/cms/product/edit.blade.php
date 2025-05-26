@@ -37,11 +37,6 @@
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description'" :title="trans('validation.attributes.description')" />
                         </div>
-
-                        <div class="mt-3">
-                            <x-components::form.textarea :key="'tags'" :title="trans('validation.attributes.tags')" :icon="'fas fa-tags'"
-                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
-                        </div>
                     </div>
 
                     <div class="col-sm-4">
@@ -53,11 +48,6 @@
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description_id'" :title="trans('validation.attributes.description_id')" />
                         </div>
-
-                        <div class="mt-3">
-                            <x-components::form.textarea :key="'tags_id'" :title="trans('validation.attributes.tags_id')" :icon="'fas fa-tags'"
-                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
-                        </div>
                     </div>
 
                     <div class="col-sm-4">
@@ -68,11 +58,6 @@
 
                         <div class="mt-3">
                             <x-components::form.textarea :key="'form.description_zh'" :title="trans('validation.attributes.description_zh')" />
-                        </div>
-
-                        <div class="mt-3">
-                            <x-components::form.textarea :key="'tags_zh'" :title="trans('validation.attributes.tags_zh')" :icon="'fas fa-tags'"
-                                :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
                         </div>
                     </div>
                 </div>
