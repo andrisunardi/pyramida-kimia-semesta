@@ -10,10 +10,10 @@ class TeamFactory extends Factory
 {
     public function definition(): array
     {
-        $name = fake()->unique()->sentence();
+        $name = fake()->unique()->name();
 
         return [
-            'name' => fake()->unique()->name(),
+            'name' => $name,
             'job' => fake()->jobTitle(),
             'description' => fake()->paragraph(),
             'description_id' => fake()->paragraph(),
