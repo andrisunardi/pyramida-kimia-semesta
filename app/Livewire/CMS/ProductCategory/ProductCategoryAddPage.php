@@ -10,15 +10,9 @@ class ProductCategoryAddPage extends Component
 {
     public ProductCategoryAddForm $form;
 
-    public function mount(): void
-    {
-        $this->form->set();
-    }
-
     public function resetFields(): void
     {
         $this->form->reset();
-        $this->form->set();
 
         $this->alert('success', trans('index.reset').' '.trans('index.success'), [
             'html' => trans('index.fields_has_been_successfully_reseted'),

@@ -33,11 +33,6 @@ class ProductCategoryAddForm extends Form
     #[Validate('required|boolean')]
     public bool $is_active = true;
 
-    public function set(): void
-    {
-        $this->date = now()->today()->toDateString();
-    }
-
     public function rules(): array
     {
         return [
