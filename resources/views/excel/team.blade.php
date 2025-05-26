@@ -71,9 +71,6 @@
                     {{ $team->job }}
                 </td>
                 <td align="left">
-                    {{ $team->name_zh }}
-                </td>
-                <td align="left">
                     {{ $team->description }}
                 </td>
                 <td align="left">
