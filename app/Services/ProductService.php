@@ -170,6 +170,8 @@ class ProductService
     public function deletePermanent(Product $product): bool
     {
         $product->deleteImage();
+        $product->deleteFileCoa();
+        $product->deleteFileMsds();
 
         return $product->forceDelete();
     }
@@ -180,6 +182,8 @@ class ProductService
 
         foreach ($products as $product) {
             $product->deleteImage();
+            $product->deleteFileCoa();
+            $product->deleteFileMsds();
             $product->forceDelete();
         }
 
