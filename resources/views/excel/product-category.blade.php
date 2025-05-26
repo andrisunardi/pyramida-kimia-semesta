@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="13">
+            <th valign="middle" align="center" colspan="13">
                 <b>{{ trans('index.product_category') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="13"></td>
         </tr>
         <tr>
-            <th align="center" colspan="13">
+            <th valign="middle" align="center" colspan="13">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -67,28 +67,28 @@
                 <td valign="middle" align="center">
                     {{ $productCategory->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->image }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $productCategory->slug }}
                 </td>
                 <td valign="middle" align="center">
@@ -103,7 +103,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="13">
+                <td valign="middle" align="center" colspan="13">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

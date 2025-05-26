@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="16">
+            <th valign="middle" align="center" colspan="16">
                 <b>{{ trans('index.product') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="16"></td>
         </tr>
         <tr>
-            <th align="center" colspan="16">
+            <th valign="middle" align="center" colspan="16">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -76,37 +76,37 @@
                 <td valign="middle" align="center">
                     {{ $product->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->category?->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->image }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->image_coa }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->image_msds }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $product->slug }}
                 </td>
                 <td valign="middle" align="center">
@@ -121,7 +121,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="16">
+                <td valign="middle" align="center" colspan="16">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

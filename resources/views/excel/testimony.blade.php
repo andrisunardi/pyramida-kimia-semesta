@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="8">
+            <th valign="middle" align="center" colspan="8">
                 <b>{{ trans('index.testmony') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="8"></td>
         </tr>
         <tr>
-            <th align="center" colspan="8">
+            <th valign="middle" align="center" colspan="8">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -52,13 +52,13 @@
                 <td valign="middle" align="center">
                     {{ $testmony->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $testmony->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $testmony->company }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $testmony->message }}
                 </td>
                 <td valign="middle" align="center">
@@ -73,7 +73,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="8">
+                <td valign="middle" align="center" colspan="8">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="12">
+            <th valign="middle" align="center" colspan="12">
                 <b>{{ trans('index.slider') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="12"></td>
         </tr>
         <tr>
-            <th align="center" colspan="12">
+            <th valign="middle" align="center" colspan="12">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -64,25 +64,25 @@
                 <td valign="middle" align="center">
                     {{ $slider->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $slider->image }}
                 </td>
                 <td valign="middle" align="center">
@@ -97,7 +97,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="12">
+                <td valign="middle" align="center" colspan="12">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

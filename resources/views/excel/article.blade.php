@@ -79,40 +79,40 @@
                 <td valign="middle" align="center">
                     {{ $article->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ collect($article->tags)->join(', ') }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ collect($article->tags_id)->join(', ') }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ collect($article->tags_zh)->join(', ') }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->date }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->image }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $article->slug }}
                 </td>
                 <td valign="middle" align="center">
@@ -127,7 +127,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="17">
+                <td valign="middle" align="center" colspan="17">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

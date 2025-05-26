@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="12">
+            <th valign="middle" align="center" colspan="12">
                 <b>{{ trans('index.team') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="12"></td>
         </tr>
         <tr>
-            <th align="center" colspan="12">
+            <th valign="middle" align="center" colspan="12">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -64,25 +64,25 @@
                 <td valign="middle" align="center">
                     {{ $team->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->job }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->image }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $team->slug }}
                 </td>
                 <td valign="middle" align="center">
@@ -97,7 +97,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="12">
+                <td valign="middle" align="center" colspan="12">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

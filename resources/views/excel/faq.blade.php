@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="11">
+            <th valign="middle" align="center" colspan="11">
                 <b>{{ trans('index.faq') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="11"></td>
         </tr>
         <tr>
-            <th align="center" colspan="11">
+            <th valign="middle" align="center" colspan="11">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -61,22 +61,22 @@
                 <td valign="middle" align="center">
                     {{ $faq->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->question }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->question_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->question_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->answer }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->answer_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $faq->answer_zh }}
                 </td>
                 <td valign="middle" align="center">
@@ -91,7 +91,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="11">
+                <td valign="middle" align="center" colspan="11">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

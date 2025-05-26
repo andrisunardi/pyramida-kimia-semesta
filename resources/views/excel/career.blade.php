@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="15">
+            <th valign="middle" align="center" colspan="15">
                 <b>{{ trans('index.career') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="15"></td>
         </tr>
         <tr>
-            <th align="center" colspan="15">
+            <th valign="middle" align="center" colspan="15">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -73,34 +73,34 @@
                 <td valign="middle" align="center">
                     {{ $career->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->location }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->location_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->location_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $career->link }}
                 </td>
                 <td valign="middle" align="center">
@@ -115,7 +115,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="15">
+                <td valign="middle" align="center" colspan="15">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>

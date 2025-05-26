@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th align="center" colspan="13">
+            <th valign="middle" align="center" colspan="13">
                 <b>{{ trans('index.gallery') }}</b>
             </th>
         </tr>
@@ -9,7 +9,7 @@
             <td colspan="13"></td>
         </tr>
         <tr>
-            <th align="center" colspan="13">
+            <th valign="middle" align="center" colspan="13">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
@@ -67,28 +67,28 @@
                 <td valign="middle" align="center">
                     {{ $gallery->id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->category?->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->name }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->name_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->name_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->description }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->description_id }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->description_zh }}
                 </td>
-                <td align="left">
+                <td valign="middle" align="left">
                     {{ $gallery->image }}
                 </td>
                 <td valign="middle" align="center">
@@ -103,7 +103,7 @@
             </tr>
         @empty
             <tr>
-                <td align="center" colspan="13">
+                <td valign="middle" align="center" colspan="13">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>
