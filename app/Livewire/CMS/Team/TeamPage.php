@@ -67,7 +67,7 @@ class TeamPage extends Component
 
     public function exportToExcel(): BinaryFileResponse
     {
-        $this->alert('success', trans('index.delete').' '.trans('index.success'), [
+        $this->alert('success', trans('index.export_to_excel').' '.trans('index.success'), [
             'html' => trans('index.team').' '.trans('index.has_been_successfully_exported'),
         ]);
 
