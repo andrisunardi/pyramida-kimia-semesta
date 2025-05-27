@@ -29,7 +29,7 @@ class EditProfilePage extends Component
         $this->form->submit();
 
         $this->alert('success', trans('index.edit_profile').' '.trans('index.success'), [
-            'html' => trans('index.your_profile_has_been_successfully_updated'),
+            'html' => trans('index.your_profile').' '.trans('index.has_been_successfully_edited'),
         ]);
     }
 

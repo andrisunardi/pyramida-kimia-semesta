@@ -40,7 +40,7 @@ class ChangePasswordPage extends Component
         $this->form->submit();
 
         $this->alert('success', trans('index.change_password_success'), [
-            'html' => trans('index.forgot_password_success'),
+            'html' => trans('index.your_password').' '.trans('index.has_been_successfully_changed'),
         ]);
     }
 

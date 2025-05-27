@@ -198,4 +198,6 @@ return [
     'your_name' => 'Nama Anda',
     'your_phone' => 'Telepon Anda',
     'your_profile_has_been_successfully_updated' => 'Profil Anda telah berhasil diperbarui',
+    'your_profile' => 'Profil Anda',
+    'your_password' => 'Password Anda',
 ];
