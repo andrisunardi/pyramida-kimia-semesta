@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="mt-3">
-                            <x-components::form.textarea :key="'tags'" :title="trans('validation.attributes.tags')" :icon="'fas fa-tags'"
+                            <x-components::form.textarea :key="'form.tags'" :title="trans('validation.attributes.tags')" :icon="'fas fa-tags'"
                                 :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="mt-3">
-                            <x-components::form.textarea :key="'tags_id'" :title="trans('validation.attributes.tags_id')" :icon="'fas fa-tags'"
+                            <x-components::form.textarea :key="'form.tags_id'" :title="trans('validation.attributes.tags_id')" :icon="'fas fa-tags'"
                                 :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="mt-3">
-                            <x-components::form.textarea :key="'tags_zh'" :title="trans('validation.attributes.tags_zh')" :icon="'fas fa-tags'"
+                            <x-components::form.textarea :key="'form.tags_zh'" :title="trans('validation.attributes.tags_zh')" :icon="'fas fa-tags'"
                                 :helper="trans('index.example') . ' : Pyramida, Kimia, Semesta'" />
                         </div>
                     </div>
@@ -72,7 +72,7 @@
 
                 <div class="row g-3 mb-3">
                     <div class="col-sm-4">
-                        <x-components::form.date :key="'form.date'" />
+                        <x-components::form.date :key="'form.date'" :required="true" />
                     </div>
 
                     <div class="col-sm-4">

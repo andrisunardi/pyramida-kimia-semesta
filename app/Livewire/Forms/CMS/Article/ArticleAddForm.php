@@ -37,7 +37,7 @@ class ArticleAddForm extends Form
     #[Validate('nullable|string|min:1|max:65535')]
     public string $tags_zh = '';
 
-    #[Validate('nullable|date|date_format:Y-m-d')]
+    #[Validate('required|date|date_format:Y-m-d')]
     public string $date = '';
 
     public ?TemporaryUploadedFile $image = null;

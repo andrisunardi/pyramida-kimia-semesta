@@ -60,6 +60,9 @@ class ArticleService
 
     public function create(array $data = []): Article
     {
+        $data['tags'] = $data['tags'] ? Str::of($data['tags'])->split('/,\s*/') : null;
+        $data['tags_id'] = $data['tags_id'] ? Str::of($data['tags_id'])->split('/,\s*/') : null;
+
         $slug = Str::slug($data['name']);
 
         $data['image'] = LivewireUpload::upload(
@@ -77,6 +80,9 @@ class ArticleService
 
     public function update(Article $article, array $data = []): Article
     {
+        $data['tags'] = $data['tags'] ? Str::of($data['tags'])->split('/,\s*/') : null;
+        $data['tags_id'] = $data['tags_id'] ? Str::of($data['tags_id'])->split('/,\s*/') : null;
+
         $slug = Str::slug($data['name']);
 
         $data['image'] = LivewireUpload::upload(

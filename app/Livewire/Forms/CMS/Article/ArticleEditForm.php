@@ -36,7 +36,7 @@ class ArticleEditForm extends Form
     #[Validate('nullable|string|min:1|max:65535')]
     public ?string $tags_zh = '';
 
-    #[Validate('nullable|date|date_format:Y-m-d')]
+    #[Validate('required|date|date_format:Y-m-d')]
     public string $date = '';
 
     public ?TemporaryUploadedFile $image = null;
@@ -53,9 +53,9 @@ class ArticleEditForm extends Form
         $this->description = $article->description;
         $this->description_id = $article->description_id;
         $this->description_zh = $article->description_zh;
-        $this->tags = $article->tags;
-        $this->tags_id = $article->tags_id;
-        $this->tags_zh = $article->tags_zh;
+        $this->tags = collect($article->tags)->join(',');
+        $this->tags_id = collect($article->tags_id)->join(',');
+        $this->tags_zh = collect($article->tags_zh)->join(',');
         $this->date = $article->date?->toDateString();
         $this->is_active = $article->is_active;
     }
