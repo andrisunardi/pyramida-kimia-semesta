@@ -40,7 +40,7 @@
         <div class="wgs-content">
             <ul class="tag-list clearfix">
                 @if (App::isLocale('en'))
-                    @foreach ($tags as $tag)
+                    @foreach ($tags ?? [] as $tag)
                         <li wire:key="{{ $key }}">
                             <a draggable="false" href="{{ route('article.index', ['search' => $tag]) }}" wire:navigate>
                                 {{ $tag }}
@@ -50,7 +50,7 @@
                 @endif
 
                 @if (App::isLocale('id'))
-                    @foreach ($idTags as $tag)
+                    @foreach ($idTags ?? [] as $tag)
                         <li wire:key="{{ $key }}">
                             <a draggable="false" href="{{ route('article.index', ['search' => $tag]) }}" wire:navigate>
                                 {{ $tag }}
@@ -60,7 +60,7 @@
                 @endif
 
                 @if (App::isLocale('zh'))
-                    @foreach ($zhTags as $tag)
+                    @foreach ($zhTags ?? [] as $tag)
                         <li wire:key="{{ $key }}">
                             <a draggable="false" href="{{ route('article.index', ['search' => $tag]) }}" wire:navigate>
                                 {{ $tag }}
