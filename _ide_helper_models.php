@@ -866,8 +866,8 @@ namespace App\Models{
  * @property string $name
  * @property string $company
  * @property string $message
- * @property string|null $message_id
- * @property string|null $message_zh
+ * @property string $message_id
+ * @property string $message_zh
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -879,31 +879,30 @@ namespace App\Models{
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read string $translate_name
+ * @property-read string $translate_message
  * @property-read \App\Models\User|null $updatedBy
- * @method static Builder<static>|Testimony active()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony active()
  * @method static \Database\Factories\TestimonyFactory factory($count = null, $state = [])
- * @method static Builder<static>|Testimony inactive()
- * @method static Builder<static>|Testimony newModelQuery()
- * @method static Builder<static>|Testimony newQuery()
- * @method static Builder<static>|Testimony onlyTrashed()
- * @method static Builder<static>|Testimony query()
- * @method static Builder<static>|Testimony whereCompany($value)
- * @method static Builder<static>|Testimony whereCreatedAt($value)
- * @method static Builder<static>|Testimony whereCreatedBy($value)
- * @method static Builder<static>|Testimony whereDeletedAt($value)
- * @method static Builder<static>|Testimony whereDeletedBy($value)
- * @method static Builder<static>|Testimony whereId($value)
- * @method static Builder<static>|Testimony whereIsActive($value)
- * @method static Builder<static>|Testimony whereMessage($value)
- * @method static Builder<static>|Testimony whereMessageId($value)
- * @method static Builder<static>|Testimony whereMessageZh($value)
- * @method static Builder<static>|Testimony whereName($value)
- * @method static Builder<static>|Testimony whereUpdatedAt($value)
- * @method static Builder<static>|Testimony whereUpdatedBy($value)
- * @method static Builder<static>|Testimony withTrashed()
- * @method static Builder<static>|Testimony withoutTrashed()
- * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereCompany($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereMessageId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereMessageZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimony withoutTrashed()
  */
 	class Testimony extends \Eloquent {}
 }

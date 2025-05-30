@@ -19,8 +19,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property string $name
  * @property string $company
  * @property string $message
- * @property string|null $message_id
- * @property string|null $message_zh
+ * @property string $message_id
+ * @property string $message_zh
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -32,7 +32,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read string $translate_name
+ * @property-read string $translate_message
  * @property-read \App\Models\User|null $updatedBy
  *
  * @method static Builder<static>|Testimony active()
@@ -122,7 +122,7 @@ class Testimony extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
-    public function getTranslateNameAttribute(): string
+    public function getTranslateMessageAttribute(): string
     {
         $locale = App::getLocale();
         $language = [
