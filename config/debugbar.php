@@ -10,7 +10,7 @@ return [
     ],
 
     'storage' => [
-        'enabled' => true,
+        'enabled' => false,
         'open' => env('DEBUGBAR_OPEN_STORAGE'),
         'driver' => 'file',
         'path' => storage_path('debugbar'),
