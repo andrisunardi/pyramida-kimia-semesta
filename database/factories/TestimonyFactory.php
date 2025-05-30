@@ -12,6 +12,8 @@ class TestimonyFactory extends Factory
             'name' => fake()->name(),
             'company' => fake()->company(),
             'message' => fake()->paragraph(),
+            'message_id' => fake()->paragraph(),
+            'message_zh' => fake()->paragraph(),
             'is_active' => fake()->boolean(),
         ];
     }

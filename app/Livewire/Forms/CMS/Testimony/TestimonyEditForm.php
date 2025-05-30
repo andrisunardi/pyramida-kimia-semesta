@@ -20,6 +20,12 @@ class TestimonyEditForm extends Form
     #[Validate('required|string|min:1|max:1000')]
     public string $message = '';
 
+    #[Validate('required|string|min:1|max:1000')]
+    public string $message_id = '';
+
+    #[Validate('required|string|min:1|max:1000')]
+    public string $message_zh = '';
+
     #[Validate('required|boolean')]
     public bool $is_active = true;
 
@@ -29,6 +35,8 @@ class TestimonyEditForm extends Form
         $this->name = $testimony->name;
         $this->company = $testimony->company;
         $this->message = $testimony->message;
+        $this->message_id = $testimony->message_id;
+        $this->message_zh = $testimony->message_zh;
         $this->is_active = $testimony->is_active;
     }
 

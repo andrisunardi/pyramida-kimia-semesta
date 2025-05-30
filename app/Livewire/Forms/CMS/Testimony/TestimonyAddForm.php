@@ -15,8 +15,14 @@ class TestimonyAddForm extends Form
     #[Validate('required|string|min:1|max:50')]
     public string $company = '';
 
-    #[Validate('nullable|string|min:1|max:1000')]
+    #[Validate('required|string|min:1|max:1000')]
     public string $message = '';
+
+    #[Validate('required|string|min:1|max:1000')]
+    public string $message_id = '';
+
+    #[Validate('required|string|min:1|max:1000')]
+    public string $message_zh = '';
 
     #[Validate('required|boolean')]
     public bool $is_active = true;

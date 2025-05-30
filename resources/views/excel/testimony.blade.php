@@ -1,20 +1,20 @@
 <table>
     <thead>
         <tr>
-            <th valign="middle" align="center" colspan="8">
-                <b>{{ trans('index.testmony') }}</b>
+            <th valign="middle" align="center" colspan="10">
+                <b>{{ trans('index.testimony') }}</b>
             </th>
         </tr>
         <tr>
-            <td colspan="8"></td>
+            <td colspan="10"></td>
         </tr>
         <tr>
-            <th valign="middle" align="center" colspan="8">
+            <th valign="middle" align="center" colspan="10">
                 {{ trans('index.printed_date') }} : {{ now()->isoFormat('LLLL') }}
             </th>
         </tr>
         <tr>
-            <td colspan="8"></td>
+            <td colspan="10"></td>
         </tr>
         <tr>
             <th valign="middle" align="center">
@@ -33,6 +33,12 @@
                 <b>{{ trans('index.message') }}</b>
             </th>
             <th valign="middle" align="center">
+                <b>{{ trans('index.message_id') }}</b>
+            </th>
+            <th valign="middle" align="center">
+                <b>{{ trans('index.message_zh') }}</b>
+            </th>
+            <th valign="middle" align="center">
                 <b>{{ trans('index.active') }}</b>
             </th>
             <th valign="middle" align="center">
@@ -44,36 +50,42 @@
         </tr>
     </thead>
     <tbody>
-        @forelse ($testimonies as $testmony)
+        @forelse ($testimonies as $testimony)
             <tr>
                 <td valign="middle" align="center">
                     {{ $loop->iteration }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $testmony->id }}
+                    {{ $testimony->id }}
                 </td>
                 <td valign="middle" align="left">
-                    {{ $testmony->name }}
+                    {{ $testimony->name }}
                 </td>
                 <td valign="middle" align="left">
-                    {{ $testmony->company }}
+                    {{ $testimony->company }}
                 </td>
                 <td valign="middle" align="left">
-                    {{ $testmony->message }}
+                    {{ $testimony->message }}
+                </td>
+                <td valign="middle" align="left">
+                    {{ $testimony->message_id }}
+                </td>
+                <td valign="middle" align="left">
+                    {{ $testimony->message_zh }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ Utils::translate(Utils::yesNo($testmony->is_active)) }}
+                    {{ Utils::translate(Utils::yesNo($testimony->is_active)) }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $testmony->created_at }}
+                    {{ $testimony->created_at }}
                 </td>
                 <td valign="middle" align="center">
-                    {{ $testmony->updated_at }}
+                    {{ $testimony->updated_at }}
                 </td>
             </tr>
         @empty
             <tr>
-                <td valign="middle" align="center" colspan="8">
+                <td valign="middle" align="center" colspan="10">
                     {{ trans('index.no_data_available') }}
                 </td>
             </tr>
@@ -81,7 +93,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="8"></td>
+            <td colspan="10"></td>
         </tr>
     </tfoot>
 </table>

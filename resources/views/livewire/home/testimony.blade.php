@@ -27,7 +27,7 @@
                             <div class="item" wire:key="{{ $key }}">
                                 <div class="quotes">
                                     <div class="quotes-text center">
-                                        <p>{!! $testimony->message !!}</p>
+                                        <p>{!! $testimony->translate_message !!}</p>
                                     </div>
                                     <div class="profile">
                                         <h5>{{ $testimony->name }}</h5>

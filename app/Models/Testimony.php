@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -18,6 +19,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property string $name
  * @property string $company
  * @property string $message
+ * @property string|null $message_id
+ * @property string|null $message_zh
  * @property bool $is_active
  * @property int|null $created_by
  * @property int|null $updated_by
@@ -29,7 +32,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
  * @property-read \App\Models\User|null $deletedBy
- * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read string $translate_name
  * @property-read \App\Models\User|null $updatedBy
  *
  * @method static Builder<static>|Testimony active()
@@ -47,6 +50,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
  * @method static Builder<static>|Testimony whereId($value)
  * @method static Builder<static>|Testimony whereIsActive($value)
  * @method static Builder<static>|Testimony whereMessage($value)
+ * @method static Builder<static>|Testimony whereMessageId($value)
+ * @method static Builder<static>|Testimony whereMessageZh($value)
  * @method static Builder<static>|Testimony whereName($value)
  * @method static Builder<static>|Testimony whereUpdatedAt($value)
  * @method static Builder<static>|Testimony whereUpdatedBy($value)
@@ -65,6 +70,8 @@ class Testimony extends Model
         'name',
         'company',
         'message',
+        'message_id',
+        'message_zh',
         'is_active',
     ];
 
@@ -74,6 +81,8 @@ class Testimony extends Model
             'name' => 'string',
             'company' => 'string',
             'message' => 'string',
+            'message_id' => 'string',
+            'message_zh' => 'string',
             'is_active' => 'boolean',
         ];
     }
@@ -111,5 +120,17 @@ class Testimony extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function getTranslateNameAttribute(): string
+    {
+        $locale = App::getLocale();
+        $language = [
+            'en' => $this->message,
+            'id' => $this->message_id,
+            'zh' => $this->message_zh,
+        ];
+
+        return $language[$locale] ?? $this->message;
     }
 }

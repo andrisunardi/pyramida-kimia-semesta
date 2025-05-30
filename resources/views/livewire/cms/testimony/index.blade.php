@@ -81,7 +81,7 @@
                                     <div>{{ $testimony->company }}</div>
                                 </td>
                                 <td class="text-wrap">
-                                    {{ $testimony->message }}
+                                    {{ $testimony->translate_message }}
                                 </td>
                                 <td class="text-center">
                                     @can('testimony.edit')

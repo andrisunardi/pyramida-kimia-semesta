@@ -38,6 +38,16 @@
                     </div>
 
                     <div class="col-sm-6">
+                        <x-components::form.message :key="'form.message_id'" :title="trans('validation.attributes.message_id')" :required="true" />
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-sm-6">
+                        <x-components::form.message :key="'form.message_zh'" :title="trans('validation.attributes.message_zh')" :required="true" />
+                    </div>
+
+                    <div class="col-sm-6">
                         <x-components::form.is-active :key="'form.is_active'" />
                     </div>
                 </div>

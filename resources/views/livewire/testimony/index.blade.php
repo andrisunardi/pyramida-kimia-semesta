@@ -14,8 +14,8 @@
                             @foreach ($chunk as $testimony)
                                 <div class="quotes quotes-flat">
                                     <div class="quotes-text">
-                                        <h5>“{{ $testimony->message }}”</h5>
-                                        {{-- <p>{{ $testimony->message }}</p> --}}
+                                        <h5>“{{ $testimony->translate_message }}”</h5>
+                                        {{-- <p>{{ $testimony->translate_message }}</p> --}}
                                     </div>
                                     <div class="profile">
                                         <h5>{{ $testimony->name }}</h5>
@@ -40,7 +40,7 @@
                             @foreach ($testimonies as $key => $testimony)
                                 <div class="quotes">
                                     <div class="quotes-text">
-                                        <p><i>{{ $testimony->message }}</i></p>
+                                        <p><i>{{ $testimony->translate_message }}</i></p>
                                     </div>
                                     <div class="profile">
                                         <h5>{{ $testimony->name }}</h5>

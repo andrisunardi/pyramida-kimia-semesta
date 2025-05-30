@@ -23,8 +23,9 @@ class TestimonyService
             ->when($search, fn ($q) => $q->where(function ($query) use ($search) {
                 $query->where('name', 'LIKE', "%{$search}%")
                     ->orWhere('company', 'LIKE', "%{$search}%")
-                    ->orWhere('subject', 'LIKE', "%{$search}%")
-                    ->orWhere('message', 'LIKE', "%{$search}%");
+                    ->orWhere('message', 'LIKE', "%{$search}%")
+                    ->orWhere('message_id', 'LIKE', "%{$search}%")
+                    ->orWhere('message_zh', 'LIKE', "%{$search}%");
             }))
             ->when($isActive, fn ($q) => $q->whereIn('is_active', $isActive))
             ->when($random, fn ($q) => $q->inRandomOrder())

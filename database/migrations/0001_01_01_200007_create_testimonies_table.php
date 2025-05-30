@@ -14,6 +14,8 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('company', 50);
             $table->string('message', 1000);
+            $table->string('message_id', 1000);
+            $table->string('message_zh', 1000);
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
