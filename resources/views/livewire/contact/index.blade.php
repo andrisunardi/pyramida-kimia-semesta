@@ -97,6 +97,12 @@
                                 </span>
                             </li>
                             <li>
+                                <em class="fa fa-whatsapp" aria-hidden="true"></em>
+                                <span>
+                                    <x-components::link.whatsapp :icon="''" :value="env('CONTACT_WHATSAPP')" />
+                                </span>
+                            </li>
+                            <li>
                                 <em class="fa fa-phone" aria-hidden="true"></em>
                                 <span>
                                     <x-components::link.phone :icon="''" :value="Utils::phone(env('CONTACT_PHONE'))" />

@@ -200,6 +200,7 @@ return [
     'your_profile_has_been_successfully_updated' => 'Your Profile has been successfully updated',
     'your_profile' => 'Your Profile',
     'your_password' => 'Your Password',
+    'whatsapp' => 'Whatsapp',
     'index' => 'Index',
     'index' => 'Index',
     'index' => 'Index',

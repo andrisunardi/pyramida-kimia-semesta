@@ -33,12 +33,18 @@
                             </a>
                         </span>
                     </li>
-                    <li class="t-phone t-phone1">
+                    <li class="t-phone t-phone1 d-none">
                         <em class="fa fa-phone" aria-hidden="true"></em>
                         <span>
                             <a draggable="false" href="tel:+{{ Utils::phone(env('CONTACT_PHONE')) }}">
                                 {{ env('CONTACT_PHONE') }}
                             </a>
+                        </span>
+                    </li>
+                    <li class="t-phone t-phone1">
+                        <em class="fa fa-whatsapp" aria-hidden="true"></em>
+                        <span>
+                            <x-components::link.whatsapp :value="Utils::phone(env('CONTACT_WHATSAPP'))" :icon="''" />
                         </span>
                     </li>
                 </ul>

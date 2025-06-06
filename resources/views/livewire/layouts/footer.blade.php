@@ -114,6 +114,9 @@
                                         :icon="''" />
                                 </p>
                                 <p>
+                                    <span>{{ trans('index.whatsapp') }}</span> :
+                                    <x-components::link.whatsapp :value="env('CONTACT_WHATSAPP')" :icon="''" />
+                                    <br>
                                     <span>{{ trans('index.phone') }}</span> :
                                     <x-components::link.phone :value="env('CONTACT_PHONE')" :icon="''" />
                                     <br>
