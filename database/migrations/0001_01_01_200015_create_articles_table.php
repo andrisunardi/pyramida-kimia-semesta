@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('tags_id')->nullable();
             $table->text('tags_zh')->nullable();
             $table->date('date');
-            $table->string('image', 80)->nullable();
+            $table->string('image', 130)->nullable();
             $table->string('slug', 100)->unique();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
