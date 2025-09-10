@@ -5,7 +5,7 @@
             <div class="item {{ $loop->first ? 'active' : null }}" wire:key="{{ $key }}">
                 <div class="fill" style="background-image:url({{ $slider->assetImage() }});">
                     <div class="banner-content">
-                        <div class="container">
+                        {{-- <div class="container">
                             <div class="row">
                                 <div class="banner-text al-left pos-left light dark-delete">
                                     <div class="animated fadeInRight">
@@ -19,7 +19,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
