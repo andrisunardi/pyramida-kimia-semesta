@@ -79,6 +79,7 @@ class Gallery extends Model
     use SoftDeletes;
 
     public $fillable = [
+        'gallery_category_id',
         'name',
         'name_id',
         'name_zh',
@@ -92,6 +93,7 @@ class Gallery extends Model
     protected function casts(): array
     {
         return [
+            'gallery_category_id' => 'integer',
             'name' => 'string',
             'name_id' => 'string',
             'name_zh' => 'string',
