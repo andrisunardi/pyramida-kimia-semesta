@@ -12,7 +12,7 @@ class GalleryEditForm extends Form
 {
     public Gallery $gallery;
 
-    #[Validate('required|integer|exists:gallery_categories,name')]
+    #[Validate('required|integer|exists:gallery_categories,id')]
     public string $gallery_category_id = '';
 
     public string $name = '';
