@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div class="section section-photo-gallery section-pad bg-light">
+    {{-- <div class="section section-photo-gallery section-pad bg-light">
         <div class="container">
             <div class="content row">
                 <div class="gallery gallery-lightbox gallery-photos gallery-filled hover-zoom">
@@ -91,5 +91,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </main>
