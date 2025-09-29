@@ -10,7 +10,7 @@ use Livewire\Form;
 
 class GalleryAddForm extends Form
 {
-    #[Validate('required|integer|exists:gallery_categories,name')]
+    #[Validate('required|integer|exists:gallery_categories,id')]
     public string $gallery_category_id = '';
 
     #[Validate('required|string|min:1|max:100|unique:galleries,name')]
