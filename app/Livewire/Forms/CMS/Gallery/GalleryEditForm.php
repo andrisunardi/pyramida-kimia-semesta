@@ -15,10 +15,13 @@ class GalleryEditForm extends Form
     #[Validate('required|integer|exists:gallery_categories,id')]
     public string $gallery_category_id = '';
 
+    #[Validate('required|string|min:1|max:100')]
     public string $name = '';
 
+    #[Validate('required|string|min:1|max:100')]
     public string $name_id = '';
 
+    #[Validate('required|string|min:1|max:100')]
     public string $name_zh = '';
 
     #[Validate('nullable|string|min:1|max:65535')]
@@ -51,9 +54,6 @@ class GalleryEditForm extends Form
     public function rules(): array
     {
         return [
-            'name' => "required|string|min:1|max:100|unique:galleries,name,{$this->gallery->id}",
-            'name_id' => "required|string|min:1|max:100|unique:galleries,name_id,{$this->gallery->id}",
-            'name_zh' => "required|string|min:1|max:100|unique:galleries,name_zh,{$this->gallery->id}",
             'image' => 'nullable|max:'.env('MAX_IMAGE').'|mimes:'.env('MIMES_IMAGE'),
         ];
     }

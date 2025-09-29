@@ -13,13 +13,13 @@ class GalleryAddForm extends Form
     #[Validate('required|integer|exists:gallery_categories,id')]
     public string $gallery_category_id = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name')]
+    #[Validate('required|string|min:1|max:100')]
     public string $name = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name_id')]
+    #[Validate('required|string|min:1|max:100')]
     public string $name_id = '';
 
-    #[Validate('required|string|min:1|max:100|unique:galleries,name_zh')]
+    #[Validate('required|string|min:1|max:100')]
     public string $name_zh = '';
 
     #[Validate('nullable|string|min:1|max:65535')]

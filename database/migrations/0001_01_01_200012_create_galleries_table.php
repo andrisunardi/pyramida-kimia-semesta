@@ -13,13 +13,13 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(GalleryCategory::class)->constrained()->cascadeOnDelete();
-            $table->string('name', 50)->unique();
-            $table->string('name_id', 50)->unique();
-            $table->string('name_zh', 50)->unique();
+            $table->string('name', 100);
+            $table->string('name_id', 100);
+            $table->string('name_zh', 100);
             $table->text('description')->nullable();
             $table->text('description_id')->nullable();
             $table->text('description_zh')->nullable();
-            $table->string('image', 80)->nullable();
+            $table->string('image', 130)->nullable();
             $table->boolean('is_active')->unsigned()->default(true);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
