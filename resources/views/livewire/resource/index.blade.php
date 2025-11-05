@@ -33,7 +33,7 @@
                             @endforeach
                         @endforeach --}}
 
-                        <div class="panel-group accordion faqs" id="coa" role="tablist" aria-multiselectable="true">
+                        {{-- <div class="panel-group accordion faqs" id="coa" role="tablist" aria-multiselectable="true">
                             @foreach ($productCategories as $key => $productCategory)
                                 <div class="panel panel-default" wire:key="{{ $key }}">
                                     <div class="panel-heading" role="tab" id="coa-id-{{ $productCategory->id }}">
@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div> --}}
 
                         <hr>
                         <h3>MSDS (MATERIAL SAFETY DATA SHEET)</h3>
@@ -79,7 +79,7 @@
                             @endforeach
                         @endforeach --}}
 
-                        <div class="panel-group accordion faqs" id="msds" role="tablist"
+                        {{-- <div class="panel-group accordion faqs" id="msds" role="tablist"
                             aria-multiselectable="true">
                             @foreach ($productCategories as $key => $productCategory)
                                 <div class="panel panel-default" wire:key="{{ $key }}">
@@ -108,7 +108,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-md-4">

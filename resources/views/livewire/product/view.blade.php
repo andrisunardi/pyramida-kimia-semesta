@@ -49,7 +49,7 @@
                                     @endif
                                 </p>
 
-                                @if ($product->checkFileCoa())
+                                {{-- @if ($product->checkFileCoa())
                                     <a draggable="false" href="{{ $product->assetFileCoa() }}" class="btn" download>
                                         COA <i class="fa fa-download"></i>
                                     </a>
@@ -59,7 +59,7 @@
                                     <a draggable="false" href="{{ $product->assetFileMsds() }}" class="btn" download>
                                         MSDS <i class="fa fa-download"></i>
                                     </a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
 

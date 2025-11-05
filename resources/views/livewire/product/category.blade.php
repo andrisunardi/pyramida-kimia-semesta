@@ -58,7 +58,7 @@
                                                 'slug' => $product->slug,
                                             ])" :text="trans('index.view')" />
                                         </span>
-                                        @if ($product->checkFileCoa())
+                                        {{-- @if ($product->checkFileCoa())
                                             <span>
                                                 <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileCoa()"
                                                     :text="'COA'" />
@@ -69,7 +69,7 @@
                                                 <x-components::link.external-link :class="'btn btn-alt'" :href="$product->assetFileMsds()"
                                                     :text="'MSDS'" />
                                             </span>
-                                        @endif
+                                        @endif --}}
                                     </div>
                                 </div>
                             </li>
