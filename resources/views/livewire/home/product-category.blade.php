@@ -6,7 +6,8 @@
                     <div class="col-md-4 col-sm-6 {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }} {{ $loop->first ? 'first' : '' }}"
                         wire:key="{{ $key }}">
                         <div class="feature boxed">
-                            <a href="solution-single.html">
+                            <a draggable="false" href="{{ route('product.category', ['slug' => $productCategory->slug]) }}"
+                                wire:navigate>
                                 <div class="fbox-photo">
                                     <x-components::image :src="$productCategory->assetImage()" :alt="$productCategory->altImage()" />
                                 </div>
