@@ -27,7 +27,7 @@
                             @endif
 
                             @if (App::isLocale('zh'))
-                                分析证书 (COA)
+                                COA (分析证书)
                             @endif
                         </h3>
 
@@ -85,7 +85,7 @@
                             @endif
 
                             @if (App::isLocale('zh'))
-                                MSDS（材料安全数据表）
+                                MSDS (材料安全数据表)
                             @endif
                         </h3>
 
