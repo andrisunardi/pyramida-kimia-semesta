@@ -207,6 +207,8 @@ return [
         'user' => 'Pengguna',
         'username' => 'Username',
         'video' => 'Video',
+        'message_id' => 'Pesan ID',
+        'message_zh' => 'Pesan ZH',
     ],
 
 ];

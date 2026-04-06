@@ -207,6 +207,8 @@ return [
         'user' => '用户',
         'username' => '用户名',
         'video' => '视频',
+        'message_id' => '消息 ID',
+        'message_zh' => '消息ZH',
     ],
 
 ];

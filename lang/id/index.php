@@ -204,4 +204,6 @@ return [
     'event' => 'Acara',
     'please_wait_until_the_uploading_finished' => 'Mohon Tunggu Hingga Proses Pengunggahan Selesai',
     'video' => 'Video',
+    'message_id' => 'Pesan ID',
+    'message_zh' => 'Pesan ZH',
 ];

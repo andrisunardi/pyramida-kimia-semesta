@@ -207,6 +207,8 @@ return [
         'user' => 'User',
         'username' => 'Username',
         'video' => 'Video',
+        'message_id' => 'Message ID',
+        'message_zh' => 'Message ZH',
         'index' => 'Index',
         'index' => 'Index',
         'index' => 'Index',

@@ -8,7 +8,7 @@
                     @endif
 
                     @if (App::isLocale('id'))
-                        我们的客户怎么说
+                        Apa Kata Klien Kami
                     @endif
 
                     @if (App::isLocale('zh'))

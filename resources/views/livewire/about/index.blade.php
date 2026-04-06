@@ -79,7 +79,22 @@
                     <div class="col-md-8">
                         <h1>{{ trans('index.about') }} {{ env('APP_NAME') }}</h1>
                         <p>
-                            {{ env('APP_DESCRIPTION') }}
+                            @if (App::isLocale('en'))
+                                PT. Pyramida Kimia Semesta was established in Tangerang Serpong, is one part of the
+                                PANCASAKTI GROUP which is engaged in the distribution of chemicals and trading of
+                                CHEMICAL RAW MATERIALS and PETROCHEMICALS
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                PT. Pyramida kimia semesta didirikan di Tangerang serpong, merupakan salah satu bagian
+                                dari PANCASAKTI GROUP yang bergerak dibidang distribusi kimia dan perdagangan BAHAN BAKU
+                                KIMIA serta PETROKIMIA
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                PT. Pyramida Kimia Semesta 公司成立于丹格朗塞尔蓬，是 PANCASAKTI 集团的子公司之一。
+                                PANCASAKTI 集团主要从事化学品分销和化工原料及石油化工产品的贸易。
+                            @endif
                         </p>
 
                         <div class="gaps"></div>

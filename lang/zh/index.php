@@ -204,4 +204,6 @@ return [
     'event' => '事件',
     'please_wait_until_the_uploading_finished' => '请稍候，上传工作即将完成。',
     'video' => '视频',
+    'message_id' => '消息 ID',
+    'message_zh' => '消息ZH',
 ];
