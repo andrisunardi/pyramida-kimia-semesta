@@ -1,11 +1,10 @@
 <div id="slider" class="banner banner-slider carousel slide carousel-fade banner-large">
     <div class="carousel-inner">
-
         @foreach ($sliders as $key => $slider)
             <div class="item {{ $loop->first ? 'active' : null }}" wire:key="{{ $key }}">
                 <div class="fill" style="background-image:url({{ $slider->assetImage() }});">
-                    <div class="banner-content">
-                        {{-- <div class="container">
+                    {{-- <div class="banner-content">
+                        <div class="container">
                             <div class="row">
                                 <div class="banner-text al-left pos-left light dark-delete">
                                     <div class="animated fadeInRight">
@@ -19,8 +18,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-                    </div>
+                        </div>
+                    </div> --}}
                 </div>
             </div>
         @endforeach
