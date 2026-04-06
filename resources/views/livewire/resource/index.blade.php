@@ -17,7 +17,19 @@
                         </h1>
 
                         <hr>
-                        <h3>COA (CERTIFICATE OF ANALYSIS)</h3>
+                        <h3>
+                            @if (App::isLocale('en'))
+                                COA (CERTIFICATE OF ANALYSIS)
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                COA (SERTIFIKAT ANALISIS)
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                分析证书 (COA)
+                            @endif
+                        </h3>
 
                         {{-- @foreach ($productCategories as $key => $productCategory)
                             <p>
@@ -63,7 +75,19 @@
                         </div> --}}
 
                         <hr>
-                        <h3>MSDS (MATERIAL SAFETY DATA SHEET)</h3>
+                        <h3>
+                            @if (App::isLocale('en'))
+                                MSDS (MATERIAL SAFETY DATA SHEET)
+                            @endif
+
+                            @if (App::isLocale('id'))
+                                MSDS (LEMBAR DATA KESELAMATAN BAHAN)
+                            @endif
+
+                            @if (App::isLocale('zh'))
+                                MSDS（材料安全数据表）
+                            @endif
+                        </h3>
 
                         {{-- @foreach ($productCategories as $key => $productCategory)
                             <p>
