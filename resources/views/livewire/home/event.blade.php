@@ -14,11 +14,11 @@
                 @endforeach
             </div>
 
-            <a draggable="false" class="left carousel-control" href="#event" role="button" data-slide="prev">
+            <a draggable="false" class="left carousel-control" href="#event" role="button" data-slide="prev" style="display: inherit">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">{{ trans('index.previous') }}</span>
             </a>
-            <a draggable="false" class="right carousel-control" href="#event" role="button" data-slide="next">
+            <a draggable="false" class="right carousel-control" href="#event" role="button" data-slide="next" style="display: inherit">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">{{ trans('index.next') }}</span>
             </a>
