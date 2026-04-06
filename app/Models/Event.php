@@ -182,11 +182,6 @@ class Event extends Model
         return '';
     }
 
-    public function altVideo(): string
-    {
-        return trans('index.event')." - {$this->translate_name} - ".env('APP_TITLE');
-    }
-
     public function checkVideo(): bool
     {
         if ($this->video && File::exists(public_path("videos/event/{$this->video}"))) {

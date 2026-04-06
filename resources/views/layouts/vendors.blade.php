@@ -4,7 +4,7 @@
 
 {{-- @include('vendors.autonumeric') --}}
 
-@include('vendors.clarity-microsoft-tag')
+{{-- @include('vendors.clarity-microsoft-tag') --}}
 
 @include('vendors.disabled-ctrl-u-and-f12')
 

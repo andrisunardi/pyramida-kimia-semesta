@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-sm-7 col-md-8 col-lg-9 col-xl-2">
                     @if ($event->checkVideo())
-                        <x-components::video :href="$event->assetVideo()" :src="$event->assetVideo()" :alt="$event->altVideo()" />
+                        <x-components::video :href="$event->assetVideo()" :src="$event->assetVideo()" />
                     @endif
                 </div>
             </div>

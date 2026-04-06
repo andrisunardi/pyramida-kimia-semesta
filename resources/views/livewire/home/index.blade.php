@@ -75,11 +75,12 @@
                             </strong>
                         </span>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+
+    @livewire('home.home-event-component')
 
     @livewire('home.home-product-category-component')
 

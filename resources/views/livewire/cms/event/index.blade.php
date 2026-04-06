@@ -82,7 +82,7 @@
                                 </td>
                                 <td>
                                     @if ($event->checkVideo())
-                                        <x-components::video :href="$event->assetVideo()" :src="$event->assetVideo()" :alt="$event->altVideo()" />
+                                        <x-components::video :href="$event->assetVideo()" :src="$event->assetVideo()" />
                                     @endif
                                 </td>
                                 <td>
