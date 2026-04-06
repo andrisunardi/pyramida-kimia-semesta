@@ -63,6 +63,16 @@ return [
     ],
     [
         'roles' => 'Super User|Admin',
+        'permissions' => 'event.index',
+        'name' => 'Event',
+        'route' => 'cms.event.index',
+        'icon' => 'fas fa-calendar-day',
+        'table' => 'events',
+        'sidebar' => true,
+        'subMenus' => [],
+    ],
+    [
+        'roles' => 'Super User|Admin',
         'permissions' => 'slider.index',
         'name' => 'Slider',
         'route' => 'cms.slider.index',

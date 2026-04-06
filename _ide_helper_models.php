@@ -13,8 +13,6 @@
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -81,8 +79,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -143,8 +139,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
  * @property-read int|null $activities_count
  * @property-read \App\Models\User|null $createdBy
@@ -199,8 +193,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $company
@@ -251,8 +243,62 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
+ * @property int $id
+ * @property string $name
+ * @property string $name_id
+ * @property string $name_zh
+ * @property string|null $description
+ * @property string|null $description_id
+ * @property string|null $description_zh
+ * @property string|null $image
+ * @property string|null $video
+ * @property bool $is_active
+ * @property int|null $created_by
+ * @property int|null $updated_by
+ * @property int|null $deleted_by
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Spatie\Activitylog\Models\Activity> $activities
+ * @property-read int|null $activities_count
+ * @property-read \App\Models\User|null $createdBy
+ * @property-read \App\Models\User|null $deletedBy
+ * @property-read string $image_url
+ * @property-read string $translate_description
+ * @property-read string $translate_name
+ * @property-read string $video_url
+ * @property-read \App\Models\User|null $updatedBy
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event active()
+ * @method static \Database\Factories\EventFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event inactive()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereDescriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereDescriptionZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereNameZh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event whereVideo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Event withoutTrashed()
+ */
+	class Event extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * @property int $id
  * @property string $question
  * @property string $question_id
@@ -305,8 +351,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property int $gallery_category_id
  * @property string $name
@@ -365,8 +409,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -414,8 +456,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property int $year
  * @property string $name
@@ -469,8 +509,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $address
@@ -519,8 +557,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -577,8 +613,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property int $product_category_id
  * @property string $name
@@ -644,8 +678,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -705,8 +737,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string|null $key
  * @property string|null $value
@@ -748,8 +778,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $name_id
@@ -805,8 +833,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $job
@@ -860,8 +886,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $company
@@ -910,8 +934,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * 
- *
  * @property int $id
  * @property string $name
  * @property string $email

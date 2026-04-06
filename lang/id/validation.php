@@ -206,6 +206,7 @@ return [
         'url' => 'Url',
         'user' => 'Pengguna',
         'username' => 'Username',
+        'video' => 'Video',
     ],
 
 ];

@@ -206,7 +206,7 @@ return [
         'url' => 'Url',
         'user' => 'User',
         'username' => 'Username',
-        'index' => 'Index',
+        'video' => 'Video',
         'index' => 'Index',
         'index' => 'Index',
         'index' => 'Index',

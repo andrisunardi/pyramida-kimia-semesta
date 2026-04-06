@@ -201,4 +201,7 @@ return [
     'your_profile' => '您的个人资料',
     'your_password' => '您的密码',
     'whatsapp' => 'Whatsapp',
+    'event' => '事件',
+    'please_wait_until_the_uploading_finished' => '请稍候，上传工作即将完成。',
+    'video' => '视频',
 ];

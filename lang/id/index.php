@@ -201,4 +201,7 @@ return [
     'your_profile' => 'Profil Anda',
     'your_password' => 'Password Anda',
     'whatsapp' => 'Whatsapp',
+    'event' => 'Acara',
+    'please_wait_until_the_uploading_finished' => 'Mohon Tunggu Hingga Proses Pengunggahan Selesai',
+    'video' => 'Video',
 ];

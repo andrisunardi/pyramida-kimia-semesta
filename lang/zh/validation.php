@@ -206,6 +206,7 @@ return [
         'url' => '网址',
         'user' => '用户',
         'username' => '用户名',
+        'video' => '视频',
     ],
 
 ];

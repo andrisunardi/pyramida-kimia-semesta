@@ -22,9 +22,9 @@ Breadcrumbs::for('livewire.update', function (BreadcrumbTrail $trail) {
 });
 
 // LIVEWIRE PREVIEW FILE
-Breadcrumbs::for('livewire.predetail-file', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('livewire.preview-file', function (BreadcrumbTrail $trail) {
     $trail->parent('index');
-    $trail->push(trans('index.predetail_file'), null, ['icon' => 'fas fa-photo-film']);
+    $trail->push(trans('index.preview_file'), null, ['icon' => 'fas fa-photo-film']);
 });
 
 // TELESCOPE
@@ -279,6 +279,27 @@ Breadcrumbs::for('cms.slider.edit', function (BreadcrumbTrail $trail, $slider) {
 Breadcrumbs::for('cms.slider.detail', function (BreadcrumbTrail $trail, $slider) {
     $trail->parent('cms.slider.index');
     $trail->push(trans('index.detail'), route('cms.slider.detail', ['slider' => $slider]), ['icon' => 'fas fa-list']);
+});
+
+// Event
+Breadcrumbs::for('cms.event.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.index');
+    $trail->push(trans('index.event'), route('cms.event.index'), ['icon' => 'fas fa-calendar-day']);
+});
+
+Breadcrumbs::for('cms.event.add', function (BreadcrumbTrail $trail) {
+    $trail->parent('cms.event.index');
+    $trail->push(trans('index.add'), route('cms.event.add'), ['icon' => 'fas fa-plus']);
+});
+
+Breadcrumbs::for('cms.event.edit', function (BreadcrumbTrail $trail, $event) {
+    $trail->parent('cms.event.index');
+    $trail->push(trans('index.edit'), route('cms.event.edit', ['event' => $event]), ['icon' => 'fas fa-edit']);
+});
+
+Breadcrumbs::for('cms.event.detail', function (BreadcrumbTrail $trail, $event) {
+    $trail->parent('cms.event.index');
+    $trail->push(trans('index.detail'), route('cms.event.detail', ['event' => $event]), ['icon' => 'fas fa-list']);
 });
 
 // TESTIMONY
