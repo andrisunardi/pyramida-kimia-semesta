@@ -1,6 +1,6 @@
 <div class="section section-pad bg-light">
     <div class="container">
-        <div id="event" class="banner carousel slide carousel-fade banner-large">
+        <div id="event" class="banner banner-slider carousel slide carousel-fade banner-large" style="height: 100%">
             <div class="carousel-inner">
                 @foreach ($events as $key => $event)
                     <div class="item {{ $loop->first ? 'active' : null }}" wire:key="{{ $key }}">
