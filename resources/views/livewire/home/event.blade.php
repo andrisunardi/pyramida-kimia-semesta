@@ -1,4 +1,4 @@
-<div class="section section-pad">
+<div class="section section-pad bg-light">
     <div class="container">
         <div id="event" class="banner banner-slider carousel slide carousel-fade banner-large">
             <div class="carousel-inner">
